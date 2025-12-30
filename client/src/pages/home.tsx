@@ -83,9 +83,11 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
           </li>
         ))}
       </ul>
-      <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
-        Learn More
-      </Button>
+      <Link href={link}>
+        <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
+          Learn More
+        </Button>
+      </Link>
     </CardContent>
   </Card>
 );
@@ -414,19 +416,19 @@ export default function HomePage() {
               title="Web Design"
               description="Websites tailored to your brand. We create sites that turn visitors into customers."
               items={["Fully responsive", "Clear Call-to-Actions", "Content Included"]}
-              link="#"
+              link="/services/web-design"
             />
             <ServiceCard 
               title="Google Marketing"
               description="Climb to the top of search results for high-value searches your customers use."
               items={["Content Creation", "Google Business Profile Posting", "Backlinks and citations"]}
-              link="#"
+              link="/services/search-engine-optimization"
             />
             <ServiceCard 
               title="Web Maintenance"
               description="Web hosting, email, maintenance, backups, unlimited content updates and more."
               items={["Monthly Reporting", "On-demand Backups", "Daily security scans"]}
-              link="#"
+              link="/services/managed-wordpress-hosting"
             />
           </div>
         </div>
