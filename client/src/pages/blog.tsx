@@ -6,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
-import { Calendar, User, ArrowRight, Loader2 } from 'lucide-react';
+import { Calendar, User, ArrowRight, Loader2, BookOpen, TrendingUp, Clock, Settings } from 'lucide-react';
 // import { SeobotClient } from 'seobot'; // Uncomment when API key is available
 
 // Mock data for display purposes
@@ -124,6 +124,59 @@ export default function BlogPage() {
 
       <section className="py-12 pb-24">
         <div className="container mx-auto px-6">
+          
+          {/* Featured Guides Grid */}
+          <div className="mb-20">
+            <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[#FD9800] pl-4">
+              Core Guides for Business Owners
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { 
+                  title: "How Marketing Works", 
+                  desc: "The simple system tailored for service businesses.", 
+                  icon: TrendingUp,
+                  link: "/resources/how-online-marketing-works"
+                },
+                { 
+                  title: "Google Business Profile", 
+                  desc: "Master the basics of your most important asset.", 
+                  icon: BookOpen,
+                  link: "/resources/google-business-profile-basics"
+                },
+                { 
+                  title: "First 30 Days", 
+                  desc: "Exactly what happens after you sign up with us.", 
+                  icon: Clock,
+                  link: "/resources/first-30-days"
+                },
+                { 
+                  title: "Ongoing Monthly Work", 
+                  desc: "How we protect and grow your digital presence.", 
+                  icon: Settings,
+                  link: "/resources/ongoing-monthly-work"
+                },
+              ].map((guide, i) => (
+                <Link key={i} href={guide.link}>
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer h-full flex flex-col group">
+                    <div className="w-12 h-12 rounded-full bg-[#fdfaf5] flex items-center justify-center text-[#FD9800] mb-4 group-hover:bg-[#FD9800] group-hover:text-white transition-colors">
+                      <guide.icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{guide.title}</h3>
+                    <p className="text-sm text-gray-600 mb-4 flex-grow">{guide.desc}</p>
+                    <div className="text-xs font-bold uppercase tracking-wide text-[#FD9800] flex items-center gap-1">
+                      Read Guide <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[#FD9800] pl-4">
+             Latest Articles
+          </h2>
+
           {loading ? (
             <div className="flex justify-center py-20">
               <Loader2 className="w-10 h-10 animate-spin text-[#FD9800]" />

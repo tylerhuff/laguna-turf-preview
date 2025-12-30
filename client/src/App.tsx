@@ -16,6 +16,10 @@ import AdminPages from "@/pages/admin/PageList";
 import AdminEditPage from "@/pages/admin/EditPage";
 import BlogPage from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
+import HowMarketingWorksPage from "@/pages/resources/how-online-marketing-works";
+import GoogleBusinessProfilePage from "@/pages/resources/google-business-profile-basics";
+import First30DaysPage from "@/pages/resources/first-30-days";
+import OngoingWorkPage from "@/pages/resources/ongoing-monthly-work";
 
 import IndustryPage from "@/pages/industry-template";
 
@@ -114,6 +118,10 @@ function Router() {
       <Route path="/contact-us" component={ContactPage} />
 
       <Route path="/resources" component={BlogPage} />
+      <Route path="/resources/how-online-marketing-works" component={HowMarketingWorksPage} />
+      <Route path="/resources/google-business-profile-basics" component={GoogleBusinessProfilePage} />
+      <Route path="/resources/first-30-days" component={First30DaysPage} />
+      <Route path="/resources/ongoing-monthly-work" component={OngoingWorkPage} />
       <Route path="/resources/:slug" component={BlogPost} />
       
       {/* Admin Routes */}
