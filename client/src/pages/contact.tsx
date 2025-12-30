@@ -108,6 +108,7 @@ export default function ContactPage() {
         disableTopWave
         backgroundImage="/assets/images/whitewater_sanclemente.webp"
         overlayOpacity={0.75}
+        priority={true}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.h1 

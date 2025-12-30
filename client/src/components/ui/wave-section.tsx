@@ -9,6 +9,7 @@ interface WaveSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   backgroundImage?: string;
   overlayOpacity?: number;
   bottomWaveColor?: string;
+  priority?: boolean;
 }
 
 export function WaveSection({ 
@@ -19,6 +20,7 @@ export function WaveSection({
   backgroundImage,
   overlayOpacity = 0.75, // Default overlay opacity - letting images shine through more
   bottomWaveColor = "#fdfaf5",
+  priority = false,
   ...props 
 }: WaveSectionProps) {
   return (
@@ -30,6 +32,8 @@ export function WaveSection({
             src={backgroundImage} 
             alt="Background" 
             className="w-full h-full object-cover"
+            fetchPriority={priority ? "high" : "auto"}
+            loading={priority ? "eager" : "lazy"}
           />
           <div 
             data-template="hero-overlay"

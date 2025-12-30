@@ -133,6 +133,7 @@ export default function SanClementePage() {
         backgroundImage="/assets/images/san-clemente-hero.webp"
         overlayOpacity={0.7}
         bottomWaveColor="#ffffff"
+        priority={true}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.div 
@@ -339,6 +340,7 @@ export default function SanClementePage() {
                     src="/assets/images/Filger-Manufacturing.webp" 
                     alt="Filger Manufacturing" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </AspectRatio>
               </div>
@@ -358,6 +360,7 @@ export default function SanClementePage() {
                     src="/assets/images/SmithandEastWoodConstruction.webp" 
                     alt="Smith & Eastwood Construction" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </AspectRatio>
               </div>
@@ -377,6 +380,7 @@ export default function SanClementePage() {
                     src="/assets/images/AscendEquities.webp" 
                     alt="Ascend Equities" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </AspectRatio>
               </div>

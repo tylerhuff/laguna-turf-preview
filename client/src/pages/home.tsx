@@ -52,6 +52,7 @@ const PortfolioItem = ({ title, description, image, link }: PortfolioItemProps) 
           src={image} 
           alt={title} 
           className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
         />
       </AspectRatio>
     </div>
@@ -236,6 +237,7 @@ export default function HomePage() {
         disableTopWave
         backgroundImage="/assets/images/bannertwentyone.jpg"
         overlayOpacity={0.75}
+        priority={true}
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
@@ -310,6 +312,9 @@ export default function HomePage() {
                    src="/assets/images/tylerhuff_founder.webp" 
                    alt="Tyler Huff" 
                    className="w-full h-auto object-cover"
+                   loading="lazy"
+                   width="448"
+                   height="560"
                  />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs block">
@@ -448,7 +453,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"I wholeheartedly recommend TwentyOne for their exceptional talent and professionalism. They consistently deliver outstanding, high-quality products with creativity and precision. Their ability to meet deadlines consistently is impressive, making TwentyOne a reliable choice for any project. I highly endorse Tyler and TwentyOne for anyone seeking top-notch web hosting and design services."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="/assets/images/DrKennedy.jpg" alt="Dr. Kennedy" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/DrKennedy.jpg" alt="Dr. Kennedy" className="w-full h-full object-cover" loading="lazy" width="48" height="48"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">John M. Kennedy, MD</h4>
@@ -462,7 +467,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Tyler was great to work with and created a website for me which exceeded my expectations. He is efficient, communicates well, quick to respond and has a good eye for design. His pricing is competitive, and he provides high quality work for a fair price."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="/assets/images/Casey.jpg" alt="Casey" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/Casey.jpg" alt="Casey" className="w-full h-full object-cover" loading="lazy" width="48" height="48"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Casey Whittemore</h4>
@@ -476,7 +481,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Very professional and great customer service, Tyler Huff was a pleasure to work with."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="/assets/images/AlexRangel.jpg" alt="Alex Rangel" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/AlexRangel.jpg" alt="Alex Rangel" className="w-full h-full object-cover" loading="lazy" width="48" height="48"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Alex Rangel</h4>
@@ -490,7 +495,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Great experience working with TwentyOne Solutions. Their team delivered a stunning website with ease. I regularly get new customers calling from my website."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="/assets/images/Csaba.jpeg" alt="Csaba" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/Csaba.jpeg" alt="Csaba" className="w-full h-full object-cover" loading="lazy" width="48" height="48"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Csaba Duzy</h4>
@@ -504,7 +509,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Had an amazing experience working with TwentyOne Solutions. Their team created a beautiful website giving us online credibility and more business!"</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="/assets/images/HuffPaintingCo-screenshot.png" alt="Cory Huff" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/HuffPaintingCo-screenshot.png" alt="Cory Huff" className="w-full h-full object-cover" loading="lazy" width="48" height="48"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Cory Huff</h4>
