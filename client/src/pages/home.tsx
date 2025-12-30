@@ -387,7 +387,7 @@ export default function HomePage() {
             <div className="space-y-12 lg:pt-20">
               <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.783637682247!2d-117.65345712398558!3d33.45487774900746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce68c126694e9%3A0xc33e5025732788e2!2sTwentyOne%20Solutions!5e0!3m2!1sen!2sus!4v1714488000000!5m2!1sen!2sus"
+                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=234%20Avenida%20Rosa%2C%20San%20Clemente%2C%20CA%2092672&t=&z=14&ie=UTF8&iwloc=B&output=embed"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
