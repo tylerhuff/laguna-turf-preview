@@ -10,6 +10,9 @@ import WebDesignPage from "@/pages/web-design";
 import PortfolioPage from "@/pages/portfolio";
 import ContactPage from "@/pages/contact";
 import SEOPage from "@/pages/seo-service";
+import AdminDashboard from "@/pages/admin/Dashboard";
+import AdminPages from "@/pages/admin/PageList";
+import AdminEditPage from "@/pages/admin/EditPage";
 
 function Router() {
   return (
@@ -20,6 +23,12 @@ function Router() {
       <Route path="/services/search-engine-optimization" component={SEOPage} />
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/contact-us" component={ContactPage} />
+      
+      {/* Admin Routes */}
+      <Route path="/admin" component={AdminDashboard} />
+      <Route path="/admin/pages" component={AdminPages} />
+      <Route path="/admin/pages/edit" component={AdminEditPage} />
+      
       <Route component={NotFound} />
     </Switch>
   );
