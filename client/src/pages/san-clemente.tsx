@@ -130,7 +130,7 @@ export default function SanClementePage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-1024x768.webp"
+        backgroundImage="/assets/images/san-clemente-hero.webp"
         overlayOpacity={0.7}
         bottomWaveColor="#ffffff"
       >
@@ -317,7 +317,7 @@ export default function SanClementePage() {
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Decorative Wave BG element */}
         <div className="absolute top-0 left-0 w-full opacity-5 pointer-events-none">
-           <img src="https://twentyonesolutions.com/wp-content/uploads/2025/04/middle_wave-1.svg" alt="" className="w-full" />
+           <img src="/assets/images/middle_wave.svg" alt="" className="w-full" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
@@ -336,7 +336,7 @@ export default function SanClementePage() {
               <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
                 <AspectRatio ratio={16/10}>
                   <img 
-                    src="https://twentyonesolutions.com/wp-content/uploads/2025/08/Filger-Manufacturing-png.webp" 
+                    src="/assets/images/Filger-Manufacturing.webp" 
                     alt="Filger Manufacturing" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
@@ -355,7 +355,7 @@ export default function SanClementePage() {
               <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
                 <AspectRatio ratio={16/10}>
                   <img 
-                    src="https://twentyonesolutions.com/wp-content/uploads/2025/12/SmithandEastWoodConstruction.webp" 
+                    src="/assets/images/SmithandEastWoodConstruction.webp" 
                     alt="Smith & Eastwood Construction" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
@@ -374,7 +374,7 @@ export default function SanClementePage() {
               <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
                 <AspectRatio ratio={16/10}>
                   <img 
-                    src="https://twentyonesolutions.com/wp-content/uploads/2025/12/AscendEquities.webp" 
+                    src="/assets/images/AscendEquities.webp" 
                     alt="Ascend Equities" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />

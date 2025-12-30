@@ -66,7 +66,7 @@ export default function AdminEditPage() {
                        <Label>Hero Image</Label>
                        <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
                           <div className="w-full h-48 bg-gray-100 rounded overflow-hidden relative">
-                             <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/04/tylerhuff_twentyonesolutions_founder-scaled.webp" className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity" alt="Preview" />
+                             <img src="/assets/images/tylerhuff_founder.webp" className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity" alt="Preview" />
                              <div className="absolute inset-0 flex items-center justify-center">
                                 <Button variant="secondary" size="sm" className="gap-2">
                                   <ImageIcon className="w-4 h-4" /> Change Image

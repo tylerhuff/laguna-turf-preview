@@ -120,7 +120,7 @@ export default function BlogPost() {
       "name": "TwentyOne Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png"
+        "url": "/assets/images/logo.png"
       }
     },
     "datePublished": article.date,
@@ -245,7 +245,7 @@ function StaticBlogPost() {
       "name": "TwentyOne Solutions",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png"
+        "url": "/assets/images/logo.png"
       }
     },
     "datePublished": "2025-10-12",

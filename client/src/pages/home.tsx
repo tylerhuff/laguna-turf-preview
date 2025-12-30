@@ -186,7 +186,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "TwentyOne Solutions",
-    "image": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png",
+    "image": "/assets/images/logo.png",
     "telephone": "+16265241059",
     "email": "contact@twentyonesolutions.com",
     "address": {
@@ -234,7 +234,7 @@ export default function HomePage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/bannertwentyone-scaled.jpg"
+        backgroundImage="/assets/images/bannertwentyone.jpg"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6">
@@ -307,7 +307,7 @@ export default function HomePage() {
             <div className="relative max-w-md mx-auto lg:ml-auto">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                  <img 
-                   src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/04/tylerhuff_twentyonesolutions_founder-scaled.webp" 
+                   src="/assets/images/tylerhuff_founder.webp" 
                    alt="Tyler Huff" 
                    className="w-full h-auto object-cover"
                  />
@@ -367,37 +367,37 @@ export default function HomePage() {
             <PortfolioItem 
               title="Filger Manufacturing"
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/Filger-Manufacturing-png.webp"
+              image="/assets/images/Filger-Manufacturing.webp"
               link="#"
             />
             <PortfolioItem 
               title="West Coast Washers"
               description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/WCW_mockup_transparent-png.webp"
+              image="/assets/images/WCW_mockup_transparent.webp"
               link="#"
             />
             <PortfolioItem 
               title="TSA Group Ltd"
               description="Transmission line siting and right-of-way consulting. Highlights current and past projects."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/TSA-Group-Limited-png.webp"
+              image="/assets/images/TSA-Group-Limited.webp"
               link="#"
             />
             <PortfolioItem 
               title="Luxury Tahoe Properties"
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/LuxuryTahoeProperties-png.webp"
+              image="/assets/images/LuxuryTahoeProperties.webp"
               link="#"
             />
             <PortfolioItem 
               title="Diamond Construction"
               description="Specializes in waterproofing solutions and gypsum concrete services for contractors."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/DiamondConstruction-png.webp"
+              image="/assets/images/DiamondConstruction.webp"
               link="#"
             />
             <PortfolioItem 
               title="Fan Fusion Ventures"
               description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/FanFusion-png.webp"
+              image="/assets/images/FanFusion.webp"
               link="#"
             />
           </div>
@@ -448,7 +448,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"I wholeheartedly recommend TwentyOne for their exceptional talent and professionalism. They consistently deliver outstanding, high-quality products with creativity and precision. Their ability to meet deadlines consistently is impressive, making TwentyOne a reliable choice for any project. I highly endorse Tyler and TwentyOne for anyone seeking top-notch web hosting and design services."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/img-1-1-e1711765153356.jpg" alt="Dr. Kennedy" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/DrKennedy.jpg" alt="Dr. Kennedy" className="w-full h-full object-cover"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">John M. Kennedy, MD</h4>
@@ -462,7 +462,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Tyler was great to work with and created a website for me which exceeded my expectations. He is efficient, communicates well, quick to respond and has a good eye for design. His pricing is competitive, and he provides high quality work for a fair price."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/01/IMG_8771.jpg" alt="Casey" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/Casey.jpg" alt="Casey" className="w-full h-full object-cover"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Casey Whittemore</h4>
@@ -476,7 +476,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Very professional and great customer service, Tyler Huff was a pleasure to work with."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/IMG_0224-scaled-e1739331712976.jpg" alt="Alex Rangel" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/AlexRangel.jpg" alt="Alex Rangel" className="w-full h-full object-cover"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Alex Rangel</h4>
@@ -490,7 +490,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Great experience working with TwentyOne Solutions. Their team delivered a stunning website with ease. I regularly get new customers calling from my website."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/9f9defeb7d7dae86d70250e2588f711d-150x150-1.jpeg" alt="Csaba" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/Csaba.jpeg" alt="Csaba" className="w-full h-full object-cover"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Csaba Duzy</h4>
@@ -504,7 +504,7 @@ export default function HomePage() {
                <p className="text-gray-600 italic mb-6">"Had an amazing experience working with TwentyOne Solutions. Their team created a beautiful website giving us online credibility and more business!"</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
-                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/04/Screenshot-2024-04-18-at-7.26.04%E2%80%AFAM.png" alt="Cory Huff" className="w-full h-full object-cover"/>
+                     <img src="/assets/images/HuffPaintingCo-screenshot.png" alt="Cory Huff" className="w-full h-full object-cover"/>
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Cory Huff</h4>

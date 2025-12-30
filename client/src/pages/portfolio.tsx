@@ -102,7 +102,7 @@ export default function PortfolioPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/gab6baae1b7715596462e080861b1563705c06e9bf501a606e520de746ba7f2488c7fc78479ca513f726e1153f5fb4005_1280-360965.webp"
+        backgroundImage="/assets/images/portfolio-hero.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
@@ -142,42 +142,42 @@ export default function PortfolioPage() {
               title="Wrangler Painting"
               subtitle="Residential Painting"
               description="Located in Los Angeles, California, this company focuses on residential painting and power washing services."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/WranglerPaintingMockup.webp"
+              image="/assets/images/WranglerPaintingMockup.webp"
               link="https://wranglerpainting.com/"
             />
             <PortfolioCard 
               title="Diamond Construction"
               subtitle="Construction"
               description="Established in 2013, specializes in waterproofing solutions and gypsum concrete services."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/DiamondConstructionMockup.png"
+              image="/assets/images/DiamondConstructionMockup.png"
               link="https://diamondconstructionandgypsum.com/"
             />
             <PortfolioCard 
               title="Fan Fusion Ventures"
               subtitle="Sports Entertainment"
               description="Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/Frame-10-2.png"
+              image="/assets/images/FanFusionMockup.png"
               link="https://fanfusionventures.com/"
             />
             <PortfolioCard 
               title="Luxury Tahoe Properties"
               subtitle="Real Estate"
               description="Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/LuxuryTahoePropertiesMockup.png"
+              image="/assets/images/LuxuryTahoePropertiesMockup.png"
               link="https://luxurytahoeproperties.com/"
             />
             <PortfolioCard 
               title="Case Whittemore, LMFT"
               subtitle="Healthcare"
               description="A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/CaseWhitteMoreMockUp.png"
+              image="/assets/images/CaseWhitteMoreMockUp.png"
               link="https://caseywhittemorelmft.com/"
             />
             <PortfolioCard 
               title="Huff Painting Co"
               subtitle="Commercial Painting"
               description="With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting."
-              image="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/HuffPaintingCoMockup.png"
+              image="/assets/images/HuffPaintingCoMockup.png"
               link="https://huffpainting.co/"
             />
           </motion.div>
@@ -195,7 +195,7 @@ export default function PortfolioPage() {
             <div className="flex items-center gap-4">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md">
                 <img 
-                  src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/img-1-1-e1711765153356-150x150.jpg" 
+                  src="/assets/images/DrKennedy-thumb.jpg" 
                   alt="John M. Kennedy, MD" 
                   className="w-full h-full object-cover"
                 />

@@ -106,7 +106,7 @@ export default function ContactPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/whitewater_sanclemente.webp"
+        backgroundImage="/assets/images/whitewater_sanclemente.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">

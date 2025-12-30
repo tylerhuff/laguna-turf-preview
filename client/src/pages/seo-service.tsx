@@ -129,7 +129,7 @@ export default function SEOPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-20 md:pb-32" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-scaled.webp"
+        backgroundImage="/assets/images/seo-hero.webp"
         overlayOpacity={0.75}
         bottomWaveColor="#ffffff"
       >
@@ -258,7 +258,7 @@ export default function SEOPage() {
             <div className="relative">
               <div className="bg-white p-2 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/mockup-mobile-search.jpg" 
+                  src="/assets/images/mockup-mobile-search.jpg" 
                   alt="Google Search Results Mockup" 
                   className="rounded-xl w-full h-auto object-cover"
                 />

@@ -22,7 +22,7 @@ export default function AboutPage() {
       "name": "TwentyOne Solutions",
       "description": "Web design & marketing agency for service businesses located in San Clemente, CA",
       "url": "https://twentyonesolutions.com/about-us",
-      "logo": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png"
+      "logo": "/assets/images/logo.png"
     }
   };
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/whitewater_sanclemente.webp"
+        backgroundImage="/assets/images/whitewater_sanclemente.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
@@ -120,7 +120,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
                   <img 
-                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/img-1-1-e1711765153356-150x150.jpg" 
+                    src="/assets/images/DrKennedy-thumb.jpg" 
                     alt="John M. Kennedy, MD" 
                     className="w-full h-full object-cover"
                   />
@@ -140,7 +140,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
                   <img 
-                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/01/IMG_8771.jpg" 
+                    src="/assets/images/Casey.jpg" 
                     alt="Casey Whittemore" 
                     className="w-full h-full object-cover"
                   />
@@ -160,7 +160,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-4 mt-auto">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
                   <img 
-                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/9f9defeb7d7dae86d70250e2588f711d-150x150-1.jpeg" 
+                    src="/assets/images/Csaba.jpeg" 
                     alt="Csaba Duzy" 
                     className="w-full h-full object-cover"
                   />
@@ -190,7 +190,7 @@ export default function AboutPage() {
               <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
                 <AspectRatio ratio={16/10}>
                   <img 
-                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/Filger-Manufacturing-png.webp" 
+                    src="/assets/images/Filger-Manufacturing.webp" 
                     alt="Filger Manufacturing" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
@@ -209,7 +209,7 @@ export default function AboutPage() {
               <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
                 <AspectRatio ratio={16/10}>
                   <img 
-                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/LuxuryTahoePropertiesMockup.png" 
+                    src="/assets/images/LuxuryTahoePropertiesMockup.png" 
                     alt="Luxury Tahoe Properties" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
@@ -228,7 +228,7 @@ export default function AboutPage() {
               <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
                 <AspectRatio ratio={16/10}>
                   <img 
-                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/WCW_mockup_transparent-png.webp" 
+                    src="/assets/images/WCW_mockup_transparent.webp" 
                     alt="West Coast Washers" 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
