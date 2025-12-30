@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
 import { Card } from '@/components/ui/card';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { WaveSection } from '@/components/ui/wave-section';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -17,30 +18,27 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Hero */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://twentyonesolutions.com/wp-content/uploads/2025/05/aerialwavecrashing-scaled.webp" 
-            alt="San Clemente Waves" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="relative h-full container mx-auto px-6 flex flex-col justify-center items-center text-center text-white">
+      <WaveSection 
+        className="pt-32 md:pt-40 pb-32" 
+        disableTopWave
+        backgroundImage="https://twentyonesolutions.com/wp-content/uploads/2025/05/aerialwavecrashing-scaled.webp"
+        overlayOpacity={0.85}
+      >
+        <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
           <motion.h1 
             initial="hidden" animate="visible" variants={fadeIn}
-            className="text-5xl md:text-7xl font-bold font-heading mb-6"
+            className="text-5xl md:text-7xl font-bold font-heading mb-6 text-gray-900"
           >
             About TwentyOne
           </motion.h1>
           <motion.p 
             initial="hidden" animate="visible" variants={fadeIn}
-            className="text-xl md:text-2xl font-light max-w-2xl"
+            className="text-xl md:text-2xl font-light max-w-2xl text-gray-700"
           >
             Web design & marketing agency for service businesses located in San Clemente, CA
           </motion.p>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Intro */}
       <section className="py-24 bg-white">

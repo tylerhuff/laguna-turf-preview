@@ -4,13 +4,38 @@ import { cn } from '@/lib/utils';
 interface WaveSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
-  reverse?: boolean; // Option to reverse wave direction
+  reverse?: boolean;
   disableTopWave?: boolean;
+  backgroundImage?: string;
+  overlayOpacity?: number;
 }
 
-export function WaveSection({ children, className, reverse, disableTopWave = false, ...props }: WaveSectionProps) {
+export function WaveSection({ 
+  children, 
+  className, 
+  reverse, 
+  disableTopWave = true, // Default to true as requested
+  backgroundImage,
+  overlayOpacity = 0.9, // Default overlay opacity
+  ...props 
+}: WaveSectionProps) {
   return (
     <section className={cn("relative bg-white", className)} {...props}>
+      {/* Background Image */}
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={backgroundImage} 
+            alt="Background" 
+            className="w-full h-full object-cover"
+          />
+          <div 
+            className="absolute inset-0 bg-white" 
+            style={{ opacity: overlayOpacity }}
+          />
+        </div>
+      )}
+
       {/* Top Wave: The White Hero section cutting UP into the Beige Header */}
       {!disableTopWave && (
         <div className="absolute top-0 left-0 right-0 h-16 md:h-24 w-full overflow-hidden leading-[0] z-10">

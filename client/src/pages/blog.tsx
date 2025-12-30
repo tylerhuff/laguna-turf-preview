@@ -76,7 +76,12 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Navigation />
 
-      <WaveSection className="pt-32 md:pt-40 pb-20" disableTopWave>
+      <WaveSection 
+        className="pt-32 md:pt-40 pb-20" 
+        disableTopWave
+        backgroundImage="https://images.unsplash.com/photo-1499750310159-52f0f837ce62?q=80&w=2666&auto=format&fit=crop"
+        overlayOpacity={0.95}
+      >
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

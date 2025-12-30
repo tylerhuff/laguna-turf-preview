@@ -20,7 +20,12 @@ export default function ContactPage() {
       <Navigation />
 
       {/* Hero */}
-      <WaveSection className="pt-20 pb-16">
+      <WaveSection 
+        className="pt-32 md:pt-40 pb-32" 
+        disableTopWave
+        backgroundImage="https://images.unsplash.com/photo-1423666639041-f14d07297586?q=80&w=2674&auto=format&fit=crop"
+        overlayOpacity={0.95}
+      >
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.h1 
             initial="hidden" animate="visible" variants={fadeIn}

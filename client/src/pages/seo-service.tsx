@@ -42,7 +42,12 @@ export default function SEOPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <WaveSection className="py-12 lg:py-20 overflow-hidden">
+      <WaveSection 
+        className="py-20 lg:py-32 overflow-hidden" 
+        disableTopWave
+        backgroundImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
+        overlayOpacity={0.95}
+      >
         {/* Abstract Background Shapes - Kept inside WaveSection */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 -z-10 pointer-events-none" />

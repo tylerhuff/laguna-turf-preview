@@ -21,7 +21,15 @@ const staggerContainer = {
   }
 };
 
-const PortfolioCard = ({ title, description, image, link, subtitle }) => (
+interface PortfolioCardProps {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+  subtitle?: string;
+}
+
+const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
   <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all">
     <div className="overflow-hidden">
       <AspectRatio ratio={16/10}>
@@ -55,9 +63,14 @@ export default function PortfolioPage() {
       <Navigation />
 
       {/* Hero */}
-      <WaveSection className="pt-20 pb-16">
+      <WaveSection 
+        className="pt-32 md:pt-40 pb-32" 
+        disableTopWave
+        backgroundImage="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+        overlayOpacity={0.95}
+      >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <motion.h1 
+          <motion.h1  
             initial="hidden" animate="visible" variants={fadeIn}
             className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >

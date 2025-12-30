@@ -24,9 +24,14 @@ export default function WebDesignPage() {
       <Navigation />
 
       {/* Hero */}
-      <WaveSection className="pt-20 pb-24">
+      <WaveSection 
+        className="pt-32 md:pt-40 pb-32" 
+        disableTopWave
+        backgroundImage="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2672&auto=format&fit=crop"
+        overlayOpacity={0.95}
+      >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <motion.h1 
+          <motion.h1  
             initial="hidden" animate="visible" variants={fadeIn}
             className="text-4xl md:text-6xl font-bold font-heading text-gray-900 leading-[1.1] mb-6"
           >
