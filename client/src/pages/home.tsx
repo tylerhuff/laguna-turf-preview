@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { LeadFormModal } from '@/components/LeadFormModal';
 import {
   Accordion,
   AccordionContent,
@@ -256,11 +257,16 @@ export default function HomePage() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Link href="/contact-us">
-                <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
-                  Free Site Preview
-                </Button>
-              </Link>
+              <LeadFormModal 
+                title="Get Your Free Site Preview"
+                description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
+                type="preview"
+                trigger={
+                  <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
+                    Free Site Preview
+                  </Button>
+                }
+              />
               <Link href="/portfolio">
                 <Button variant="outline" size="lg" className="h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50">
                   View Our Work
@@ -329,11 +335,16 @@ export default function HomePage() {
                ))}
                
                <div className="pt-6">
-                 <Link href="/contact-us">
-                   <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
-                      Build my Preview
-                   </Button>
-                 </Link>
+                 <LeadFormModal 
+                   title="Build My Preview"
+                   description="Ready to see your business online? Fill out the form below and we'll get started on your free preview."
+                   type="preview"
+                   trigger={
+                     <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                        Build my Preview
+                     </Button>
+                   }
+                 />
                </div>
             </div>
           </div>

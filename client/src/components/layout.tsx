@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { LeadFormModal } from '@/components/LeadFormModal';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function Navigation() {
@@ -56,11 +57,16 @@ export function Navigation() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link href="/contact-us">
-              <Button className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5">
-                Strategy Call
-              </Button>
-            </Link>
+            <LeadFormModal 
+              title="Schedule a Strategy Call"
+              description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
+              type="strategy"
+              trigger={
+                <Button className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5">
+                  Strategy Call
+                </Button>
+              }
+            />
             <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -87,11 +93,18 @@ export function Navigation() {
                   </a>
                 </Link>
               ))}
-              <Link href="/contact-us">
-                <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white mt-4">
-                  Strategy Call
-                </Button>
-              </Link>
+              <div onClick={() => setIsOpen(false)}>
+                <LeadFormModal 
+                  title="Schedule a Strategy Call"
+                  description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
+                  type="strategy"
+                  trigger={
+                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white mt-4">
+                      Strategy Call
+                    </Button>
+                  }
+                />
+              </div>
             </nav>
           </motion.div>
         )}
