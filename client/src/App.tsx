@@ -13,6 +13,8 @@ import SEOPage from "@/pages/seo-service";
 import AdminDashboard from "@/pages/admin/Dashboard";
 import AdminPages from "@/pages/admin/PageList";
 import AdminEditPage from "@/pages/admin/EditPage";
+import BlogPage from "@/pages/blog";
+import BlogPost from "@/pages/blog-post";
 
 function Router() {
   return (
@@ -23,6 +25,8 @@ function Router() {
       <Route path="/services/search-engine-optimization" component={SEOPage} />
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/contact-us" component={ContactPage} />
+      <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/:slug" component={BlogPost} />
       
       {/* Admin Routes */}
       <Route path="/admin" component={AdminDashboard} />
