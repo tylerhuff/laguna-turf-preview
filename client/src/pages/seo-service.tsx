@@ -45,7 +45,7 @@ export default function SEOPage() {
       <WaveSection 
         className="py-20 lg:py-32 overflow-hidden" 
         disableTopWave
-        backgroundImage="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop"
+        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-scaled.webp"
         overlayOpacity={0.95}
       >
         {/* Abstract Background Shapes - Kept inside WaveSection */}

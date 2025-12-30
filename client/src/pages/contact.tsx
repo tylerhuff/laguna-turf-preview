@@ -23,7 +23,7 @@ export default function ContactPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-32" 
         disableTopWave
-        backgroundImage="https://images.unsplash.com/photo-1423666639041-f14d07297586?q=80&w=2674&auto=format&fit=crop"
+        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/whitewater_sanclemente.webp"
         overlayOpacity={0.95}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
@@ -41,6 +41,20 @@ export default function ContactPage() {
           </motion.p>
         </div>
       </WaveSection>
+
+      {/* Map Section */}
+      <section className="h-[400px] w-full overflow-hidden grayscale">
+        <iframe 
+          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=234%20Avenida%20Rosa%20A%2C%20San%20Clemente%2C%20CA%2092672&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+          width="100%" 
+          height="100%" 
+          style={{ border: 0, filter: 'sepia(100%) hue-rotate(330deg) saturate(150%)' }}
+          allowFullScreen 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          title="TwentyOne Solutions Location"
+        ></iframe>
+      </section>
 
       {/* Contact Content */}
       <section className="py-20 bg-[#fdfaf5]">

@@ -98,7 +98,7 @@ export default function HomePage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-32" 
         disableTopWave
-        backgroundImage="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2676&auto=format&fit=crop"
+        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/bannertwentyone-scaled.jpg"
         overlayOpacity={0.92}
       >
         <div className="container mx-auto px-6">

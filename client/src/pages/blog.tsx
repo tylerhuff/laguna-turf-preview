@@ -79,7 +79,7 @@ export default function BlogPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-20" 
         disableTopWave
-        backgroundImage="https://images.unsplash.com/photo-1499750310159-52f0f837ce62?q=80&w=2666&auto=format&fit=crop"
+        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/gab6baae1b7715596462e080861b1563705c06e9bf501a606e520de746ba7f2488c7fc78479ca513f726e1153f5fb4005_1280-360965.webp"
         overlayOpacity={0.95}
       >
         <div className="container mx-auto px-6 text-center">
