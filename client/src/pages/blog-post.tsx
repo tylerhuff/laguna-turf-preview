@@ -178,9 +178,9 @@ export default function BlogPost() {
 
            <div 
              className="
-               prose-h2:text-3xl prose-h2:font-bold prose-h2:font-heading prose-h2:text-gray-900 prose-h2:mt-12 prose-h2:mb-6
-               prose-h3:text-2xl prose-h3:font-bold prose-h3:font-heading prose-h3:text-gray-800 prose-h3:mt-8 prose-h3:mb-4
-               prose-p:text-gray-600 prose-p:leading-loose prose-p:mb-6 prose-p:text-lg
+               prose-h2:text-3xl prose-h2:font-bold prose-h2:font-heading prose-h2:text-gray-900 prose-h2:mt-16 prose-h2:mb-6
+               prose-h3:text-2xl prose-h3:font-bold prose-h3:font-heading prose-h3:text-gray-800 prose-h3:mt-12 prose-h3:mb-4
+               prose-p:text-gray-600 prose-p:leading-loose prose-p:mb-8 prose-p:text-lg
                prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-ul:text-gray-600 prose-li:mb-2
                prose-ol:list-decimal prose-ol:pl-6 prose-ol:mb-6 prose-ol:text-gray-600
                prose-strong:text-gray-900 prose-strong:font-bold
