@@ -6,6 +6,7 @@ import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { LeadFormModal } from '@/components/LeadFormModal';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
@@ -156,14 +157,27 @@ export default function SanClementePage() {
             initial="hidden" animate="visible" variants={fadeIn}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Link href="/contact-us">
-              <Button size="lg" className="h-14 px-8 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-lg">
-                Strategy Call
-              </Button>
-            </Link>
-            <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/90 hover:bg-white text-gray-800 border-none font-bold rounded-lg shadow-lg">
-              Free Site Preview
-            </Button>
+            <LeadFormModal 
+              title="Book Your Strategy Call"
+              description="Schedule a free consultation to discuss your business goals and how we can help you grow online."
+              type="strategy"
+              trigger={
+                <Button size="lg" className="h-14 px-8 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-lg">
+                  Strategy Call
+                </Button>
+              }
+            />
+            
+            <LeadFormModal 
+              title="Get Your Free Site Preview"
+              description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
+              type="preview"
+              trigger={
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg bg-white/90 hover:bg-white text-gray-800 border-none font-bold rounded-lg shadow-lg">
+                  Free Site Preview
+                </Button>
+              }
+            />
           </motion.div>
         </div>
       </WaveSection>
@@ -231,11 +245,16 @@ export default function SanClementePage() {
                 <li>– Laguna Niguel</li>
                 <li>– Laguna Beach</li>
               </ul>
-              <Link href="/contact-us">
-                <Button className="mt-4 bg-[#FD9800] hover:bg-[#e08600] text-white">
-                  Strategy Call <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-              </Link>
+              <LeadFormModal 
+                title="Book Your Strategy Call"
+                description="Schedule a free consultation to discuss your business goals and how we can help you grow online."
+                type="strategy"
+                trigger={
+                  <Button className="mt-4 bg-[#FD9800] hover:bg-[#e08600] text-white">
+                    Strategy Call <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                }
+              />
             </div>
           </div>
         </div>
