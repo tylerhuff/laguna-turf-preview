@@ -3,12 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   Check,
   CheckCircle2,
-  Menu,
-  Phone,
-  Mail,
-  MapPin,
   ExternalLink,
-  ChevronDown
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -21,6 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Navigation, Footer } from '@/components/layout';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -42,10 +38,10 @@ interface PortfolioItemProps {
   description: string;
   image: string;
   link: string;
-  logoAlt?: string; // Optional since it's not always used
+  logoAlt?: string;
 }
 
-const PortfolioItem = ({ title, description, image, link, logoAlt }: PortfolioItemProps) => (
+const PortfolioItem = ({ title, description, image, link }: PortfolioItemProps) => (
   <motion.div variants={fadeIn} className="group cursor-pointer">
     <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1">
       <AspectRatio ratio={16/9}>
@@ -94,32 +90,7 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-[#fdfaf5]/95 backdrop-blur-sm py-4">
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">
-            <span className="text-[#FD9800]">TwentyOne</span>
-            <span className="text-gray-600 text-xl">solutions</span>
-          </div>
-          
-          <nav className="hidden lg:flex items-center gap-8 text-[16px] font-medium text-gray-600">
-            <a href="#" className="hover:text-[#FD9800] transition-colors">About</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Web Design</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Marketing</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Portfolio</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Contact</a>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <Button className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 py-5 rounded-lg shadow-md transition-all hover:-translate-y-0.5 text-base">
-              Strategy Call
-            </Button>
-            <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu className="w-8 h-8 text-gray-800" />
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 bg-wave-header">
@@ -403,43 +374,15 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-12 lg:pt-20">
-              <div>
-                <h4 className="font-bold text-xl text-gray-900 mb-6">Contact</h4>
-                <ul className="space-y-4 text-lg text-gray-600">
-                  <li className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-[#FD9800]" /> 
-                    <a href="mailto:contact@twentyonesolutions.com" className="hover:text-[#FD9800]">contact@twentyonesolutions.com</a>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-[#FD9800]" /> 
-                    <a href="tel:+16265241059" className="hover:text-[#FD9800]">+1 (626) 524-1059</a>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-[#FD9800] mt-1" /> 
-                    <span>234 Avenida Rosa<br/>San Clemente, CA 92672</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-bold text-xl text-gray-900 mb-6">Services</h4>
-                <ul className="space-y-2 text-lg text-gray-600">
-                  <li><a href="#" className="hover:text-[#FD9800]">Web Design</a></li>
-                  <li><a href="#" className="hover:text-[#FD9800]">Google Marketing</a></li>
-                  <li><a href="#" className="hover:text-[#FD9800]">Web Maintenance</a></li>
-                </ul>
+              <div className="hidden lg:block">
+                 <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/06/WCW_mockup_transparent-1024x576.webp" alt="Site Preview" className="w-full h-auto rounded-xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500"/>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-100 py-8">
-        <div className="container mx-auto px-6 text-center text-gray-400 text-sm">
-          <p>&copy; 2025 Twenty One Solutions. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

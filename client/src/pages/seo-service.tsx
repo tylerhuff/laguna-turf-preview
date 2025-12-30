@@ -4,21 +4,24 @@ import {
   Search, 
   MapPin, 
   TrendingUp, 
+  Users, 
   Check,
   Star,
-  Menu,
-  Phone,
-  Mail,
-  ArrowRight
+  Clock,
+  ShieldCheck,
+  Zap,
+  Layout,
+  Globe
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Navigation, Footer } from '@/components/layout';
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
 const staggerContainer = {
@@ -26,175 +29,108 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.1
     }
   }
 };
 
 export default function SEOPage() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
-      {/* Navigation */}
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm py-4">
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">
-            <span className="text-[#FD9800]">TwentyOne</span>
-            <span className="text-gray-600 text-xl">solutions</span>
-          </div>
-          
-          <nav className="hidden md:flex items-center gap-8 text-[15px] font-medium text-gray-600">
-            <a href="#" className="hover:text-[#FD9800] transition-colors">About</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Web Design</a>
-            <a href="#" className="text-[#FD9800] transition-colors">Marketing</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Portfolio</a>
-            <a href="#" className="hover:text-[#FD9800] transition-colors">Contact</a>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <Button className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5">
-              Strategy Call
-            </Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="w-6 h-6" />
-            </Button>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-24 overflow-hidden">
-        {/* Wave Background Element */}
-        <div className="absolute top-0 left-0 right-0 h-[500px] bg-[#fdfaf5] -z-10" style={{ borderRadius: '0 0 50% 50% / 0 0 20% 20%' }}></div>
+      <section className="relative py-12 lg:py-20 bg-gradient-to-b from-[#fdfaf5] to-white overflow-hidden">
+        {/* Abstract Background Shapes */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 -z-10 pointer-events-none" />
 
-        <div className="container mx-auto px-6 text-center">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto space-y-8"
-          >
-            <motion.h1 variants={fadeIn} className="text-4xl md:text-6xl font-bold font-heading text-gray-900 leading-tight">
-              Google Marketing
-            </motion.h1>
-            
-            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto font-light">
-              The best long-term marketing investment for local service businesses.
-            </motion.p>
-            
-            <motion.div variants={fadeIn} className="pt-4">
-              <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg hover:shadow-xl transition-all">
-                Get Your Free Audit
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Main Content Area */}
-      <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            
-            {/* Left Column: Copy */}
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            {/* Left Content */}
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-12"
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+              className="lg:col-span-7 space-y-8"
             >
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold font-heading text-gray-900">
-                  Are potential customers finding your business?
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  If you’re not showing up on Google’s first page or in the Map Pack, you’re missing out on valuable leads and sales.
-                  When people search for services like yours, they are usually ready to <strong className="text-gray-900">call and book right away</strong>.
-                </p>
-              </div>
+              <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FD9800] text-xs font-bold uppercase tracking-wider border border-orange-100">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FD9800]"></span>
+                </span>
+                Google Marketing Partner
+              </motion.div>
+              
+              <motion.h1 variants={fadeIn} className="text-4xl lg:text-6xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight">
+                Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
+              </motion.h1>
+              
+              <motion.p variants={fadeIn} className="text-lg text-gray-600 max-w-lg leading-relaxed">
+                We help local businesses rank #1 on Google. Stop losing leads to competitors and become the first choice in your market.
+              </motion.p>
 
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold font-heading text-gray-900">Why Ranking #1 Matters</h3>
-                <p className="text-lg text-gray-600">
-                  The top organic search result gets <strong className="text-[#FD9800]">39.8% of clicks</strong>. If you aren't there, your competitors are getting those calls.
-                </p>
-                <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-[#FD9800]">
-                      <MapPin className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900">Map Pack Dominance</h4>
-                      <p className="text-sm text-gray-500">44% of local traffic goes here.</p>
-                    </div>
+              <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4 max-w-lg">
+                <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+                    <TrendingUp className="w-4 h-4" />
                   </div>
-                  <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#FD9800] w-[44%]"></div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-sm">More Traffic</h4>
+                    <p className="text-xs text-gray-500 mt-1">Capture high-intent leads searching now.</p>
                   </div>
                 </div>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="text-2xl font-bold font-heading text-gray-900">How We Help You Win</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Target Exact Keywords Your Customers Use",
-                    "Build Local Authority with Quality Backlinks",
-                    "Create Content That Builds Trust",
-                    "Optimize for Mobile & Speed"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="mt-1 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
-                        <Check className="w-3 h-3" />
-                      </div>
-                      <span className="text-gray-700 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
+                    <ShieldCheck className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-sm">More Trust</h4>
+                    <p className="text-xs text-gray-500 mt-1">Establish authority in your service area.</p>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
 
-            {/* Right Column: Form */}
+            {/* Right Form */}
             <motion.div 
-               initial={{ opacity: 0, x: 20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.6 }}
-               className="lg:sticky lg:top-24"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="lg:col-span-5 relative"
             >
-              <Card className="shadow-xl border-gray-100 overflow-hidden">
-                <div className="bg-gray-900 p-6 text-white text-center">
-                  <h3 className="text-xl font-bold font-heading mb-2">Get a Free Strategy Audit</h3>
-                  <p className="text-gray-400 text-sm">See exactly how to outrank your competitors.</p>
-                </div>
-                <CardContent className="p-8 space-y-5">
-                  <div className="space-y-2">
-                    <Label htmlFor="audit-name">Full Name *</Label>
-                    <Input id="audit-name" className="bg-gray-50 border-gray-200 focus:ring-[#FD9800] focus:border-[#FD9800]" data-testid="input-name" />
+              <Card className="border-0 shadow-2xl relative z-10 overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-1.5 bg-[#FD9800]" />
+                <CardContent className="p-6 md:p-8 bg-white">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold font-heading text-gray-900">Get Your Free Strategy Audit</h3>
+                    <p className="text-sm text-gray-500 mt-1">See how you stack up against competitors.</p>
                   </div>
                   
-                  <div className="space-y-2">
-                    <Label htmlFor="audit-email">Email Address *</Label>
-                    <Input id="audit-email" type="email" className="bg-gray-50 border-gray-200 focus:ring-[#FD9800] focus:border-[#FD9800]" data-testid="input-email" />
-                  </div>
+                  <form className="space-y-4">
+                    <div className="space-y-1.5">
+                      <Label htmlFor="audit-name" className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Full Name</Label>
+                      <Input id="audit-name" placeholder="John Doe" className="bg-[#fdfaf5] border-gray-200 focus:bg-white" data-testid="input-name" />
+                    </div>
+                    
+                    <div className="space-y-1.5">
+                      <Label htmlFor="audit-email" className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Email Address</Label>
+                      <Input id="audit-email" type="email" placeholder="john@company.com" className="bg-[#fdfaf5] border-gray-200 focus:bg-white" data-testid="input-email" />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="audit-phone">Phone Number *</Label>
-                    <Input id="audit-phone" type="tel" className="bg-gray-50 border-gray-200 focus:ring-[#FD9800] focus:border-[#FD9800]" data-testid="input-phone" />
-                  </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="audit-website" className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Website URL</Label>
+                      <Input id="audit-website" placeholder="https://example.com" className="bg-[#fdfaf5] border-gray-200 focus:bg-white" data-testid="input-website" />
+                    </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="audit-website">Business Website</Label>
-                    <Input id="audit-website" placeholder="https://" className="bg-gray-50 border-gray-200 focus:ring-[#FD9800] focus:border-[#FD9800]" data-testid="input-website" />
-                  </div>
-
-                  <Button className="w-full h-12 bg-[#FD9800] hover:bg-[#e08600] text-white font-bold text-lg mt-2" data-testid="button-audit">
-                    Get My Free Audit
-                  </Button>
-                  
-                  <p className="text-xs text-center text-gray-400">
-                    No commitment required. We respect your privacy.
-                  </p>
+                    <Button className="w-full h-12 text-base font-bold bg-[#FD9800] hover:bg-[#e08600] text-white shadow-lg mt-2" data-testid="button-audit">
+                      Analyze My Website
+                    </Button>
+                    
+                    <p className="text-[10px] text-center text-gray-400 mt-3">
+                      100% free. No credit card required. Delivered in 24h.
+                    </p>
+                  </form>
                 </CardContent>
               </Card>
             </motion.div>
@@ -202,71 +138,102 @@ export default function SEOPage() {
         </div>
       </section>
 
-      {/* CTA Section - Simple & Direct */}
-      <section className="py-20 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-6">
-            Ready to Dominate Local Search?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Don’t wait until your competitors have taken all the top spots. Invest in your business’s growth today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button size="lg" className="h-14 px-8 bg-[#FD9800] hover:bg-[#e08600] text-white text-lg rounded-lg">
-                Contact Us
-             </Button>
-             <Button size="lg" variant="outline" className="h-14 px-8 border-gray-300 text-gray-700 hover:bg-white text-lg rounded-lg">
-                View Pricing
-             </Button>
+      {/* Stats Section */}
+      <section className="py-12 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-around items-center gap-8 text-center">
+            <div className="space-y-1">
+              <div className="text-4xl font-bold font-heading text-[#FD9800]">39.8%</div>
+              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Organic Click Share</div>
+            </div>
+            <div className="w-px h-12 bg-gray-100 hidden md:block" />
+            <div className="space-y-1">
+              <div className="text-4xl font-bold font-heading text-[#FD9800]">44%</div>
+              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Map Pack Traffic</div>
+            </div>
+            <div className="w-px h-12 bg-gray-100 hidden md:block" />
+            <div className="space-y-1">
+              <div className="text-4xl font-bold font-heading text-[#FD9800]">10x</div>
+              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">ROI Potential</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
+      {/* How We Do It */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800 mb-4">
-                <span className="text-[#FD9800]">TwentyOne</span>
-                <span className="text-gray-600 text-xl">solutions</span>
-              </div>
-              <p className="text-gray-500 max-w-sm">
-                We help service businesses look professional online and get found when people search.
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">Our Proven Framework</h2>
+              <p className="text-gray-600 mb-8 leading-relaxed">
+                We don't rely on guesswork. Our SEO strategy is built on data, technical precision, and user experience principles that drive real revenue.
               </p>
+              
+              <div className="space-y-6">
+                {[
+                  {
+                    title: "Technical Foundation",
+                    desc: "We fix site speed, mobile usability, and crawl errors first.",
+                    icon: Zap
+                  },
+                  {
+                    title: "Content Strategy",
+                    desc: "We create content that answers the questions your customers are asking.",
+                    icon: Layout
+                  },
+                  {
+                    title: "Local Signals",
+                    desc: "We build citations and optimize your profile for local relevance.",
+                    icon: Globe
+                  }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4">
+                    <div className="w-10 h-10 rounded-full bg-[#fdfaf5] flex items-center justify-center text-gray-900 flex-shrink-0 mt-1 border border-gray-100">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{item.title}</h4>
+                      <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Links</h4>
-              <ul className="space-y-3 text-gray-600">
-                <li><a href="#" className="hover:text-[#FD9800]">Home</a></li>
-                <li><a href="#" className="hover:text-[#FD9800]">Services</a></li>
-                <li><a href="#" className="hover:text-[#FD9800]">Portfolio</a></li>
-                <li><a href="#" className="hover:text-[#FD9800]">Contact</a></li>
-              </ul>
+            <div className="relative">
+              <div className="bg-[#1e293b] rounded-2xl p-8 text-white relative z-10 overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[#FD9800]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                
+                <h3 className="text-2xl font-bold font-heading mb-6">Ready to grow?</h3>
+                <p className="text-gray-300 mb-8">
+                  Get a comprehensive audit of your current digital presence and a roadmap to #1.
+                </p>
+                <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
+                  Schedule Strategy Call
+                </Button>
+                
+                <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-4">
+                  <div className="flex -space-x-2">
+                    {[1,2,3].map(i => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-slate-700 border-2 border-[#1e293b] flex items-center justify-center text-[10px]">
+                        {i}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    <strong className="text-white">500+</strong> businesses optimized
+                  </div>
+                </div>
+              </div>
+              
+              <div className="absolute inset-0 border-2 border-gray-100 rounded-2xl transform translate-x-4 translate-y-4 -z-10 bg-[#fdfaf5]" />
             </div>
-
-            <div>
-              <h4 className="font-bold text-gray-900 mb-4">Contact</h4>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-[#FD9800]" /> contact@twentyonesolutions.com
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-[#FD9800]" /> +1 (626) 524-1059
-                </li>
-                <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[#FD9800]" /> San Clemente, CA 92672
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-100 pt-8 text-center text-sm text-gray-400">
-            &copy; 2025 Twenty One Solutions. All rights reserved.
           </div>
         </div>
-      </footer>
+      </section>
+
+      <Footer />
     </div>
   );
 }

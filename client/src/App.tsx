@@ -4,15 +4,22 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
-import SEOPage from "@/pages/seo-service";
 import HomePage from "@/pages/home";
+import AboutPage from "@/pages/about";
+import WebDesignPage from "@/pages/web-design";
+import PortfolioPage from "@/pages/portfolio";
+import ContactPage from "@/pages/contact";
+import SEOPage from "@/pages/seo-service";
 
 function Router() {
   return (
     <Switch>
-      {/* Home page is now the main entry */}
       <Route path="/" component={HomePage} />
+      <Route path="/about-us" component={AboutPage} />
+      <Route path="/services/website-design" component={WebDesignPage} />
       <Route path="/services/search-engine-optimization" component={SEOPage} />
+      <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/contact-us" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
   );
