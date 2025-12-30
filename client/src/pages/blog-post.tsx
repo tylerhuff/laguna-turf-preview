@@ -176,7 +176,21 @@ export default function BlogPost() {
              className="w-full h-[400px] object-cover shadow-lg mb-12"
            />
 
-           <div dangerouslySetInnerHTML={{ __html: article.content }} />
+           <div 
+             className="
+               prose-h2:text-3xl prose-h2:font-bold prose-h2:font-heading prose-h2:text-gray-900 prose-h2:mt-12 prose-h2:mb-6
+               prose-h3:text-2xl prose-h3:font-bold prose-h3:font-heading prose-h3:text-gray-800 prose-h3:mt-8 prose-h3:mb-4
+               prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-6 prose-p:text-lg
+               prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-ul:text-gray-600 prose-li:mb-2
+               prose-ol:list-decimal prose-ol:pl-6 prose-ol:mb-6 prose-ol:text-gray-600
+               prose-strong:text-gray-900 prose-strong:font-bold
+               prose-a:text-[#FD9800] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+               prose-blockquote:border-l-4 prose-blockquote:border-[#FD9800] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg prose-blockquote:my-8
+               prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8 prose-img:w-full
+               [&>*:first-child]:mt-0
+             "
+             dangerouslySetInnerHTML={{ __html: article.content }} 
+           />
            
            <hr className="my-12" />
            
