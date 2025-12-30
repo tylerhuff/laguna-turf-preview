@@ -134,7 +134,7 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="h-[400px] w-full overflow-hidden grayscale">
         <iframe 
-          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=234%20Avenida%20Rosa%20A%2C%20San%20Clemente%2C%20CA%2092672&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=15&ie=UTF8&iwloc=B&output=embed"
           width="100%" 
           height="100%" 
           style={{ border: 0, filter: 'sepia(100%) hue-rotate(330deg) saturate(150%)' }}
