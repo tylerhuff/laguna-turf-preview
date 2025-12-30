@@ -13,7 +13,7 @@ export function Navigation() {
     { href: "/services/website-design", label: "Web Design" },
     { href: "/services/search-engine-optimization", label: "Marketing" },
     { href: "/portfolio", label: "Portfolio" },
-    { href: "/blog", label: "Blog" },
+    { href: "/blog", label: "Resources" },
     { href: "/contact-us", label: "Contact" },
   ];
 
@@ -124,7 +124,7 @@ export function Footer() {
               <li><Link href="/about-us"><a className="hover:text-[#FD9800]">About</a></Link></li>
               <li><Link href="/services/website-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
               <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Portfolio</a></Link></li>
-              <li><Link href="/blog"><a className="hover:text-[#FD9800]">Blog</a></Link></li>
+              <li><Link href="/blog"><a className="hover:text-[#FD9800]">Resources</a></Link></li>
               <li><Link href="/contact-us"><a className="hover:text-[#FD9800]">Contact</a></Link></li>
             </ul>
           </div>

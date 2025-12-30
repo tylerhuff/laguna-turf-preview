@@ -99,7 +99,7 @@ export default function HomePage() {
         className="pt-32 md:pt-40 pb-32" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/bannertwentyone-scaled.jpg"
-        overlayOpacity={0.92}
+        overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">

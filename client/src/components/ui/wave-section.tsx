@@ -16,7 +16,7 @@ export function WaveSection({
   reverse, 
   disableTopWave = true, // Default to true as requested
   backgroundImage,
-  overlayOpacity = 0.9, // Default overlay opacity
+  overlayOpacity = 0.75, // Default overlay opacity - letting images shine through more
   ...props 
 }: WaveSectionProps) {
   return (

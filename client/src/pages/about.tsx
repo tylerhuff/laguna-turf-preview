@@ -22,7 +22,7 @@ export default function AboutPage() {
         className="pt-32 md:pt-40 pb-32" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/whitewater_sanclemente.webp"
-        overlayOpacity={0.85}
+        overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
           <motion.h1 

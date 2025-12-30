@@ -46,20 +46,20 @@ export default function SEOPage() {
         className="py-20 lg:py-32 overflow-hidden" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-scaled.webp"
-        overlayOpacity={0.95}
+        overlayOpacity={0.75}
       >
         {/* Abstract Background Shapes - Kept inside WaveSection */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 -z-10 pointer-events-none" />
 
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
+            {/* Content - Centered */}
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="lg:col-span-7 space-y-8"
+              className="space-y-8"
             >
               <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FD9800] text-xs font-bold uppercase tracking-wider border border-orange-100">
                 <span className="relative flex h-2 w-2">
@@ -69,77 +69,40 @@ export default function SEOPage() {
                 Google Marketing Partner
               </motion.div>
               
-              <motion.h1 variants={fadeIn} className="text-4xl lg:text-6xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight">
+              <motion.h1 variants={fadeIn} className="text-4xl lg:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight">
                 Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
               </motion.h1>
               
-              <motion.p variants={fadeIn} className="text-lg text-gray-600 max-w-lg leading-relaxed">
+              <motion.p variants={fadeIn} className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 We help local businesses rank #1 on Google. Stop losing leads to competitors and become the first choice in your market.
               </motion.p>
 
-              <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4 max-w-lg">
-                <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+              <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4">
+                <div className="flex items-center gap-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
                   <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
                     <TrendingUp className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h4 className="font-bold text-gray-900 text-sm">More Traffic</h4>
-                    <p className="text-xs text-gray-500 mt-1">Capture high-intent leads searching now.</p>
+                    <p className="text-xs text-gray-500">Capture high-intent leads.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
                   <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h4 className="font-bold text-gray-900 text-sm">More Trust</h4>
-                    <p className="text-xs text-gray-500 mt-1">Establish authority in your service area.</p>
+                    <p className="text-xs text-gray-500">Establish authority.</p>
                   </div>
                 </div>
               </motion.div>
-            </motion.div>
-
-            {/* Right Form */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="lg:col-span-5 relative"
-            >
-              <Card className="border-0 shadow-2xl relative z-10 overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-1.5 bg-[#FD9800]" />
-                <CardContent className="p-6 md:p-8 bg-white">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-bold font-heading text-gray-900">Get Your Free Strategy Audit</h3>
-                    <p className="text-sm text-gray-500 mt-1">See how you stack up against competitors.</p>
-                  </div>
-                  
-                  <form className="space-y-4">
-                    <div className="space-y-1.5">
-                      <Label htmlFor="audit-name" className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Full Name</Label>
-                      <Input id="audit-name" placeholder="John Doe" className="bg-[#fdfaf5] border-gray-200 focus:bg-white" data-testid="input-name" />
-                    </div>
-                    
-                    <div className="space-y-1.5">
-                      <Label htmlFor="audit-email" className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Email Address</Label>
-                      <Input id="audit-email" type="email" placeholder="john@company.com" className="bg-[#fdfaf5] border-gray-200 focus:bg-white" data-testid="input-email" />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <Label htmlFor="audit-website" className="text-xs font-semibold text-gray-700 uppercase tracking-wide">Website URL</Label>
-                      <Input id="audit-website" placeholder="https://example.com" className="bg-[#fdfaf5] border-gray-200 focus:bg-white" data-testid="input-website" />
-                    </div>
-
-                    <Button className="w-full h-12 text-base font-bold bg-[#FD9800] hover:bg-[#e08600] text-white shadow-lg mt-2" data-testid="button-audit">
-                      Analyze My Website
-                    </Button>
-                    
-                    <p className="text-[10px] text-center text-gray-400 mt-3">
-                      100% free. No credit card required. Delivered in 24h.
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
+              
+              <motion.div variants={fadeIn}>
+                <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
+                  Get Your Free Audit
+                </Button>
+              </motion.div>
             </motion.div>
           </div>
         </div>

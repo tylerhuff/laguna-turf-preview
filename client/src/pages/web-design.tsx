@@ -28,7 +28,7 @@ export default function WebDesignPage() {
         className="pt-32 md:pt-40 pb-32" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/pexels-photo-355328-355328-scaled.avif"
-        overlayOpacity={0.95}
+        overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.h1  
