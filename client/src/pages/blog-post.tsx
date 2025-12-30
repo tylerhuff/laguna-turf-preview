@@ -4,7 +4,7 @@ import { useLocation, Link } from "wouter";
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, Share2, Facebook, Twitter, Linkedin, Loader2 } from 'lucide-react';
-import { SeobotClient } from 'seobot';
+import { BlogClient } from 'seobot';
 
 export default function BlogPost() {
   const [location] = useLocation();
@@ -28,7 +28,7 @@ export default function BlogPost() {
           }
         ].find(a => a.slug === slug);
 
-        const client = new SeobotClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
+        const client = new BlogClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
         
         // Fetch list to get metadata (image, description) which might be missing in single article response
         const listData = await client.getArticles(0, 100); 

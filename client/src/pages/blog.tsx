@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { Calendar, User, ArrowRight, Loader2, BookOpen, TrendingUp, Clock, Settings } from 'lucide-react';
-import { SeobotClient } from 'seobot'; 
+import { BlogClient } from 'seobot'; 
 
 // Mock data for display purposes
 const MOCK_ARTICLES = [
@@ -51,7 +51,7 @@ export default function BlogPage() {
     async function fetchArticles() {
       try {
         setLoading(true);
-        const client = new SeobotClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
+        const client = new BlogClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
         // Seobot client uses 0-based indexing for pages and positional arguments
         const data = await client.getArticles(0, 10);
         if (data && data.articles && data.articles.length > 0) {
