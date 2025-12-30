@@ -134,9 +134,12 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                  <img 
-                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+                   src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/tyler-huff-profile.jpg" 
                    alt="Tyler Huff" 
                    className="w-full h-auto object-cover"
+                   onError={(e) => {
+                     e.currentTarget.src = "https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/tyler_huff.webp";
+                   }}
                  />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs hidden md:block">

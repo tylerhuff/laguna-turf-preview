@@ -4,16 +4,16 @@ import { cn } from '@/lib/utils';
 interface WaveSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
+  reverse?: boolean; // Option to reverse wave direction
 }
 
-export function WaveSection({ children, className, ...props }: WaveSectionProps) {
+export function WaveSection({ children, className, reverse, ...props }: WaveSectionProps) {
   return (
     <section className={cn("relative bg-white", className)} {...props}>
       {/* Top Wave: The White Hero section cutting UP into the Beige Header */}
-      {/* Visual effect: Concave White shape at the top */}
       <div className="absolute top-0 left-0 right-0 h-16 md:h-24 w-full overflow-hidden leading-[0] z-10">
         <svg 
-          viewBox="0 0 1440 100" 
+          viewBox="0 0 1440 120" 
           preserveAspectRatio="none" 
           className="w-full h-full"
         >
@@ -21,7 +21,7 @@ export function WaveSection({ children, className, ...props }: WaveSectionProps)
           <path 
             fill="#fdfaf5" 
             fillOpacity="1" 
-            d="M0,0 L1440,0 L1440,100 Q720,20 0,100 Z"
+            d="M0,0 L1440,0 L1440,60 C1100,120 900,-20 720,60 C500,140 200,20 0,80 Z"
           ></path>
         </svg>
       </div>
@@ -31,10 +31,9 @@ export function WaveSection({ children, className, ...props }: WaveSectionProps)
       </div>
 
       {/* Bottom Wave: The White Hero section cutting DOWN into the Beige Next Section */}
-      {/* Visual effect: Concave White shape at the bottom */}
       <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 w-full overflow-hidden leading-[0] z-10">
         <svg 
-          viewBox="0 0 1440 100" 
+          viewBox="0 0 1440 120" 
           preserveAspectRatio="none" 
           className="w-full h-full"
         >
@@ -42,7 +41,7 @@ export function WaveSection({ children, className, ...props }: WaveSectionProps)
           <path 
             fill="#fdfaf5" 
             fillOpacity="1" 
-            d="M0,100 L1440,100 L1440,0 Q720,80 0,0 Z"
+            d="M0,120 L1440,120 L1440,40 C1100,-20 900,120 720,40 C500,-40 200,80 0,20 Z"
           ></path>
         </svg>
       </div>
