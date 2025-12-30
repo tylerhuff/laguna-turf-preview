@@ -96,27 +96,36 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <WaveSection className="pt-20 pb-32">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-4xl mx-auto space-y-6"
-          >
-            <motion.h1 variants={fadeIn} className="text-4xl md:text-[64px] font-bold font-heading text-gray-900 leading-[1.1]">
-              Websites and Marketing for Service Businesses
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
+            <motion.h1 
+              variants={fadeIn} 
+              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
+            >
+              Websites and Marketing for <span className="text-[#FD9800] relative inline-block">
+                Service Businesses
+                <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#FD9800]/20" viewBox="0 0 100 10" preserveAspectRatio="none">
+                  <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+                </svg>
+              </span>
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto">
+            <motion.p 
+              variants={fadeIn} 
+              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
+            >
               We help service businesses look professional online and get found when people search.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="pt-8">
-              <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg hover:shadow-xl transition-all font-bold">
+            <motion.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
                 Free Site Preview
               </Button>
+              <Button variant="outline" size="lg" className="h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50">
+                View Our Work
+              </Button>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </WaveSection>
 
@@ -134,12 +143,9 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                  <img 
-                   src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/tyler-huff-profile.jpg" 
+                   src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/04/tylerhuff_twentyonesolutions_founder-scaled.webp" 
                    alt="Tyler Huff" 
                    className="w-full h-auto object-cover"
-                   onError={(e) => {
-                     e.currentTarget.src = "https://staging44.twentyonesolutions.com/wp-content/uploads/2025/05/tyler_huff.webp";
-                   }}
                  />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs hidden md:block">
