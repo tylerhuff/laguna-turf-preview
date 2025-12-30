@@ -10,7 +10,7 @@ export function Navigation() {
 
   const links = [
     { href: "/about-us", label: "About" },
-    { href: "/services/website-design", label: "Web Design" },
+    { href: "/services/web-design", label: "Web Design" },
     { href: "/services/search-engine-optimization", label: "Marketing" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/blog", label: "Resources" },
@@ -122,7 +122,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-gray-600">
               <li><Link href="/about-us"><a className="hover:text-[#FD9800]">About Us</a></Link></li>
               <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Our Portfolio</a></Link></li>
-              <li><Link href="/services/website-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
+              <li><Link href="/services/web-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
               <li><Link href="/services/search-engine-optimization"><a className="hover:text-[#FD9800]">Marketing</a></Link></li>
               <li><Link href="/blog"><a className="hover:text-[#FD9800]">Resources</a></Link></li>
             </ul>

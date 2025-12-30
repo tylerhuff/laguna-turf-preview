@@ -10,6 +10,8 @@ import WebDesignPage from "@/pages/web-design";
 import PortfolioPage from "@/pages/portfolio";
 import ContactPage from "@/pages/contact";
 import SEOPage from "@/pages/seo-service";
+import ServicesHub from "@/pages/services-hub";
+import PrivacyPolicy from "@/pages/privacy";
 import AdminDashboard from "@/pages/admin/Dashboard";
 import AdminPages from "@/pages/admin/PageList";
 import AdminEditPage from "@/pages/admin/EditPage";
@@ -20,11 +22,33 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
+      <Route path="/san-clemente" component={HomePage} />
       <Route path="/about-us" component={AboutPage} />
-      <Route path="/services/website-design" component={WebDesignPage} />
+      
+      {/* Services */}
+      <Route path="/services" component={ServicesHub} />
+      <Route path="/services/web-design" component={WebDesignPage} />
+      <Route path="/services/web-design/san-juan-capistrano" component={WebDesignPage} />
+      <Route path="/services/web-design/dana-point" component={WebDesignPage} />
+      <Route path="/services/web-design/san-clemente" component={WebDesignPage} />
+      <Route path="/services/web-design/laguna-niguel" component={WebDesignPage} />
+      
+      {/* Note: Sitemap has typo 'optimiziation', supporting both */}
       <Route path="/services/search-engine-optimization" component={SEOPage} />
+      <Route path="/services/search-engine-optimiziation" component={SEOPage} />
+      
+      <Route path="/services/managed-wordpress-hosting" component={WebDesignPage} />
+      <Route path="/services/google-ads" component={SEOPage} />
+      <Route path="/services/online-listings-management" component={SEOPage} />
+      <Route path="/services/what-is-google-business-profile" component={SEOPage} />
+      <Route path="/services/what-is-listings-management" component={SEOPage} />
+      
+      <Route path="/local-seo-audit" component={SEOPage} />
+
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/contact-us" component={ContactPage} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:slug" component={BlogPost} />
       
