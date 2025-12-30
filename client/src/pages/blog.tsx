@@ -52,7 +52,8 @@ export default function BlogPage() {
       try {
         setLoading(true);
         const client = new SeobotClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
-        const data = await client.getArticles({ page: 1, limit: 10 });
+        // Seobot client uses 0-based indexing for pages and positional arguments
+        const data = await client.getArticles(0, 10);
         if (data && data.articles && data.articles.length > 0) {
           setArticles(data.articles);
         }
