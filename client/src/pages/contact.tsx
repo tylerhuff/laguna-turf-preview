@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,8 +16,35 @@ const fadeIn = {
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function ContactPage() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "TwentyOne Solutions",
+      "telephone": "+16265241059",
+      "email": "contact@twentyonesolutions.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "234 Avenida Rosa A",
+        "addressLocality": "San Clemente",
+        "addressRegion": "CA",
+        "postalCode": "92672",
+        "addressCountry": "US"
+      },
+      "url": "https://twentyonesolutions.com/contact-us"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <title>Contact TwentyOne Solutions - San Clemente Web Design</title>
+        <meta name="description" content="Contact TwentyOne Solutions for web design and marketing services in San Clemente, CA. Call us at +1 (626) 524-1059." />
+        <script type="application/ld+json">
+          {JSON.stringify(contactSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       {/* Hero */}

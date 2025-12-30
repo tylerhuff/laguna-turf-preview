@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link } from "wouter";
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
@@ -72,8 +73,31 @@ export default function BlogPage() {
   }, []);
   */
 
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "TwentyOne Solutions Resources",
+    "description": "Tips, strategies, and guides to help your service business grow online.",
+    "url": "https://twentyonesolutions.com/resources",
+    "publisher": {
+      "@type": "Organization",
+      "name": "TwentyOne Solutions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png"
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <title>Resources & Blog - TwentyOne Solutions</title>
+        <meta name="description" content="Insights and tips for growing your service business online." />
+        <script type="application/ld+json">
+          {JSON.stringify(blogSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       <WaveSection 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -58,8 +59,43 @@ const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioC
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function PortfolioPage() {
+  const portfolioSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "TwentyOne Solutions Portfolio",
+    "description": "Our work with home builders, contractors, trades, and professional services businesses.",
+    "url": "https://twentyonesolutions.com/portfolio",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "CreativeWork",
+          "name": "Wrangler Painting",
+          "description": "Residential Painting Website"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Diamond Construction",
+          "description": "Construction Website"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Fan Fusion Ventures",
+          "description": "Sports Entertainment Website"
+        }
+      ]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <title>Our Portfolio - TwentyOne Solutions</title>
+        <meta name="description" content="View our web design work for contractors, trades, and professional service businesses." />
+        <script type="application/ld+json">
+          {JSON.stringify(portfolioSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       {/* Hero */}

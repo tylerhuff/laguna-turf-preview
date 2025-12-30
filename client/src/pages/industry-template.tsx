@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { ExternalLink, CheckCircle2 } from 'lucide-react';
 import { Navigation, Footer } from '@/components/layout';
@@ -26,8 +27,27 @@ const fadeIn = {
 };
 
 export default function IndustryPage({ industryName, heroImage, portfolioItem }: IndustryPageProps) {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Web Design & Marketing for ${industryName}`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "TwentyOne Solutions"
+    },
+    "description": `Professional web design and SEO services specifically for ${industryName.toLowerCase()}.`,
+    "areaServed": "USA"
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <title>Web Design for {industryName} - TwentyOne Solutions</title>
+        <meta name="description" content={`Custom web design and marketing for ${industryName.toLowerCase()}. Get found online and book more jobs.`} />
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       {/* Hero */}

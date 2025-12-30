@@ -178,11 +178,50 @@ export default function HomePage() {
     ]
   };
 
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TwentyOne Solutions",
+    "image": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png",
+    "telephone": "+16265241059",
+    "email": "contact@twentyonesolutions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "234 Avenida Rosa A",
+      "addressLocality": "San Clemente",
+      "addressRegion": "CA",
+      "postalCode": "92672",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.4274,
+      "longitude": -117.6120
+    },
+    "url": "https://twentyonesolutions.com",
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Helmet>
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(businessSchema)}
         </script>
       </Helmet>
       <Navigation />

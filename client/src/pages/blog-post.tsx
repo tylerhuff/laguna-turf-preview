@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useLocation, Link } from "wouter";
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
@@ -11,8 +12,36 @@ export default function BlogPost() {
   // In a real implementation, you would fetch the specific article by slug here
   // const { data: article } = useQuery(['article', slug], () => client.getArticle(slug));
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "5 Reasons Your Service Business Needs a Professional Website in 2025",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    "author": {
+      "@type": "Person",
+      "name": "Tyler Huff"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TwentyOne Solutions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://twentyonesolutions.com/wp-content/uploads/2025/12/logo.png"
+      }
+    },
+    "datePublished": "2025-10-12",
+    "description": "In today’s digital age, relying solely on word-of-mouth isn’t enough. Discover why a professional website is crucial for growth."
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
+      <Helmet>
+        <title>5 Reasons Your Business Needs a Website - TwentyOne Solutions</title>
+        <meta name="description" content="Discover why a professional website is crucial for growth in 2025." />
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">

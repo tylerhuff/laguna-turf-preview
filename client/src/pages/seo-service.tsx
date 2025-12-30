@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { 
   Search, 
@@ -37,8 +38,27 @@ const staggerContainer = {
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function SEOPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Search Engine Optimization",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "TwentyOne Solutions"
+    },
+    "description": "We help local businesses rank #1 on Google. Stop losing leads to competitors and become the first choice in your market.",
+    "areaServed": "USA"
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <title>SEO & Google Marketing - TwentyOne Solutions</title>
+        <meta name="description" content="Get found when customers search. Professional SEO services for local businesses." />
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       {/* Hero Section */}

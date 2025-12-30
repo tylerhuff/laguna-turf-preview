@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight, Zap, MousePointerClick, Search, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -19,8 +20,85 @@ const fadeIn = {
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function WebDesignPage() {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Web Design",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "TwentyOne Solutions"
+    },
+    "description": "Websites that clearly explain what you do, build trust, and make it easy to reach you.",
+    "areaServed": "USA"
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should my website include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about marketing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you own the domain or me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You own the domain (and assets). We don’t take hostages."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What’s the turnaround time for a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a website cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my website be mobile friendly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Of course. Every site we build works perfectly on phones, tablets, and desktops."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <title>Web Design Services - TwentyOne Solutions</title>
+        <meta name="description" content="Professional web design for service businesses. Fast, mobile-friendly, and optimized for Google." />
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       {/* Hero */}

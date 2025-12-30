@@ -16,11 +16,111 @@ const fadeIn = {
 };
 
 export default function SanClementePage() {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TwentyOne Solutions - San Clemente",
+    "description": "Websites and online marketing for service based small businesses in San Clemente.",
+    "url": "https://twentyonesolutions.com/san-clemente",
+    "telephone": "+16265241059",
+    "email": "contact@twentyonesolutions.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "234 Avenida Rosa A",
+      "addressLocality": "San Clemente",
+      "addressRegion": "CA",
+      "postalCode": "92672",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "San Clemente"
+    },
+    "priceRange": "$$"
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does a website take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most builds move fast once content and details are in. We will give you a clear timeline after the strategy call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a new website to improve Google visibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. Sometimes a rebuild is the fastest path, sometimes we can improve what you already have. We will tell you straight on the call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do you need from me to start?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic business info, service list, service area, photos, and any existing logins if you already have a website or Google Business Profile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with small service businesses or only big companies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both, as long as you are serious about getting a professional online presence and consistent lead flow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I own my website and domain?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You own your website and your domain. If you ever want to move it, you can."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with service area businesses that do not have a storefront?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Most trades and contractors are service area businesses. We set things up so you can show up across your service area without needing a public address."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you write the content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, if you want. Or you can provide it. Either way, we make sure the final site is clear and matches how customers actually search."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help with reviews?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We can set up a review request process and help you get more reviews over time."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Helmet>
         <title>Web Design San Clemente - TwentyOne Solutions</title>
         <meta name="description" content="Websites and online marketing for service based small businesses in San Clemente. Built to look legit, bring in leads, and stay in good shape over time." />
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
       
       <Navigation />

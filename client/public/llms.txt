@@ -1,0 +1,32 @@
+# TwentyOne Solutions
+
+> Websites and Online Marketing for Service Based Small Businesses
+
+## Overview
+
+TwentyOne Solutions is a web design and online marketing agency based in San Clemente, CA. We specialize in building high-performing websites and managing SEO for contractors, home builders, trades, and professional services.
+
+## Core Services
+
+- **Web Design**: Custom, mobile-friendly websites built to convert visitors into leads.
+- **Search Engine Optimization (SEO)**: Local SEO strategies to rank service businesses in their specific service areas.
+- **Managed Hosting**: Secure hosting, backups, and ongoing maintenance.
+- **Google Business Profile Management**: Optimization and management of Google Maps listings.
+
+## Key Pages
+
+- [Home](https://twentyonesolutions.com/)
+- [San Clemente](https://twentyonesolutions.com/san-clemente)
+- [About Us](https://twentyonesolutions.com/about-us)
+- [Web Design Services](https://twentyonesolutions.com/services/web-design)
+- [Marketing Services](https://twentyonesolutions.com/services/search-engine-optimization)
+- [Portfolio](https://twentyonesolutions.com/portfolio)
+- [Resources](https://twentyonesolutions.com/resources)
+- [Contact](https://twentyonesolutions.com/contact-us)
+
+## Contact Information
+
+- **Email**: contact@twentyonesolutions.com
+- **Phone**: +1 (626) 524-1059
+- **Address**: 234 Avenida Rosa A, San Clemente, CA 92672
+- **Service Areas**: San Clemente, Dana Point, San Juan Capistrano, Laguna Niguel, Laguna Beach
