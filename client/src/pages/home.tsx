@@ -385,8 +385,17 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-12 lg:pt-20">
-              <div className="hidden lg:block">
-                 <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/06/WCW_mockup_transparent-1024x576.webp" alt="Site Preview" className="w-full h-auto rounded-xl shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500"/>
+              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.783637682247!2d-117.65345712398558!3d33.45487774900746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce68c126694e9%3A0xc33e5025732788e2!2sTwentyOne%20Solutions!5e0!3m2!1sen!2sus!4v1714488000000!5m2!1sen!2sus"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="TwentyOne Solutions Location"
+                ></iframe>
               </div>
             </div>
           </div>
