@@ -21,7 +21,7 @@ export function WaveSection({ children, className, reverse, ...props }: WaveSect
           <path 
             fill="#fdfaf5" 
             fillOpacity="1" 
-            d="M0,0 L1440,0 L1440,60 C1100,120 900,-20 720,60 C500,140 200,20 0,80 Z"
+            d="M0,0 L1440,0 L1440,50 C1000,90 440,10 0,50 Z"
           ></path>
         </svg>
       </div>
