@@ -280,6 +280,22 @@ export default function SanClementePage() {
                   <p className="text-sm text-gray-500">Bloom with Me</p>
                </div>
             </Card>
+
+            <Card className="border-0 shadow-lg bg-white p-8 md:col-span-2">
+               <div className="flex text-[#FD9800] mb-4">★★★★★</div>
+               <p className="text-gray-600 italic mb-6 leading-relaxed">
+                 "We have a fairly newer company and did not have a website. Tyler reached out to us at the perfect timing as I was attempting to work with a website creator via a popular app. It went horrible. I lost money and time. Tyler helped us construct our idea and bring it to life. We are thrilled with his skillset and ability to produce. We love and are so proud of our website now."
+               </p>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-[#FD9800] flex items-center justify-center text-white font-bold text-xl">
+                     BE
+                  </div>
+                  <div>
+                     <h4 className="font-bold text-gray-900">Brittany Eastwood</h4>
+                     <p className="text-sm text-gray-500">Local Guide</p>
+                  </div>
+               </div>
+            </Card>
           </div>
         </div>
       </section>

@@ -113,7 +113,7 @@ export function Footer() {
               </a>
             </Link>
             <p className="text-gray-500 text-sm">
-              Websites and Marketing for Service Businesses.
+              Websites and Marketing for Service Businesses. <Link href="/san-clemente"><a className="hover:text-[#FD9800] underline">Based in San Clemente, CA</a></Link>.
             </p>
           </div>
           
@@ -124,7 +124,6 @@ export function Footer() {
               <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Our Portfolio</a></Link></li>
               <li><Link href="/services/web-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
               <li><Link href="/services/search-engine-optimization"><a className="hover:text-[#FD9800]">Marketing</a></Link></li>
-              <li><Link href="/san-clemente"><a className="hover:text-[#FD9800]">San Clemente</a></Link></li>
               <li><Link href="/blog"><a className="hover:text-[#FD9800]">Resources</a></Link></li>
             </ul>
           </div>
@@ -144,11 +143,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[#FD9800] shrink-0 mt-0.5" /> 
-                <span>
+                <a href="https://share.google/GwCCMnYsmulVGlOPB" target="_blank" rel="noopener noreferrer" className="hover:text-[#FD9800]">
                   TwentyOne Solutions<br/>
                   234 Avenida Rosa A<br/>
                   San Clemente, CA 92672
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#FD9800] shrink-0" /> 
