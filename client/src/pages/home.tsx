@@ -140,7 +140,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
+            <div className="relative max-w-sm mx-auto lg:ml-auto">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                  <img 
                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/04/tylerhuff_twentyonesolutions_founder-scaled.webp" 
