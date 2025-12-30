@@ -139,7 +139,16 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
             <h2 className="text-4xl font-bold font-heading text-gray-900">Why TwentyOne Solutions?</h2>
-            <div className="text-lg text-gray-600 leading-relaxed md:space-y-4 space-y-4">
+            
+            {/* Desktop: Single Paragraph */}
+            <div className="hidden md:block text-lg text-gray-600 leading-relaxed">
+              <p>
+                A strong online presence should make it easy for customers to understand what you do, trust you, and reach out. That is what we build. We work with contractors, trades, home builders, and professional services. We keep the process simple, so you always know what is happening and what the next step is.
+              </p>
+            </div>
+
+            {/* Mobile: Two Paragraphs */}
+            <div className="md:hidden text-lg text-gray-600 leading-relaxed space-y-4">
               <p>
                 A strong online presence should make it easy for customers to understand what you do, trust you, and reach out. That is what we build. We work with contractors, trades, home builders, and professional services.
               </p>
@@ -164,7 +173,7 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="space-y-10">
+            <div className="space-y-10 lg:pl-12">
                {[
                  { title: "Try Before you Buy", desc: "See a site preview before you commit." },
                  { title: "Easy Onboarding", desc: "We make the process as easy as possible for you." },
@@ -175,7 +184,7 @@ export default function HomePage() {
                    <div className="w-10 h-10 rounded-full bg-[#FD9800] flex items-center justify-center shrink-0 mt-1 shadow-lg shadow-orange-200">
                      <Check className="w-6 h-6 text-white" />
                    </div>
-                   <div>
+                   <div className="max-w-md">
                      <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2">{item.title}</h3>
                      <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
                    </div>
@@ -281,10 +290,24 @@ export default function HomePage() {
             <p className="text-lg text-gray-600">We’ve helped dozens of small businesses get found online.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             <Card className="border-0 shadow-lg bg-white p-8">
                <div className="flex text-[#FD9800] mb-4">★★★★★</div>
-               <p className="text-gray-600 italic mb-6">"Tyler was great to work with and created a website for me which exceeded my expectations. He is efficient, communicates well, quick to respond and has a good eye for design."</p>
+               <p className="text-gray-600 italic mb-6">"I wholeheartedly recommend TwentyOne for their exceptional talent and professionalism. They consistently deliver outstanding, high-quality products with creativity and precision. Their ability to meet deadlines consistently is impressive, making TwentyOne a reliable choice for any project. I highly endorse Tyler and TwentyOne for anyone seeking top-notch web hosting and design services."</p>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/img-1-1-e1711765153356.jpg" alt="Dr. Kennedy" className="w-full h-full object-cover"/>
+                  </div>
+                  <div>
+                     <h4 className="font-bold text-gray-900">John M. Kennedy, MD</h4>
+                     <p className="text-sm text-gray-500">Founder & Creator, B.R.E.A.T.H.E</p>
+                  </div>
+               </div>
+            </Card>
+
+            <Card className="border-0 shadow-lg bg-white p-8">
+               <div className="flex text-[#FD9800] mb-4">★★★★★</div>
+               <p className="text-gray-600 italic mb-6">"Tyler was great to work with and created a website for me which exceeded my expectations. He is efficient, communicates well, quick to respond and has a good eye for design. His pricing is competitive, and he provides high quality work for a fair price."</p>
                <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
                      <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/01/IMG_8771.jpg" alt="Casey" className="w-full h-full object-cover"/>
@@ -295,6 +318,21 @@ export default function HomePage() {
                   </div>
                </div>
             </Card>
+
+            <Card className="border-0 shadow-lg bg-white p-8">
+               <div className="flex text-[#FD9800] mb-4">★★★★★</div>
+               <p className="text-gray-600 italic mb-6">"Very professional and great customer service, Tyler Huff was a pleasure to work with."</p>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/IMG_0224-scaled-e1739331712976.jpg" alt="Alex Rangel" className="w-full h-full object-cover"/>
+                  </div>
+                  <div>
+                     <h4 className="font-bold text-gray-900">Alex Rangel</h4>
+                     <p className="text-sm text-gray-500">Wrangler Painting</p>
+                  </div>
+               </div>
+            </Card>
+
             <Card className="border-0 shadow-lg bg-white p-8">
                <div className="flex text-[#FD9800] mb-4">★★★★★</div>
                <p className="text-gray-600 italic mb-6">"Great experience working with TwentyOne Solutions. Their team delivered a stunning website with ease. I regularly get new customers calling from my website."</p>
@@ -305,6 +343,20 @@ export default function HomePage() {
                   <div>
                      <h4 className="font-bold text-gray-900">Csaba Duzy</h4>
                      <p className="text-sm text-gray-500">S n' J Automotive</p>
+                  </div>
+               </div>
+            </Card>
+            
+            <Card className="border-0 shadow-lg bg-white p-8">
+               <div className="flex text-[#FD9800] mb-4">★★★★★</div>
+               <p className="text-gray-600 italic mb-6">"Had an amazing experience working with TwentyOne Solutions. Their team created a beautiful website giving us online credibility and more business!"</p>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                     <img src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/04/Screenshot-2024-04-18-at-7.26.04%E2%80%AFAM.png" alt="Cory Huff" className="w-full h-full object-cover"/>
+                  </div>
+                  <div>
+                     <h4 className="font-bold text-gray-900">Cory Huff</h4>
+                     <p className="text-sm text-gray-500">Huff Painting Co</p>
                   </div>
                </div>
             </Card>
@@ -327,7 +379,7 @@ export default function HomePage() {
             <AccordionItem value="item-2" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
               <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What about marketing?</AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
-                We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business. Once you rank on the top for searches customers use to find services like yours, you stay there.
+                We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business. Once you rank on the top for searches customers use to find services like yours, you stay there. SEO is a long term strategy and because of that we ask for a 12 month commitment.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
@@ -337,9 +389,45 @@ export default function HomePage() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What’s the turnaround time?</AccordionTrigger>
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What’s the turnaround time for a website?</AccordionTrigger>
               <AccordionContent className="text-gray-600 leading-relaxed">
-                We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days.
+                We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days. If we’re building out more pages or you need extra features, it’ll take a bit longer. Either way, timeline depends on how fast you get back to us with content and approvals.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">How much does a website cost?</AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-6" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Will my website be mobile friendly?</AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                Of course. Every site we build works perfectly on phones, tablets, and desktops.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-7" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Is there a limit to design revisions?</AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                Nope. We keep refining the design until you’re satisfied.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-8" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Who provides the website content?</AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                We highly recommend professional photography. If not, we can use professional stock content and write copy for you. It’s no additional charge.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-9" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Do you offer ongoing maintenance post-launch?</AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                Yes. Maintenance plans start at $279/month depending on scope.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-10" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">How does the design process work?</AccordionTrigger>
+              <AccordionContent className="text-gray-600 leading-relaxed">
+                If you like your initial website, great! We will launch it after your edits. If not, we start with a kickoff call and a quick questionnaire. Then we send you three design templates to choose from. Once you pick your favorite, we build the site, send it over for review, make any tweaks you need, and launch. Simple and streamlined.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
