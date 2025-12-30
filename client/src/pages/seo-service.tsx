@@ -12,22 +12,24 @@ import {
   ShieldCheck,
   Zap,
   Layout,
-  Globe
+  Globe,
+  BarChart3,
+  MousePointer2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Navigation, Footer } from '@/components/layout';
+import { LeadFormModal } from '@/components/LeadFormModal';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { WaveSection } from '@/components/ui/wave-section';
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 10 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
@@ -40,8 +42,6 @@ const staggerContainer = {
     }
   }
 };
-
-import { WaveSection } from '@/components/ui/wave-section';
 
 export default function SEOPage() {
   const serviceSchema = {
@@ -127,162 +127,233 @@ export default function SEOPage() {
 
       {/* Hero Section */}
       <WaveSection 
-        className="py-20 lg:py-32 pb-48 overflow-hidden" 
+        className="pt-32 md:pt-40 pb-48" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-scaled.webp"
         overlayOpacity={0.75}
       >
-        {/* Abstract Background Shapes - Kept inside WaveSection */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 -z-10 pointer-events-none" />
-
         <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8">
-            {/* Content - Centered */}
-            <motion.div 
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="space-y-8"
+          <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
+            <motion.h1 
+              variants={fadeIn} 
+              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
             >
-              <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FD9800] text-xs font-bold uppercase tracking-wider border border-orange-100">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FD9800]"></span>
-                </span>
-                Google Marketing Partner
-              </motion.div>
-              
-              <motion.h1 variants={fadeIn} className="text-4xl lg:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight">
-                Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
-              </motion.h1>
-              
-              <motion.p variants={fadeIn} className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                We help local businesses rank #1 on Google. Stop losing leads to competitors and become the first choice in your market.
-              </motion.p>
-
-              <motion.div variants={fadeIn} className="flex flex-wrap justify-center gap-4">
-                <div className="flex items-center gap-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
-                    <TrendingUp className="w-4 h-4" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-bold text-gray-900 text-sm">More Traffic</h4>
-                    <p className="text-xs text-gray-500">Capture high-intent leads.</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-gray-100 shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">
-                    <ShieldCheck className="w-4 h-4" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-bold text-gray-900 text-sm">More Trust</h4>
-                    <p className="text-xs text-gray-500">Establish authority.</p>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div variants={fadeIn}>
-                <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
-                  Get Your Free Audit
-                </Button>
-              </motion.div>
+              Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
+            </motion.h1>
+            
+            <motion.p 
+              variants={fadeIn} 
+              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
+            >
+              When people search for services like yours, they are ready to hire. We make sure you are the first business they see.
+            </motion.p>
+            
+            <motion.div variants={fadeIn} className="pt-4">
+              <LeadFormModal 
+                title="Schedule a Strategy Call"
+                description="Let's discuss how we can improve your rankings and get you more leads."
+                type="strategy"
+                trigger={
+                  <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
+                    Start Ranking Higher
+                  </Button>
+                }
+              />
             </motion.div>
           </div>
         </div>
       </WaveSection>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-white border-y border-gray-100">
+      {/* Why Ranking Matters */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-around items-center gap-8 text-center">
-            <div className="space-y-1">
-              <div className="text-4xl font-bold font-heading text-[#FD9800]">39.8%</div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Organic Click Share</div>
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-6">Why Ranking #1 Matters</h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              When people are actively searching for services—like painters, electricians, home cleaners, or contractors—they’re often ready to call and book right away. Showing up at the top means you’re their first choice for the job.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="border-0 shadow-lg bg-[#fdfaf5] p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center text-[#FD9800] mx-auto mb-6">
+                <MousePointer2 className="w-8 h-8" />
+              </div>
+              <h3 className="text-4xl font-bold font-heading text-gray-900 mb-2">39.8%</h3>
+              <p className="text-gray-600 font-medium uppercase tracking-wide text-sm mb-4">Organic Click Share</p>
+              <p className="text-gray-500">
+                Nearly 4 out of 10 people click on the first result they see. If you're not there, your competitors are getting those clicks.
+              </p>
+            </Card>
+
+            <Card className="border-0 shadow-lg bg-[#fdfaf5] p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mx-auto mb-6">
+                <MapPin className="w-8 h-8" />
+              </div>
+              <h3 className="text-4xl font-bold font-heading text-gray-900 mb-2">44%</h3>
+              <p className="text-gray-600 font-medium uppercase tracking-wide text-sm mb-4">Map Pack Traffic</p>
+              <p className="text-gray-500">
+                Almost half of local search traffic goes to the top 3 businesses in the Map Pack. Being here is crucial for local leads.
+              </p>
+            </Card>
+
+            <Card className="border-0 shadow-lg bg-[#fdfaf5] p-8 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600 mx-auto mb-6">
+                <TrendingUp className="w-8 h-8" />
+              </div>
+              <h3 className="text-4xl font-bold font-heading text-gray-900 mb-2">High Intent</h3>
+              <p className="text-gray-600 font-medium uppercase tracking-wide text-sm mb-4">Ready to Hire</p>
+              <p className="text-gray-500">
+                Local searches lead to action. People searching are ready to make a purchase or book a service now.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Section */}
+      <section className="py-24 bg-[#fdfaf5]">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">How This Impacts Your Business</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Ranking higher on Google isn’t just about visibility—it’s about credibility and trust. Customers are more likely to click, call, and visit businesses that show up first.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#FD9800] shadow-sm shrink-0">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Lead Generation</h4>
+                    <p className="text-gray-600">More visibility means more people finding your business when they need you most.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#FD9800] shadow-sm shrink-0">
+                    <BarChart3 className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Sales and Revenue</h4>
+                    <p className="text-gray-600">High-intent customers finding you means more conversions and booked jobs.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#FD9800] shadow-sm shrink-0">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">Brand Authority</h4>
+                    <p className="text-gray-600">Top-ranking businesses are perceived as the credible, trustworthy market leaders.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-px h-12 bg-gray-100 hidden md:block" />
-            <div className="space-y-1">
-              <div className="text-4xl font-bold font-heading text-[#FD9800]">44%</div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">Map Pack Traffic</div>
-            </div>
-            <div className="w-px h-12 bg-gray-100 hidden md:block" />
-            <div className="space-y-1">
-              <div className="text-4xl font-bold font-heading text-[#FD9800]">10x</div>
-              <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">ROI Potential</div>
+            
+            <div className="relative">
+              <div className="bg-white p-2 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                <img 
+                  src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/mockup-mobile-search.jpg" 
+                  alt="Google Search Results Mockup" 
+                  className="rounded-xl w-full h-auto object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#FD9800]/10 rounded-full blur-2xl -z-10"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl -z-10"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How We Do It */}
+      {/* How We Do It Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">Our Proven Framework</h2>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                We don't rely on guesswork. Our SEO strategy is built on data, technical precision, and user experience principles that drive real revenue.
-              </p>
-              
-              <div className="space-y-6">
-                {[
-                  {
-                    title: "Technical Foundation",
-                    desc: "We fix site speed, mobile usability, and crawl errors first.",
-                    icon: Zap
-                  },
-                  {
-                    title: "Content Strategy",
-                    desc: "We create content that answers the questions your customers are asking.",
-                    icon: Layout
-                  },
-                  {
-                    title: "Local Signals",
-                    desc: "We build citations and optimize your profile for local relevance.",
-                    icon: Globe
-                  }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#fdfaf5] flex items-center justify-center text-gray-900 flex-shrink-0 mt-1 border border-gray-100">
-                      <item.icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900">{item.title}</h4>
-                      <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="bg-[#1e293b] rounded-2xl p-8 text-white relative z-10 overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-[#FD9800]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-                
-                <h3 className="text-2xl font-bold font-heading mb-6">Ready to grow?</h3>
-                <p className="text-gray-300 mb-8">
-                  Get a comprehensive audit of your current digital presence and a roadmap to #1.
-                </p>
-                <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
-                  Schedule Strategy Call
-                </Button>
-                
-                <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-4">
-                  <div className="flex -space-x-2">
-                    {[1,2,3].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-slate-700 border-2 border-[#1e293b] flex items-center justify-center text-[10px]">
-                        {i}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    <strong className="text-white">500+</strong> businesses optimized
-                  </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-6">How We Get You to Show Up First</h2>
+            <p className="text-lg text-gray-600">
+              Local SEO helps your business appear at the top of Google search results when customers search for services in your area.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 h-full">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
+                  <Search className="w-6 h-6" />
                 </div>
-              </div>
-              
-              <div className="absolute inset-0 border-2 border-gray-100 rounded-2xl transform translate-x-4 translate-y-4 -z-10 bg-[#fdfaf5]" />
-            </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Target Exact Keywords</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  We make sure your website matches exactly what your customers are actively searching for in your area.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 h-full">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Build Local Authority</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  High-quality backlinks boost your credibility and tell Google you’re the trusted choice in your city.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 h-full">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
+                  <Layout className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Localized Content</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  We publish keyword-rich content that engages your local audience and answers their specific questions.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 h-full">
+              <CardContent className="p-8">
+                <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Site Optimization</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  From titles to meta descriptions and speed, we make sure your site is easy for Google to find and rank.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-[#1e293b] text-white relative overflow-hidden">
+        {/* Abstract shapes */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FD9800]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+
+        <div className="container mx-auto px-6 relative z-10 text-center max-w-3xl">
+          <h2 className="text-4xl lg:text-5xl font-bold font-heading mb-6">Ready to Dominate Local Search?</h2>
+          <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+            Don’t wait until your competitors have taken all the top spots. Invest in your business’s growth with our Local SEO solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <LeadFormModal 
+              title="Schedule a Strategy Call"
+              description="Get a comprehensive audit of your current digital presence and a roadmap to #1."
+              type="strategy"
+              trigger={
+                <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/20">
+                  Get Found Today
+                </Button>
+              }
+            />
           </div>
         </div>
       </section>
