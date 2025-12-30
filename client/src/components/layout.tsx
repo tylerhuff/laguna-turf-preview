@@ -35,7 +35,7 @@ export function Navigation() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <header className="sticky top-0 z-50 bg-[#fdfaf5]/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/">
             <a className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">

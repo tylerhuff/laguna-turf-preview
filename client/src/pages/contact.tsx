@@ -12,13 +12,15 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
+import { WaveSection } from '@/components/ui/wave-section';
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Navigation />
 
       {/* Hero */}
-      <section className="relative pt-20 pb-16 bg-white">
+      <WaveSection className="pt-20 pb-16">
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.h1 
             initial="hidden" animate="visible" variants={fadeIn}
@@ -33,7 +35,7 @@ export default function ContactPage() {
             Just fill out the form below or give us a call.
           </motion.p>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Contact Content */}
       <section className="py-20 bg-[#fdfaf5]">

@@ -87,13 +87,15 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
   </Card>
 );
 
+import { WaveSection } from '@/components/ui/wave-section';
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 bg-wave-header">
+      <WaveSection className="pt-20 pb-32">
         <div className="container mx-auto px-6 text-center">
           <motion.div 
             initial="hidden"
@@ -116,7 +118,7 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Why Us Section */}
       <section className="py-24 bg-white">

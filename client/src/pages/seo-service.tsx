@@ -34,14 +34,16 @@ const staggerContainer = {
   }
 };
 
+import { WaveSection } from '@/components/ui/wave-section';
+
 export default function SEOPage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative py-12 lg:py-20 bg-gradient-to-b from-[#fdfaf5] to-white overflow-hidden">
-        {/* Abstract Background Shapes */}
+      <WaveSection className="py-12 lg:py-20 overflow-hidden">
+        {/* Abstract Background Shapes - Kept inside WaveSection */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-orange-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 -z-10 pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 -z-10 pointer-events-none" />
 
@@ -136,7 +138,7 @@ export default function SEOPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Stats Section */}
       <section className="py-12 bg-white border-y border-gray-100">

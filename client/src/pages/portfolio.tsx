@@ -47,13 +47,15 @@ const PortfolioCard = ({ title, description, image, link, subtitle }) => (
   </motion.div>
 );
 
+import { WaveSection } from '@/components/ui/wave-section';
+
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Navigation />
 
       {/* Hero */}
-      <section className="relative pt-20 pb-16 bg-white">
+      <WaveSection className="pt-20 pb-16">
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.h1 
             initial="hidden" animate="visible" variants={fadeIn}
@@ -68,7 +70,7 @@ export default function PortfolioPage() {
             We work with home builders, contractors, trades, and professional services businesses.
           </motion.p>
         </div>
-      </section>
+      </WaveSection>
 
       {/* Intro */}
       <section className="py-16 bg-[#fdfaf5]">
