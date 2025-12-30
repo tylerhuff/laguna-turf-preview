@@ -76,17 +76,17 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Navigation />
 
-      <WaveSection className="pt-20 pb-16" disableTopWave>
+      <WaveSection className="pt-32 md:pt-40 pb-20" disableTopWave>
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 leading-tight">
               Latest Insights
             </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Tips, strategies, and guides to help your service business grow online.
             </p>
           </motion.div>
