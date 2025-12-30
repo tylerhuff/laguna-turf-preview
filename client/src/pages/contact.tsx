@@ -165,7 +165,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 font-medium uppercase tracking-wide">Location</p>
-                      <span className="font-bold text-gray-900">San Clemente, Orange County, CA</span>
+                      <a href="https://www.google.com/maps/place/TwentyOne+Solutions/@33.4666479,-117.6517273,12z/data=!4m6!3m5!1s0x8b8c2f1bdf3b8e33:0x9ae5b755a9dbe9dc!8m2!3d33.4666479!4d-117.6517273" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 hover:text-[#FD9800] transition-colors block">
+                        234 Avenida Rosa A<br />San Clemente, CA 92672
+                      </a>
                     </div>
                   </div>
                 </div>
