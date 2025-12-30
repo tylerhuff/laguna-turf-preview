@@ -21,12 +21,16 @@ import BlogPost from "@/pages/blog-post";
 import IndustryPage from "@/pages/industry-template";
 
 import SanClementePage from "@/pages/san-clemente";
+import PrivacyPolicyPage from "@/pages/privacy-policy";
+import TermsOfServicePage from "@/pages/terms-of-service";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
       <Route path="/san-clemente" component={SanClementePage} />
+      <Route path="/privacy-policy" component={PrivacyPolicyPage} />
+      <Route path="/terms-of-service" component={TermsOfServicePage} />
       <Route path="/about-us" component={AboutPage} />
       
       {/* Industry Pages */}
