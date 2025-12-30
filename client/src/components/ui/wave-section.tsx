@@ -8,6 +8,7 @@ interface WaveSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   disableTopWave?: boolean;
   backgroundImage?: string;
   overlayOpacity?: number;
+  bottomWaveColor?: string;
 }
 
 export function WaveSection({ 
@@ -17,6 +18,7 @@ export function WaveSection({
   disableTopWave = true, // Default to true as requested
   backgroundImage,
   overlayOpacity = 0.75, // Default overlay opacity - letting images shine through more
+  bottomWaveColor = "#fdfaf5",
   ...props 
 }: WaveSectionProps) {
   return (
@@ -68,7 +70,7 @@ export function WaveSection({
         >
           {/* Fill with Beige to match the section below */}
           <path 
-            fill="#fdfaf5" 
+            fill={bottomWaveColor}
             fillOpacity="1" 
             d="M0,120 L1440,120 L1440,40 C1100,-20 900,120 720,40 C500,-40 200,80 0,20 Z"
           ></path>

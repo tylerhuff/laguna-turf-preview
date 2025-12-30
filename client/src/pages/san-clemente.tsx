@@ -31,6 +31,7 @@ export default function SanClementePage() {
         disableTopWave
         backgroundImage="https://twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-1024x768.webp"
         overlayOpacity={0.7}
+        bottomWaveColor="#ffffff"
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.div 
@@ -288,25 +289,38 @@ export default function SanClementePage() {
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-4xl font-bold font-heading text-gray-900 text-center mb-16">Frequently Asked Questions</h2>
           
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {[
-              { q: "How long does a website take?", a: "Most builds move fast once content and details are in. We will give you a clear timeline after the strategy call." },
-              { q: "Do I need a new website to improve Google visibility?", a: "Not always. Sometimes a rebuild is the fastest path, sometimes we can improve what you already have. We will tell you straight on the call." },
-              { q: "What do you need from me to start?", a: "Basic business info, service list, service area, photos, and any existing logins if you already have a website or Google Business Profile." },
-              { q: "Do you work with small service businesses or only big companies?", a: "Both, as long as you are serious about getting a professional online presence and consistent lead flow." },
-              { q: "Will I own my website and domain?", a: "Yes. You own your website and your domain. If you ever want to move it, you can." },
-              { q: "Do you work with service area businesses that do not have a storefront?", a: "Yes. Most trades and contractors are service area businesses. We set things up so you can show up across your service area without needing a public address." },
-              { q: "Do you write the content?", a: "Yes, if you want. Or you can provide it. Either way, we make sure the final site is clear and matches how customers actually search." },
-              { q: "Can you help with reviews?", a: "Yes. We can set up a review request process and help you get more reviews over time." }
-            ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{item.q}</AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed text-base">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "How long does a website take?", a: "Most builds move fast once content and details are in. We will give you a clear timeline after the strategy call." },
+                { q: "Do I need a new website to improve Google visibility?", a: "Not always. Sometimes a rebuild is the fastest path, sometimes we can improve what you already have. We will tell you straight on the call." },
+                { q: "What do you need from me to start?", a: "Basic business info, service list, service area, photos, and any existing logins if you already have a website or Google Business Profile." },
+                { q: "Do you work with small service businesses or only big companies?", a: "Both, as long as you are serious about getting a professional online presence and consistent lead flow." }
+              ].map((item, i) => (
+                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{item.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed text-base">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "Will I own my website and domain?", a: "Yes. You own your website and your domain. If you ever want to move it, you can." },
+                { q: "Do you work with service area businesses that do not have a storefront?", a: "Yes. Most trades and contractors are service area businesses. We set things up so you can show up across your service area without needing a public address." },
+                { q: "Do you write the content?", a: "Yes, if you want. Or you can provide it. Either way, we make sure the final site is clear and matches how customers actually search." },
+                { q: "Can you help with reviews?", a: "Yes. We can set up a review request process and help you get more reviews over time." }
+              ].map((item, i) => (
+                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{item.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed text-base">
+                    {item.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
 
@@ -315,9 +329,21 @@ export default function SanClementePage() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">See what your custom website could look like in 24 hours.</p>
-          <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
+          <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg mb-16">
             Build Site Preview
           </Button>
+
+          <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.8529519515233!2d-117.65391592358825!3d33.46664797338361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b8c2f1bdf3b8e33%3A0x9ae5b755a9dbe9dc!2sTwentyOne%20Solutions!5e0!3m2!1sen!2sus!4v1714420000000!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </section>
 

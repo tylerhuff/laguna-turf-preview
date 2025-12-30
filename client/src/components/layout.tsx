@@ -124,6 +124,7 @@ export function Footer() {
               <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Our Portfolio</a></Link></li>
               <li><Link href="/services/web-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
               <li><Link href="/services/search-engine-optimization"><a className="hover:text-[#FD9800]">Marketing</a></Link></li>
+              <li><Link href="/san-clemente"><a className="hover:text-[#FD9800]">San Clemente</a></Link></li>
               <li><Link href="/blog"><a className="hover:text-[#FD9800]">Resources</a></Link></li>
             </ul>
           </div>
