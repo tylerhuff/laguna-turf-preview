@@ -19,34 +19,56 @@ import { WaveSection } from '@/components/ui/wave-section';
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // TODO: Replace this with your actual Formspree Form ID
+  // 1. Go to https://formspree.io/
+  // 2. Create a new form
+  // 3. Copy the Form ID (or the full URL ending) and paste it here
+  const FORMSPREE_FORM_ID = "YOUR_FORMSPREE_ID_HERE";
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Construct mailto link with form data as a fallback/actual action
+    if (FORMSPREE_FORM_ID === "YOUR_FORMSPREE_ID_HERE") {
+      toast.error("Formspree ID missing", {
+        description: "Please update the FORMSPREE_FORM_ID in contact.tsx with your actual ID.",
+        duration: 5000,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const name = formData.get('name');
-    const phone = formData.get('phone');
-    const email = formData.get('email');
-    const message = formData.get('message');
-    
-    const subject = `New Website Inquiry from ${name}`;
-    const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`;
-    
-    // Open mail client
-    window.location.href = `mailto:tyler@twentyonesolutions.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    toast.success("Opening your email client...", {
-      description: "Please hit send in your email app to complete the request.",
-      duration: 5000,
-    });
-    
-    setIsSubmitting(false);
-    form.reset();
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        toast.success("Message sent successfully!", {
+          description: "We'll get back to you as soon as possible.",
+          duration: 5000,
+        });
+        form.reset();
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || "Form submission failed");
+      }
+    } catch (error) {
+      toast.error("Something went wrong", {
+        description: "Please try again later or contact us directly via phone.",
+        duration: 5000,
+      });
+      console.error("Form error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactSchema = {
@@ -186,7 +208,7 @@ export default function ContactPage() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Opening Email...
+                      Sending...
                     </>
                   ) : (
                     "Submit"
