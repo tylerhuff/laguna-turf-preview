@@ -139,13 +139,18 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
             <h2 className="text-4xl font-bold font-heading text-gray-900">Why TwentyOne Solutions?</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              A strong online presence should make it easy for customers to understand what you do, trust you, and reach out. That is what we build. We work with contractors, trades, home builders, and professional services. We keep the process simple, so you always know what is happening and what the next step is.
-            </p>
+            <div className="text-lg text-gray-600 leading-relaxed md:space-y-4 space-y-4">
+              <p>
+                A strong online presence should make it easy for customers to understand what you do, trust you, and reach out. That is what we build. We work with contractors, trades, home builders, and professional services.
+              </p>
+              <p>
+                We keep the process simple, so you always know what is happening and what the next step is.
+              </p>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative max-w-sm mx-auto lg:ml-auto">
+            <div className="relative max-w-md mx-auto lg:ml-auto">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                  <img 
                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/04/tylerhuff_twentyonesolutions_founder-scaled.webp" 
@@ -153,32 +158,32 @@ export default function HomePage() {
                    className="w-full h-auto object-cover"
                  />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs hidden md:block">
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs block">
                  <h4 className="font-bold text-xl font-heading text-gray-900">Tyler Huff</h4>
                  <p className="text-[#FD9800] font-medium">Owner, Developer</p>
               </div>
             </div>
             
-            <div className="space-y-8">
+            <div className="space-y-10">
                {[
                  { title: "Try Before you Buy", desc: "See a site preview before you commit." },
                  { title: "Easy Onboarding", desc: "We make the process as easy as possible for you." },
                  { title: "Marketing Too", desc: "A website turns visitors into customers. Marketing gets visitors to your website." },
                  { title: "Ongoing Support", desc: "Support to keep your website up to date with content and the trends." }
                ].map((item, i) => (
-                 <div key={i} className="flex gap-4">
-                   <div className="w-8 h-8 rounded-full bg-[#FD9800] flex items-center justify-center shrink-0 mt-1">
-                     <Check className="w-5 h-5 text-white" />
+                 <div key={i} className="flex gap-6">
+                   <div className="w-10 h-10 rounded-full bg-[#FD9800] flex items-center justify-center shrink-0 mt-1 shadow-lg shadow-orange-200">
+                     <Check className="w-6 h-6 text-white" />
                    </div>
                    <div>
-                     <h3 className="text-xl font-bold font-heading text-gray-900 mb-1">{item.title}</h3>
-                     <p className="text-gray-600">{item.desc}</p>
+                     <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2">{item.title}</h3>
+                     <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
                    </div>
                  </div>
                ))}
                
-               <div className="pt-4">
-                 <Button size="lg" className="h-12 px-8 bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-md">
+               <div className="pt-6">
+                 <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                     Build my Preview
                  </Button>
                </div>
