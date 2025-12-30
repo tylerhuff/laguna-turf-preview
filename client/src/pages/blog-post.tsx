@@ -29,10 +29,23 @@ export default function BlogPost() {
         ].find(a => a.slug === slug);
 
         const client = new SeobotClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
+        
+        // Fetch list to get metadata (image, description) which might be missing in single article response
+        const listData = await client.getArticles(0, 100); 
+        const metadata = listData.articles.find(a => a.slug === slug);
+        
         const fetchedArticle = await client.getArticle(slug);
         
         if (fetchedArticle) {
-          setArticle(fetchedArticle);
+          setArticle({
+             ...fetchedArticle,
+             title: fetchedArticle.headline,
+             description: metadata?.metaDescription || fetchedArticle.metaDescription,
+             image: metadata?.image || fetchedArticle.image, // Prioritize metadata image
+             date: fetchedArticle.createdAt,
+             category: metadata?.category ? metadata.category.title : (fetchedArticle.category?.title || 'General'),
+             content: fetchedArticle.html
+          });
         } else if (mockArticle) {
            // Fallback to mock if API fails/not found and it matches a mock slug
            // Note: The previous hardcoded page had specific content. 

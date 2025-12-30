@@ -55,7 +55,17 @@ export default function BlogPage() {
         // Seobot client uses 0-based indexing for pages and positional arguments
         const data = await client.getArticles(0, 10);
         if (data && data.articles && data.articles.length > 0) {
-          setArticles(data.articles);
+          const mappedArticles = data.articles.map(a => ({
+            id: a.id,
+            slug: a.slug,
+            title: a.headline,
+            excerpt: a.metaDescription,
+            image: a.image,
+            date: a.createdAt,
+            author: 'TwentyOne Solutions', // API doesn't provide author
+            category: a.category ? a.category.title : 'General'
+          }));
+          setArticles(mappedArticles);
         }
       } catch (error) {
         console.error("Failed to fetch articles:", error);
