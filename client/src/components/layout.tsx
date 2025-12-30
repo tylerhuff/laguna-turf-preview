@@ -131,11 +131,10 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-gray-900 mb-4">Industries</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><span className="hover:text-[#FD9800] cursor-pointer">Contractors</span></li>
-              <li><span className="hover:text-[#FD9800] cursor-pointer">Home Builders</span></li>
-              <li><span className="hover:text-[#FD9800] cursor-pointer">Professional Services</span></li>
-              <li><span className="hover:text-[#FD9800] cursor-pointer">Painters</span></li>
-              <li><span className="hover:text-[#FD9800] cursor-pointer">Local Business</span></li>
+              <li><Link href="/industries/contractors"><a className="hover:text-[#FD9800]">Contractors</a></Link></li>
+              <li><Link href="/industries/home-builders"><a className="hover:text-[#FD9800]">Home Builders</a></Link></li>
+              <li><Link href="/industries/professional-services"><a className="hover:text-[#FD9800]">Professional Services</a></Link></li>
+              <li><Link href="/industries/painters"><a className="hover:text-[#FD9800]">Painters</a></Link></li>
             </ul>
           </div>
 

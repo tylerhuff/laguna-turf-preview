@@ -18,6 +18,8 @@ import AdminEditPage from "@/pages/admin/EditPage";
 import BlogPage from "@/pages/blog";
 import BlogPost from "@/pages/blog-post";
 
+import IndustryPage from "@/pages/industry-template";
+
 function Router() {
   return (
     <Switch>
@@ -25,6 +27,64 @@ function Router() {
       <Route path="/san-clemente" component={HomePage} />
       <Route path="/about-us" component={AboutPage} />
       
+      {/* Industry Pages */}
+      <Route path="/industries/contractors">
+        {() => (
+          <IndustryPage 
+            industryName="Contractors"
+            heroImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/DiamondConstruction-png.webp"
+            portfolioItem={{
+              title: "Diamond Construction",
+              description: "A professional site for a general contractor specializing in waterproofing and gypsum concrete. Highlights services and past projects to build trust with new clients.",
+              image: "https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/DiamondConstruction-png.webp",
+              link: "#"
+            }}
+          />
+        )}
+      </Route>
+      <Route path="/industries/home-builders">
+        {() => (
+          <IndustryPage 
+            industryName="Home Builders"
+            heroImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/LuxuryTahoePropertiesMockup.png"
+            portfolioItem={{
+              title: "Luxury Tahoe Properties",
+              description: "High-end real estate and home showcase website. Features stunning imagery, property listings, and an elegant design that appeals to luxury buyers.",
+              image: "https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/LuxuryTahoePropertiesMockup.png",
+              link: "#"
+            }}
+          />
+        )}
+      </Route>
+      <Route path="/industries/professional-services">
+        {() => (
+          <IndustryPage 
+            industryName="Professional Services"
+            heroImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/TSA-Group-Limited-png.webp"
+            portfolioItem={{
+              title: "TSA Group Ltd",
+              description: "A corporate website for a consulting firm. Focuses on credibility, service clarity, and lead generation for high-value B2B contracts.",
+              image: "https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/TSA-Group-Limited-png.webp",
+              link: "#"
+            }}
+          />
+        )}
+      </Route>
+      <Route path="/industries/painters">
+        {() => (
+          <IndustryPage 
+            industryName="Painters"
+            heroImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/04/Screenshot-2024-04-18-at-7.26.04%E2%80%AFAM.png"
+            portfolioItem={{
+              title: "Huff Painting Co",
+              description: "A vibrant, visual-first website for a local painting company. showcases before/after transformations and makes booking quotes easy.",
+              image: "https://staging44.twentyonesolutions.com/wp-content/uploads/2024/04/Screenshot-2024-04-18-at-7.26.04%E2%80%AFAM.png",
+              link: "#"
+            }}
+          />
+        )}
+      </Route>
+
       {/* Services */}
       <Route path="/services" component={ServicesHub} />
       <Route path="/services/web-design" component={WebDesignPage} />
