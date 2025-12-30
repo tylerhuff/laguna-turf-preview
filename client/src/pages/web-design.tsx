@@ -205,25 +205,38 @@ export default function WebDesignPage() {
 
       {/* FAQ */}
       <section className="py-24 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6 max-w-3xl">
+        <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl font-bold font-heading text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            {[
-              { q: "What should my website include?", a: "A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions." },
-              { q: "What about marketing?", a: "We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business." },
-              { q: "Do you own the domain or me?", a: "You own the domain (and assets). We don’t take hostages." },
-              { q: "What’s the turnaround time for a website?", a: "We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days." },
-              { q: "How much does a website cost?", a: "Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month." },
-              { q: "Will my website be mobile friendly?", a: "Of course. Every site we build works perfectly on phones, tablets, and desktops." }
-            ].map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
-                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed pb-4">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "What should my website include?", a: "A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions." },
+                { q: "What about marketing?", a: "We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business." },
+                { q: "Do you own the domain or me?", a: "You own the domain (and assets). We don’t take hostages." }
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "What’s the turnaround time for a website?", a: "We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days." },
+                { q: "How much does a website cost?", a: "Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month." },
+                { q: "Will my website be mobile friendly?", a: "Of course. Every site we build works perfectly on phones, tablets, and desktops." }
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </section>
 

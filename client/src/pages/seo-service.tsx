@@ -19,6 +19,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Navigation, Footer } from '@/components/layout';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 10 },
@@ -50,6 +56,61 @@ export default function SEOPage() {
     "areaServed": "USA"
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long does SEO take to work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SEO is a long-term strategy. Typically, you start seeing movement in 3-4 months, with significant results in 6-12 months. It builds momentum over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I really need SEO if I have a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A website without SEO is like a billboard in the desert. SEO puts your business in front of people who are actively looking for your services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between SEO and Google Ads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google Ads (PPC) stops working the moment you stop paying. SEO builds organic authority that lasts, providing a better long-term ROI."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you track results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We provide monthly reports showing your keyword rankings, traffic growth, and most importantly, the calls and leads generated from your website."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you guarantee #1 rankings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No ethical SEO agency can guarantee a #1 spot because Google's algorithm is always changing. However, we have a proven track record of getting our clients to the top of the map pack and organic results."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Local SEO different?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Local SEO focuses on ranking for 'near me' searches and Google Maps. It requires specific strategies like citation building and Google Business Profile optimization."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <Helmet>
@@ -57,6 +118,9 @@ export default function SEOPage() {
         <meta name="description" content="Get found when customers search. Professional SEO services for local businesses." />
         <script type="application/ld+json">
           {JSON.stringify(serviceSchema)}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
         </script>
       </Helmet>
       <Navigation />
@@ -219,6 +283,43 @@ export default function SEOPage() {
               
               <div className="absolute inset-0 border-2 border-gray-100 rounded-2xl transform translate-x-4 translate-y-4 -z-10 bg-[#fdfaf5]" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 bg-[#fdfaf5]">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold font-heading text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "How long does SEO take to work?", a: "SEO is a long-term strategy. Typically, you start seeing movement in 3-4 months, with significant results in 6-12 months. It builds momentum over time." },
+                { q: "Do I really need SEO if I have a website?", a: "Yes. A website without SEO is like a billboard in the desert. SEO puts your business in front of people who are actively looking for your services." },
+                { q: "What is the difference between SEO and Google Ads?", a: "Google Ads (PPC) stops working the moment you stop paying. SEO builds organic authority that lasts, providing a better long-term ROI." }
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "How do you track results?", a: "We provide monthly reports showing your keyword rankings, traffic growth, and most importantly, the calls and leads generated from your website." },
+                { q: "Do you guarantee #1 rankings?", a: "No ethical SEO agency can guarantee a #1 spot because Google's algorithm is always changing. However, we have a proven track record of getting our clients to the top of the map pack and organic results." },
+                { q: "Is Local SEO different?", a: "Yes. Local SEO focuses on ranking for 'near me' searches and Google Maps. It requires specific strategies like citation building and Google Business Profile optimization." }
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </div>
       </section>
