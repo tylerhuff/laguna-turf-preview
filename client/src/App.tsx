@@ -11,7 +11,6 @@ import PortfolioPage from "@/pages/portfolio";
 import ContactPage from "@/pages/contact";
 import SEOPage from "@/pages/seo-service";
 import ServicesHub from "@/pages/services-hub";
-import PrivacyPolicy from "@/pages/privacy";
 import AdminDashboard from "@/pages/admin/Dashboard";
 import AdminPages from "@/pages/admin/PageList";
 import AdminEditPage from "@/pages/admin/EditPage";
@@ -113,7 +112,6 @@ function Router() {
 
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/contact-us" component={ContactPage} />
-      <Route path="/privacy-policy" component={PrivacyPolicy} />
 
       <Route path="/blog" component={BlogPage} />
       <Route path="/blog/:slug" component={BlogPost} />
