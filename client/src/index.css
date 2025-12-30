@@ -63,8 +63,8 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Clean White Background */
-  --background: 0 0% 100%;
+  /* Clean Warm White Background */
+  --background: 40 33% 98%; /* Warm white #fdfaf5 matching your wave bg */
   --foreground: 0 0% 20%; /* #333333 */
 
   --card: 0 0% 100%;
@@ -140,7 +140,7 @@
 }
 
 .dark {
-  /* Keeping minimal dark mode support, though brand is primarily light */
+  /* Minimal dark mode support */
   --button-outline: rgba(255,255,255, .10);
   --badge-outline: rgba(255,255,255, .05);
   --opaque-button-border-intensity: 9;
@@ -196,7 +196,7 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading, var(--font-sans));
-    @apply font-medium; /* Jost looks better with medium weight for headings usually */
+    @apply font-medium;
   }
 }
 
@@ -211,10 +211,20 @@
     pointer-events: none;
   }
 
-  /* Helper to replicate the wave background */
-  .bg-wave-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f9f9f9' fill-opacity='1' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E");
+  /* Helper to replicate the wave background exactly as seen in screenshot */
+  .bg-wave-header {
+    background-color: #fdfaf5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L60,197.3C120,203,240,213,360,208C480,203,600,181,720,181.3C840,181,960,203,1080,208C1200,213,1320,203,1380,197.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
     background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 150px;
+  }
+
+  .bg-wave-footer {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fdfaf5' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom;
     background-size: cover;
   }
 

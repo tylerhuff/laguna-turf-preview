@@ -5,12 +5,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import SEOPage from "@/pages/seo-service";
+import HomePage from "@/pages/home";
 
 function Router() {
   return (
     <Switch>
-      {/* Route to the new SEO page as default for this task */}
-      <Route path="/" component={SEOPage} />
+      {/* Home page is now the main entry */}
+      <Route path="/" component={HomePage} />
       <Route path="/services/search-engine-optimization" component={SEOPage} />
       <Route component={NotFound} />
     </Switch>
