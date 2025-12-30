@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { 
   Check,
@@ -90,8 +91,100 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function HomePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should my website include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about marketing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business. Once you rank on the top for searches customers use to find services like yours, you stay there. SEO is a long term strategy and because of that we ask for a 12 month commitment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you own the domain or me?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You own the domain (and assets). We don’t take hostages. Even if we bought the domain for you, if you cancel with us we transfer the domain for you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What’s the turnaround time for a website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days. If we’re building out more pages or you need extra features, it’ll take a bit longer. Either way, timeline depends on how fast you get back to us with content and approvals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a website cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will my website be mobile friendly?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Of course. Every site we build works perfectly on phones, tablets, and desktops."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a limit to design revisions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nope. We keep refining the design until you’re satisfied."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who provides the website content?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We highly recommend professional photography. If not, we can use professional stock content and write copy for you. It’s no additional charge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer ongoing maintenance post-launch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Maintenance plans start at $279/month depending on scope."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the design process work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you like your initial website, great! We will launch it after your edits. If not, we start with a kickoff call and a quick questionnaire. Then we send you three design templates to choose from. Once you pick your favorite, we build the site, send it over for review, make any tweaks you need, and launch. Simple and streamlined."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       <Navigation />
 
       {/* Hero Section */}
@@ -360,77 +453,96 @@ export default function HomePage() {
                   </div>
                </div>
             </Card>
+
+            <Card className="border-0 shadow-lg bg-white p-8">
+               <div className="flex text-[#FD9800] mb-4">★★★★★</div>
+               <p className="text-gray-600 italic mb-6">"We have a fairly newer company and did not have a website. Tyler reached out to us at the perfect timing as I was attempting to work with a website creator via a popular app. It went horrible. I lost money and time. Tyler helped us construct our idea and bring it to life. We are thrilled with his skillset and ability to produce. We love and are so proud of our website now."</p>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-[#FD9800] flex items-center justify-center text-white font-bold text-xl">
+                     BE
+                  </div>
+                  <div>
+                     <h4 className="font-bold text-gray-900">Brittany Eastwood</h4>
+                     <p className="text-sm text-gray-500">Local Guide</p>
+                  </div>
+               </div>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="py-24 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6 max-w-4xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-4xl font-bold font-heading text-gray-900 text-center mb-16">Frequently Asked Questions</h2>
           
-          <Accordion type="single" collapsible className="w-full space-y-4">
-            <AccordionItem value="item-1" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What should my website include?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What about marketing?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business. Once you rank on the top for searches customers use to find services like yours, you stay there. SEO is a long term strategy and because of that we ask for a 12 month commitment.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Do you own the domain or me?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                You own the domain (and assets). We don’t take hostages. Even if we bought the domain for you, if you cancel with us we transfer the domain for you.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What’s the turnaround time for a website?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days. If we’re building out more pages or you need extra features, it’ll take a bit longer. Either way, timeline depends on how fast you get back to us with content and approvals.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-5" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">How much does a website cost?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-6" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Will my website be mobile friendly?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                Of course. Every site we build works perfectly on phones, tablets, and desktops.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-7" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Is there a limit to design revisions?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                Nope. We keep refining the design until you’re satisfied.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-8" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Who provides the website content?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                We highly recommend professional photography. If not, we can use professional stock content and write copy for you. It’s no additional charge.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-9" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Do you offer ongoing maintenance post-launch?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                Yes. Maintenance plans start at $279/month depending on scope.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-10" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
-              <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">How does the design process work?</AccordionTrigger>
-              <AccordionContent className="text-gray-600 leading-relaxed">
-                If you like your initial website, great! We will launch it after your edits. If not, we start with a kickoff call and a quick questionnaire. Then we send you three design templates to choose from. Once you pick your favorite, we build the site, send it over for review, make any tweaks you need, and launch. Simple and streamlined.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-1" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What should my website include?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What about marketing?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business. Once you rank on the top for searches customers use to find services like yours, you stay there. SEO is a long term strategy and because of that we ask for a 12 month commitment.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Do you own the domain or me?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  You own the domain (and assets). We don’t take hostages. Even if we bought the domain for you, if you cancel with us we transfer the domain for you.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-4" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">What’s the turnaround time for a website?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days. If we’re building out more pages or you need extra features, it’ll take a bit longer. Either way, timeline depends on how fast you get back to us with content and approvals.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-5" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">How much does a website cost?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              <AccordionItem value="item-6" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Will my website be mobile friendly?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  Of course. Every site we build works perfectly on phones, tablets, and desktops.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-7" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Is there a limit to design revisions?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  Nope. We keep refining the design until you’re satisfied.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-8" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Who provides the website content?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  We highly recommend professional photography. If not, we can use professional stock content and write copy for you. It’s no additional charge.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-9" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">Do you offer ongoing maintenance post-launch?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  Yes. Maintenance plans start at $279/month depending on scope.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-10" className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5]">
+                <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800]">How does the design process work?</AccordionTrigger>
+                <AccordionContent className="text-gray-600 leading-relaxed">
+                  If you like your initial website, great! We will launch it after your edits. If not, we start with a kickoff call and a quick questionnaire. Then we send you three design templates to choose from. Once you pick your favorite, we build the site, send it over for review, make any tweaks you need, and launch. Simple and streamlined.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </div>
       </section>
 
