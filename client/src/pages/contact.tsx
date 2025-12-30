@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Facebook, Loader2, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Loader2, CheckCircle, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -175,13 +175,28 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold font-heading text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex flex-col gap-4">
                   <a href="https://www.facebook.com/twentyonewebsolutions" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#FD9800] transition-colors font-medium group">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-[#1877F2] group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-[#FD9800] group-hover:scale-110 transition-transform">
                       <Facebook className="w-5 h-5 fill-current" />
                     </div>
                     <span>TwentyOne Solutions on Facebook</span>
                   </a>
+                  
+                  <a href="https://www.instagram.com/21solutions/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#FD9800] transition-colors font-medium group">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-[#FD9800] group-hover:scale-110 transition-transform">
+                      <Instagram className="w-5 h-5" />
+                    </div>
+                    <span>@21solutions on Instagram</span>
+                  </a>
+
+                  <a href="https://www.linkedin.com/company/twentyone-solutions/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#FD9800] transition-colors font-medium group">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-[#FD9800] group-hover:scale-110 transition-transform">
+                      <Linkedin className="w-5 h-5 fill-current" />
+                    </div>
+                    <span>TwentyOne Solutions on LinkedIn</span>
+                  </a>
+
                   <a href="https://www.google.com/maps/place/TwentyOne+Solutions/@33.4666479,-117.6517273,12z/data=!4m6!3m5!1s0x8b8c2f1bdf3b8e33:0x9ae5b755a9dbe9dc!8m2!3d33.4666479!4d-117.6517273" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#FD9800] transition-colors font-medium group">
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-[#4285F4] group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-[#FD9800] group-hover:scale-110 transition-transform">
                       <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81Z"/></svg>
                     </div>
                     <span>View on Google Maps</span>
