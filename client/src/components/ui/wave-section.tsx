@@ -30,6 +30,7 @@ export function WaveSection({
             className="w-full h-full object-cover"
           />
           <div 
+            data-template="hero-overlay"
             className="absolute inset-0 bg-white" 
             style={{ opacity: overlayOpacity }}
           />
