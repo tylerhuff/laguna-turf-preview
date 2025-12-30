@@ -2,28 +2,26 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Search, 
-  BarChart, 
-  Globe, 
   MapPin, 
   TrendingUp, 
   Users, 
-  ShieldCheck, 
   ArrowRight,
   Menu,
-  CheckCircle2,
   Phone,
-  Mail
+  Mail,
+  Check,
+  Star,
+  Clock
 } from 'lucide-react';
-import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import generatedHeroImage from '@assets/generated_images/abstract_digital_data_flow_and_growth_chart_for_seo_service.png';
+import { Textarea } from '@/components/ui/textarea';
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
 const staggerContainer = {
@@ -31,304 +29,323 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.1
     }
   }
 };
 
 export default function SEOPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans overflow-x-hidden dark">
-      {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/10 bg-background/80 backdrop-blur-md">
-        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white text-lg">21</span>
+    <div className="min-h-screen bg-white text-slate-900 font-sans">
+      {/* Top Bar - Exact Brand Match */}
+      <div className="bg-[#1e293b] text-white text-[13px] font-medium py-3 border-b border-slate-700">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-2">
+          <div className="flex items-center gap-2">
+            <span className="bg-blue-600 text-white text-[10px] px-2 py-0.5 rounded font-bold uppercase tracking-wider">New</span>
+            <span>Get a Professional Website in 24 Hours</span>
+          </div>
+          <div className="flex items-center gap-6 text-slate-300">
+             <a href="mailto:contact@twentyonesolutions.com" className="hover:text-white transition-colors flex items-center gap-2">
+               <Mail className="w-3.5 h-3.5" />
+               contact@twentyonesolutions.com
+             </a>
+             <a href="tel:+16265241059" className="hover:text-white transition-colors flex items-center gap-2">
+               <Phone className="w-3.5 h-3.5" />
+               +1 (626) 524-1059
+             </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation - Clean Corporate */}
+      <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-slate-100">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            {/* Logo Approximation */}
+            <div className="w-10 h-10 bg-[#1e293b] rounded-lg flex items-center justify-center text-white font-heading font-bold text-xl shadow-lg shadow-slate-900/20">
+              21
             </div>
-            <span>Twenty One Solutions</span>
+            <div className="font-heading font-bold text-lg tracking-tight text-slate-900 leading-tight">
+              Twenty One <br/>
+              <span className="text-blue-600">Solutions</span>
+            </div>
           </div>
           
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">Services</a>
-            <a href="#" className="hover:text-primary transition-colors">Case Studies</a>
-            <a href="#" className="hover:text-primary transition-colors">About</a>
-            <a href="#" className="hover:text-primary transition-colors">Contact</a>
+          <nav className="hidden lg:flex items-center gap-10 text-[15px] font-medium text-slate-600">
+            <a href="#" className="text-blue-600 font-semibold">Home</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Services</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Case Studies</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">About</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Contact</a>
           </nav>
 
-          <Button className="hidden md:flex">Get Free Audit</Button>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="w-5 h-5" />
-          </Button>
+          <div className="flex items-center gap-4">
+            <Button className="hidden md:flex bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 shadow-md shadow-blue-600/20 transition-all hover:-translate-y-0.5">
+              Get Free Audit
+            </Button>
+            <Button variant="ghost" size="icon" className="lg:hidden">
+              <Menu className="w-6 h-6" />
+            </Button>
+          </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-primary/5 blur-[120px] rounded-full translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 -z-10 w-1/3 h-1/2 bg-blue-600/10 blur-[100px] rounded-full -translate-x-1/2" />
-
+      {/* Hero Section - High Conversion Layout */}
+      <section className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-50/50 skew-x-12 translate-x-1/3 -z-10" />
+        
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div 
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
               className="space-y-8"
             >
-              <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                #1 Investment for Long-Term Growth
+              <motion.div variants={fadeIn} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold border border-blue-100">
+                <Star className="w-4 h-4 fill-current" />
+                Google Marketing Experts
               </motion.div>
               
-              <motion.h1 variants={fadeIn} className="text-5xl lg:text-7xl font-bold font-heading leading-tight tracking-tight">
-                Dominate Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
-                  Local Market.
-                </span>
+              <motion.h1 variants={fadeIn} className="text-4xl lg:text-6xl font-bold font-heading text-slate-900 leading-[1.15]">
+                Dominate Your <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Local Market.</span>
               </motion.h1>
               
-              <motion.p variants={fadeIn} className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                Stop losing customers to competitors. We help you rank #1 on Google so you become the first choice for ready-to-buy customers.
+              <motion.p variants={fadeIn} className="text-lg text-slate-600 max-w-xl leading-relaxed">
+                Stop losing customers to competitors. We optimize your online presence to ensure you rank #1 on Google for the services you offer.
               </motion.p>
               
-              <motion.div variants={fadeIn} className="flex flex-wrap gap-4">
-                <Button size="lg" className="h-14 px-8 text-base">
-                  Get Your Free Audit
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button size="lg" variant="outline" className="h-14 px-8 text-base bg-background/50 backdrop-blur-sm">
-                  View Case Studies
-                </Button>
+              <motion.div variants={fadeIn} className="flex flex-col sm:flex-row gap-4">
+                <div className="flex items-center gap-2 text-sm text-slate-500 font-medium">
+                   <div className="flex -space-x-2">
+                     <div className="w-8 h-8 rounded-full bg-slate-200 border-2 border-white" />
+                     <div className="w-8 h-8 rounded-full bg-slate-300 border-2 border-white" />
+                     <div className="w-8 h-8 rounded-full bg-slate-400 border-2 border-white" />
+                   </div>
+                   <span className="ml-2">Trusted by 500+ Local Businesses</span>
+                </div>
               </motion.div>
+
+              <motion.ul variants={fadeIn} className="space-y-3 text-slate-700 font-medium">
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  Get found by high-intent customers ready to buy
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  Outrank competitors in the Google Map Pack
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  Build long-term authority and trust
+                </li>
+              </motion.ul>
             </motion.div>
 
+            {/* Embedded Form - "Get Professional Website" style */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border/50 group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-60 z-10 group-hover:opacity-40 transition-opacity" />
-                <img 
-                  src={generatedHeroImage} 
-                  alt="SEO Data Visualization" 
-                  className="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              {/* Floating Stat Card 1 */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="absolute -bottom-6 -left-6 bg-card border border-border p-4 rounded-xl shadow-lg z-20"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-500/10 rounded-full flex items-center justify-center text-green-500">
-                    <TrendingUp className="w-5 h-5" />
+              <Card className="border-0 shadow-2xl bg-white overflow-hidden relative z-10">
+                <div className="h-2 bg-blue-600 w-full absolute top-0 left-0" />
+                <CardContent className="p-8">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold font-heading text-slate-900">Get Your Free Strategy Audit</h3>
+                    <p className="text-slate-500 mt-2">See exactly what's holding your website back from ranking #1.</p>
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider">Growth</p>
-                    <p className="text-xl font-bold text-foreground">+145% Leads</p>
-                  </div>
-                </div>
-              </motion.div>
+                  
+                  <form className="space-y-5">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="hero-name" className="text-slate-700">Full Name</Label>
+                        <Input id="hero-name" placeholder="John Doe" className="bg-slate-50 border-slate-200 focus:border-blue-500 focus:ring-blue-500" data-testid="input-name" />
+                      </div>
+                      <div className="space-y-2">
+                         <Label htmlFor="hero-phone" className="text-slate-700">Phone</Label>
+                         <Input id="hero-phone" placeholder="(555) 000-0000" className="bg-slate-50 border-slate-200 focus:border-blue-500 focus:ring-blue-500" data-testid="input-phone" />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="hero-email" className="text-slate-700">Email Address</Label>
+                      <Input id="hero-email" type="email" placeholder="john@company.com" className="bg-slate-50 border-slate-200 focus:border-blue-500 focus:ring-blue-500" data-testid="input-email" />
+                    </div>
 
-              {/* Floating Stat Card 2 */}
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-                className="absolute -top-6 -right-6 bg-card border border-border p-4 rounded-xl shadow-lg z-20"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-500">
-                    <Search className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wider">Visibility</p>
-                    <p className="text-xl font-bold text-foreground">Top 3 Ranking</p>
-                  </div>
-                </div>
-              </motion.div>
+                    <div className="space-y-2">
+                      <Label htmlFor="hero-website" className="text-slate-700">Business Website</Label>
+                      <Input id="hero-website" placeholder="https://example.com" className="bg-slate-50 border-slate-200 focus:border-blue-500 focus:ring-blue-500" data-testid="input-website" />
+                    </div>
+
+                    <Button className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-0.5" data-testid="button-audit">
+                      Get My Free Audit
+                    </Button>
+                    
+                    <p className="text-xs text-center text-slate-400 mt-4">
+                      We respect your privacy. No spam, ever.
+                    </p>
+                  </form>
+                </CardContent>
+              </Card>
+              
+              {/* Decorative elements behind form */}
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-slate-200 rounded-xl -z-10" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-muted/30 border-y border-border/50">
+      {/* Stats Section - Credibility */}
+      <section className="py-16 bg-white border-b border-slate-100">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-8 text-center space-y-4">
-                <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
-                  <Users className="w-6 h-6" />
-                </div>
-                <h3 className="text-4xl font-bold font-heading">39.8%</h3>
-                <p className="text-muted-foreground">Of all clicks go to the top organic search result.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-8 text-center space-y-4">
-                <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <h3 className="text-4xl font-bold font-heading">44%</h3>
-                <p className="text-muted-foreground">Of local search traffic goes to the Google Map Pack.</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 backdrop-blur-sm border-border/50">
-              <CardContent className="p-8 text-center space-y-4">
-                <div className="mx-auto w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <h3 className="text-4xl font-bold font-heading">10x</h3>
-                <p className="text-muted-foreground">ROI when ranking #1 for high-intent keywords.</p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="p-4">
+               <div className="text-4xl font-bold text-blue-600 font-heading mb-2">39.8%</div>
+               <p className="text-slate-600 font-medium">Click-through rate for the #1 organic result</p>
+            </div>
+            <div className="p-4">
+               <div className="text-4xl font-bold text-blue-600 font-heading mb-2">44%</div>
+               <p className="text-slate-600 font-medium">Traffic share for the Local Map Pack</p>
+            </div>
+            <div className="p-4">
+               <div className="text-4xl font-bold text-blue-600 font-heading mb-2">10x</div>
+               <p className="text-slate-600 font-medium">ROI on long-term SEO investment</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Problem / Solution */}
-      <section className="py-24">
+      {/* Services Breakdown */}
+      <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold font-heading">Ranking higher isn't just vanity.<br/>It's revenue.</h2>
-            <p className="text-lg text-muted-foreground">
-              Customers trust businesses they see first. If you aren't visible, you don't exist to them.
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-2 block">Our Process</span>
+            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 font-heading">How We Secure Your Top Spot</h2>
+            <p className="text-slate-600 text-lg leading-relaxed">
+              Ranking #1 isn't luck. It's engineering. We use a proven, data-driven approach to signal to Google that your business is the authority in your area.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                  <Globe className="w-6 h-6" />
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 group">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                  <Search className="w-7 h-7" />
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold font-heading mb-2">Local SEO Dominance</h3>
-                  <p className="text-muted-foreground">We optimize your Google Business Profile and local citations to ensure you own the Map Pack for your service area.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                  <BarChart className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold font-heading mb-2">High-Intent Keywords</h3>
-                  <p className="text-muted-foreground">We target specific terms like "emergency plumber near me" that signal a customer is ready to buy right now.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                  <TrendingUp className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold font-heading mb-2">Authority Building</h3>
-                  <p className="text-muted-foreground">Through strategic content and high-quality backlinks, we signal to Google that you are the market leader.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold font-heading mb-6">Get Your Free Strategy Audit</h3>
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" data-testid="input-firstname" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" data-testid="input-lastname" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@company.com" data-testid="input-email" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="website">Website URL</Label>
-                  <Input id="website" placeholder="https://yourwebsite.com" data-testid="input-website" />
-                </div>
-                <Button className="w-full text-lg h-12 mt-2" data-testid="button-submit">
-                  Analyze My Site
-                </Button>
-                <p className="text-xs text-muted-foreground text-center mt-4">
-                  No credit card required. Free 24-hour turnaround.
+                <h3 className="text-xl font-bold text-slate-900 mb-3 font-heading">Keyword Targeting</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  We identify the exact "money keywords" your customers are typing into Google right now (e.g., "emergency plumber near me").
                 </p>
-              </form>
-            </div>
+                <a href="#" className="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 group">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                  <MapPin className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 font-heading">Map Pack Optimization</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  We optimize your Google Business Profile, photos, and citations to ensure you dominate the local 3-pack map results.
+                </p>
+                <a href="#" className="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white border-slate-200 hover:border-blue-200 hover:shadow-xl transition-all duration-300 group">
+              <CardContent className="p-8">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                  <TrendingUp className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 font-heading">Authority Building</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  We build high-quality backlinks and publish authoritative content that tells Google your business is the market leader.
+                </p>
+                <a href="#" className="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn more <ArrowRight className="w-4 h-4" />
+                </a>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Trust/Social Proof */}
-      <section className="py-20 bg-primary/5">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-8">Trusted by growing businesses</p>
-          <div className="flex flex-wrap justify-center gap-12 opacity-50 grayscale">
-             {/* Simple text placeholders for logos as per mockup guidelines */}
-             <span className="text-2xl font-bold font-heading">Acme Corp</span>
-             <span className="text-2xl font-bold font-heading">GlobalTech</span>
-             <span className="text-2xl font-bold font-heading">RiverFlow</span>
-             <span className="text-2xl font-bold font-heading">Starlight</span>
-             <span className="text-2xl font-bold font-heading">Nexus</span>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Footer */}
-      <footer className="bg-card border-t border-border pt-20 pb-10">
+      {/* CTA Footer - Corporate Style */}
+      <footer className="bg-[#1e293b] text-slate-300 pt-20 pb-10 border-t border-slate-800">
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 md:col-span-2 space-y-6">
-              <div className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <span className="text-white text-lg">21</span>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-[#1e293b] font-heading font-bold text-xl">
+                  21
                 </div>
-                <span>Twenty One Solutions</span>
+                <div className="font-heading font-bold text-lg tracking-tight text-white leading-tight">
+                  Twenty One <br/>
+                  <span className="text-blue-400">Solutions</span>
+                </div>
               </div>
-              <p className="text-muted-foreground max-w-sm">
-                We build digital experiences that drive real revenue. Stop guessing with your marketing and start growing.
+              <p className="max-w-sm text-slate-400 leading-relaxed">
+                We help local service businesses grow their revenue through strategic Google Marketing and high-performance web design.
               </p>
+              <div className="flex gap-4 pt-2">
+                 {/* Social placeholders */}
+                 <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer"><Mail className="w-5 h-5"/></div>
+                 <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer"><Phone className="w-5 h-5"/></div>
+              </div>
             </div>
+            
             <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#" className="hover:text-primary">Local SEO</a></li>
-                <li><a href="#" className="hover:text-primary">Paid Advertising</a></li>
-                <li><a href="#" className="hover:text-primary">Web Design</a></li>
-                <li><a href="#" className="hover:text-primary">Content Marketing</a></li>
+              <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Services</h4>
+              <ul className="space-y-4">
+                <li><a href="#" className="hover:text-white transition-colors">Local SEO</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Web Design</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Paid Advertising</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Content Marketing</a></li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-bold mb-4">Contact</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4" /> contact@twentyonesolutions.com
+              <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 text-blue-500 mt-0.5" /> 
+                  <a href="mailto:contact@twentyonesolutions.com" className="hover:text-white transition-colors">contact@twentyonesolutions.com</a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" /> +1 (626) 524-1059
+                <li className="flex items-start gap-3">
+                  <Phone className="w-5 h-5 text-blue-500 mt-0.5" /> 
+                  <a href="tel:+16265241059" className="hover:text-white transition-colors">+1 (626) 524-1059</a>
                 </li>
-                <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" /> San Clemente, CA 92672
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-blue-500 mt-0.5" /> 
+                  <span>234 Avenida Rosa<br/>San Clemente, CA 92672</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="w-5 h-5 text-blue-500 mt-0.5" /> 
+                  <span>Mon-Sun 24/7</span>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
+          
+          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
             <p>&copy; 2025 Twenty One Solutions. All rights reserved.</p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-foreground">Privacy Policy</a>
-              <a href="#" className="hover:text-foreground">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
