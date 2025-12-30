@@ -392,7 +392,7 @@ export default function SanClementePage() {
                   </div>
                   <div>
                      <h4 className="font-bold text-gray-900">Brittany Eastwood</h4>
-                     <p className="text-sm text-gray-500">Local Guide</p>
+                     <p className="text-sm text-gray-500">Smith & Eastwood Construction</p>
                   </div>
                </div>
             </Card>
