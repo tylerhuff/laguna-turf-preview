@@ -5,26 +5,29 @@ interface WaveSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   reverse?: boolean; // Option to reverse wave direction
+  disableTopWave?: boolean;
 }
 
-export function WaveSection({ children, className, reverse, ...props }: WaveSectionProps) {
+export function WaveSection({ children, className, reverse, disableTopWave = false, ...props }: WaveSectionProps) {
   return (
     <section className={cn("relative bg-white", className)} {...props}>
       {/* Top Wave: The White Hero section cutting UP into the Beige Header */}
-      <div className="absolute top-0 left-0 right-0 h-16 md:h-24 w-full overflow-hidden leading-[0] z-10">
-        <svg 
-          viewBox="0 0 1440 120" 
-          preserveAspectRatio="none" 
-          className="w-full h-full"
-        >
-          {/* Fill with Beige to match the header above */}
-          <path 
-            fill="#fdfaf5" 
-            fillOpacity="1" 
-            d="M0,0 L1440,0 L1440,50 C1000,90 440,10 0,50 Z"
-          ></path>
-        </svg>
-      </div>
+      {!disableTopWave && (
+        <div className="absolute top-0 left-0 right-0 h-16 md:h-24 w-full overflow-hidden leading-[0] z-10">
+          <svg 
+            viewBox="0 0 1440 120" 
+            preserveAspectRatio="none" 
+            className="w-full h-full"
+          >
+            {/* Fill with Beige to match the header above */}
+            <path 
+              fill="#fdfaf5" 
+              fillOpacity="1" 
+              d="M0,0 L1440,0 L1440,50 C1000,90 440,10 0,50 Z"
+            ></path>
+          </svg>
+        </div>
+      )}
 
       <div className="relative z-0">
         {children}

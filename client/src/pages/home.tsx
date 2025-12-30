@@ -95,7 +95,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <WaveSection className="pt-20 pb-32">
+      <WaveSection className="pt-20 pb-32" disableTopWave>
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
             <motion.h1 
