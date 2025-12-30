@@ -20,11 +20,13 @@ import BlogPost from "@/pages/blog-post";
 
 import IndustryPage from "@/pages/industry-template";
 
+import SanClementePage from "@/pages/san-clemente";
+
 function Router() {
   return (
     <Switch>
       <Route path="/" component={HomePage} />
-      <Route path="/san-clemente" component={HomePage} />
+      <Route path="/san-clemente" component={SanClementePage} />
       <Route path="/about-us" component={AboutPage} />
       
       {/* Industry Pages */}
