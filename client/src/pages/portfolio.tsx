@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -89,13 +89,12 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Our Portfolio - TwentyOne Solutions</title>
-        <meta name="description" content="View our web design work for contractors, trades, and professional service businesses." />
-        <script type="application/ld+json">
-          {JSON.stringify(portfolioSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Our Portfolio - TwentyOne Solutions"
+        description="View our web design work for contractors, trades, and professional service businesses."
+        canonical="/portfolio"
+        schema={portfolioSchema}
+      />
       <Navigation />
 
       {/* Hero */}

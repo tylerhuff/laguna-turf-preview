@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Check, ArrowRight, ExternalLink } from 'lucide-react';
 import { Navigation, Footer } from '@/components/layout';
@@ -113,16 +113,15 @@ export default function SanClementePage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Web Design San Clemente - TwentyOne Solutions</title>
-        <meta name="description" content="Websites and online marketing for service based small businesses in San Clemente. Built to look legit, bring in leads, and stay in good shape over time." />
-        <script type="application/ld+json">
-          {JSON.stringify(localBusinessSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="San Clemente Web Design | TwentyOne Solutions"
+        description="San Clemente web design and SEO agency. We help local service businesses get more customers online."
+        canonical="/san-clemente"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [localBusinessSchema, faqSchema]
+        }}
+      />
       
       <Navigation />
 

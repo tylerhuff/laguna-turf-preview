@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Facebook, Loader2, CheckCircle, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -93,13 +93,12 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Contact TwentyOne Solutions - San Clemente Web Design</title>
-        <meta name="description" content="Contact TwentyOne Solutions for web design and marketing services in San Clemente, CA. Call us at +1 (626) 524-1059." />
-        <script type="application/ld+json">
-          {JSON.stringify(contactSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Contact Us | TwentyOne Solutions"
+        description="Contact TwentyOne Solutions for web design and marketing services in San Clemente, CA. Call us at +1 (626) 524-1059."
+        canonical="/contact-us"
+        schema={contactSchema}
+      />
       <Navigation />
 
       {/* Hero */}

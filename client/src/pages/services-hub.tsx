@@ -1,10 +1,16 @@
 import React from 'react';
+import { SEO } from '@/components/seo';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function ServicesHub() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] font-sans text-gray-800">
+      <SEO 
+        title="Our Services | TwentyOne Solutions"
+        description="Comprehensive web design and marketing services for service businesses."
+        canonical="/services"
+      />
       <Navigation />
       <WaveSection className="pt-32 pb-20" disableTopWave overlayOpacity={0.8}>
         <div className="container mx-auto px-6 text-center">

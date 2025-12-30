@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Link } from "wouter";
 import { 
@@ -221,14 +221,15 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(businessSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Websites and Marketing for Service Businesses"
+        description="We help service businesses look professional online and get found. Web design, SEO, and marketing for contractors, trades, and home builders."
+        canonical="/"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [faqSchema, businessSchema]
+        }}
+      />
       <Navigation />
 
       {/* Hero Section */}

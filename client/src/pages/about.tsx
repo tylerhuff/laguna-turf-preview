@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,13 +28,12 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>About TwentyOne Solutions - Web Design San Clemente</title>
-        <meta name="description" content="Web design & marketing agency for service businesses located in San Clemente, CA. Focused on getting you more calls." />
-        <script type="application/ld+json">
-          {JSON.stringify(aboutSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="About TwentyOne Solutions - Web Design San Clemente"
+        description="Web design & marketing agency for service businesses located in San Clemente, CA. Focused on getting you more calls."
+        canonical="/about-us"
+        schema={aboutSchema}
+      />
       <Navigation />
 
       {/* Hero */}
