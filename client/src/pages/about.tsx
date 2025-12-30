@@ -41,22 +41,26 @@ export default function AboutPage() {
       </WaveSection>
 
       {/* Intro */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl font-bold font-heading text-gray-900">Focused on Local Service Businesses</h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We work with contractors and local service businesses that want more calls. When someone lands on your site, it should be obvious what you do, where you work, and how to reach you.
-            </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We handle your website, hosting, support, and online marketing so you never have to think about it. Everything stays consistent, dialed in, and pointed at one thing, getting you more calls.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold font-heading text-gray-900">Focused on Local Service Businesses</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-12 text-lg text-gray-600 leading-relaxed">
+              <p>
+                We work with contractors and local service businesses that want more calls. When someone lands on your site, it should be obvious what you do, where you work, and how to reach you.
+              </p>
+              <p>
+                We handle your website, hosting, support, and online marketing so you never have to think about it. Everything stays consistent, dialed in, and pointed at one thing, getting you more calls.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why TwentyOne */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Why TwentyOne?</h2>
@@ -69,43 +73,90 @@ export default function AboutPage() {
               { num: "02", title: "Proven Results", desc: "Built to get you more calls. Clear message, strong trust, and a simple path to contact you." },
               { num: "03", title: "Future Proof", desc: "We stay on top of the trends so you never have to worry about falling behind." }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-[#FD9800]">
-                <span className="text-5xl font-bold text-gray-100 block mb-4">{item.num}</span>
-                <h3 className="text-xl font-bold font-heading text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+              <div key={i} className="bg-[#fdfaf5] p-8 rounded-xl shadow-lg border-t-4 border-[#FD9800] relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                <span className="text-6xl font-bold text-[#FD9800]/20 absolute top-4 right-4">{item.num}</span>
+                <h3 className="text-xl font-bold font-heading text-gray-900 mb-2 relative z-10">{item.title}</h3>
+                <p className="text-gray-600 relative z-10">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonial */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <Card className="border-0 shadow-xl bg-[#fdfaf5] p-8 md:p-12 relative">
-            <div className="flex text-[#FD9800] mb-6 text-xl">★★★★★</div>
-            <blockquote className="text-xl md:text-2xl text-gray-700 italic font-light leading-relaxed mb-8">
-              "I wholeheartedly recommend TwentyOne for their exceptional talent and professionalism. They consistently deliver outstanding, high-quality products with creativity and precision."
-            </blockquote>
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md">
-                <img 
-                  src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/img-1-1-e1711765153356-150x150.jpg" 
-                  alt="John M. Kennedy, MD" 
-                  className="w-full h-full object-cover"
-                />
+      {/* Testimonials */}
+      <section className="py-24 bg-[#fdfaf5]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Client Feedback</h2>
+            <p className="text-lg text-gray-600">Don't just take our word for it.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-0 shadow-xl bg-white p-8 relative h-full flex flex-col">
+              <div className="flex text-[#FD9800] mb-6 text-xl">★★★★★</div>
+              <blockquote className="text-lg text-gray-600 italic font-light leading-relaxed mb-8 flex-grow">
+                "I wholeheartedly recommend TwentyOne for their exceptional talent and professionalism. They consistently deliver outstanding, high-quality products."
+              </blockquote>
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
+                  <img 
+                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/img-1-1-e1711765153356-150x150.jpg" 
+                    alt="John M. Kennedy, MD" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-sm">John M. Kennedy, MD</h4>
+                  <p className="text-xs text-gray-500">Creator, BREATHE</p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-bold text-gray-900 text-lg">John M. Kennedy, MD</h4>
-                <p className="text-gray-600">Found & Creator, BREATHE</p>
+            </Card>
+
+            <Card className="border-0 shadow-xl bg-white p-8 relative h-full flex flex-col">
+              <div className="flex text-[#FD9800] mb-6 text-xl">★★★★★</div>
+              <blockquote className="text-lg text-gray-600 italic font-light leading-relaxed mb-8 flex-grow">
+                "Tyler was great to work with and created a website for me which exceeded my expectations. He is efficient and has a good eye for design."
+              </blockquote>
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
+                  <img 
+                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/01/IMG_8771.jpg" 
+                    alt="Casey Whittemore" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-sm">Casey Whittemore</h4>
+                  <p className="text-xs text-gray-500">LMFT</p>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+
+            <Card className="border-0 shadow-xl bg-white p-8 relative h-full flex flex-col">
+              <div className="flex text-[#FD9800] mb-6 text-xl">★★★★★</div>
+              <blockquote className="text-lg text-gray-600 italic font-light leading-relaxed mb-8 flex-grow">
+                "Great experience working with TwentyOne Solutions. Their team delivered a stunning website with ease. I regularly get new customers calling."
+              </blockquote>
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
+                  <img 
+                    src="https://staging44.twentyonesolutions.com/wp-content/uploads/2024/03/9f9defeb7d7dae86d70250e2588f711d-150x150-1.jpeg" 
+                    alt="Csaba Duzy" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-900 text-sm">Csaba Duzy</h4>
+                  <p className="text-xs text-gray-500">S n' J Automotive</p>
+                </div>
+              </div>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* Some of our Work */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Some of our Work</h2>
@@ -115,8 +166,8 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-4">
+            <div className="group cursor-pointer">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
                 <AspectRatio ratio={16/10}>
                   <img 
                     src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/Filger-Manufacturing-png.webp" 
@@ -124,11 +175,18 @@ export default function AboutPage() {
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
                 </AspectRatio>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Manufacturing</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Filger Manufacturing</h3>
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">Filger Manufacturing</h3>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
+              </div>
             </div>
-            <div className="group">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-4">
+            
+            <div className="group cursor-pointer">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
                 <AspectRatio ratio={16/10}>
                   <img 
                     src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/LuxuryTahoePropertiesMockup.png" 
@@ -136,11 +194,18 @@ export default function AboutPage() {
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
                 </AspectRatio>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Real Estate</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Diamond Construction</h3>
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">Diamond Construction</h3>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
+              </div>
             </div>
-            <div className="group">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-4">
+
+            <div className="group cursor-pointer">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
                 <AspectRatio ratio={16/10}>
                   <img 
                     src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/08/WCW_mockup_transparent-png.webp" 
@@ -148,11 +213,31 @@ export default function AboutPage() {
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                   />
                 </AspectRatio>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Cleaning Services</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">West Coast Washers</h3>
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">West Coast Washers</h3>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="h-[400px] w-full overflow-hidden grayscale border-t border-gray-200">
+        <iframe 
+          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=234%20Avenida%20Rosa%20A%2C%20San%20Clemente%2C%20CA%2092672&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+          width="100%" 
+          height="100%" 
+          style={{ border: 0, filter: 'sepia(100%) hue-rotate(330deg) saturate(150%)' }}
+          allowFullScreen 
+          loading="lazy" 
+          referrerPolicy="no-referrer-when-downgrade"
+          title="TwentyOne Solutions Location"
+        ></iframe>
       </section>
 
       {/* CTA */}

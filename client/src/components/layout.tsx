@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -104,45 +104,59 @@ export function Footer() {
   return (
     <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          <div className="col-span-1">
             <Link href="/">
-              <a className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800 mb-4">
+              <a className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-gray-800 mb-4">
                 <span className="text-[#FD9800]">TwentyOne</span>
-                <span className="text-gray-600 text-xl">solutions</span>
+                <span className="text-gray-600 text-lg">solutions</span>
               </a>
             </Link>
-            <p className="text-gray-500 max-w-sm">
-              We help service businesses look professional online and get found when people search.
+            <p className="text-gray-500 text-sm">
+              Websites and Marketing for Service Businesses.
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold text-gray-900 mb-4">Links</h4>
-            <ul className="space-y-3 text-gray-600">
-              <li><Link href="/"><a className="hover:text-[#FD9800]">Home</a></Link></li>
-              <li><Link href="/about-us"><a className="hover:text-[#FD9800]">About</a></Link></li>
+            <h4 className="font-bold text-gray-900 mb-4">Company</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><Link href="/about-us"><a className="hover:text-[#FD9800]">About Us</a></Link></li>
+              <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Our Portfolio</a></Link></li>
               <li><Link href="/services/website-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
-              <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Portfolio</a></Link></li>
+              <li><Link href="/services/search-engine-optimization"><a className="hover:text-[#FD9800]">Marketing</a></Link></li>
               <li><Link href="/blog"><a className="hover:text-[#FD9800]">Resources</a></Link></li>
-              <li><Link href="/contact-us"><a className="hover:text-[#FD9800]">Contact</a></Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-gray-900 mb-4">Industries</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><span className="hover:text-[#FD9800] cursor-pointer">Contractors</span></li>
+              <li><span className="hover:text-[#FD9800] cursor-pointer">Home Builders</span></li>
+              <li><span className="hover:text-[#FD9800] cursor-pointer">Professional Services</span></li>
+              <li><span className="hover:text-[#FD9800] cursor-pointer">Painters</span></li>
+              <li><span className="hover:text-[#FD9800] cursor-pointer">Local Business</span></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-gray-900 mb-4">Contact</h4>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#FD9800]" /> 
-                <a href="mailto:contact@twentyonesolutions.com">contact@twentyonesolutions.com</a>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-[#FD9800] shrink-0 mt-0.5" /> 
+                <span>
+                  TwentyOne Solutions<br/>
+                  234 Avenida Rosa A<br/>
+                  San Clemente, CA 92672
+                </span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#FD9800]" /> 
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#FD9800] shrink-0" /> 
                 <a href="tel:+16265241059">+1 (626) 524-1059</a>
               </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#FD9800]" /> 
-                <span>San Clemente, CA 92672</span>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#FD9800] shrink-0" /> 
+                <a href="mailto:contact@twentyonesolutions.com">contact@twentyonesolutions.com</a>
               </li>
             </ul>
           </div>
