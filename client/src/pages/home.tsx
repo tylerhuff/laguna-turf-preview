@@ -121,7 +121,7 @@ export default function HomePage() {
       </WaveSection>
 
       {/* Why Us Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
             <h2 className="text-4xl font-bold font-heading text-gray-900">Why TwentyOne Solutions?</h2>
@@ -174,7 +174,7 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl font-bold font-heading text-gray-900">Our Work</h2>
@@ -225,7 +225,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Breakdown */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">More than Websites</h2>
@@ -255,7 +255,7 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl font-bold font-heading text-gray-900">What Clients Say</h2>
@@ -294,7 +294,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-4xl font-bold font-heading text-gray-900 text-center mb-16">Frequently Asked Questions</h2>
           
@@ -328,7 +328,7 @@ export default function HomePage() {
       </section>
 
       {/* Form / CTA Section */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="space-y-8">
