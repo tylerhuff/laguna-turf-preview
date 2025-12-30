@@ -17,9 +17,9 @@ export default function BlogPost() {
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
-           <Link href="/blog">
+           <Link href="/resources">
              <Button variant="ghost" className="mb-8 hover:bg-white/50 text-gray-600 gap-2">
-               <ArrowLeft className="w-4 h-4" /> Back to Blog
+               <ArrowLeft className="w-4 h-4" /> Back to Resources
              </Button>
            </Link>
            

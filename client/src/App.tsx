@@ -113,8 +113,8 @@ function Router() {
       <Route path="/portfolio" component={PortfolioPage} />
       <Route path="/contact-us" component={ContactPage} />
 
-      <Route path="/blog" component={BlogPage} />
-      <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/resources" component={BlogPage} />
+      <Route path="/resources/:slug" component={BlogPost} />
       
       {/* Admin Routes */}
       <Route path="/admin" component={AdminDashboard} />

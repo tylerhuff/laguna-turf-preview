@@ -113,7 +113,7 @@ export default function BlogPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link href={`/blog/${article.slug}`}>
+                  <Link href={`/resources/${article.slug}`}>
                     <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white overflow-hidden group">
                       <div className="h-48 overflow-hidden relative">
                          <div className="absolute top-4 left-4 bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
