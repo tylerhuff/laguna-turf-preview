@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
+import { Link } from "wouter";
 import { 
   Check,
   CheckCircle2,
@@ -255,12 +256,16 @@ export default function HomePage() {
             </motion.p>
             
             <motion.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
-                Free Site Preview
-              </Button>
-              <Button variant="outline" size="lg" className="h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50">
-                View Our Work
-              </Button>
+              <Link href="/contact-us">
+                <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
+                  Free Site Preview
+                </Button>
+              </Link>
+              <Link href="/portfolio">
+                <Button variant="outline" size="lg" className="h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50">
+                  View Our Work
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -324,9 +329,11 @@ export default function HomePage() {
                ))}
                
                <div className="pt-6">
-                 <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
-                    Build my Preview
-                 </Button>
+                 <Link href="/contact-us">
+                   <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                      Build my Preview
+                   </Button>
+                 </Link>
                </div>
             </div>
           </div>
