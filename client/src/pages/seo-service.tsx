@@ -43,7 +43,7 @@ export default function SEOPage() {
 
       {/* Hero Section */}
       <WaveSection 
-        className="py-20 lg:py-32 overflow-hidden" 
+        className="py-20 lg:py-32 pb-48 overflow-hidden" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-scaled.webp"
         overlayOpacity={0.75}

@@ -96,7 +96,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <WaveSection 
-        className="pt-32 md:pt-40 pb-32" 
+        className="pt-32 md:pt-40 pb-48" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/bannertwentyone-scaled.jpg"
         overlayOpacity={0.75}
