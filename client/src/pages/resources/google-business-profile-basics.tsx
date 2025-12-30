@@ -25,7 +25,7 @@ export default function GoogleBusinessProfilePage() {
              Google Business Profile Basics for Service Businesses
            </h1>
            <p className="text-xl text-gray-600 mt-6 leading-relaxed">
-             Your most valuable digital asset isn't your website—it’s your Google Business Profile. Here is why.
+             Your most valuable digital asset isn't your website - it's your Google Business Profile. Here is why.
            </p>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default function GoogleBusinessProfilePage() {
       <article className="container mx-auto px-6 max-w-4xl py-12">
         <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-[#FD9800]">
            <p>
-             If you are a local service business, your Google Business Profile (formerly Google My Business) is your lifeline. It is what populates the "Map Pack"—those three local results that appear at the very top of Google searches.
+             If you are a local service business, your Google Business Profile (formerly Google My Business) is your lifeline. It is what populates the "Map Pack" - those three local results that appear at the very top of Google searches.
            </p>
 
            <h3>What it is</h3>

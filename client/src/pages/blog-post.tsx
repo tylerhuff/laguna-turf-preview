@@ -298,7 +298,7 @@ function StaticBlogPost() {
            />
 
            <p>
-             If you're running a service business—whether you're a contractor, landscaper, consultant, or cleaner—you might think a Facebook page or word-of-mouth is enough. But in 2025, the landscape has changed. Customers expect more.
+             If you're running a service business - whether you're a contractor, landscaper, consultant, or cleaner - you might think a Facebook page or word-of-mouth is enough. But in 2025, the landscape has changed. Customers expect more.
            </p>
            
            <h3>1. Credibility and Trust</h3>

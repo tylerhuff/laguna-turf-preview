@@ -47,7 +47,7 @@ export default function First30DaysPage() {
 
            <h3>Day 11-14: Review & Refine</h3>
            <p>
-             We send you a live preview link. You can click around on your phone and computer. You tell us what you love and what you want tweaked. We make those changes fast—usually within 48 hours.
+             We send you a live preview link. You can click around on your phone and computer. You tell us what you love and what you want tweaked. We make those changes fast - usually within 48 hours.
            </p>
 
            <h3>Day 15: Launch 🚀</h3>

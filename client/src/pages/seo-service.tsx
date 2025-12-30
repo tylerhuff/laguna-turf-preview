@@ -127,10 +127,11 @@ export default function SEOPage() {
 
       {/* Hero Section */}
       <WaveSection 
-        className="pt-32 md:pt-40 pb-48" 
+        className="pt-32 md:pt-40 pb-20 md:pb-32" 
         disableTopWave
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/12/pexels-photo-3825873-3825873-scaled.webp"
         overlayOpacity={0.75}
+        bottomWaveColor="#ffffff"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
@@ -170,7 +171,7 @@ export default function SEOPage() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-6">Why Ranking #1 Matters</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              When people are actively searching for services—like painters, electricians, home cleaners, or contractors—they’re often ready to call and book right away. Showing up at the top means you’re their first choice for the job.
+              When people are actively searching for services - like painters, electricians, home cleaners, or contractors - they're often ready to call and book right away. Showing up at the top means you're their first choice for the job.
             </p>
           </div>
 
@@ -218,7 +219,7 @@ export default function SEOPage() {
             <div>
               <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">How This Impacts Your Business</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Ranking higher on Google isn’t just about visibility—it’s about credibility and trust. Customers are more likely to click, call, and visit businesses that show up first.
+                Ranking higher on Google isn't just about visibility - it's about credibility and trust. Customers are more likely to click, call, and visit businesses that show up first.
               </p>
               
               <div className="space-y-6">
@@ -333,15 +334,11 @@ export default function SEOPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#1e293b] text-white relative overflow-hidden">
-        {/* Abstract shapes */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FD9800]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
-
+      <section className="py-24 bg-[#fdfaf5] relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10 text-center max-w-3xl">
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading mb-6">Ready to Dominate Local Search?</h2>
-          <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-            Don’t wait until your competitors have taken all the top spots. Invest in your business’s growth with our Local SEO solutions.
+          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-gray-900 mb-6">Ready to Dominate Local Search?</h2>
+          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+            Don't wait until your competitors have taken all the top spots. Invest in your business's growth with our Local SEO solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <LeadFormModal 

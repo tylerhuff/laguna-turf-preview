@@ -33,7 +33,7 @@ export default function HowMarketingWorksPage() {
       <article className="container mx-auto px-6 max-w-4xl py-12">
         <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-[#FD9800]">
            <p>
-             If you’ve ever felt like online marketing is a black box where you put money in and hope something comes out, you aren’t alone. But for local service businesses—plumbers, roofers, landscapers, consultants—the formula is actually very straightforward.
+             If you've ever felt like online marketing is a black box where you put money in and hope something comes out, you aren't alone. But for local service businesses - plumbers, roofers, landscapers, consultants - the formula is actually very straightforward.
            </p>
 
            <h3>The 3-Step Funnel</h3>
