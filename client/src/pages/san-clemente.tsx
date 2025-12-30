@@ -182,14 +182,38 @@ export default function SanClementePage() {
             <div className="bg-[#fdfaf5] p-8 rounded-2xl border border-gray-100">
               <h3 className="text-2xl font-bold font-heading text-gray-900 mb-6">We are a good fit for</h3>
               <ul className="space-y-4">
-                {["Contractors", "Home Builders", "Trades", "Professional services"].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-lg font-medium text-gray-700">
+                <li>
+                  <Link href="/industries/contractors" className="flex items-center gap-3 text-lg font-medium text-gray-700 hover:text-[#FD9800] transition-colors">
                     <div className="w-8 h-8 rounded-full bg-[#FD9800]/10 flex items-center justify-center text-[#FD9800]">
                       <Check className="w-5 h-5" />
                     </div>
-                    {item}
-                  </li>
-                ))}
+                    Contractors
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries/home-builders" className="flex items-center gap-3 text-lg font-medium text-gray-700 hover:text-[#FD9800] transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-[#FD9800]/10 flex items-center justify-center text-[#FD9800]">
+                      <Check className="w-5 h-5" />
+                    </div>
+                    Home Builders
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries/painters" className="flex items-center gap-3 text-lg font-medium text-gray-700 hover:text-[#FD9800] transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-[#FD9800]/10 flex items-center justify-center text-[#FD9800]">
+                      <Check className="w-5 h-5" />
+                    </div>
+                    Trades
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/industries/professional-services" className="flex items-center gap-3 text-lg font-medium text-gray-700 hover:text-[#FD9800] transition-colors">
+                    <div className="w-8 h-8 rounded-full bg-[#FD9800]/10 flex items-center justify-center text-[#FD9800]">
+                      <Check className="w-5 h-5" />
+                    </div>
+                    Professional services
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -303,7 +327,7 @@ export default function SanClementePage() {
               <p className="text-gray-600 text-sm mb-4">
                 Figler Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes.
               </p>
-              <a href="https://filger.com/" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
+              <a href="https://filger.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
                 Visit Website <ExternalLink className="w-3 h-3" />
               </a>
             </div>
@@ -322,7 +346,7 @@ export default function SanClementePage() {
               <p className="text-gray-600 text-sm mb-4">
                 Smith and Eastwood Construction has a clean, professional online presence that makes it easy for homeowners to understand their services and get in touch.
               </p>
-              <a href="https://smitheastwoodbuild.com/" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
+              <a href="https://smitheastwoodbuild.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
                 Visit Website <ExternalLink className="w-3 h-3" />
               </a>
             </div>
@@ -341,7 +365,7 @@ export default function SanClementePage() {
               <p className="text-gray-600 text-sm mb-4">
                 Ascend Equities has a sharp, professional online presence that reflects their focus on quality properties and long term value.
               </p>
-              <a href="https://ascendequities.com/" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
+              <a href="https://ascendequities.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
                 Visit Website <ExternalLink className="w-3 h-3" />
               </a>
             </div>
