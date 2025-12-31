@@ -130,18 +130,18 @@ function Router() {
                   link: "https://filger.com/"
                 },
                 {
-                  title: "Case Whittemore, LMFT",
-                  subtitle: "Healthcare",
-                  description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health.",
-                  image: "/assets/images/CaseWhitteMoreMockUp.png",
-                  link: "https://caseywhittemorelmft.com/"
-                },
-                {
                   title: "Fan Fusion Ventures",
                   subtitle: "Sports Entertainment",
                   description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
                   image: "/assets/images/FanFusionMockup.png",
                   link: "https://fanfusionventures.com/"
+                },
+                {
+                  title: "Case Whittemore, LMFT",
+                  subtitle: "Healthcare",
+                  description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health.",
+                  image: "/assets/images/CaseWhitteMoreMockUp.png",
+                  link: "https://caseywhittemorelmft.com/"
                 },
                 {
                   title: "Ascend Equities",
