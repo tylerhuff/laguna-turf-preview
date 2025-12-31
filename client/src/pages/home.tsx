@@ -295,14 +295,14 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold font-heading text-gray-900">Why TwentyOne Solutions?</h2>
             
             {/* Desktop: Single Paragraph */}
-            <div className="hidden md:block text-lg text-gray-600 leading-relaxed">
+            <div className="hidden md:block text-lg text-gray-600 leading-relaxed text-left">
               <p>
                 A strong online presence should make it easy for customers to understand what you do, trust you, and reach out. That is what we build. We work with contractors, trades, home builders, and professional services. We keep the process simple, so you always know what is happening and what the next step is.
               </p>
             </div>
 
             {/* Mobile: Two Paragraphs */}
-            <div className="md:hidden text-lg text-gray-600 leading-relaxed space-y-4">
+            <div className="md:hidden text-lg text-gray-600 leading-relaxed space-y-4 text-left">
               <p>
                 A strong online presence should make it easy for customers to understand what you do, trust you, and reach out. That is what we build. We work with contractors, trades, home builders, and professional services.
               </p>
