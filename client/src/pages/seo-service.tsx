@@ -407,7 +407,7 @@ export default function SEOPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl font-bold font-heading text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -419,7 +419,7 @@ export default function SEOPage() {
                 { q: "Will I show up in Google AI Overviews?", a: "We optimize your content with direct answers and structured data specifically to increase your chances of appearing in AI-generated search summaries." },
                 { q: "Can you help me rank in other cities?", a: "Absolutely. We can create location-specific pages and strategies to target customers in neighboring towns like Dana Point, San Juan Capistrano, and Laguna Niguel." }
               ].map((faq, i) => (
-                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5] shadow-sm">
                   <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
                   <AccordionContent className="text-gray-600 leading-relaxed pb-4">
                     {faq.a}
@@ -435,7 +435,7 @@ export default function SEOPage() {
                 { q: "Do I need to blog?", a: "Regular content is fuel for SEO. We handle the blogging for you, creating helpful articles that answer customer questions and signal expertise to Google." },
                 { q: "What happens if I stop SEO?", a: "SEO gains are durable but not permanent. If you stop, you won't disappear overnight, but competitors will eventually overtake you as your content and signals age." }
               ].map((faq, i) => (
-                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-[#fdfaf5] shadow-sm">
                   <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
                   <AccordionContent className="text-gray-600 leading-relaxed pb-4">
                     {faq.a}
@@ -448,7 +448,7 @@ export default function SEOPage() {
       </section>
 
       {/* Form / CTA Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
             <ContactForm />
