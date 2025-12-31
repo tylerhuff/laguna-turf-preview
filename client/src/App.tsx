@@ -51,7 +51,6 @@ function Router() {
         <Route path="/san-clemente" component={SanClementePage} />
         <Route path="/privacy-policy" component={PrivacyPolicyPage} />
         <Route path="/terms-of-service" component={TermsOfServicePage} />
-        <Route path="/sitemap" component={SitemapPage} />
         <Route path="/about-us" component={AboutPage} />
         
         {/* Industry Pages */}

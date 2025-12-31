@@ -139,7 +139,6 @@ export function Footer() {
               <li><Link href="/services/web-design" className="hover:text-[#FD9800]">Web Design</Link></li>
               <li><Link href="/services/search-engine-optimization" className="hover:text-[#FD9800]">Marketing</Link></li>
               <li><Link href="/resources" className="hover:text-[#FD9800]">Resources</Link></li>
-              <li><Link href="/sitemap" className="hover:text-[#FD9800]">Sitemap</Link></li>
             </ul>
           </div>
 
