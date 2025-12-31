@@ -34,6 +34,10 @@ export function WaveSection({
             {mobileBackgroundImage && (
               <source media="(max-width: 768px)" srcSet={mobileBackgroundImage} />
             )}
+            {/* Fallback to checking if a mobile version exists by convention if not explicitly provided */}
+            {!mobileBackgroundImage && backgroundImage && !backgroundImage.includes('-mobile') && (
+               <source media="(max-width: 768px)" srcSet={backgroundImage.replace(/(\.[^.]+)$/, '-mobile.webp')} />
+            )}
             <img 
               src={backgroundImage} 
               alt="Background" 
