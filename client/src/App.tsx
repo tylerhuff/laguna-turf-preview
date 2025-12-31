@@ -11,7 +11,7 @@ import ReactGA from "react-ga4";
 
 // Initialize Google Analytics with a placeholder ID
 // Users should replace this with their actual Measurement ID
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; 
+const GA_MEASUREMENT_ID = "G-1VS2JMB3H6"; 
 
 ReactGA.initialize(GA_MEASUREMENT_ID);
 
