@@ -382,12 +382,19 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <PortfolioItem 
+              title="Ascend Equities"
+              description="Specializing in real estate investment and asset management strategies for high-net-worth individuals."
+              image="/assets/images/AscendEquities.webp"
+              link="https://ascendequities.com/"
+              category="Real Estate Investment"
+            />
+            <PortfolioItem 
               title="Filger Manufacturing"
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
               image="/assets/images/Filger-Manufacturing.webp"
               mobileImage="/assets/images/Filger-Manufacturing-mobile.webp"
               link="https://filger.com/"
-              category="Professional Services"
+              category="Aerospace"
             />
             <PortfolioItem 
               title="West Coast Washers"
@@ -395,7 +402,15 @@ export default function HomePage() {
               image="/assets/images/WCW_mockup_transparent.webp"
               mobileImage="/assets/images/WCW_mockup_transparent-mobile.webp"
               link="https://westcoastwashersllc.com/"
-              category="Professional Services"
+              category="Exterior Cleaning"
+            />
+            <PortfolioItem 
+              title="Diamond Construction"
+              description="Established in 2013, specializes in waterproofing solutions and gypsum concrete services."
+              image="/assets/images/DiamondConstruction.webp"
+              mobileImage="/assets/images/DiamondConstruction-mobile.webp"
+              link="https://diamondconstructionandgypsum.com/"
+              category="Construction"
             />
             <PortfolioItem 
               title="TSA Group Ltd"
@@ -403,31 +418,14 @@ export default function HomePage() {
               image="/assets/images/TSA-Group-Limited.webp"
               mobileImage="/assets/images/TSA-Group-Limited-mobile.webp"
               link="https://tsagroupconsulting.com/"
-              category="Professional Services"
+              category="Consulting"
             />
             <PortfolioItem 
-              title="Luxury Tahoe Properties"
-              description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
-              image="/assets/images/LuxuryTahoeProperties.webp"
-              mobileImage="/assets/images/LuxuryTahoeProperties-mobile.webp"
-              link="https://luxurytahoeproperties.com/"
-              category="Professional Services"
-            />
-            <PortfolioItem 
-              title="Diamond Construction"
-              description="Specializes in waterproofing solutions and gypsum concrete services for contractors."
-              image="/assets/images/DiamondConstruction.webp"
-              mobileImage="/assets/images/DiamondConstruction-mobile.webp"
-              link="https://diamondconstructionandgypsum.com/"
-              category="Construction"
-            />
-            <PortfolioItem 
-              title="Fan Fusion Ventures"
-              description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
-              image="/assets/images/FanFusion.webp"
-              mobileImage="/assets/images/FanFusion-mobile.webp"
-              link="https://fanfusionventures.com/"
-              category="Professional Services"
+              title="Huff Painting Co"
+              description="With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting."
+              image="/assets/images/HuffPaintingCoMockup.png"
+              link="https://huffpainting.co/"
+              category="Commercial Painting"
             />
           </div>
         </div>
