@@ -72,7 +72,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
             initial="hidden" animate="visible" variants={fadeIn}
             className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >
-            Web Design & Marketing for <span className="text-[#FD9800]">{industryName}</span>
+            Web Design & Local SEO Marketing for <span className="text-[#FD9800]">{industryName}</span>
           </motion.h1>
           <motion.p 
             initial="hidden" animate="visible" variants={fadeIn}
@@ -88,7 +88,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-8">
             <h2 className="text-3xl font-bold font-heading text-gray-900">
-              Custom Web Design for {industryName}
+              Web Design and Local SEO Marketing for {industryName}
             </h2>
             <div className="text-lg text-gray-600 leading-relaxed space-y-6">
               <p>
