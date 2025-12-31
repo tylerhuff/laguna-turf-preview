@@ -74,6 +74,30 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   // Professional Services
   {
+    title: "Filger Manufacturing",
+    subtitle: "Aerospace",
+    description: "Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes.",
+    image: "/assets/images/Filger-Manufacturing.webp",
+    link: "https://filger.com/",
+    category: "Professional Services"
+  },
+  {
+    title: "Ascend Equities",
+    subtitle: "Real Estate Investment",
+    description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California.",
+    image: "/assets/images/AscendEquities.webp",
+    link: "https://ascendequities.com/",
+    category: "Professional Services"
+  },
+  {
+    title: "TSA Group Ltd",
+    subtitle: "Consulting",
+    description: "Transmission line siting and right-of-way consulting. Highlights current and past projects.",
+    image: "/assets/images/TSA-Group-Limited.webp",
+    link: "https://tsagroupconsulting.com/",
+    category: "Professional Services"
+  },
+  {
     title: "Case Whittemore, LMFT",
     subtitle: "Healthcare",
     description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges.",
@@ -90,35 +114,11 @@ const portfolioItems: PortfolioItem[] = [
     category: "Professional Services"
   },
   {
-    title: "Filger Manufacturing",
-    subtitle: "Aerospace",
-    description: "Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes.",
-    image: "/assets/images/Filger-Manufacturing.webp",
-    link: "https://filger.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "TSA Group Ltd",
-    subtitle: "Consulting",
-    description: "Transmission line siting and right-of-way consulting. Highlights current and past projects.",
-    image: "/assets/images/TSA-Group-Limited.webp",
-    link: "https://tsagroupconsulting.com/",
-    category: "Professional Services"
-  },
-  {
     title: "Luxury Tahoe Properties",
     subtitle: "Real Estate",
     description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
     image: "/assets/images/LuxuryTahoePropertiesMockup.png",
     link: "https://luxurytahoeproperties.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "Ascend Equities",
-    subtitle: "Real Estate Investment",
-    description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California.",
-    image: "/assets/images/AscendEquities.webp",
-    link: "https://ascendequities.com/",
     category: "Professional Services"
   },
 
