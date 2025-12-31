@@ -219,6 +219,7 @@ export default function PortfolioPage() {
         title="Our Portfolio - TwentyOne Solutions"
         description="View our web design work for contractors, trades, and professional service businesses."
         canonical="/portfolio"
+        image="/assets/images/portfolio-hero.webp"
         schema={portfolioSchema}
       />
       <Navigation />

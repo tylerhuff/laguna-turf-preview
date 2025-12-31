@@ -36,6 +36,7 @@ export default function AboutPage() {
         title="About TwentyOne Solutions - Web Design San Clemente"
         description="Web design & marketing agency for service businesses located in San Clemente, CA. Focused on getting you more calls."
         canonical="/about-us"
+        image="/assets/images/whitewater_sanclemente.webp"
         schema={aboutSchema}
       />
       <Navigation />

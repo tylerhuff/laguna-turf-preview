@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, BarChart3, Clock, Lock } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
@@ -29,13 +29,13 @@ export default function MaintenancePage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Website Maintenance & Hosting - TwentyOne Solutions</title>
-        <meta name="description" content="Secure hosting, daily backups, and ongoing maintenance to keep your business website fast and safe." />
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Website Maintenance & Hosting - TwentyOne Solutions"
+        description="Secure hosting, daily backups, and ongoing maintenance to keep your business website fast and safe."
+        canonical="/services/website-care"
+        image="/assets/images/bannertwentyone.webp"
+        schema={serviceSchema}
+      />
       <Navigation />
 
       {/* Hero Section */}

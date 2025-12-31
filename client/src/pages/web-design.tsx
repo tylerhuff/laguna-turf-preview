@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight, Zap, MousePointerClick, Search, MapPin } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
@@ -90,16 +90,16 @@ export default function WebDesignPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Web Design Services - TwentyOne Solutions</title>
-        <meta name="description" content="Professional web design for service businesses. Fast, mobile-friendly, and optimized for Google." />
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Web Design Services - TwentyOne Solutions"
+        description="Professional web design for service businesses. Fast, mobile-friendly, and optimized for Google."
+        canonical="/services/web-design"
+        image="/assets/images/web-design-hero.webp"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, faqSchema]
+        }}
+      />
       <Navigation />
 
       {/* Hero */}

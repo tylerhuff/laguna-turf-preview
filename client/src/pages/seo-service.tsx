@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { 
   Search, 
@@ -116,16 +116,16 @@ export default function SEOPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>SEO & Google Marketing - TwentyOne Solutions</title>
-        <meta name="description" content="Get found when customers search. Professional SEO services for local businesses." />
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(faqSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="SEO & Google Marketing - TwentyOne Solutions"
+        description="Get found when customers search. Professional SEO services for local businesses."
+        canonical="/services/search-engine-optimization"
+        image="/assets/images/seo-hero.webp"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [serviceSchema, faqSchema]
+        }}
+      />
       <Navigation />
 
       {/* Hero Section */}

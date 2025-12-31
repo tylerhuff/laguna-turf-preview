@@ -237,6 +237,7 @@ export default function HomePage() {
         title="Websites and Marketing for Service Businesses"
         description="We help service businesses look professional online and get found. Web design, SEO, and marketing for contractors, trades, and home builders."
         canonical="/"
+        image="/assets/images/bannertwentyone.webp"
         schema={{
           "@context": "https://schema.org",
           "@graph": [faqSchema, businessSchema]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { ExternalLink, CheckCircle2 } from 'lucide-react';
 import { Navigation, Footer } from '@/components/layout';
@@ -41,13 +41,12 @@ export default function IndustryPage({ industryName, heroImage, portfolioItem }:
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Web Design for {industryName} - TwentyOne Solutions</title>
-        <meta name="description" content={`Custom web design and marketing for ${industryName.toLowerCase()}. Get found online and book more jobs.`} />
-        <script type="application/ld+json">
-          {JSON.stringify(serviceSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title={`Web Design for ${industryName} - TwentyOne Solutions`}
+        description={`Custom web design and marketing for ${industryName.toLowerCase()}. Get found online and book more jobs.`}
+        image={heroImage}
+        schema={serviceSchema}
+      />
       <Navigation />
 
       {/* Hero */}

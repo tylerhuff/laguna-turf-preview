@@ -10,6 +10,7 @@ export default function ServicesHub() {
         title="Our Services | TwentyOne Solutions"
         description="Comprehensive web design and marketing services for service businesses."
         canonical="/services"
+        image="/assets/images/bannertwentyone.webp"
       />
       <Navigation />
       <WaveSection className="pt-32 pb-20" disableTopWave overlayOpacity={0.8}>

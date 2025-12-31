@@ -121,6 +121,7 @@ export default function SanClementePage() {
         title="San Clemente Web Design | TwentyOne Solutions"
         description="San Clemente web design and SEO agency. We help local service businesses get more customers online."
         canonical="/san-clemente"
+        image="/assets/images/san-clemente-hero.webp"
         schema={{
           "@context": "https://schema.org",
           "@graph": [localBusinessSchema, faqSchema]

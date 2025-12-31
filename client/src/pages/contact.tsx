@@ -88,6 +88,7 @@ export default function ContactPage() {
         title="Contact Us | TwentyOne Solutions"
         description="Contact TwentyOne Solutions for web design and marketing services in San Clemente, CA. Call us at +1 (626) 524-1059."
         canonical="/contact-us"
+        image="/assets/images/whitewater_sanclemente.webp"
         schema={contactSchema}
       />
       <Navigation />
