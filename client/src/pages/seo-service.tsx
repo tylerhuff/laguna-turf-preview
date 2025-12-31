@@ -22,7 +22,6 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
 import { LeadFormModal } from '@/components/LeadFormModal';
-import seoHero from '@assets/stock_images/seo_analytics_dashbo_b7df1b3f.jpg';
 import {
   Accordion,
   AccordionContent,
@@ -132,7 +131,7 @@ export default function SEOPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage={seoHero}
+        backgroundImage="/assets/images/seo-hero.webp"
         overlayOpacity={0.75}
         bottomWaveColor="#ffffff"
       >
