@@ -324,10 +324,8 @@ export default function SanClementePage() {
           <div className="text-center mb-16">
             <span className="uppercase text-[#FD9800] font-bold tracking-wider text-sm mb-2 block">Portfolio</span>
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Our Local Work</h2>
-            <Link href="/portfolio">
-              <a className="text-[#FD9800] font-semibold hover:underline inline-flex items-center gap-1">
-                See all work <ArrowRight className="w-4 h-4" />
-              </a>
+            <Link href="/portfolio" className="text-[#FD9800] font-semibold hover:underline inline-flex items-center gap-1">
+              See all work <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 

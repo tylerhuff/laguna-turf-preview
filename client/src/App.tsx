@@ -149,6 +149,7 @@ function Router() {
         <Route component={NotFound} />
       </Switch>
     </Suspense>
+    </WouterRouter>
   );
 }
 

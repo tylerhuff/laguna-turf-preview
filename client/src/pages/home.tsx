@@ -68,10 +68,8 @@ const PortfolioItem = ({ title, description, image, mobileImage, link, category 
     </div>
     <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{title}</h3>
     <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
-    <Link href={link}>
-      <a className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
-        Visit Website <ExternalLink className="w-4 h-4 ml-1" />
-      </a>
+    <Link href={link} className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
+      Visit Website <ExternalLink className="w-4 h-4 ml-1" />
     </Link>
   </m.div>
 );
@@ -96,10 +94,8 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
           </li>
         ))}
       </ul>
-      <Link href={link}>
-        <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
-          Learn More
-        </a>
+      <Link href={link} className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
+        Learn More
       </Link>
     </CardContent>
   </Card>
@@ -284,10 +280,8 @@ export default function HomePage() {
                   </Button>
                 }
               />
-            <Link href="/portfolio">
-              <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-                View Our Work
-              </a>
+            <Link href="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+              View Our Work
             </Link>
             </m.div>
           </div>
