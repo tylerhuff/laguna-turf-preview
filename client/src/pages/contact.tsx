@@ -29,15 +29,6 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    if (FORMSPREE_FORM_ID === "YOUR_FORMSPREE_ID_HERE") {
-      toast.error("Formspree ID missing", {
-        description: "Please update the FORMSPREE_FORM_ID in contact.tsx with your actual ID.",
-        duration: 5000,
-      });
-      setIsSubmitting(false);
-      return;
-    }
-
     const form = e.currentTarget;
     const formData = new FormData(form);
 
