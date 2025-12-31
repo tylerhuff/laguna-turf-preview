@@ -92,18 +92,18 @@ function Router() {
               heroImage="/assets/images/whitewater_sanclemente.webp"
               portfolioItems={[
                 {
-                  title: "Luxury Tahoe Properties",
-                  subtitle: "Real Estate",
-                  description: "High-end real estate and home showcase website. Features stunning imagery, property listings, and an elegant design.",
-                  image: "/assets/images/LuxuryTahoePropertiesMockup.png",
-                  link: "https://luxurytahoeproperties.com/"
+                  title: "Smith & Eastwood Construction",
+                  subtitle: "General Contractors",
+                  description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
+                  image: "/assets/images/SmithandEastWoodConstruction.webp",
+                  link: "https://smitheastwoodbuild.com/"
                 },
                 {
-                  title: "Ascend Equities",
-                  subtitle: "Real Estate Investment",
-                  description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate.",
-                  image: "/assets/images/AscendEquities.webp",
-                  link: "https://ascendequities.com/"
+                  title: "Diamond Construction",
+                  subtitle: "Construction",
+                  description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
+                  image: "/assets/images/DiamondConstructionMockup.png",
+                  link: "https://diamondconstructionandgypsum.com/"
                 }
               ]}
             />
