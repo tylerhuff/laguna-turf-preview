@@ -18,6 +18,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { toast } from 'sonner';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Navigation, Footer } from '@/components/layout';
 
@@ -227,6 +228,15 @@ export default function HomePage() {
       "opens": "09:00",
       "closes": "17:00"
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast.success("Request received!", {
+      description: "We'll start building your preview and email you shortly.",
+      duration: 5000,
+    });
+    e.currentTarget.reset();
   };
 
   return (
@@ -642,7 +652,7 @@ export default function HomePage() {
               
               <Card className="border-0 shadow-2xl bg-white overflow-hidden">
                 <CardContent className="p-8">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="contact-name">Full Name *</Label>

@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { WaveSection } from '@/components/ui/wave-section';
+import { toast } from 'sonner';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -26,6 +27,15 @@ export default function AboutPage() {
       "url": "https://twentyonesolutions.com/about-us",
       "logo": "/assets/images/logo.png"
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast.success("Request received!", {
+      description: "We'll start building your preview and email you shortly.",
+      duration: 5000,
+    });
+    e.currentTarget.reset();
   };
 
   return (
@@ -255,7 +265,7 @@ export default function AboutPage() {
               
               <Card className="border-0 shadow-2xl bg-white overflow-hidden">
                 <CardContent className="p-8">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="contact-name">Full Name *</Label>

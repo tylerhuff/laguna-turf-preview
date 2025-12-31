@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { toast } from 'sonner';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -212,6 +213,15 @@ export default function PortfolioPage() {
 
   const categories: Category[] = ['Professional Services', 'Construction', 'Painters', 'Trades'];
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast.success("Request received!", {
+      description: "We'll start building your preview and email you shortly.",
+      duration: 5000,
+    });
+    e.currentTarget.reset();
+  };
+
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO 
@@ -294,7 +304,7 @@ export default function PortfolioPage() {
               
               <Card className="border-0 shadow-2xl bg-white overflow-hidden">
                 <CardContent className="p-8">
-                  <form className="space-y-6">
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="contact-name">Full Name *</Label>
