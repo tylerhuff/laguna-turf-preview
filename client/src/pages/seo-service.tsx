@@ -367,8 +367,8 @@ export default function SEOPage() {
       {/* AI Search Section */}
       <section className="py-16 bg-[#fdfaf5] border-t border-gray-100">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1">
+          <div className="flex flex-col md:flex-row items-center gap-16">
+            <div className="w-full md:w-5/12">
                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
                   <Zap className="w-4 h-4" />
                   <span>AI Search Ready</span>
@@ -393,11 +393,11 @@ export default function SEOPage() {
               </ul>
             </div>
             
-            <div className="flex-1 relative w-full max-w-md">
+            <div className="w-full md:w-7/12 relative">
               <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                 <img 
-                  src="/assets/images/ai-search-features.avif" 
-                  alt="AI Search Optimization" 
+                  src="/assets/images/google-ai-overview-result.png" 
+                  alt="Google AI Overview Result showing client ranking" 
                   className="w-full h-auto"
                 />
               </div>
