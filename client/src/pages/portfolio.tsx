@@ -277,28 +277,21 @@ export default function PortfolioPage() {
         ))}
       </div>
 
-      {/* Testimonial Highlight */}
+      {/* Map Section */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <Card className="border-0 shadow-xl bg-[#fdfaf5] p-8 md:p-12 relative">
-            <div className="flex text-[#FD9800] mb-6 text-xl">★★★★★</div>
-            <blockquote className="text-xl md:text-2xl text-gray-700 italic font-light leading-relaxed mb-8">
-              "I wholeheartedly recommend TwentyOne for their exceptional talent and professionalism. They consistently deliver outstanding, high-quality products with creativity and precision."
-            </blockquote>
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-md">
-                <img 
-                  src="/assets/images/DrKennedy-thumb.jpg" 
-                  alt="John M. Kennedy, MD" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 text-lg">John M. Kennedy, MD</h4>
-                <p className="text-gray-600">Founder & Creator, B.R.E.A.T.H.E</p>
-              </div>
-            </div>
-          </Card>
+        <div className="container mx-auto px-6">
+          <div className="h-[400px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100 grayscale hover:grayscale-0 transition-all duration-500">
+            <iframe 
+              src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+              width="100%" 
+              height="100%" 
+              style={{ border: 0, filter: 'sepia(100%) hue-rotate(330deg) saturate(150%)' }}
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="TwentyOne Solutions Location"
+            ></iframe>
+          </div>
         </div>
       </section>
 
