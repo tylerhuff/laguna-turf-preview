@@ -95,7 +95,7 @@ export function Navigation() {
                   </a>
                 </Link>
               ))}
-              <div className="flex flex-col gap-3 mt-4" onClick={() => setIsOpen(false)}>
+              <div className="flex flex-col gap-3 mt-4">
                 <LeadFormModal 
                   title="Schedule a Strategy Call"
                   description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
