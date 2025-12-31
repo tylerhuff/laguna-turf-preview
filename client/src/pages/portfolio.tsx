@@ -169,7 +169,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     title: "Ceiling Pro",
-    subtitle: "Cleaning & Restoration",
+    subtitle: "Ceiling Installation",
     description: "Trusted Ceiling Experts in the Bay Area. Providing exceptional ceiling installations for both commercial and residential spaces with quality you can rely on.",
     image: "/assets/images/CeilingProMockup.png",
     link: "https://ceilingprosf.com/",
