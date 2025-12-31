@@ -16,6 +16,7 @@ const WebDesignPage = lazy(() => import("@/pages/web-design"));
 const PortfolioPage = lazy(() => import("@/pages/portfolio"));
 const ContactPage = lazy(() => import("@/pages/contact"));
 const SEOPage = lazy(() => import("@/pages/seo-service"));
+const MaintenancePage = lazy(() => import("@/pages/maintenance"));
 const ServicesHub = lazy(() => import("@/pages/services-hub"));
 const AdminDashboard = lazy(() => import("@/pages/admin/Dashboard"));
 const AdminPages = lazy(() => import("@/pages/admin/PageList"));
@@ -121,7 +122,9 @@ function Router() {
         <Route path="/services/search-engine-optimization" component={SEOPage} />
         <Route path="/services/search-engine-optimiziation" component={SEOPage} />
         
-        <Route path="/services/managed-wordpress-hosting" component={WebDesignPage} />
+        <Route path="/services/managed-wordpress-hosting" component={MaintenancePage} />
+        <Route path="/services/maintenance" component={MaintenancePage} />
+        
         <Route path="/services/google-ads" component={SEOPage} />
         <Route path="/services/online-listings-management" component={SEOPage} />
         <Route path="/services/what-is-google-business-profile" component={SEOPage} />
