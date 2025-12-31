@@ -245,8 +245,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* CTA */}
       <section className="py-24 bg-[#fdfaf5]">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">Ready to Get Started?</h2>
+          <p className="text-xl text-gray-600 mb-8">See what your custom website could look like in 24 hours.</p>
+          <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
+            Build Site Preview
+          </Button>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="h-[400px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100 grayscale hover:grayscale-0 transition-all duration-500">
             <iframe 
@@ -260,17 +271,6 @@ export default function AboutPage() {
               title="TwentyOne Solutions Location"
             ></iframe>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-gray-600 mb-8">See what your custom website could look like in 24 hours.</p>
-          <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
-            Build Site Preview
-          </Button>
         </div>
       </section>
 
