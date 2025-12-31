@@ -95,14 +95,24 @@ export function Navigation() {
                   </a>
                 </Link>
               ))}
-              <div onClick={() => setIsOpen(false)}>
+              <div className="flex flex-col gap-3 mt-4" onClick={() => setIsOpen(false)}>
                 <LeadFormModal 
                   title="Schedule a Strategy Call"
                   description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
                   type="strategy"
                   trigger={
-                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white mt-4">
+                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
                       Strategy Call
+                    </Button>
+                  }
+                />
+                <LeadFormModal 
+                  title="Get Your Free Site Preview"
+                  description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
+                  type="preview"
+                  trigger={
+                    <Button variant="outline" className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]">
+                      Free Site Preview
                     </Button>
                   }
                 />
