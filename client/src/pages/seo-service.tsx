@@ -311,9 +311,9 @@ export default function SEOPage() {
                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
                   <Zap className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">Site Optimization</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">AI Search Ready</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  From titles to meta descriptions and speed, we make sure your site is easy for Google to find and rank.
+                  We structure your data so you show up in Google AI Overviews and ChatGPT results, not just traditional search.
                 </p>
               </CardContent>
             </Card>
@@ -330,7 +330,9 @@ export default function SEOPage() {
               {[
                 { q: "How long does SEO take to work?", a: "SEO is a long-term strategy. Typically, you start seeing movement in 3-4 months, with significant results in 6-12 months. It builds momentum over time." },
                 { q: "Do I really need SEO if I have a website?", a: "Yes. A website without SEO is like a billboard in the desert. SEO puts your business in front of people who are actively looking for your services." },
-                { q: "What is the difference between SEO and Google Ads?", a: "Google Ads (PPC) stops working the moment you stop paying. SEO builds organic authority that lasts, providing a better long-term ROI." }
+                { q: "What is the difference between SEO and Google Ads?", a: "Google Ads (PPC) stops working the moment you stop paying. SEO builds organic authority that lasts, providing a better long-term ROI." },
+                { q: "Will I show up in Google AI Overviews?", a: "We optimize your content with direct answers and structured data specifically to increase your chances of appearing in AI-generated search summaries." },
+                { q: "Can you help me rank in other cities?", a: "Absolutely. We can create location-specific pages and strategies to target customers in neighboring towns like Dana Point, San Juan Capistrano, and Laguna Niguel." }
               ].map((faq, i) => (
                 <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
                   <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
@@ -344,7 +346,9 @@ export default function SEOPage() {
               {[
                 { q: "How do you track results?", a: "We provide monthly reports showing your keyword rankings, traffic growth, and most importantly, the calls and leads generated from your website." },
                 { q: "Do you guarantee #1 rankings?", a: "No ethical SEO agency can guarantee a #1 spot because Google's algorithm is always changing. However, we have a proven track record of getting our clients to the top of the map pack and organic results." },
-                { q: "Is Local SEO different?", a: "Yes. Local SEO focuses on ranking for 'near me' searches and Google Maps. It requires specific strategies like citation building and Google Business Profile optimization." }
+                { q: "Is Local SEO different?", a: "Yes. Local SEO focuses on ranking for 'near me' searches and Google Maps. It requires specific strategies like citation building and Google Business Profile optimization." },
+                { q: "Do I need to blog?", a: "Regular content is fuel for SEO. We handle the blogging for you, creating helpful articles that answer customer questions and signal expertise to Google." },
+                { q: "What happens if I stop SEO?", a: "SEO gains are durable but not permanent. If you stop, you won't disappear overnight, but competitors will eventually overtake you as your content and signals age." }
               ].map((faq, i) => (
                 <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
                   <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>

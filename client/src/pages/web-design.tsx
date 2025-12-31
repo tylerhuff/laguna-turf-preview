@@ -199,7 +199,9 @@ export default function WebDesignPage() {
               {[
                 { q: "What should my website include?", a: "A website needs to clearly show what you do, where you do it, and make it easy for a potential customer to reach out. Typically, that includes a home, about, services, portfolio, and contact page with clear call to actions." },
                 { q: "What about marketing?", a: "We do Google marketing, or Search Engine Optimization (SEO). SEO is the best long term investment you can make for your business." },
-                { q: "Do you own the domain or me?", a: "You own the domain (and assets). We don’t take hostages." }
+                { q: "Do you own the domain or me?", a: "You own the domain (and assets). We don’t take hostages." },
+                { q: "Do you write the text?", a: "Yes! We interview you to learn about your business, then our professional copywriters craft compelling text that sells your services and ranks on Google." },
+                { q: "Can I update the site myself?", a: "Absolutely. We build on user-friendly platforms and provide training so you can easily update photos, projects, and text whenever you want." }
               ].map((faq, i) => (
                 <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
                   <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
@@ -213,7 +215,9 @@ export default function WebDesignPage() {
               {[
                 { q: "What’s the turnaround time for a website?", a: "We can deliver a website preview in 24 hours! A 3-4 page website can deliver within 7 days." },
                 { q: "How much does a website cost?", a: "Business websites are a one time fee with a 30% deposit and the rest due upon website completion. Website hosting and domain is $39/month." },
-                { q: "Will my website be mobile friendly?", a: "Of course. Every site we build works perfectly on phones, tablets, and desktops." }
+                { q: "Will my website be mobile friendly?", a: "Of course. Every site we build works perfectly on phones, tablets, and desktops." },
+                { q: "What platform do you use?", a: "We use modern, fast, and secure web technologies (like React and Next.js) for high performance, but we can also work with WordPress if you prefer." },
+                { q: "Do you use templates?", a: "We start with a proven framework to keep costs low and speed high, but we customize every pixel to match your brand, colors, and specific business needs." }
               ].map((faq, i) => (
                 <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
                   <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
