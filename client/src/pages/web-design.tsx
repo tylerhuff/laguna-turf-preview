@@ -176,19 +176,15 @@ export default function WebDesignPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: "01", title: "Site Preview First", desc: "Get a preview before committing." },
-              { step: "02", title: "Onboarding", desc: "We just need a single onboarding form from you and that’s it." },
-              { step: "03", title: "Launch & Grow", desc: "Once you’re thrilled with the site, we launch it." }
+              { num: "01", title: "Quick launch", desc: "Clear steps, quick turnaround, and you are live without weeks of back and forth." },
+              { num: "02", title: "Proven Results", desc: "Built to get you more calls. Clear message, strong trust, and a simple path to contact you." },
+              { num: "03", title: "Future Proof", desc: "We stay on top of the trends so you never have to worry about falling behind." }
             ].map((item, i) => (
-              <Card key={i} className="border-0 shadow-lg bg-[#fdfaf5] relative overflow-hidden">
-                <CardContent className="p-8">
-                  <span className="text-6xl font-bold text-gray-100 absolute top-4 right-4 z-0">{item.step}</span>
-                  <div className="relative z-10">
-                    <h3 className="text-xl font-bold font-heading text-gray-900 mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.desc}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={i} className="bg-[#fdfaf5] p-8 rounded-xl shadow-lg border-t-4 border-[#FD9800] relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                <span className="text-6xl font-bold text-[#FD9800]/20 absolute top-4 right-4">{item.num}</span>
+                <h3 className="text-xl font-bold font-heading text-gray-900 mb-2 relative z-10">{item.title}</h3>
+                <p className="text-gray-600 relative z-10">{item.desc}</p>
+              </div>
             ))}
           </div>
           
