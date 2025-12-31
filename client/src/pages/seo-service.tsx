@@ -117,8 +117,8 @@ export default function SEOPage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO 
-        title="SEO & Google Marketing - TwentyOne Solutions"
-        description="Get found when customers search. Professional SEO services for local businesses."
+        title="Local SEO Services San Clemente | Google Marketing for Business"
+        description="Get found when customers search. Professional Local SEO services for businesses in San Clemente. Rank higher and get more leads."
         canonical="/services/search-engine-optimization"
         image="/assets/images/seo-hero.webp"
         schema={{

@@ -118,8 +118,8 @@ export default function SanClementePage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO 
-        title="San Clemente Web Design | TwentyOne Solutions"
-        description="San Clemente web design and SEO agency. We help local service businesses get more customers online."
+        title="San Clemente Web Design Agency & Local SEO | TwentyOne Solutions"
+        description="Premier San Clemente web design and SEO agency. We help local service businesses build trust and get more customers online."
         canonical="/san-clemente"
         image="/assets/images/san-clemente-hero.webp"
         schema={{

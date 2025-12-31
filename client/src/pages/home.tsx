@@ -234,7 +234,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO  
-        title="Websites and Marketing for Service Businesses"
+        title="Web Design for Service Businesses | San Clemente Web Agency"
         description="We help service businesses look professional online and get found. Web design, SEO, and marketing for contractors, trades, and home builders."
         canonical="/"
         image="/assets/images/bannertwentyone.webp"

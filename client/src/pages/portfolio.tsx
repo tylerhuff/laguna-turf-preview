@@ -216,8 +216,8 @@ export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO 
-        title="Our Portfolio - TwentyOne Solutions"
-        description="View our web design work for contractors, trades, and professional service businesses."
+        title="Web Design Portfolio | Contractor & Service Business Websites"
+        description="View our recent web design work for contractors, trades, home builders, and professional service businesses in San Clemente and beyond."
         canonical="/portfolio"
         image="/assets/images/portfolio-hero.webp"
         schema={portfolioSchema}

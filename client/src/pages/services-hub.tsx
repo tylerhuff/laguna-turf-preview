@@ -7,8 +7,8 @@ export default function ServicesHub() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] font-sans text-gray-800">
       <SEO 
-        title="Our Services | TwentyOne Solutions"
-        description="Comprehensive web design and marketing services for service businesses."
+        title="Web Design & Marketing Services | TwentyOne Solutions"
+        description="Comprehensive web design, SEO, and maintenance services for service-based businesses. Everything you need to grow online."
         canonical="/services"
         image="/assets/images/bannertwentyone.webp"
       />

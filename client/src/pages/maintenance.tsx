@@ -30,8 +30,8 @@ export default function MaintenancePage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO 
-        title="Website Maintenance & Hosting - TwentyOne Solutions"
-        description="Secure hosting, daily backups, and ongoing maintenance to keep your business website fast and safe."
+        title="Website Maintenance & Managed Hosting Plans | TwentyOne Solutions"
+        description="Secure hosting, daily backups, and ongoing maintenance. We keep your business website fast, safe, and up-to-date so you don't have to."
         canonical="/services/website-care"
         image="/assets/images/bannertwentyone.webp"
         schema={serviceSchema}

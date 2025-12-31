@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { Link } from "wouter";
 import { motion } from 'framer-motion';
 import { ContactForm } from '@/components/ContactForm';
@@ -95,13 +95,13 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <Helmet>
-        <title>Resources & Blog - TwentyOne Solutions</title>
-        <meta name="description" content="Insights and tips for growing your service business online." />
-        <script type="application/ld+json">
-          {JSON.stringify(blogSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="Digital Marketing Resources & Guides | TwentyOne Solutions"
+        description="Actionable tips, strategies, and guides to help your service business grow online. Learn about SEO, web design, and Google Business Profile."
+        canonical="/resources"
+        image="/assets/images/portfolio-hero.webp"
+        schema={blogSchema}
+      />
       <Navigation />
 
       <WaveSection 

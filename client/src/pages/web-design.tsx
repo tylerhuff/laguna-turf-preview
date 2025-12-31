@@ -91,8 +91,8 @@ export default function WebDesignPage() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
       <SEO 
-        title="Web Design Services - TwentyOne Solutions"
-        description="Professional web design for service businesses. Fast, mobile-friendly, and optimized for Google."
+        title="Custom Web Design for Service Businesses | TwentyOne Solutions"
+        description="Professional web design for service businesses in San Clemente and beyond. Fast, mobile-friendly, and optimized to get you more calls."
         canonical="/services/web-design"
         image="/assets/images/web-design-hero.webp"
         schema={{
