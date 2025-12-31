@@ -127,7 +127,7 @@ export function Footer() {
               <span className="text-gray-600 text-lg">solutions</span>
             </Link>
             <p className="text-gray-500 text-sm">
-              Websites and Marketing for Service Businesses. <Link href="/san-clemente" className="hover:text-[#FD9800] underline">Based in San Clemente, CA</Link>.
+              Websites and Marketing for Service Businesses. Based in <Link href="/san-clemente" className="text-[#FD9800] font-medium hover:text-[#e08600]">San Clemente, CA</Link>.
             </p>
           </div>
           
