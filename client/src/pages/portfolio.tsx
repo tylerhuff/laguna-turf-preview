@@ -119,7 +119,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Ascend Equities",
     subtitle: "Real Estate Investment",
-    description: "Specializing in real estate investment and asset management strategies for high-net-worth individuals.",
+    description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California.",
     image: "/assets/images/AscendEquities.webp",
     link: "https://ascendequities.com/",
     category: "Professional Services"
@@ -165,7 +165,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "West Coast Washers",
     subtitle: "Exterior Cleaning",
-    description: "Professional exterior cleaning for homes and businesses in Southern California featuring a modern site.",
+    description: "Specializes in commercial building exterior cleaning and pressure washing services across Southern California.",
     image: "/assets/images/WCW_mockup_transparent.webp",
     link: "https://westcoastwashersllc.com/",
     category: "Trades"

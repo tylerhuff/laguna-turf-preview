@@ -350,7 +350,7 @@ export default function SanClementePage() {
               {
                 title: "Ascend Equities",
                 subtitle: "Real Estate",
-                description: "Ascend Equities has a sharp, professional online presence that reflects their focus on quality properties and long term value.",
+                description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California.",
                 image: "/assets/images/AscendEquities.webp",
                 link: "https://ascendequities.com/"
               }

@@ -383,7 +383,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <PortfolioItem 
               title="Ascend Equities"
-              description="Specializing in real estate investment and asset management strategies for high-net-worth individuals."
+              description="Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California."
               image="/assets/images/AscendEquities.webp"
               link="https://ascendequities.com/"
               category="Real Estate Investment"
@@ -398,7 +398,7 @@ export default function HomePage() {
             />
             <PortfolioItem 
               title="West Coast Washers"
-              description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
+              description="Specializes in commercial building exterior cleaning and pressure washing services across Southern California."
               image="/assets/images/WCW_mockup_transparent.webp"
               mobileImage="/assets/images/WCW_mockup_transparent-mobile.webp"
               link="https://westcoastwashersllc.com/"

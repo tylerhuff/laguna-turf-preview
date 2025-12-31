@@ -205,7 +205,7 @@ export default function AboutPage() {
               {
                 title: "West Coast Washers",
                 subtitle: "Cleaning Services",
-                description: "Professional exterior cleaning for homes and businesses in Southern California featuring a modern site.",
+                description: "Specializes in commercial building exterior cleaning and pressure washing services across Southern California.",
                 image: "/assets/images/WCW_mockup_transparent.webp",
                 link: "https://westcoastwashersllc.com/"
               }
