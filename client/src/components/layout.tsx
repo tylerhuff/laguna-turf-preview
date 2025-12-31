@@ -21,12 +21,14 @@ export function Navigation() {
   return (
     <>
       <div className="bg-[#FD9800] text-white text-xs font-medium py-2.5">
-        <div className="container mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div className="container mx-auto px-6 flex flex-row justify-between items-center">
+          <span className="opacity-90 tracking-wide sm:hidden font-bold">Get a Website Today</span>
           <span className="opacity-90 tracking-wide hidden sm:inline">Get a Professional Website in 24 Hours</span>
-          <div className="flex items-center gap-6 justify-center w-full sm:w-auto">
-             <a href="mailto:contact@twentyonesolutions.com" className="hover:opacity-80 transition-opacity flex items-center gap-1.5">
+          
+          <div className="flex items-center gap-6">
+             <a href="mailto:contact@twentyonesolutions.com" className="hover:opacity-80 transition-opacity hidden sm:flex items-center gap-1.5">
                <Mail className="w-3.5 h-3.5" />
-               <span className="hidden sm:inline">contact@twentyonesolutions.com</span>
+               <span>contact@twentyonesolutions.com</span>
              </a>
              <div className="w-px h-3 bg-white/20 hidden sm:block"></div>
              <a href="tel:+16265241059" className="hover:opacity-80 transition-opacity flex items-center gap-1.5 font-semibold">
