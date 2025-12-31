@@ -8,6 +8,7 @@ import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ceilingProImg from '@assets/generated_images/website_mockup_for_ceiling_pro.png';
 import sierraElectricImg from '@assets/generated_images/website_mockup_for_sierra_precision_electric.png';
+import cleaningSolutionImg from '@assets/generated_images/website_mockup_for_cleaning_solution_building_corp.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -60,7 +61,7 @@ const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioC
 
 import { WaveSection } from '@/components/ui/wave-section';
 
-type Category = 'Professional Services' | 'Construction' | 'Painters' | 'Contractors';
+type Category = 'Professional Services' | 'Construction' | 'Painters' | 'Trades';
 
 interface PortfolioItem {
   title: string;
@@ -150,14 +151,14 @@ const portfolioItems: PortfolioItem[] = [
     category: "Painters"
   },
 
-  // Contractors
+  // Trades
   {
     title: "West Coast Washers",
     subtitle: "Exterior Cleaning",
     description: "Professional exterior cleaning for homes and businesses in Southern California featuring a modern site.",
     image: "/assets/images/WCW_mockup_transparent.webp",
     link: "#",
-    category: "Contractors"
+    category: "Trades"
   },
   {
     title: "Ceiling Pro",
@@ -165,7 +166,7 @@ const portfolioItems: PortfolioItem[] = [
     description: "Professional ceiling cleaning and restoration services for commercial and residential properties.",
     image: ceilingProImg,
     link: "https://ceilingprosf.com/",
-    category: "Contractors"
+    category: "Trades"
   },
   {
     title: "Sierra Precision Electric",
@@ -173,7 +174,15 @@ const portfolioItems: PortfolioItem[] = [
     description: "Expert electrical services for the Truckee and Tahoe region, specializing in residential and commercial projects.",
     image: sierraElectricImg,
     link: "https://truckeetahoeelectrical.com/",
-    category: "Contractors"
+    category: "Trades"
+  },
+  {
+    title: "Cleaning Solution Building Corp",
+    subtitle: "Commercial Cleaning",
+    description: "Commercial Cleaning Services in Long Island, Nassau, & Suffolk. Delivering quality cleaning solutions since 2017.",
+    image: cleaningSolutionImg,
+    link: "https://cleaningsolutionbuildingcorp.com/",
+    category: "Trades"
   }
 ];
 
@@ -194,7 +203,7 @@ export default function PortfolioPage() {
     }
   };
 
-  const categories: Category[] = ['Professional Services', 'Construction', 'Painters', 'Contractors'];
+  const categories: Category[] = ['Professional Services', 'Construction', 'Painters', 'Trades'];
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
