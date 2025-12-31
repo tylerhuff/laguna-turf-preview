@@ -42,11 +42,12 @@ interface PortfolioItemProps {
   image: string;
   link: string;
   logoAlt?: string;
+  category?: string;
 }
 
-const PortfolioItem = ({ title, description, image, link }: PortfolioItemProps) => (
+const PortfolioItem = ({ title, description, image, link, category }: PortfolioItemProps) => (
   <motion.div variants={fadeIn} className="group cursor-pointer">
-    <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1">
+    <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1 relative">
       <AspectRatio ratio={16/9}>
         <img 
           src={image} 
@@ -55,6 +56,11 @@ const PortfolioItem = ({ title, description, image, link }: PortfolioItemProps) 
           loading="lazy"
         />
       </AspectRatio>
+      {category && (
+        <div className="absolute top-3 left-3">
+          <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{category}</span>
+        </div>
+      )}
     </div>
     <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{title}</h3>
     <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
@@ -375,36 +381,42 @@ export default function HomePage() {
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
               image="/assets/images/Filger-Manufacturing.webp"
               link="#"
+              category="Manufacturing"
             />
             <PortfolioItem 
               title="West Coast Washers"
               description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
               image="/assets/images/WCW_mockup_transparent.webp"
               link="#"
+              category="Cleaning Services"
             />
             <PortfolioItem 
               title="TSA Group Ltd"
               description="Transmission line siting and right-of-way consulting. Highlights current and past projects."
               image="/assets/images/TSA-Group-Limited.webp"
               link="#"
+              category="Consulting"
             />
             <PortfolioItem 
               title="Luxury Tahoe Properties"
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
               image="/assets/images/LuxuryTahoeProperties.webp"
               link="#"
+              category="Real Estate"
             />
             <PortfolioItem 
               title="Diamond Construction"
               description="Specializes in waterproofing solutions and gypsum concrete services for contractors."
               image="/assets/images/DiamondConstruction.webp"
               link="#"
+              category="Construction"
             />
             <PortfolioItem 
               title="Fan Fusion Ventures"
               description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
               image="/assets/images/FanFusion.webp"
               link="#"
+              category="Entertainment"
             />
           </div>
         </div>
