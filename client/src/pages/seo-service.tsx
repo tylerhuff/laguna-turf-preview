@@ -320,6 +320,43 @@ export default function SEOPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 bg-[#fdfaf5]">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold font-heading text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "How long does SEO take to work?", a: "SEO is a long-term strategy. Typically, you start seeing movement in 3-4 months, with significant results in 6-12 months. It builds momentum over time." },
+                { q: "Do I really need SEO if I have a website?", a: "Yes. A website without SEO is like a billboard in the desert. SEO puts your business in front of people who are actively looking for your services." },
+                { q: "What is the difference between SEO and Google Ads?", a: "Google Ads (PPC) stops working the moment you stop paying. SEO builds organic authority that lasts, providing a better long-term ROI." }
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {[
+                { q: "How do you track results?", a: "We provide monthly reports showing your keyword rankings, traffic growth, and most importantly, the calls and leads generated from your website." },
+                { q: "Do you guarantee #1 rankings?", a: "No ethical SEO agency can guarantee a #1 spot because Google's algorithm is always changing. However, we have a proven track record of getting our clients to the top of the map pack and organic results." },
+                { q: "Is Local SEO different?", a: "Yes. Local SEO focuses on ranking for 'near me' searches and Google Maps. It requires specific strategies like citation building and Google Business Profile optimization." }
+              ].map((faq, i) => (
+                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
+                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
+                    {faq.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* Form / CTA Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -382,43 +419,6 @@ export default function SEOPage() {
                 ></iframe>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl font-bold font-heading text-gray-900 text-center mb-12">Frequently Asked Questions</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {[
-                { q: "How long does SEO take to work?", a: "SEO is a long-term strategy. Typically, you start seeing movement in 3-4 months, with significant results in 6-12 months. It builds momentum over time." },
-                { q: "Do I really need SEO if I have a website?", a: "Yes. A website without SEO is like a billboard in the desert. SEO puts your business in front of people who are actively looking for your services." },
-                { q: "What is the difference between SEO and Google Ads?", a: "Google Ads (PPC) stops working the moment you stop paying. SEO builds organic authority that lasts, providing a better long-term ROI." }
-              ].map((faq, i) => (
-                <AccordionItem key={i} value={`item-left-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
-                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
-                    {faq.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-            <Accordion type="single" collapsible className="w-full space-y-4">
-              {[
-                { q: "How do you track results?", a: "We provide monthly reports showing your keyword rankings, traffic growth, and most importantly, the calls and leads generated from your website." },
-                { q: "Do you guarantee #1 rankings?", a: "No ethical SEO agency can guarantee a #1 spot because Google's algorithm is always changing. However, we have a proven track record of getting our clients to the top of the map pack and organic results." },
-                { q: "Is Local SEO different?", a: "Yes. Local SEO focuses on ranking for 'near me' searches and Google Maps. It requires specific strategies like citation building and Google Business Profile optimization." }
-              ].map((faq, i) => (
-                <AccordionItem key={i} value={`item-right-${i}`} className="border border-gray-100 rounded-lg px-6 bg-white shadow-sm">
-                  <AccordionTrigger className="text-lg font-bold text-gray-900 hover:text-[#FD9800] text-left">{faq.q}</AccordionTrigger>
-                  <AccordionContent className="text-gray-600 leading-relaxed pb-4">
-                    {faq.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
           </div>
         </div>
       </section>
