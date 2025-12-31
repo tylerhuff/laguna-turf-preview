@@ -84,27 +84,31 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
       </WaveSection>
 
       {/* Main Content */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold font-heading text-gray-900">
-                Custom Web Design for {industryName}
-              </h2>
-              <div className="text-lg text-gray-600 leading-relaxed space-y-4">
-                <p>
-                  As a {industryName.toLowerCase().slice(0, -1)}, your reputation is everything. You need a website that reflects the quality of your work and builds trust instantly. We build custom websites that showcase your projects, highlight your services, and make it incredibly easy for potential clients to contact you.
-                </p>
-                <p>
-                  We don't just build pretty sites; we build sites that convert visitors into leads. From clear call-to-actions to mobile-friendly layouts, every element is designed to grow your business.
-                </p>
-              </div>
-              <ul className="space-y-3 pt-4">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h2 className="text-3xl font-bold font-heading text-gray-900">
+              Custom Web Design for {industryName}
+            </h2>
+            <div className="text-lg text-gray-600 leading-relaxed space-y-6">
+              <p>
+                As a {industryName.toLowerCase().slice(0, -1)}, your reputation is everything. You need a website that reflects the quality of your work and builds trust instantly. We build custom websites that showcase your projects, highlight your services, and make it incredibly easy for potential clients to contact you.
+              </p>
+              <p>
+                We don't just build pretty sites; we build sites that convert visitors into leads. From clear call-to-actions to mobile-friendly layouts, every element is designed to grow your business.
+              </p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mt-8">
+              <h3 className="text-xl font-bold font-heading text-gray-900 mb-4">Why Choose Us?</h3>
+              <ul className="grid md:grid-cols-2 gap-4">
                 {[
                   "Mobile-optimized for clients on the go",
                   "Portfolio galleries to showcase your work",
                   "Trust signals and testimonial integration",
-                  "Fast loading speeds for better retention"
+                  "Fast loading speeds for better retention",
+                  "Local SEO optimized structure",
+                  "Lead generation focused design"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-700">
                     <CheckCircle2 className="w-5 h-5 text-[#FD9800] shrink-0 mt-0.5" />
@@ -112,19 +116,6 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                   </li>
                 ))}
               </ul>
-            </div>
-            
-            <div className="bg-[#fdfaf5] p-8 rounded-2xl border border-gray-100 shadow-lg">
-              <h3 className="text-2xl font-bold font-heading text-gray-900 mb-4">Local SEO & Marketing</h3>
-              <p className="text-gray-600 mb-6">
-                Having a website is only half the battle. You need to be found when people in your area search for "{industryName} near me".
-              </p>
-              <p className="text-gray-600 mb-6">
-                Our Local SEO services help you climb the Google rankings. We optimize your Google Business Profile, build local citations, and create content that targets your specific service area.
-              </p>
-              <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
-                Get Your Free SEO Audit
-              </Button>
             </div>
           </div>
         </div>

@@ -61,20 +61,6 @@ function Router() {
               heroImage="/assets/images/san-clemente-hero.webp"
               portfolioItems={[
                 {
-                  title: "Diamond Construction",
-                  subtitle: "Construction",
-                  description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
-                  image: "/assets/images/DiamondConstructionMockup.png",
-                  link: "https://diamondconstructionandgypsum.com/"
-                },
-                {
-                  title: "Smith & Eastwood Construction",
-                  subtitle: "General Contractors",
-                  description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
-                  image: "/assets/images/SmithandEastWoodConstruction.webp",
-                  link: "https://smitheastwoodbuild.com/"
-                },
-                {
                   title: "West Coast Washers",
                   subtitle: "Exterior Cleaning",
                   description: "Specializes in commercial building exterior cleaning and pressure washing services across Southern California.",
@@ -156,6 +142,20 @@ function Router() {
                   description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
                   image: "/assets/images/FanFusionMockup.png",
                   link: "https://fanfusionventures.com/"
+                },
+                {
+                  title: "Ascend Equities",
+                  subtitle: "Real Estate Investment",
+                  description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate.",
+                  image: "/assets/images/AscendEquities.webp",
+                  link: "https://ascendequities.com/"
+                },
+                {
+                  title: "Luxury Tahoe Properties",
+                  subtitle: "Real Estate",
+                  description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
+                  image: "/assets/images/LuxuryTahoePropertiesMockup.png",
+                  link: "https://luxurytahoeproperties.com/"
                 }
               ]}
             />
