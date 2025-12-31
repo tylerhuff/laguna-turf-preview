@@ -1,5 +1,6 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
+import { motion } from 'framer-motion';
 import { Check, ArrowRight, ExternalLink } from 'lucide-react';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
@@ -9,6 +10,11 @@ import { LeadFormModal } from '@/components/LeadFormModal';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
 
 export default function SanClementePage() {
   const localBusinessSchema = {
@@ -129,23 +135,27 @@ export default function SanClementePage() {
         priority={true}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <div 
-            className="mb-4 inline-block bg-[#FD9800] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide animate-in fade-in slide-in-from-bottom-4 duration-700"
+          <motion.div 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="mb-4 inline-block bg-[#FD9800] text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide"
           >
             San Clemente
-          </div>
-          <h1 
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100 fill-mode-both"
+          </motion.div>
+          <motion.h1 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >
             Web Design and Online Marketing
-          </h1>
-          <p 
-            className="text-xl md:text-2xl text-gray-700 font-light mb-8 leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200 fill-mode-both"
+          </motion.h1>
+          <motion.p 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-xl md:text-2xl text-gray-700 font-light mb-8 leading-relaxed"
           >
             Websites and online marketing for service based small businesses in San Clemente. Built to look legit, bring in leads, and stay in good shape over time.
-          </p>
-          <div 
-            className="flex flex-col sm:flex-row justify-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both"
+          </motion.p>
+          <motion.div 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <LeadFormModal 
               title="Book Your Strategy Call"
@@ -168,7 +178,7 @@ export default function SanClementePage() {
                 </Button>
               }
             />
-          </div>
+          </motion.div>
         </div>
       </WaveSection>
 

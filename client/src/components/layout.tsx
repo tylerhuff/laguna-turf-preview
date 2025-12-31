@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LeadFormModal } from '@/components/LeadFormModal';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,15 +41,19 @@ export function Navigation() {
 
       <header className="sticky top-0 z-50 bg-[#fdfaf5] border-b-0 shadow-sm">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">
+          <Link href="/">
+            <a className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">
               <span className="text-[#FD9800]">TwentyOne</span>
               <span className="text-gray-600 text-xl">solutions</span>
+            </a>
           </Link>
           
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-600">
             {links.map(link => (
-              <Link key={link.href} href={link.href} className={`transition-colors ${location === link.href ? 'text-[#FD9800]' : 'hover:text-[#FD9800]'}`}>
+              <Link key={link.href} href={link.href}>
+                <a className={`transition-colors ${location === link.href ? 'text-[#FD9800]' : 'hover:text-[#FD9800]'}`}>
                   {link.label}
+                </a>
               </Link>
             ))}
           </nav>
@@ -71,14 +76,23 @@ export function Navigation() {
         </div>
       </header>
 
-      {isOpen && (
-        <div 
-            className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6 animate-in slide-in-from-top-5 duration-300"
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6"
           >
             <nav className="flex flex-col gap-4">
               {links.map(link => (
-                <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
+                <Link key={link.href} href={link.href}>
+                  <a 
+                    className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`}
+                    onClick={() => setIsOpen(false)}
+                  >
                     {link.label}
+                  </a>
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4">
@@ -104,8 +118,9 @@ export function Navigation() {
                 />
               </div>
             </nav>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
@@ -116,33 +131,35 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-gray-800 mb-4">
+            <Link href="/">
+              <a className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-gray-800 mb-4">
                 <span className="text-[#FD9800]">TwentyOne</span>
                 <span className="text-gray-600 text-lg">solutions</span>
+              </a>
             </Link>
             <p className="text-gray-500 text-sm">
-              Websites and Marketing for Service Businesses. <Link href="/san-clemente" className="hover:text-[#FD9800] underline">Based in San Clemente, CA</Link>.
+              Websites and Marketing for Service Businesses. <Link href="/san-clemente"><a className="hover:text-[#FD9800] underline">Based in San Clemente, CA</a></Link>.
             </p>
           </div>
           
           <div>
             <h4 className="font-bold text-gray-900 mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/about-us" className="hover:text-[#FD9800]">About Us</Link></li>
-              <li><Link href="/portfolio" className="hover:text-[#FD9800]">Our Portfolio</Link></li>
-              <li><Link href="/services/web-design" className="hover:text-[#FD9800]">Web Design</Link></li>
-              <li><Link href="/services/search-engine-optimization" className="hover:text-[#FD9800]">Marketing</Link></li>
-              <li><Link href="/resources" className="hover:text-[#FD9800]">Resources</Link></li>
+              <li><Link href="/about-us"><a className="hover:text-[#FD9800]">About Us</a></Link></li>
+              <li><Link href="/portfolio"><a className="hover:text-[#FD9800]">Our Portfolio</a></Link></li>
+              <li><Link href="/services/web-design"><a className="hover:text-[#FD9800]">Web Design</a></Link></li>
+              <li><Link href="/services/search-engine-optimization"><a className="hover:text-[#FD9800]">Marketing</a></Link></li>
+              <li><Link href="/resources"><a className="hover:text-[#FD9800]">Resources</a></Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold text-gray-900 mb-4">Industries</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/industries/contractors" className="hover:text-[#FD9800]">Contractors</Link></li>
-              <li><Link href="/industries/home-builders" className="hover:text-[#FD9800]">Home Builders</Link></li>
-              <li><Link href="/industries/professional-services" className="hover:text-[#FD9800]">Professional Services</Link></li>
-              <li><Link href="/industries/painters" className="hover:text-[#FD9800]">Painters</Link></li>
+              <li><Link href="/industries/contractors"><a className="hover:text-[#FD9800]">Contractors</a></Link></li>
+              <li><Link href="/industries/home-builders"><a className="hover:text-[#FD9800]">Home Builders</a></Link></li>
+              <li><Link href="/industries/professional-services"><a className="hover:text-[#FD9800]">Professional Services</a></Link></li>
+              <li><Link href="/industries/painters"><a className="hover:text-[#FD9800]">Painters</a></Link></li>
             </ul>
           </div>
 
@@ -172,8 +189,8 @@ export function Footer() {
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <p>&copy; 2025 Twenty One Solutions. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="hover:text-[#FD9800]">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-[#FD9800]">Terms of Service</Link>
+            <Link href="/privacy-policy"><a className="hover:text-[#FD9800]">Privacy Policy</a></Link>
+            <Link href="/terms-of-service"><a className="hover:text-[#FD9800]">Terms of Service</a></Link>
           </div>
         </div>
       </div>

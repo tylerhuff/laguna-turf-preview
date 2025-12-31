@@ -1,5 +1,6 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
+import { motion } from 'framer-motion';
 import { Link } from "wouter";
 import { 
   Check,
@@ -20,6 +21,21 @@ import {
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Navigation, Footer } from '@/components/layout';
 
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 interface PortfolioItemProps {
   title: string;
   description: string;
@@ -30,7 +46,7 @@ interface PortfolioItemProps {
 }
 
 const PortfolioItem = ({ title, description, image, link, category }: PortfolioItemProps) => (
-  <div className="group cursor-pointer">
+  <motion.div variants={fadeIn} className="group cursor-pointer">
     <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1 relative">
       <AspectRatio ratio={16/9}>
         <img 
@@ -51,7 +67,7 @@ const PortfolioItem = ({ title, description, image, link, category }: PortfolioI
     <a href={link} className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
       Visit Website <ExternalLink className="w-4 h-4 ml-1" />
     </a>
-  </div>
+  </motion.div>
 );
 
 interface ServiceCardProps {
@@ -232,8 +248,9 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
-            <h1 
-              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700"
+            <motion.h1 
+              variants={fadeIn} 
+              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
             >
               Websites and Marketing for <span className="text-[#FD9800] relative inline-block">
                 Service Businesses
@@ -241,15 +258,16 @@ export default function HomePage() {
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                 </svg>
               </span>
-            </h1>
+            </motion.h1>
             
-            <p 
-              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
+            <motion.p 
+              variants={fadeIn} 
+              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
             >
               We help service businesses look professional online and get found when people search.
-            </p>
+            </motion.p>
             
-            <div className="pt-4 flex flex-col sm:flex-row gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
+            <motion.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
               <LeadFormModal 
                 title="Get Your Free Site Preview"
                 description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
@@ -265,7 +283,7 @@ export default function HomePage() {
                   View Our Work
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </WaveSection>

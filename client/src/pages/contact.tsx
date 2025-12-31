@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SEO } from '@/components/seo';
+import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Facebook, Loader2, CheckCircle, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,6 +8,12 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Navigation, Footer } from '@/components/layout';
 import { toast } from 'sonner';
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
 import { WaveSection } from '@/components/ui/wave-section';
 
 export default function ContactPage() {
@@ -22,6 +29,15 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     
+    if (FORMSPREE_FORM_ID === "YOUR_FORMSPREE_ID_HERE") {
+      toast.error("Formspree ID missing", {
+        description: "Please update the FORMSPREE_FORM_ID in contact.tsx with your actual ID.",
+        duration: 5000,
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     const form = e.currentTarget;
     const formData = new FormData(form);
 
@@ -94,16 +110,18 @@ export default function ContactPage() {
         priority={true}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <h1 
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700"
+          <motion.h1 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >
             How can we help?
-          </h1>
-          <p 
-            className="text-xl text-gray-600 font-light animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
+          </motion.h1>
+          <motion.p 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-xl text-gray-600 font-light"
           >
             Just fill out the form below or give us a call.
-          </p>
+          </motion.p>
         </div>
       </WaveSection>
 

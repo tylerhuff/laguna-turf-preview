@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
 import { ExternalLink, CheckCircle2 } from 'lucide-react';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
@@ -19,6 +20,11 @@ interface IndustryPageProps {
   heroImage: string;
   portfolioItem: PortfolioItem;
 }
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
 
 export default function IndustryPage({ industryName, heroImage, portfolioItem }: IndustryPageProps) {
   const serviceSchema = {
@@ -52,16 +58,18 @@ export default function IndustryPage({ industryName, heroImage, portfolioItem }:
         overlayOpacity={0.8}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <h1 
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700"
+          <motion.h1 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >
             Web Design & Marketing for <span className="text-[#FD9800]">{industryName}</span>
-          </h1>
-          <p 
-            className="text-xl text-gray-600 font-light animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
+          </motion.h1>
+          <motion.p 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-xl text-gray-600 font-light"
           >
             Get more calls and booked jobs with a professional website built for {industryName.toLowerCase()}.
-          </p>
+          </motion.p>
         </div>
       </WaveSection>
 

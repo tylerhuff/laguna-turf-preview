@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { motion } from 'framer-motion';
 import { 
   Search, 
   MapPin, 
@@ -26,6 +27,21 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { WaveSection } from '@/components/ui/wave-section';
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
 export default function SEOPage() {
   const serviceSchema = {
@@ -119,19 +135,21 @@ export default function SEOPage() {
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
-            <h1 
-              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700"
+            <motion.h1 
+              variants={fadeIn} 
+              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
             >
               Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
-            </h1>
+            </motion.h1>
             
-            <p 
-              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
+            <motion.p 
+              variants={fadeIn} 
+              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
             >
               When people search for services like yours, they are ready to hire. We make sure you are the first business they see.
-            </p>
+            </motion.p>
             
-            <div className="pt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
+            <motion.div variants={fadeIn} className="pt-4">
               <LeadFormModal 
                 title="Schedule a Strategy Call"
                 description="Let's discuss how we can improve your rankings and get you more leads."
@@ -142,7 +160,7 @@ export default function SEOPage() {
                   </Button>
                 }
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </WaveSection>

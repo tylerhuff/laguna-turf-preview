@@ -1,11 +1,17 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
+import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
 import { Card } from '@/components/ui/card';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { WaveSection } from '@/components/ui/wave-section';
+
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
 
 export default function AboutPage() {
   const aboutSchema = {
@@ -38,16 +44,18 @@ export default function AboutPage() {
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
-          <h1 
-            className="text-5xl md:text-7xl font-bold font-heading mb-6 text-gray-900 animate-in fade-in slide-in-from-bottom-4 duration-700"
+          <motion.h1 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-5xl md:text-7xl font-bold font-heading mb-6 text-gray-900"
           >
             About TwentyOne
-          </h1>
-          <p 
-            className="text-xl md:text-2xl font-light max-w-2xl text-gray-700 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
+          </motion.h1>
+          <motion.p 
+            initial="hidden" animate="visible" variants={fadeIn}
+            className="text-xl md:text-2xl font-light max-w-2xl text-gray-700"
           >
             Web design & marketing agency for service businesses located in San Clemente, CA
-          </p>
+          </motion.p>
         </div>
       </WaveSection>
 
