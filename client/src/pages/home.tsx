@@ -318,9 +318,9 @@ export default function HomePage() {
                    height="560"
                  />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-gray-100 max-w-xs block">
-                 <h4 className="font-bold text-xl font-heading text-gray-900">Tyler Huff</h4>
-                 <p className="text-[#FD9800] font-medium">Owner, Developer</p>
+              <div className="absolute -bottom-6 right-4 bg-white p-4 rounded-xl shadow-xl border border-gray-100 max-w-xs block">
+                 <h4 className="font-bold text-lg font-heading text-gray-900">Tyler Huff</h4>
+                 <p className="text-[#FD9800] font-medium text-sm">Owner, Developer</p>
               </div>
             </div>
             
