@@ -122,9 +122,9 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-[#fdfaf5]">
+      <section className="py-16 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold font-heading text-gray-900 mb-4">Featured {industryName} Projects</h2>
             <p className="text-lg text-gray-600">See how we've helped other businesses like yours.</p>
           </div>
