@@ -252,6 +252,7 @@ export default function HomePage() {
         backgroundImage="/assets/images/bannertwentyone.webp"
         overlayOpacity={0.75}
         priority={true}
+        bottomWaveColor="#ffffff"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
@@ -292,6 +293,50 @@ export default function HomePage() {
           </div>
         </div>
       </WaveSection>
+
+      {/* Real Results Section */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-6">Real Results</h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              This is the difference effective Local SEO makes. We take businesses from being invisible to dominating their local market.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Before */}
+            <div className="relative group">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-red-100 text-red-700 px-6 py-2 rounded-full font-bold shadow-sm z-10 border border-red-200">
+                Before
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white transform rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white">
+                <img 
+                  src="/assets/images/local-search-grid-before.png" 
+                  alt="Local Search Grid Report - Before Results" 
+                  className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+              <p className="text-center mt-6 text-gray-500 font-medium">Limited visibility. <br/>Hard to find.</p>
+            </div>
+
+            {/* After */}
+            <div className="relative group">
+               <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-green-100 text-green-700 px-6 py-2 rounded-full font-bold shadow-sm z-10 border border-green-200">
+                After
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-green-500 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white ring-4 ring-green-500/20">
+                <img 
+                  src="/assets/images/local-search-grid-after.png" 
+                  alt="Local Search Grid Report - After Results" 
+                  className="w-full h-auto"
+                />
+              </div>
+               <p className="text-center mt-6 text-gray-900 font-bold">Domination. <br/>Top ranking across the entire city.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Why Us Section */}
       <section className="py-24 bg-[#fdfaf5]">
