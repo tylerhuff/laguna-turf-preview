@@ -1,6 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
-import { useHashLocation } from "wouter/use-hash-location";
+import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -44,8 +43,7 @@ function LoadingFallback() {
 
 function Router() {
   return (
-    <WouterRouter hook={useHashLocation}>
-      <Suspense fallback={<LoadingFallback />}>
+    <Suspense fallback={<LoadingFallback />}>
         <Switch>
           <Route path="/" component={HomePage} />
         <Route path="/san-clemente" component={SanClementePage} />
@@ -149,7 +147,6 @@ function Router() {
         <Route component={NotFound} />
       </Switch>
     </Suspense>
-    </WouterRouter>
   );
 }
 
