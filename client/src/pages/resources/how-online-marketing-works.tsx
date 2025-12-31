@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
@@ -8,10 +8,11 @@ import { ArrowLeft } from 'lucide-react';
 export default function HowMarketingWorksPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>How Online Marketing Works for Service Businesses - TwentyOne Solutions</title>
-        <meta name="description" content="A simple breakdown of how digital marketing brings in leads for contractors and service businesses." />
-      </Helmet>
+      <SEO 
+        title="How Online Marketing Works for Service Businesses"
+        description="A simple breakdown of how digital marketing brings in leads for contractors and service businesses."
+        canonical="/resources/how-online-marketing-works"
+      />
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">

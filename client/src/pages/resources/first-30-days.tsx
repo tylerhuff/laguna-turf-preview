@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
@@ -8,10 +8,11 @@ import { ArrowLeft } from 'lucide-react';
 export default function First30DaysPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>What to Expect in the First 30 Days - TwentyOne Solutions</title>
-        <meta name="description" content="A transparent timeline of our onboarding, build, and launch process." />
-      </Helmet>
+      <SEO 
+        title="What to Expect in the First 30 Days | TwentyOne Solutions"
+        description="A transparent timeline of our onboarding, build, and launch process. From strategy to go-live in 30 days."
+        canonical="/resources/first-30-days"
+      />
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">

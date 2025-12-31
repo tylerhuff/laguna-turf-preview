@@ -11,13 +11,13 @@ interface SEOProps {
 }
 
 export function SEO({ 
-  title, 
-  description, 
+  title = "TwentyOne Solutions | Web Design & Marketing", 
+  description = "Web design and digital marketing agency for service businesses. We help contractors, trades, and professionals get more calls.", 
   canonical, 
   image = "https://twentyonesolutions.com/wp-content/uploads/2025/06/WCW_mockup_transparent-png.webp",
   type = "website",
   schema 
-}: SEOProps) {
+}: Partial<SEOProps>) {
   const siteUrl = "https://twentyonesolutions.com";
   const fullCanonical = canonical 
     ? (canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`)

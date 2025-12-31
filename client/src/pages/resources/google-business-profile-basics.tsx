@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
@@ -8,10 +8,11 @@ import { ArrowLeft } from 'lucide-react';
 export default function GoogleBusinessProfilePage() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>Google Business Profile Basics - TwentyOne Solutions</title>
-        <meta name="description" content="Everything service businesses need to know about their most important digital asset: The Google Business Profile." />
-      </Helmet>
+      <SEO 
+        title="Google Business Profile Basics for Service Businesses"
+        description="Everything service businesses need to know about their most important digital asset: The Google Business Profile."
+        canonical="/resources/google-business-profile-basics"
+      />
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">

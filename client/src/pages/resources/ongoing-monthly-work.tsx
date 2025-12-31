@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
@@ -8,10 +8,11 @@ import { ArrowLeft } from 'lucide-react';
 export default function OngoingWorkPage() {
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>What Ongoing Monthly Work Looks Like - TwentyOne Solutions</title>
-        <meta name="description" content="We don't just build it and leave. Here is how we keep your business growing month after month." />
-      </Helmet>
+      <SEO 
+        title="What Ongoing Monthly Work Looks Like | TwentyOne Solutions"
+        description="We don't just build it and leave. Learn how our monthly maintenance and SEO plans keep your business growing."
+        canonical="/resources/ongoing-monthly-work"
+      />
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">

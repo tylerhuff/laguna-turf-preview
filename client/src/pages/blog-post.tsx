@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { SEO } from '@/components/seo';
 import { useLocation, Link } from "wouter";
 import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
@@ -129,13 +129,13 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>{article.title} - TwentyOne Solutions</title>
-        <meta name="description" content={article.description || article.excerpt} />
-        <script type="application/ld+json">
-          {JSON.stringify(articleSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title={`${article.title}`}
+        description={article.description || article.excerpt || "Article by TwentyOne Solutions"}
+        image={article.image}
+        type="article"
+        schema={articleSchema}
+      />
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">
@@ -254,13 +254,13 @@ function StaticBlogPost() {
 
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <Helmet>
-        <title>5 Reasons Your Business Needs a Website - TwentyOne Solutions</title>
-        <meta name="description" content="Discover why a professional website is crucial for growth in 2025." />
-        <script type="application/ld+json">
-          {JSON.stringify(articleSchema)}
-        </script>
-      </Helmet>
+      <SEO 
+        title="5 Reasons Your Business Needs a Website"
+        description="Discover why a professional website is crucial for growth in 2025."
+        image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
+        type="article"
+        schema={articleSchema}
+      />
       <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">
