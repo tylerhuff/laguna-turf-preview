@@ -489,19 +489,25 @@ export default function SanClementePage() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-gray-600 mb-8">See what your custom website could look like in 24 hours.</p>
-          <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg mb-16">
+          <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
             Build Site Preview
           </Button>
+        </div>
+      </section>
 
-          <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-200">
+      {/* Map Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="h-[400px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.8529519515233!2d-117.65391592358825!3d33.46664797338361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8b8c2f1bdf3b8e33%3A0x9ae5b755a9dbe9dc!2sTwentyOne%20Solutions!5e0!3m2!1sen!2sus!4v1714420000000!5m2!1sen!2sus" 
+              src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=15&ie=UTF8&iwloc=B&output=embed"
               width="100%" 
               height="100%" 
-              style={{ border: 0 }} 
+              style={{ border: 0 }}
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
+              title="TwentyOne Solutions Location"
             ></iframe>
           </div>
         </div>
