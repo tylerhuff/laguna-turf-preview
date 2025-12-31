@@ -247,56 +247,36 @@ export default function SEOPage() {
       {/* Impact Section */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">How This Impacts Your Business</h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Ranking higher on Google isn't just about visibility - it's about credibility and trust. Customers are more likely to click, call, and visit businesses that show up first.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#FD9800] shadow-sm shrink-0">
-                    <Users className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Lead Generation</h4>
-                    <p className="text-gray-600">More visibility means more people finding your business when they need you most.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#FD9800] shadow-sm shrink-0">
-                    <BarChart3 className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Sales and Revenue</h4>
-                    <p className="text-gray-600">High-intent customers finding you means more conversions and booked jobs.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#FD9800] shadow-sm shrink-0">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">Brand Authority</h4>
-                    <p className="text-gray-600">Top-ranking businesses are perceived as the credible, trustworthy market leaders.</p>
-                  </div>
-                </div>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">How This Impacts Your Business</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Ranking higher on Google isn't just about visibility - it's about credibility and trust. Customers are more likely to click, call, and visit businesses that show up first.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#fdfaf5] flex items-center justify-center text-[#FD9800] mx-auto mb-6">
+                <Users className="w-8 h-8" />
               </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Lead Generation</h4>
+              <p className="text-gray-600 leading-relaxed">More visibility means more people finding your business when they need you most.</p>
             </div>
-            
-            <div className="relative">
-              <div className="bg-white p-2 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                <img 
-                  src="/assets/images/google-map-pack-screenshot.avif" 
-                  alt="Google Map Pack Results" 
-                  className="rounded-xl w-full h-auto object-cover"
-                />
+
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#fdfaf5] flex items-center justify-center text-[#FD9800] mx-auto mb-6">
+                <BarChart3 className="w-8 h-8" />
               </div>
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#FD9800]/10 rounded-full blur-2xl -z-10"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl -z-10"></div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Sales and Revenue</h4>
+              <p className="text-gray-600 leading-relaxed">High-intent customers finding you means more conversions and booked jobs.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-full bg-[#fdfaf5] flex items-center justify-center text-[#FD9800] mx-auto mb-6">
+                <ShieldCheck className="w-8 h-8" />
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Brand Authority</h4>
+              <p className="text-gray-600 leading-relaxed">Top-ranking businesses are perceived as the credible, trustworthy market leaders.</p>
             </div>
           </div>
         </div>
