@@ -7,6 +7,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
+import webDesignHero from '@assets/stock_images/modern_web_design_of_a3ec103c.jpg';
+import webDesignMockup from '@assets/stock_images/laptop_website_mocku_a658f1a2.jpg';
 import {
   Accordion,
   AccordionContent,
@@ -107,7 +109,7 @@ export default function WebDesignPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/pexels-photo-355328-355328-scaled.avif"
+        backgroundImage={webDesignHero}
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
@@ -157,8 +159,8 @@ export default function WebDesignPage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/06/WCW_mockup_transparent-1024x576.webp" 
-                  alt="West Coast Washers Mockup" 
+                  src={webDesignMockup}
+                  alt="Website Design Mockup" 
                   className="w-full h-auto"
                 />
               </div>
