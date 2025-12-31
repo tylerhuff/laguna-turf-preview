@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/accordion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Navigation, Footer } from '@/components/layout';
+import { PortfolioCard } from '@/components/PortfolioCard';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -35,44 +36,6 @@ const staggerContainer = {
     }
   }
 };
-
-interface PortfolioItemProps {
-  title: string;
-  description: string;
-  image: string;
-  mobileImage?: string;
-  link: string;
-  logoAlt?: string;
-  category?: string;
-}
-
-const PortfolioItem = ({ title, description, image, mobileImage, link, category }: PortfolioItemProps) => (
-  <m.div variants={fadeIn} className="group cursor-pointer">
-    <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1 relative">
-      <AspectRatio ratio={16/9}>
-        <picture className="w-full h-full">
-          {mobileImage && <source media="(max-width: 640px)" srcSet={mobileImage} />}
-          <img 
-            src={image} 
-            alt={title} 
-            className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        </picture>
-      </AspectRatio>
-      {category && (
-        <div className="absolute top-3 left-3">
-          <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{category}</span>
-        </div>
-      )}
-    </div>
-    <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{title}</h3>
-    <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
-    <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
-      Visit Website <ExternalLink className="w-4 h-4 ml-1" />
-    </a>
-  </m.div>
-);
 
 interface ServiceCardProps {
   title: string;
@@ -379,51 +342,45 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <PortfolioItem 
+            <PortfolioCard 
               title="Filger Manufacturing"
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
               image="/assets/images/Filger-Manufacturing.webp"
-              mobileImage="/assets/images/Filger-Manufacturing-mobile.webp"
               link="https://filger.com/"
               category="Professional Services"
             />
-            <PortfolioItem 
+            <PortfolioCard 
               title="West Coast Washers"
               description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
               image="/assets/images/WCW_mockup_transparent.webp"
-              mobileImage="/assets/images/WCW_mockup_transparent-mobile.webp"
               link="https://westcoastwashersllc.com/"
               category="Professional Services"
             />
-            <PortfolioItem 
+            <PortfolioCard 
               title="TSA Group Ltd"
               description="Transmission line siting and right-of-way consulting. Highlights current and past projects."
               image="/assets/images/TSA-Group-Limited.webp"
-              mobileImage="/assets/images/TSA-Group-Limited-mobile.webp"
               link="https://tsagroupconsulting.com/"
               category="Professional Services"
             />
-            <PortfolioItem 
+            <PortfolioCard 
               title="Luxury Tahoe Properties"
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
               image="/assets/images/LuxuryTahoeProperties.webp"
-              mobileImage="/assets/images/LuxuryTahoeProperties-mobile.webp"
               link="https://luxurytahoeproperties.com/"
               category="Professional Services"
             />
-            <PortfolioItem 
+            <PortfolioCard 
               title="Diamond Construction"
               description="Specializes in waterproofing solutions and gypsum concrete services for contractors."
               image="/assets/images/DiamondConstruction.webp"
-              mobileImage="/assets/images/DiamondConstruction-mobile.webp"
               link="https://diamondconstructionandgypsum.com/"
               category="Construction"
             />
-            <PortfolioItem 
+            <PortfolioCard 
               title="Fan Fusion Ventures"
               description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
               image="/assets/images/FanFusion.webp"
-              mobileImage="/assets/images/FanFusion-mobile.webp"
               link="https://fanfusionventures.com/"
               category="Professional Services"
             />

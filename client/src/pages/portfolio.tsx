@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { PortfolioCard } from '@/components/PortfolioCard';
 import ceilingProImg from '@assets/generated_images/website_mockup_for_ceiling_pro.png';
 import sierraElectricImg from '@assets/generated_images/website_mockup_for_sierra_precision_electric.png';
 import cleaningSolutionImg from '@assets/generated_images/website_mockup_for_cleaning_solution_building_corp.png';
@@ -26,40 +27,6 @@ const staggerContainer = {
     }
   }
 };
-
-interface PortfolioCardProps {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  subtitle?: string;
-}
-
-const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
-  <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
-    <div className="overflow-hidden">
-      <AspectRatio ratio={16/10}>
-        <img 
-          src={image} 
-          alt={title} 
-          className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-        />
-      </AspectRatio>
-    </div>
-    <div className="p-6 flex flex-col flex-grow">
-      <div className="mb-2">
-        {subtitle && <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{subtitle}</span>}
-        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{title}</h3>
-      </div>
-      <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
-        <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
-          Visit Website <ExternalLink className="w-4 h-4 ml-2" />
-        </Button>
-      </a>
-    </div>
-  </motion.div>
-);
 
 import { WaveSection } from '@/components/ui/wave-section';
 
