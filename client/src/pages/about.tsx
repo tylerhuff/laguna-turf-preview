@@ -9,7 +9,6 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { WaveSection } from '@/components/ui/wave-section';
-import { PortfolioCard } from '@/components/PortfolioCard';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -188,29 +187,62 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <PortfolioCard 
-              title="Filger Manufacturing"
-              description="Filger Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes."
-              image="/assets/images/Filger-Manufacturing.webp"
-              link="https://filger.com/"
-              category="Manufacturing"
-            />
+            <div className="group cursor-pointer">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
+                <AspectRatio ratio={16/10}>
+                  <img 
+                    src="/assets/images/Filger-Manufacturing.webp" 
+                    alt="Filger Manufacturing" 
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                </AspectRatio>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Manufacturing</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">Filger Manufacturing</h3>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
+              </div>
+            </div>
             
-            <PortfolioCard 
-              title="Diamond Construction"
-              description="Diamond Construction specializes in waterproofing solutions and gypsum concrete services for contractors."
-              image="/assets/images/LuxuryTahoePropertiesMockup.png"
-              link="https://diamondconstructionandgypsum.com/"
-              category="Construction"
-            />
+            <div className="group cursor-pointer">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
+                <AspectRatio ratio={16/10}>
+                  <img 
+                    src="/assets/images/LuxuryTahoePropertiesMockup.png" 
+                    alt="Luxury Tahoe Properties" 
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                </AspectRatio>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Real Estate</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">Diamond Construction</h3>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
+              </div>
+            </div>
 
-            <PortfolioCard 
-              title="West Coast Washers"
-              description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
-              image="/assets/images/WCW_mockup_transparent.webp"
-              link="https://westcoastwashersllc.com/"
-              category="Cleaning Services"
-            />
+            <div className="group cursor-pointer">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
+                <AspectRatio ratio={16/10}>
+                  <img 
+                    src="/assets/images/WCW_mockup_transparent.webp" 
+                    alt="West Coast Washers" 
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                </AspectRatio>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Cleaning Services</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">West Coast Washers</h3>
+                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
+              </div>
+            </div>
           </div>
         </div>
       </section>

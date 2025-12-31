@@ -12,7 +12,6 @@ import { LeadFormModal } from '@/components/LeadFormModal';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "wouter";
-import { PortfolioCard } from '@/components/PortfolioCard';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -333,29 +332,65 @@ export default function SanClementePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            <PortfolioCard 
-              title="Filger Manufacturing"
-              description="Figler Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes."
-              image="/assets/images/Filger-Manufacturing.webp"
-              link="https://filger.com/"
-              category="Manufacturing"
-            />
+            <div className="group">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
+                <AspectRatio ratio={16/10}>
+                  <img 
+                    src="/assets/images/Filger-Manufacturing.webp" 
+                    alt="Filger Manufacturing" 
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Filger Manufacturing</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Figler Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes.
+              </p>
+              <a href="https://filger.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
+                Visit Website <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
 
-            <PortfolioCard 
-              title="Smith & Eastwood Construction"
-              description="Smith and Eastwood Construction has a clean, professional online presence that makes it easy for homeowners to understand their services and get in touch."
-              image="/assets/images/SmithandEastWoodConstruction.webp"
-              link="https://smitheastwoodbuild.com/"
-              category="Construction"
-            />
+            <div className="group">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
+                <AspectRatio ratio={16/10}>
+                  <img 
+                    src="/assets/images/SmithandEastWoodConstruction.webp" 
+                    alt="Smith & Eastwood Construction" 
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Smith & Eastwood Construction</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Smith and Eastwood Construction has a clean, professional online presence that makes it easy for homeowners to understand their services and get in touch.
+              </p>
+              <a href="https://smitheastwoodbuild.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
+                Visit Website <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
 
-            <PortfolioCard 
-              title="Ascend Equities"
-              description="Ascend Equities has a sharp, professional online presence that reflects their focus on quality properties and long term value."
-              image="/assets/images/AscendEquities.webp"
-              link="https://ascendequities.com/"
-              category="Real Estate"
-            />
+            <div className="group">
+              <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
+                <AspectRatio ratio={16/10}>
+                  <img 
+                    src="/assets/images/AscendEquities.webp" 
+                    alt="Ascend Equities" 
+                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </AspectRatio>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Ascend Equities</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Ascend Equities has a sharp, professional online presence that reflects their focus on quality properties and long term value.
+              </p>
+              <a href="https://ascendequities.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
+                Visit Website <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
