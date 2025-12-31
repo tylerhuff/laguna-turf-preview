@@ -111,7 +111,7 @@ const portfolioItems: PortfolioItem[] = [
     subtitle: "Real Estate",
     description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
     image: "/assets/images/LuxuryTahoePropertiesMockup.png",
-    link: "https://www.tluxp.com/",
+    link: "https://luxurytahoeproperties.com/",
     category: "Professional Services"
   },
   {

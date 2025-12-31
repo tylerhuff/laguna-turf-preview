@@ -405,7 +405,7 @@ export default function HomePage() {
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
               image="/assets/images/LuxuryTahoeProperties.webp"
               mobileImage="/assets/images/LuxuryTahoeProperties-mobile.webp"
-              link="https://www.tluxp.com/"
+              link="https://luxurytahoeproperties.com/"
               category="Professional Services"
             />
             <PortfolioItem 
