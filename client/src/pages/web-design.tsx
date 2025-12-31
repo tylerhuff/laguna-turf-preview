@@ -107,7 +107,7 @@ export default function WebDesignPage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/pexels-photo-355328-355328-scaled.avif"
+        backgroundImage="/assets/images/web-design-hero.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">

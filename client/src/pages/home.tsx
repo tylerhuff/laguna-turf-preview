@@ -244,7 +244,7 @@ export default function HomePage() {
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
-        backgroundImage="/assets/images/bannertwentyone.jpg"
+        backgroundImage="/assets/images/bannertwentyone.webp"
         overlayOpacity={0.75}
         priority={true}
       >
