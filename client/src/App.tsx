@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Loader2 } from "lucide-react";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 // Lazy load pages
 const NotFound = lazy(() => import("@/pages/not-found"));
@@ -151,13 +152,15 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ScrollToTop />
-        <Toaster />
-        <Router />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <LazyMotion features={domAnimation}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <ScrollToTop />
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </QueryClientProvider>
+    </LazyMotion>
   );
 }
 

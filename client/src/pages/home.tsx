@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Link } from "wouter";
 import { 
   Check,
@@ -40,21 +40,25 @@ interface PortfolioItemProps {
   title: string;
   description: string;
   image: string;
+  mobileImage?: string;
   link: string;
   logoAlt?: string;
   category?: string;
 }
 
-const PortfolioItem = ({ title, description, image, link, category }: PortfolioItemProps) => (
-  <motion.div variants={fadeIn} className="group cursor-pointer">
+const PortfolioItem = ({ title, description, image, mobileImage, link, category }: PortfolioItemProps) => (
+  <m.div variants={fadeIn} className="group cursor-pointer">
     <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1 relative">
       <AspectRatio ratio={16/9}>
-        <img 
-          src={image} 
-          alt={title} 
-          className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+        <picture className="w-full h-full">
+          {mobileImage && <source media="(max-width: 640px)" srcSet={mobileImage} />}
+          <img 
+            src={image} 
+            alt={title} 
+            className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </picture>
       </AspectRatio>
       {category && (
         <div className="absolute top-3 left-3">
@@ -64,10 +68,12 @@ const PortfolioItem = ({ title, description, image, link, category }: PortfolioI
     </div>
     <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{title}</h3>
     <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
-    <a href={link} className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
-      Visit Website <ExternalLink className="w-4 h-4 ml-1" />
-    </a>
-  </motion.div>
+    <Link href={link}>
+      <a className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
+        Visit Website <ExternalLink className="w-4 h-4 ml-1" />
+      </a>
+    </Link>
+  </m.div>
 );
 
 interface ServiceCardProps {
@@ -227,7 +233,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <SEO 
+      <SEO  
         title="Websites and Marketing for Service Businesses"
         description="We help service businesses look professional online and get found. Web design, SEO, and marketing for contractors, trades, and home builders."
         canonical="/"
@@ -248,7 +254,7 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
-            <motion.h1 
+            <m.h1 
               variants={fadeIn} 
               className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
             >
@@ -258,16 +264,16 @@ export default function HomePage() {
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                 </svg>
               </span>
-            </motion.h1>
+            </m.h1>
             
-            <motion.p 
+            <m.p 
               variants={fadeIn} 
               className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
             >
               We help service businesses look professional online and get found when people search.
-            </motion.p>
+            </m.p>
             
-            <motion.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
+            <m.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
               <LeadFormModal 
                 title="Get Your Free Site Preview"
                 description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
@@ -283,7 +289,7 @@ export default function HomePage() {
                 View Our Work
               </a>
             </Link>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </WaveSection>
@@ -380,6 +386,7 @@ export default function HomePage() {
               title="Filger Manufacturing"
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
               image="/assets/images/Filger-Manufacturing.webp"
+              mobileImage="/assets/images/Filger-Manufacturing-mobile.webp"
               link="#"
               category="Professional Services"
             />
@@ -387,6 +394,7 @@ export default function HomePage() {
               title="West Coast Washers"
               description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
               image="/assets/images/WCW_mockup_transparent.webp"
+              mobileImage="/assets/images/WCW_mockup_transparent-mobile.webp"
               link="#"
               category="Professional Services"
             />
@@ -394,6 +402,7 @@ export default function HomePage() {
               title="TSA Group Ltd"
               description="Transmission line siting and right-of-way consulting. Highlights current and past projects."
               image="/assets/images/TSA-Group-Limited.webp"
+              mobileImage="/assets/images/TSA-Group-Limited-mobile.webp"
               link="#"
               category="Professional Services"
             />
@@ -401,6 +410,7 @@ export default function HomePage() {
               title="Luxury Tahoe Properties"
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
               image="/assets/images/LuxuryTahoeProperties.webp"
+              mobileImage="/assets/images/LuxuryTahoeProperties-mobile.webp"
               link="#"
               category="Professional Services"
             />
@@ -408,6 +418,7 @@ export default function HomePage() {
               title="Diamond Construction"
               description="Specializes in waterproofing solutions and gypsum concrete services for contractors."
               image="/assets/images/DiamondConstruction.webp"
+              mobileImage="/assets/images/DiamondConstruction-mobile.webp"
               link="#"
               category="Construction"
             />
@@ -415,6 +426,7 @@ export default function HomePage() {
               title="Fan Fusion Ventures"
               description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
               image="/assets/images/FanFusion.webp"
+              mobileImage="/assets/images/FanFusion-mobile.webp"
               link="#"
               category="Professional Services"
             />
@@ -690,6 +702,6 @@ export default function HomePage() {
       </section>
 
       <Footer />
-    </div>
+      </div>
   );
 }
