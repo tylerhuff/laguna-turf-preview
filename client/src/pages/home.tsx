@@ -91,9 +91,9 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
         ))}
       </ul>
       <Link href={link}>
-        <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
+        <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
           Learn More
-        </Button>
+        </a>
       </Link>
     </CardContent>
   </Card>
@@ -278,11 +278,11 @@ export default function HomePage() {
                   </Button>
                 }
               />
-              <Link href="/portfolio">
-                <Button variant="outline" size="lg" className="h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50">
-                  View Our Work
-                </Button>
-              </Link>
+            <Link href="/portfolio">
+              <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
+                View Our Work
+              </a>
+            </Link>
             </motion.div>
           </div>
         </div>
