@@ -279,7 +279,7 @@ export default function SanClementePage() {
                 <p className="text-gray-600 mb-8 flex-grow leading-relaxed">
                   A clean modern website that makes it obvious what you do, where you work, and how to contact you. Built to load fast and convert visitors into calls and form submissions.
                 </p>
-                <Link href="/services/website-design">
+                <Link href="/services/web-design">
                   <Button variant="outline" className="w-full border-[#FD9800] text-[#FD9800] hover:bg-[#FD9800] hover:text-white font-bold">
                     Learn More
                   </Button>
@@ -307,7 +307,7 @@ export default function SanClementePage() {
                 <p className="text-gray-600 mb-8 flex-grow leading-relaxed">
                   Hosting, updates, backups, security checks, and help when you need changes. This is for business owners who want it handled without chasing people down.
                 </p>
-                <Link href="/services/managed-wordpress-hosting">
+                <Link href="/services/website-care">
                   <Button variant="outline" className="w-full border-[#FD9800] text-[#FD9800] hover:bg-[#FD9800] hover:text-white font-bold">
                     Learn More
                   </Button>
