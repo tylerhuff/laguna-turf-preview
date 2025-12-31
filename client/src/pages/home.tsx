@@ -47,9 +47,9 @@ interface PortfolioItemProps {
 }
 
 const PortfolioItem = ({ title, description, image, mobileImage, link, category }: PortfolioItemProps) => (
-  <m.div variants={fadeIn} className="group cursor-pointer">
-    <div className="overflow-hidden rounded-xl shadow-lg border border-gray-100 bg-white mb-6 transition-all hover:shadow-xl hover:-translate-y-1 relative">
-      <AspectRatio ratio={16/9}>
+  <m.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
+    <div className="overflow-hidden">
+      <AspectRatio ratio={16/10}>
         <picture className="w-full h-full">
           {mobileImage && <source media="(max-width: 640px)" srcSet={mobileImage} />}
           <img 
@@ -60,17 +60,19 @@ const PortfolioItem = ({ title, description, image, mobileImage, link, category 
           />
         </picture>
       </AspectRatio>
-      {category && (
-        <div className="absolute top-3 left-3">
-          <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">{category}</span>
-        </div>
-      )}
     </div>
-    <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{title}</h3>
-    <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
-    <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
-      Visit Website <ExternalLink className="w-4 h-4 ml-1" />
-    </a>
+    <div className="p-6 flex flex-col flex-grow">
+      <div className="mb-2">
+        {category && <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{category}</span>}
+        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{title}</h3>
+      </div>
+      <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
+        <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
+          Visit Website <ExternalLink className="w-4 h-4 ml-2" />
+        </Button>
+      </a>
+    </div>
   </m.div>
 );
 

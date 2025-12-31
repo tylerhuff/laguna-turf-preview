@@ -1,7 +1,7 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
-import { Check, Star, ArrowRight } from 'lucide-react';
+import { Check, Star, ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
 import { Card, CardContent } from '@/components/ui/card';
@@ -187,62 +187,60 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="group cursor-pointer">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
-                <AspectRatio ratio={16/10}>
-                  <img 
-                    src="/assets/images/Filger-Manufacturing.webp" 
-                    alt="Filger Manufacturing" 
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                  />
-                </AspectRatio>
-                <div className="absolute top-3 left-3">
-                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Manufacturing</span>
+            {[
+              {
+                title: "Filger Manufacturing",
+                subtitle: "Manufacturing",
+                description: "Figler Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes.",
+                image: "/assets/images/Filger-Manufacturing.webp",
+                link: "https://filger.com/"
+              },
+              {
+                title: "Luxury Tahoe Properties",
+                subtitle: "Real Estate",
+                description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
+                image: "/assets/images/LuxuryTahoePropertiesMockup.png",
+                link: "https://luxurytahoeproperties.com/"
+              },
+              {
+                title: "West Coast Washers",
+                subtitle: "Cleaning Services",
+                description: "Professional exterior cleaning for homes and businesses in Southern California featuring a modern site.",
+                image: "/assets/images/WCW_mockup_transparent.webp",
+                link: "https://westcoastwashersllc.com/"
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
+                <div className="overflow-hidden">
+                  <AspectRatio ratio={16/10}>
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </AspectRatio>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="mb-2">
+                    <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{item.subtitle}</span>
+                    <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{item.title}</h3>
+                  </div>
+                  {/* Note: I added description to the data above to match the design. The original about.tsx didn't have descriptions visible in the simplified view? No, it did not have descriptions in the simplified grid view I replaced. Wait, let me check the previous read. */}
+                  {/* The previous read showed no descriptions in the 'Some of our Work' section in about.tsx. The user wants the CARD style. The CARD style includes a description. I should probably add descriptions or leave them empty? The user said "Change the portfolio cards on every other page to match the ones on the portfolio page." This implies full card content. I've added descriptions based on portfolio.tsx data for these items. */}
+                  {/* Wait, the previous read of about.tsx lines 190-247 did NOT have descriptions. Just image, badge, title, arrow. */}
+                  {/* I should add the descriptions to make it look correct. I sourced them from portfolio.tsx. */}
+                  {/* Re-checking about.tsx content to be sure. */}
+                  {/* about.tsx lines 190-247: It has image, badge (absolute), Title + Arrow. No description. */}
+                  {/* I will include the description as I did in the data array above. */}
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{item.description}</p>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-auto">
+                    <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
+                      Visit Website <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
                 </div>
               </div>
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">Filger Manufacturing</h3>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
-              </div>
-            </div>
-            
-            <div className="group cursor-pointer">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
-                <AspectRatio ratio={16/10}>
-                  <img 
-                    src="/assets/images/LuxuryTahoePropertiesMockup.png" 
-                    alt="Luxury Tahoe Properties" 
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                  />
-                </AspectRatio>
-                <div className="absolute top-3 left-3">
-                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Real Estate</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">Diamond Construction</h3>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
-              </div>
-            </div>
-
-            <div className="group cursor-pointer">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-4 border border-gray-100 relative">
-                <AspectRatio ratio={16/10}>
-                  <img 
-                    src="/assets/images/WCW_mockup_transparent.webp" 
-                    alt="West Coast Washers" 
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                  />
-                </AspectRatio>
-                <div className="absolute top-3 left-3">
-                  <span className="bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Cleaning Services</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-center">
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#FD9800] transition-colors">West Coast Washers</h3>
-                <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-[#FD9800] transform group-hover:translate-x-1 transition-all" />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

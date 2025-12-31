@@ -332,65 +332,54 @@ export default function SanClementePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            <div className="group">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
-                <AspectRatio ratio={16/10}>
-                  <img 
-                    src="/assets/images/Filger-Manufacturing.webp" 
-                    alt="Filger Manufacturing" 
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </AspectRatio>
+            {[
+              {
+                title: "Filger Manufacturing",
+                subtitle: "Manufacturing",
+                description: "Figler Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes.",
+                image: "/assets/images/Filger-Manufacturing.webp",
+                link: "https://filger.com/"
+              },
+              {
+                title: "Smith & Eastwood Construction",
+                subtitle: "Construction",
+                description: "Smith and Eastwood Construction has a clean, professional online presence that makes it easy for homeowners to understand their services and get in touch.",
+                image: "/assets/images/SmithandEastWoodConstruction.webp",
+                link: "https://smitheastwoodbuild.com/"
+              },
+              {
+                title: "Ascend Equities",
+                subtitle: "Real Estate",
+                description: "Ascend Equities has a sharp, professional online presence that reflects their focus on quality properties and long term value.",
+                image: "/assets/images/AscendEquities.webp",
+                link: "https://ascendequities.com/"
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
+                <div className="overflow-hidden">
+                  <AspectRatio ratio={16/10}>
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </AspectRatio>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="mb-2">
+                    <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{item.subtitle}</span>
+                    <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{item.title}</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{item.description}</p>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-auto">
+                    <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
+                      Visit Website <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </a>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Filger Manufacturing</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Figler Manufacturing specializes in high-precision machining for aerospace and defense. Their site highlights equipment and quality processes.
-              </p>
-              <a href="https://filger.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
-                Visit Website <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
-                <AspectRatio ratio={16/10}>
-                  <img 
-                    src="/assets/images/SmithandEastWoodConstruction.webp" 
-                    alt="Smith & Eastwood Construction" 
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </AspectRatio>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Smith & Eastwood Construction</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Smith and Eastwood Construction has a clean, professional online presence that makes it easy for homeowners to understand their services and get in touch.
-              </p>
-              <a href="https://smitheastwoodbuild.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
-                Visit Website <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
-
-            <div className="group">
-              <div className="rounded-xl overflow-hidden shadow-lg mb-6 border border-gray-100">
-                <AspectRatio ratio={16/10}>
-                  <img 
-                    src="/assets/images/AscendEquities.webp" 
-                    alt="Ascend Equities" 
-                    className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </AspectRatio>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Ascend Equities</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Ascend Equities has a sharp, professional online presence that reflects their focus on quality properties and long term value.
-              </p>
-              <a href="https://ascendequities.com/" target="_blank" rel="noopener noreferrer" className="text-[#FD9800] text-sm font-bold uppercase tracking-wide hover:underline inline-flex items-center gap-1">
-                Visit Website <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
