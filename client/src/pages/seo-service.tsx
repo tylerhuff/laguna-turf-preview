@@ -243,7 +243,40 @@ export default function SEOPage() {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative h-[400px] lg:h-[500px] w-full hidden md:block">
+               {/* Back Layer - Search Results */}
+               <div className="absolute top-20 left-0 w-[45%] rounded-xl shadow-2xl overflow-hidden border-4 border-white transform -rotate-6 z-10 bg-white hover:z-40 transition-all duration-300">
+                 <img 
+                   src="/assets/images/mockup-mobile-search.jpg" 
+                   alt="Google Search Results" 
+                   className="w-full h-auto object-cover"
+                 />
+               </div>
+
+               {/* Middle Layer - Website */}
+               <div className="absolute top-0 left-[25%] w-[60%] rounded-xl shadow-2xl overflow-hidden border-4 border-white z-20 bg-white hover:scale-105 transition-transform duration-300">
+                 <img 
+                   src="/assets/images/SmithandEastWoodConstruction.webp" 
+                   alt="Client Website" 
+                   className="w-full h-auto object-cover"
+                 />
+               </div>
+
+               {/* Front Layer - Map Pack */}
+               <div className="absolute bottom-20 right-0 w-[40%] rounded-xl shadow-2xl overflow-hidden border-4 border-white transform rotate-6 z-30 bg-white hover:z-50 transition-all duration-300">
+                 <img 
+                   src="/assets/images/google-map-pack-screenshot.avif" 
+                   alt="Google Map Pack" 
+                   className="w-full h-auto object-cover"
+                 />
+               </div>
+               
+               {/* Decor */}
+               <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-[#FD9800]/10 rounded-full blur-3xl -z-10 transform -translate-x-1/2 -translate-y-1/2"></div>
+            </div>
+            
+            {/* Mobile View */}
+            <div className="md:hidden relative">
               <div className="bg-white p-2 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img 
                   src="/assets/images/google-map-pack-screenshot.avif" 
@@ -251,9 +284,7 @@ export default function SEOPage() {
                   className="rounded-xl w-full h-auto object-cover"
                 />
               </div>
-              {/* Decorative elements */}
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#FD9800]/10 rounded-full blur-2xl -z-10"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl -z-10"></div>
             </div>
           </div>
         </div>
