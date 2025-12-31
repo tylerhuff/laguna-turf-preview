@@ -73,7 +73,7 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px] bg-white text-gray-900">
+      <DialogContent className="sm:max-w-[500px] bg-white text-gray-900" onOpenAutoFocus={(e) => e.preventDefault()}>
         <DialogHeader>
           <DialogTitle className="text-2xl font-heading text-[#FD9800]">{title}</DialogTitle>
           <DialogDescription className="text-gray-600">
