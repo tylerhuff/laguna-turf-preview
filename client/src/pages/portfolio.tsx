@@ -8,9 +8,6 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import ceilingProImg from '@assets/generated_images/website_mockup_for_ceiling_pro.png';
-import sierraElectricImg from '@assets/generated_images/website_mockup_for_sierra_precision_electric.png';
-import cleaningSolutionImg from '@assets/generated_images/website_mockup_for_cleaning_solution_building_corp.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -173,24 +170,24 @@ const portfolioItems: PortfolioItem[] = [
   {
     title: "Ceiling Pro",
     subtitle: "Cleaning & Restoration",
-    description: "Professional ceiling cleaning and restoration services for commercial and residential properties.",
-    image: ceilingProImg,
+    description: "Trusted Ceiling Experts in the Bay Area. Providing exceptional ceiling installations for both commercial and residential spaces with quality you can rely on.",
+    image: "/assets/images/CeilingProMockup.png",
     link: "https://ceilingprosf.com/",
     category: "Trades"
   },
   {
     title: "Sierra Precision Electric",
     subtitle: "Electrical Contractor",
-    description: "Expert electrical services for the Truckee and Tahoe region, specializing in residential and commercial projects.",
-    image: sierraElectricImg,
+    description: "Trusted Electrical Solutions for Truckee and Lake Tahoe. Specializing in high-end residential installations, smart systems, and custom home projects.",
+    image: "/assets/images/SierraElectricMockup.png",
     link: "https://truckeetahoeelectrical.com/",
     category: "Trades"
   },
   {
     title: "Cleaning Solution Building Corp",
     subtitle: "Commercial Cleaning",
-    description: "Commercial Cleaning Services in Long Island, Nassau, & Suffolk. Delivering quality cleaning solutions since 2017.",
-    image: cleaningSolutionImg,
+    description: "Commercial Cleaning Services in Long Island, Nassau, & Suffolk. Experience top-notch cleaning with our dedicated team committed at a fair price.",
+    image: "/assets/images/CleaningSolutionMockup.png",
     link: "https://cleaningsolutionbuildingcorp.com/",
     category: "Trades"
   }
