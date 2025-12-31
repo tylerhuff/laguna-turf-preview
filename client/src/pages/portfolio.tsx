@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import ceilingProImg from '@assets/generated_images/website_mockup_for_ceiling_pro.png';
+import sierraElectricImg from '@assets/generated_images/website_mockup_for_sierra_precision_electric.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -31,7 +33,7 @@ interface PortfolioCardProps {
 }
 
 const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
-  <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all">
+  <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
     <div className="overflow-hidden">
       <AspectRatio ratio={16/10}>
         <img 
@@ -41,13 +43,13 @@ const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioC
         />
       </AspectRatio>
     </div>
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <div className="mb-2">
         {subtitle && <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{subtitle}</span>}
         <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{title}</h3>
       </div>
-      <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
+      <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
         <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
           Visit Website <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
@@ -58,6 +60,123 @@ const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioC
 
 import { WaveSection } from '@/components/ui/wave-section';
 
+type Category = 'Professional Services' | 'Construction' | 'Painters' | 'Contractors';
+
+interface PortfolioItem {
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  link: string;
+  category: Category;
+}
+
+const portfolioItems: PortfolioItem[] = [
+  // Professional Services
+  {
+    title: "Case Whittemore, LMFT",
+    subtitle: "Healthcare",
+    description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges.",
+    image: "/assets/images/CaseWhitteMoreMockUp.png",
+    link: "https://caseywhittemorelmft.com/",
+    category: "Professional Services"
+  },
+  {
+    title: "Fan Fusion Ventures",
+    subtitle: "Sports Entertainment",
+    description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
+    image: "/assets/images/FanFusionMockup.png",
+    link: "https://fanfusionventures.com/",
+    category: "Professional Services"
+  },
+  {
+    title: "TSA Group Ltd",
+    subtitle: "Consulting",
+    description: "Transmission line siting and right-of-way consulting. Highlights current and past projects.",
+    image: "/assets/images/TSA-Group-Limited.webp",
+    link: "#",
+    category: "Professional Services"
+  },
+  {
+    title: "Luxury Tahoe Properties",
+    subtitle: "Real Estate",
+    description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
+    image: "/assets/images/LuxuryTahoePropertiesMockup.png",
+    link: "https://luxurytahoeproperties.com/",
+    category: "Professional Services"
+  },
+  {
+    title: "Ascend Equities",
+    subtitle: "Real Estate Investment",
+    description: "Specializing in real estate investment and asset management strategies for high-net-worth individuals.",
+    image: "/assets/images/AscendEquities.webp",
+    link: "#",
+    category: "Professional Services"
+  },
+
+  // Construction
+  {
+    title: "Diamond Construction",
+    subtitle: "Construction",
+    description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
+    image: "/assets/images/DiamondConstructionMockup.png",
+    link: "https://diamondconstructionandgypsum.com/",
+    category: "Construction"
+  },
+  {
+    title: "Smith & Eastwood Construction",
+    subtitle: "General Contractors",
+    description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
+    image: "/assets/images/SmithandEastWoodConstruction.webp",
+    link: "#",
+    category: "Construction"
+  },
+
+  // Painters
+  {
+    title: "Huff Painting Co",
+    subtitle: "Commercial Painting",
+    description: "With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting.",
+    image: "/assets/images/HuffPaintingCoMockup.png",
+    link: "https://huffpainting.co/",
+    category: "Painters"
+  },
+  {
+    title: "Wrangler Painting",
+    subtitle: "Residential Painting",
+    description: "Located in Los Angeles, California, this company focuses on residential painting and power washing services.",
+    image: "/assets/images/WranglerPaintingMockup.webp",
+    link: "https://wranglerpainting.com/",
+    category: "Painters"
+  },
+
+  // Contractors
+  {
+    title: "West Coast Washers",
+    subtitle: "Exterior Cleaning",
+    description: "Professional exterior cleaning for homes and businesses in Southern California featuring a modern site.",
+    image: "/assets/images/WCW_mockup_transparent.webp",
+    link: "#",
+    category: "Contractors"
+  },
+  {
+    title: "Ceiling Pro",
+    subtitle: "Cleaning & Restoration",
+    description: "Professional ceiling cleaning and restoration services for commercial and residential properties.",
+    image: ceilingProImg,
+    link: "https://ceilingprosf.com/",
+    category: "Contractors"
+  },
+  {
+    title: "Sierra Precision Electric",
+    subtitle: "Electrical Contractor",
+    description: "Expert electrical services for the Truckee and Tahoe region, specializing in residential and commercial projects.",
+    image: sierraElectricImg,
+    link: "https://truckeetahoeelectrical.com/",
+    category: "Contractors"
+  }
+];
+
 export default function PortfolioPage() {
   const portfolioSchema = {
     "@context": "https://schema.org",
@@ -67,25 +186,15 @@ export default function PortfolioPage() {
     "url": "https://twentyonesolutions.com/portfolio",
     "mainEntity": {
       "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "CreativeWork",
-          "name": "Wrangler Painting",
-          "description": "Residential Painting Website"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "Diamond Construction",
-          "description": "Construction Website"
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "Fan Fusion Ventures",
-          "description": "Sports Entertainment Website"
-        }
-      ]
+      "itemListElement": portfolioItems.map(item => ({
+        "@type": "CreativeWork",
+        "name": item.title,
+        "description": item.description
+      }))
     }
   };
+
+  const categories: Category[] = ['Professional Services', 'Construction', 'Painters', 'Contractors'];
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
@@ -130,58 +239,34 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Portfolio Grid */}
-      <section className="pb-24 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            initial="hidden" animate="visible" variants={staggerContainer}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            <PortfolioCard 
-              title="Wrangler Painting"
-              subtitle="Residential Painting"
-              description="Located in Los Angeles, California, this company focuses on residential painting and power washing services."
-              image="/assets/images/WranglerPaintingMockup.webp"
-              link="https://wranglerpainting.com/"
-            />
-            <PortfolioCard 
-              title="Diamond Construction"
-              subtitle="Construction"
-              description="Established in 2013, specializes in waterproofing solutions and gypsum concrete services."
-              image="/assets/images/DiamondConstructionMockup.png"
-              link="https://diamondconstructionandgypsum.com/"
-            />
-            <PortfolioCard 
-              title="Fan Fusion Ventures"
-              subtitle="Sports Entertainment"
-              description="Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans."
-              image="/assets/images/FanFusionMockup.png"
-              link="https://fanfusionventures.com/"
-            />
-            <PortfolioCard 
-              title="Luxury Tahoe Properties"
-              subtitle="Real Estate"
-              description="Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area."
-              image="/assets/images/LuxuryTahoePropertiesMockup.png"
-              link="https://luxurytahoeproperties.com/"
-            />
-            <PortfolioCard 
-              title="Case Whittemore, LMFT"
-              subtitle="Healthcare"
-              description="A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges."
-              image="/assets/images/CaseWhitteMoreMockUp.png"
-              link="https://caseywhittemorelmft.com/"
-            />
-            <PortfolioCard 
-              title="Huff Painting Co"
-              subtitle="Commercial Painting"
-              description="With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting."
-              image="/assets/images/HuffPaintingCoMockup.png"
-              link="https://huffpainting.co/"
-            />
-          </motion.div>
-        </div>
-      </section>
+      {/* Portfolio Sections */}
+      <div className="space-y-20 pb-24 bg-[#fdfaf5]">
+        {categories.map((category) => (
+          <section key={category} className="container mx-auto px-6">
+            <div className="flex items-center gap-4 mb-8">
+              <h3 className="text-3xl font-bold font-heading text-gray-900">{category}</h3>
+              <div className="h-px bg-gray-200 flex-grow"></div>
+            </div>
+            
+            <motion.div 
+              initial="hidden" 
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {portfolioItems
+                .filter(item => item.category === category)
+                .map((item, index) => (
+                  <PortfolioCard 
+                    key={index}
+                    {...item}
+                  />
+                ))}
+            </motion.div>
+          </section>
+        ))}
+      </div>
 
       {/* Testimonial Highlight */}
       <section className="py-20 bg-white">
