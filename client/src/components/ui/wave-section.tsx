@@ -7,6 +7,7 @@ interface WaveSectionProps extends React.HTMLAttributes<HTMLDivElement> {
   reverse?: boolean;
   disableTopWave?: boolean;
   backgroundImage?: string;
+  mobileBackgroundImage?: string;
   overlayOpacity?: number;
   bottomWaveColor?: string;
   priority?: boolean;
@@ -18,6 +19,7 @@ export function WaveSection({
   reverse, 
   disableTopWave = true, // Default to true as requested
   backgroundImage,
+  mobileBackgroundImage,
   overlayOpacity = 0.75, // Default overlay opacity - letting images shine through more
   bottomWaveColor = "#fdfaf5",
   priority = false,
@@ -28,13 +30,18 @@ export function WaveSection({
       {/* Background Image */}
       {backgroundImage && (
         <div className="absolute inset-0 z-0">
-          <img 
-            src={backgroundImage} 
-            alt="Background" 
-            className="w-full h-full object-cover"
-            fetchPriority={priority ? "high" : "auto"}
-            loading={priority ? "eager" : "lazy"}
-          />
+          <picture className="w-full h-full">
+            {mobileBackgroundImage && (
+              <source media="(max-width: 768px)" srcSet={mobileBackgroundImage} />
+            )}
+            <img 
+              src={backgroundImage} 
+              alt="Background" 
+              className="w-full h-full object-cover"
+              fetchPriority={priority ? "high" : "auto"}
+              loading={priority ? "eager" : "lazy"}
+            />
+          </picture>
           <div 
             data-template="hero-overlay"
             className="absolute inset-0 bg-white" 
