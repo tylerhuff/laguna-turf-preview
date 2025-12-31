@@ -20,7 +20,6 @@ import {
 } from "@/components/ui/accordion";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Navigation, Footer } from '@/components/layout';
-import mobileHeroImage from '@assets/generated_images/vertical_mobile_background_of_ocean_waves.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -244,7 +243,6 @@ export default function HomePage() {
         className="pt-32 md:pt-40 pb-48" 
         disableTopWave
         backgroundImage="/assets/images/bannertwentyone.jpg"
-        mobileBackgroundImage={mobileHeroImage}
         overlayOpacity={0.75}
         priority={true}
       >
