@@ -1,24 +1,25 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
-import { ExternalLink, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { ContactForm } from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { PortfolioCard } from '@/pages/portfolio';
 
 interface PortfolioItem {
   title: string;
   description: string;
   image: string;
-  link?: string;
+  link: string;
+  subtitle?: string;
 }
 
 interface IndustryPageProps {
   industryName: string;
   heroImage: string;
-  portfolioItem: PortfolioItem;
+  portfolioItems: PortfolioItem[];
 }
 
 const fadeIn = {
@@ -26,7 +27,17 @@ const fadeIn = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
-export default function IndustryPage({ industryName, heroImage, portfolioItem }: IndustryPageProps) {
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+export default function IndustryPage({ industryName, heroImage, portfolioItems }: IndustryPageProps) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -119,36 +130,28 @@ export default function IndustryPage({ industryName, heroImage, portfolioItem }:
         </div>
       </section>
 
-      {/* Featured Project */}
+      {/* Featured Projects */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold font-heading text-gray-900 mb-4">Featured {industryName} Project</h2>
+            <h2 className="text-3xl font-bold font-heading text-gray-900 mb-4">Featured {industryName} Projects</h2>
             <p className="text-lg text-gray-600">See how we've helped other businesses like yours.</p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-             <div className="group bg-white rounded-xl overflow-hidden shadow-xl border border-gray-100 transition-all hover:-translate-y-1">
-               <div className="grid md:grid-cols-2 gap-0">
-                 <div className="relative h-64 md:h-auto">
-                   <img 
-                     src={portfolioItem.image} 
-                     alt={portfolioItem.title} 
-                     className="absolute inset-0 w-full h-full object-cover"
-                   />
-                 </div>
-                 <div className="p-8 flex flex-col justify-center">
-                   <h3 className="text-2xl font-bold font-heading text-gray-900 mb-3">{portfolioItem.title}</h3>
-                   <p className="text-gray-600 mb-6">{portfolioItem.description}</p>
-                   {portfolioItem.link && (
-                     <a href={portfolioItem.link} className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all">
-                       Visit Live Site <ExternalLink className="w-4 h-4 ml-1" />
-                     </a>
-                   )}
-                 </div>
-               </div>
-             </div>
-          </div>
+          <motion.div 
+            initial="hidden" 
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {portfolioItems.map((item, index) => (
+              <PortfolioCard 
+                key={index}
+                {...item}
+              />
+            ))}
+          </motion.div>
         </div>
       </section>
 

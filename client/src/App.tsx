@@ -58,13 +58,44 @@ function Router() {
           {() => (
             <IndustryPage 
               industryName="Contractors"
-              heroImage="/assets/images/DiamondConstruction.webp"
-              portfolioItem={{
-                title: "Diamond Construction",
-                description: "A professional site for a general contractor specializing in waterproofing and gypsum concrete. Highlights services and past projects to build trust with new clients.",
-                image: "/assets/images/DiamondConstruction.webp",
-                link: "#"
-              }}
+              heroImage="/assets/images/san-clemente-hero.webp"
+              portfolioItems={[
+                {
+                  title: "Diamond Construction",
+                  subtitle: "Construction",
+                  description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
+                  image: "/assets/images/DiamondConstructionMockup.png",
+                  link: "https://diamondconstructionandgypsum.com/"
+                },
+                {
+                  title: "Smith & Eastwood Construction",
+                  subtitle: "General Contractors",
+                  description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
+                  image: "/assets/images/SmithandEastWoodConstruction.webp",
+                  link: "https://smitheastwoodbuild.com/"
+                },
+                {
+                  title: "West Coast Washers",
+                  subtitle: "Exterior Cleaning",
+                  description: "Specializes in commercial building exterior cleaning and pressure washing services across Southern California.",
+                  image: "/assets/images/WCW_mockup_transparent.webp",
+                  link: "https://westcoastwashersllc.com/"
+                },
+                {
+                  title: "Ceiling Pro",
+                  subtitle: "Ceiling Installation",
+                  description: "Trusted Ceiling Experts in the Bay Area. Providing exceptional ceiling installations for both commercial and residential spaces.",
+                  image: "/assets/images/CeilingProMockup.png",
+                  link: "https://ceilingprosf.com/"
+                },
+                {
+                  title: "Sierra Precision Electric",
+                  subtitle: "Electrical Contractor",
+                  description: "Trusted Electrical Solutions for Truckee and Lake Tahoe. Specializing in high-end residential installations.",
+                  image: "/assets/images/SierraElectricMockup.png",
+                  link: "https://truckeetahoeelectrical.com/"
+                }
+              ]}
             />
           )}
         </Route>
@@ -72,13 +103,23 @@ function Router() {
           {() => (
             <IndustryPage 
               industryName="Home Builders"
-              heroImage="/assets/images/LuxuryTahoePropertiesMockup.png"
-              portfolioItem={{
-                title: "Luxury Tahoe Properties",
-                description: "High-end real estate and home showcase website. Features stunning imagery, property listings, and an elegant design that appeals to luxury buyers.",
-                image: "/assets/images/LuxuryTahoePropertiesMockup.png",
-                link: "#"
-              }}
+              heroImage="/assets/images/whitewater_sanclemente.webp"
+              portfolioItems={[
+                {
+                  title: "Luxury Tahoe Properties",
+                  subtitle: "Real Estate",
+                  description: "High-end real estate and home showcase website. Features stunning imagery, property listings, and an elegant design.",
+                  image: "/assets/images/LuxuryTahoePropertiesMockup.png",
+                  link: "https://luxurytahoeproperties.com/"
+                },
+                {
+                  title: "Ascend Equities",
+                  subtitle: "Real Estate Investment",
+                  description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate.",
+                  image: "/assets/images/AscendEquities.webp",
+                  link: "https://ascendequities.com/"
+                }
+              ]}
             />
           )}
         </Route>
@@ -86,13 +127,37 @@ function Router() {
           {() => (
             <IndustryPage 
               industryName="Professional Services"
-              heroImage="/assets/images/TSA-Group-Limited.webp"
-              portfolioItem={{
-                title: "TSA Group Ltd",
-                description: "A corporate website for a consulting firm. Focuses on credibility, service clarity, and lead generation for high-value B2B contracts.",
-                image: "/assets/images/TSA-Group-Limited.webp",
-                link: "#"
-              }}
+              heroImage="/assets/images/san-clemente-hero.webp"
+              portfolioItems={[
+                {
+                  title: "TSA Group Ltd",
+                  subtitle: "Consulting",
+                  description: "A corporate website for a consulting firm. Focuses on credibility, service clarity, and lead generation.",
+                  image: "/assets/images/TSA-Group-Limited.webp",
+                  link: "https://tsagroupconsulting.com/"
+                },
+                {
+                  title: "Filger Manufacturing",
+                  subtitle: "Aerospace",
+                  description: "Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes.",
+                  image: "/assets/images/Filger-Manufacturing.webp",
+                  link: "https://filger.com/"
+                },
+                {
+                  title: "Case Whittemore, LMFT",
+                  subtitle: "Healthcare",
+                  description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health.",
+                  image: "/assets/images/CaseWhitteMoreMockUp.png",
+                  link: "https://caseywhittemorelmft.com/"
+                },
+                {
+                  title: "Fan Fusion Ventures",
+                  subtitle: "Sports Entertainment",
+                  description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
+                  image: "/assets/images/FanFusionMockup.png",
+                  link: "https://fanfusionventures.com/"
+                }
+              ]}
             />
           )}
         </Route>
@@ -100,13 +165,23 @@ function Router() {
           {() => (
             <IndustryPage 
               industryName="Painters"
-              heroImage="/assets/images/HuffPaintingCo-screenshot.png"
-              portfolioItem={{
-                title: "Huff Painting Co",
-                description: "A vibrant, visual-first website for a local painting company. showcases before/after transformations and makes booking quotes easy.",
-                image: "/assets/images/HuffPaintingCo-screenshot.png",
-                link: "#"
-              }}
+              heroImage="/assets/images/whitewater_sanclemente.webp"
+              portfolioItems={[
+                {
+                  title: "Huff Painting Co",
+                  subtitle: "Commercial Painting",
+                  description: "A vibrant, visual-first website for a local painting company. Showcases before/after transformations.",
+                  image: "/assets/images/HuffPaintingCoMockup.png",
+                  link: "https://huffpainting.co/"
+                },
+                {
+                  title: "Wrangler Painting",
+                  subtitle: "Residential Painting",
+                  description: "Located in Los Angeles, California, this company focuses on residential painting and power washing services.",
+                  image: "/assets/images/WranglerPaintingMockup.webp",
+                  link: "https://wranglerpainting.com/"
+                }
+              ]}
             />
           )}
         </Route>

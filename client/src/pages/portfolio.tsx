@@ -30,7 +30,7 @@ interface PortfolioCardProps {
   subtitle?: string;
 }
 
-const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
+export const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
   <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
     <div className="overflow-hidden">
       <AspectRatio ratio={16/10}>
