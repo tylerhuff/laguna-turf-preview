@@ -153,7 +153,7 @@ export default function WebDesignPage() {
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative space-y-12">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500 relative z-10">
                 <img 
                   src="/assets/images/WCW_mockup_transparent.webp" 
@@ -161,7 +161,7 @@ export default function WebDesignPage() {
                   className="w-full h-auto"
                 />
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -rotate-1 hover:rotate-0 transition-transform duration-500 -mt-12 ml-6 relative z-0">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -rotate-1 hover:rotate-0 transition-transform duration-500 ml-6 relative z-0">
                 <img 
                   src="/assets/images/SmithandEastWoodConstruction.webp" 
                   alt="Smith & Eastwood Construction Mockup" 
