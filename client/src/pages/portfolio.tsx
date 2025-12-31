@@ -91,11 +91,19 @@ const portfolioItems: PortfolioItem[] = [
     category: "Professional Services"
   },
   {
+    title: "Filger Manufacturing",
+    subtitle: "Aerospace",
+    description: "Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes.",
+    image: "/assets/images/Filger-Manufacturing.webp",
+    link: "https://filger.com/",
+    category: "Professional Services"
+  },
+  {
     title: "TSA Group Ltd",
     subtitle: "Consulting",
     description: "Transmission line siting and right-of-way consulting. Highlights current and past projects.",
     image: "/assets/images/TSA-Group-Limited.webp",
-    link: "#",
+    link: "https://tsagroupconsulting.com/",
     category: "Professional Services"
   },
   {
@@ -103,7 +111,7 @@ const portfolioItems: PortfolioItem[] = [
     subtitle: "Real Estate",
     description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
     image: "/assets/images/LuxuryTahoePropertiesMockup.png",
-    link: "https://luxurytahoeproperties.com/",
+    link: "https://www.tluxp.com/",
     category: "Professional Services"
   },
   {
@@ -111,7 +119,7 @@ const portfolioItems: PortfolioItem[] = [
     subtitle: "Real Estate Investment",
     description: "Specializing in real estate investment and asset management strategies for high-net-worth individuals.",
     image: "/assets/images/AscendEquities.webp",
-    link: "#",
+    link: "https://ascendequities.com/",
     category: "Professional Services"
   },
 
@@ -129,7 +137,7 @@ const portfolioItems: PortfolioItem[] = [
     subtitle: "General Contractors",
     description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
     image: "/assets/images/SmithandEastWoodConstruction.webp",
-    link: "#",
+    link: "https://smitheastwoodbuild.com/",
     category: "Construction"
   },
 
@@ -157,7 +165,7 @@ const portfolioItems: PortfolioItem[] = [
     subtitle: "Exterior Cleaning",
     description: "Professional exterior cleaning for homes and businesses in Southern California featuring a modern site.",
     image: "/assets/images/WCW_mockup_transparent.webp",
-    link: "#",
+    link: "https://westcoastwashersllc.com/",
     category: "Trades"
   },
   {

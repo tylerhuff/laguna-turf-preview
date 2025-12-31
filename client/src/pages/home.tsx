@@ -68,9 +68,9 @@ const PortfolioItem = ({ title, description, image, mobileImage, link, category 
     </div>
     <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{title}</h3>
     <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
-    <Link href={link} className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
+    <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#FD9800] font-semibold hover:gap-2 transition-all group-hover:underline">
       Visit Website <ExternalLink className="w-4 h-4 ml-1" />
-    </Link>
+    </a>
   </m.div>
 );
 
@@ -381,7 +381,7 @@ export default function HomePage() {
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
               image="/assets/images/Filger-Manufacturing.webp"
               mobileImage="/assets/images/Filger-Manufacturing-mobile.webp"
-              link="#"
+              link="https://filger.com/"
               category="Professional Services"
             />
             <PortfolioItem 
@@ -389,7 +389,7 @@ export default function HomePage() {
               description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
               image="/assets/images/WCW_mockup_transparent.webp"
               mobileImage="/assets/images/WCW_mockup_transparent-mobile.webp"
-              link="#"
+              link="https://westcoastwashersllc.com/"
               category="Professional Services"
             />
             <PortfolioItem 
@@ -397,7 +397,7 @@ export default function HomePage() {
               description="Transmission line siting and right-of-way consulting. Highlights current and past projects."
               image="/assets/images/TSA-Group-Limited.webp"
               mobileImage="/assets/images/TSA-Group-Limited-mobile.webp"
-              link="#"
+              link="https://tsagroupconsulting.com/"
               category="Professional Services"
             />
             <PortfolioItem 
@@ -405,7 +405,7 @@ export default function HomePage() {
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
               image="/assets/images/LuxuryTahoeProperties.webp"
               mobileImage="/assets/images/LuxuryTahoeProperties-mobile.webp"
-              link="#"
+              link="https://www.tluxp.com/"
               category="Professional Services"
             />
             <PortfolioItem 
@@ -413,7 +413,7 @@ export default function HomePage() {
               description="Specializes in waterproofing solutions and gypsum concrete services for contractors."
               image="/assets/images/DiamondConstruction.webp"
               mobileImage="/assets/images/DiamondConstruction-mobile.webp"
-              link="#"
+              link="https://diamondconstructionandgypsum.com/"
               category="Construction"
             />
             <PortfolioItem 
@@ -421,7 +421,7 @@ export default function HomePage() {
               description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
               image="/assets/images/FanFusion.webp"
               mobileImage="/assets/images/FanFusion-mobile.webp"
-              link="#"
+              link="https://fanfusionventures.com/"
               category="Professional Services"
             />
           </div>
