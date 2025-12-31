@@ -315,14 +315,17 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative max-w-md mx-auto lg:ml-auto">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                 <img 
-                   src="/assets/images/tylerhuff_founder.webp" 
-                   alt="Tyler Huff" 
-                   className="w-full h-auto object-cover"
-                   loading="lazy"
-                   width="448"
-                   height="560"
-                 />
+                <picture className="w-full h-auto">
+                  <source media="(max-width: 640px)" srcSet="/assets/images/tylerhuff_founder-mobile.webp" />
+                   <img 
+                     src="/assets/images/tylerhuff_founder.webp" 
+                     alt="Tyler Huff" 
+                     className="w-full h-auto object-cover"
+                     loading="lazy"
+                     width="448"
+                     height="560"
+                   />
+                </picture>
               </div>
               <div className="absolute -bottom-6 right-4 bg-white p-4 rounded-xl shadow-xl border border-gray-100 max-w-xs block">
                  <h4 className="font-bold text-lg font-heading text-gray-900">Tyler Huff</h4>

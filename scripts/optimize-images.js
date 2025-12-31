@@ -35,13 +35,12 @@ async function processImages() {
 
         // 2. Generate Mobile WebP Version (600px width)
         const mobileWebpPath = path.join(imagesDir, `${name}${mobileSuffix}.webp`);
-        if (!files.includes(`${name}${mobileSuffix}.webp`)) {
-          console.log(`Generating Mobile WebP: ${name}${mobileSuffix}.webp`);
-          await sharp(inputPath)
-            .resize(600, null, { withoutEnlargement: true }) // Resize to max 600px width, auto height
-            .webp({ quality: 80 })
-            .toFile(mobileWebpPath);
-        }
+        // Always regenerate mobile images if we want to change quality
+        console.log(`Generating Mobile WebP: ${name}${mobileSuffix}.webp`);
+        await sharp(inputPath)
+          .resize(600, null, { withoutEnlargement: true }) // Resize to max 600px width, auto height
+          .webp({ quality: 70 }) // Lower quality for mobile for better performance
+          .toFile(mobileWebpPath);
       } catch (innerErr) {
         console.error(`Failed to process ${file}:`, innerErr.message);
       }
