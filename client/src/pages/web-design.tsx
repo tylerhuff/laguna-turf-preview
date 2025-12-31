@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight, Zap, MousePointerClick, Search, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
 import {
   Accordion,
@@ -108,24 +110,19 @@ export default function WebDesignPage() {
         backgroundImage="https://staging44.twentyonesolutions.com/wp-content/uploads/2025/02/pexels-photo-355328-355328-scaled.avif"
         overlayOpacity={0.75}
       >
-        <div className="container mx-auto px-6 text-center max-w-4xl">
+        <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
           <motion.h1  
             initial="hidden" animate="visible" variants={fadeIn}
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 leading-[1.1] mb-6"
+            className="text-5xl md:text-7xl font-bold font-heading text-gray-900 mb-6"
           >
             Web Design
           </motion.h1>
           <motion.p 
             initial="hidden" animate="visible" variants={fadeIn}
-            className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto mb-10"
+            className="text-xl md:text-2xl font-light max-w-2xl text-gray-700"
           >
             Websites that clearly explain what you do, build trust, and make it easy to reach you.
           </motion.p>
-          <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-            <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
-              Get a Free Preview
-            </Button>
-          </motion.div>
         </div>
       </WaveSection>
 
@@ -195,10 +192,71 @@ export default function WebDesignPage() {
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
-              Get a Free Preview
-            </Button>
+        </div>
+      </section>
+
+      {/* Form / CTA Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div className="space-y-8">
+              <h2 className="text-4xl font-bold font-heading text-gray-900">Ready to Get Started?</h2>
+              <p className="text-xl text-gray-600">See what your custom website could look like in 24 hours.</p>
+              
+              <Card className="border-0 shadow-2xl bg-white overflow-hidden">
+                <CardContent className="p-8">
+                  <form className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="contact-name">Full Name *</Label>
+                        <Input id="contact-name" className="bg-[#fdfaf5] border-gray-200" required />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="contact-phone">Phone *</Label>
+                        <Input id="contact-phone" className="bg-[#fdfaf5] border-gray-200" required />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-email">Email *</Label>
+                      <Input id="contact-email" type="email" className="bg-[#fdfaf5] border-gray-200" required />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-business">Business Name *</Label>
+                      <Input id="contact-business" className="bg-[#fdfaf5] border-gray-200" required />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-desc">What does your business do? *</Label>
+                      <Input id="contact-desc" className="bg-[#fdfaf5] border-gray-200" required />
+                    </div>
+
+                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-14 text-lg mt-4">
+                      Submit
+                    </Button>
+                    <p className="text-xs text-center text-gray-500">
+                      I agree to privacy policy & terms of service.
+                    </p>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="space-y-12 lg:pt-20">
+              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                <iframe 
+                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="TwentyOne Solutions Location"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>

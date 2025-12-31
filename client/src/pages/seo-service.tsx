@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
 import { Navigation, Footer } from '@/components/layout';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import {
@@ -127,41 +129,26 @@ export default function SEOPage() {
 
       {/* Hero Section */}
       <WaveSection 
-        className="pt-32 md:pt-40 pb-20 md:pb-32" 
+        className="pt-32 md:pt-40 pb-48" 
         disableTopWave
         backgroundImage="/assets/images/seo-hero.webp"
         overlayOpacity={0.75}
         bottomWaveColor="#ffffff"
       >
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
-            <motion.h1 
-              variants={fadeIn} 
-              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
-            >
-              Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
-            </motion.h1>
-            
-            <motion.p 
-              variants={fadeIn} 
-              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
-            >
-              When people search for services like yours, they are ready to hire. We make sure you are the first business they see.
-            </motion.p>
-            
-            <motion.div variants={fadeIn} className="pt-4">
-              <LeadFormModal 
-                title="Schedule a Strategy Call"
-                description="Let's discuss how we can improve your rankings and get you more leads."
-                type="strategy"
-                trigger={
-                  <Button size="lg" className="h-16 px-10 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white rounded-full shadow-xl hover:shadow-2xl transition-all font-bold hover:-translate-y-1">
-                    Start Ranking Higher
-                  </Button>
-                }
-              />
-            </motion.div>
-          </div>
+        <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
+          <motion.h1 
+            initial="hidden" animate="visible" variants={fadeIn} 
+            className="text-5xl md:text-7xl font-bold font-heading text-gray-900 mb-6"
+          >
+            Get Found When <br/>Customers <span className="text-[#FD9800]">Search.</span>
+          </motion.h1>
+          
+          <motion.p 
+            initial="hidden" animate="visible" variants={fadeIn} 
+            className="text-xl md:text-2xl font-light max-w-2xl text-gray-700"
+          >
+            When people search for services like yours, they are ready to hire. We make sure you are the first business they see.
+          </motion.p>
         </div>
       </WaveSection>
 
@@ -333,24 +320,68 @@ export default function SEOPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-[#fdfaf5] relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10 text-center max-w-3xl">
-          <h2 className="text-4xl lg:text-5xl font-bold font-heading text-gray-900 mb-6">Ready to Dominate Local Search?</h2>
-          <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-            Don't wait until your competitors have taken all the top spots. Invest in your business's growth with our Local SEO solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <LeadFormModal 
-              title="Schedule a Strategy Call"
-              description="Get a comprehensive audit of your current digital presence and a roadmap to #1."
-              type="strategy"
-              trigger={
-                <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-full shadow-lg hover:shadow-orange-500/20">
-                  Get Found Today
-                </Button>
-              }
-            />
+      {/* Form / CTA Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16">
+            <div className="space-y-8">
+              <h2 className="text-4xl font-bold font-heading text-gray-900">Ready to Get Started?</h2>
+              <p className="text-xl text-gray-600">See what your custom website could look like in 24 hours.</p>
+              
+              <Card className="border-0 shadow-2xl bg-white overflow-hidden">
+                <CardContent className="p-8">
+                  <form className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="contact-name">Full Name *</Label>
+                        <Input id="contact-name" className="bg-[#fdfaf5] border-gray-200" required />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="contact-phone">Phone *</Label>
+                        <Input id="contact-phone" className="bg-[#fdfaf5] border-gray-200" required />
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-email">Email *</Label>
+                      <Input id="contact-email" type="email" className="bg-[#fdfaf5] border-gray-200" required />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-business">Business Name *</Label>
+                      <Input id="contact-business" className="bg-[#fdfaf5] border-gray-200" required />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="contact-desc">What does your business do? *</Label>
+                      <Input id="contact-desc" className="bg-[#fdfaf5] border-gray-200" required />
+                    </div>
+
+                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-14 text-lg mt-4">
+                      Submit
+                    </Button>
+                    <p className="text-xs text-center text-gray-500">
+                      I agree to privacy policy & terms of service.
+                    </p>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="space-y-12 lg:pt-20">
+              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                <iframe 
+                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="TwentyOne Solutions Location"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>
