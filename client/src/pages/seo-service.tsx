@@ -316,11 +316,11 @@ export default function SEOPage() {
             <Card className="border border-gray-100 hover:shadow-xl transition-all hover:-translate-y-1 h-full">
               <CardContent className="p-8">
                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
-                  <Search className="w-6 h-6" />
+                  <MapPin className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">Target Exact Keywords</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Google Business Profile</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  We make sure your website matches exactly what your customers are actively searching for in your area.
+                  We optimize your profile to dominate the Map Pack, ensuring you're the first choice customers see on Google Maps.
                 </p>
               </CardContent>
             </Card>
@@ -330,9 +330,9 @@ export default function SEOPage() {
                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
                   <Globe className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">Build Local Authority</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Backlinks & Citations</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  High-quality backlinks boost your credibility and tell Google you’re the trusted choice in your city.
+                  We build authoritative backlinks and local citations to boost your credibility and tell Google you’re the trusted choice in your city.
                 </p>
               </CardContent>
             </Card>
@@ -365,50 +365,41 @@ export default function SEOPage() {
       </section>
 
       {/* AI Search Section */}
-      <section className="py-24 bg-gray-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[128px]"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FD9800] rounded-full blur-[128px]"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 font-bold text-sm mb-6">
-                The Future of Search
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-                Optimized for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#FD9800]">AI Overviews</span> & ChatGPT
+      <section className="py-16 bg-[#fdfaf5] border-t border-gray-100">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
+                  <Zap className="w-4 h-4" />
+                  <span>AI Search Ready</span>
+               </div>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">
+                Optimized for AI Overviews & ChatGPT
               </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Search is changing. People aren't just clicking links anymore—they're getting answers directly from AI. We structure your data and content so your business is the one the AI recommends.
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Search is evolving. We structure your data so your business is recommended directly by AI tools like Google's AI Overviews and ChatGPT.
               </p>
-              
-              <div className="space-y-6">
+              <ul className="space-y-3">
                 {[
-                  "Direct Answer Optimization for Google AI Overviews",
-                  "Entity-Based SEO for ChatGPT & Perplexity",
-                  "Schema Markup for Rich Results",
-                  "Voice Search Compatibility"
+                  "Direct Answers for AI Queries",
+                  "Structured Data & Schema",
+                  "Voice Search Optimized"
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-4 items-center">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shrink-0">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-lg font-medium">{item}</span>
-                  </div>
+                  <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                    <Check className="w-5 h-5 text-[#FD9800]" />
+                    {item}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
             
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 backdrop-blur-sm">
+            <div className="flex-1 relative w-full max-w-md">
+              <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                 <img 
                   src="/assets/images/ai-search-features.avif" 
-                  alt="AI Search Optimization Graph" 
+                  alt="AI Search Optimization" 
                   className="w-full h-auto"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none"></div>
               </div>
             </div>
           </div>
