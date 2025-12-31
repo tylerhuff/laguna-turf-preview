@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -9,21 +8,6 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import ceilingProImg from '@assets/generated_images/website_mockup_for_ceiling_pro.png';
 import sierraElectricImg from '@assets/generated_images/website_mockup_for_sierra_precision_electric.png';
 import cleaningSolutionImg from '@assets/generated_images/website_mockup_for_cleaning_solution_building_corp.png';
-
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
 
 interface PortfolioCardProps {
   title: string;
@@ -34,7 +18,7 @@ interface PortfolioCardProps {
 }
 
 const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
-  <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
+  <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
     <div className="overflow-hidden">
       <AspectRatio ratio={16/10}>
         <img 
@@ -56,7 +40,7 @@ const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioC
         </Button>
       </a>
     </div>
-  </motion.div>
+  </div>
 );
 
 import { WaveSection } from '@/components/ui/wave-section';
@@ -223,18 +207,16 @@ export default function PortfolioPage() {
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <motion.h1  
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
+          <h1  
+            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700"
           >
             Our Portfolio
-          </motion.h1>
-          <motion.p 
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-xl text-gray-600 font-light max-w-2xl mx-auto"
+          </h1>
+          <p 
+            className="text-xl text-gray-600 font-light max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
           >
             We work with home builders, contractors, trades, and professional services businesses.
-          </motion.p>
+          </p>
         </div>
       </WaveSection>
 
@@ -257,11 +239,7 @@ export default function PortfolioPage() {
               <div className="h-px bg-gray-200 flex-grow"></div>
             </div>
             
-            <motion.div 
-              initial="hidden" 
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={staggerContainer}
+            <div 
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {portfolioItems
@@ -272,7 +250,7 @@ export default function PortfolioPage() {
                     {...item}
                   />
                 ))}
-            </motion.div>
+            </div>
           </section>
         ))}
       </div>

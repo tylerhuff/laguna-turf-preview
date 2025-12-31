@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { motion } from 'framer-motion';
 import { Check, Star, ArrowRight, Zap, MousePointerClick, Search, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -11,11 +10,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
 
 import { WaveSection } from '@/components/ui/wave-section';
 
@@ -109,23 +103,21 @@ export default function WebDesignPage() {
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
-          <motion.h1  
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 leading-[1.1] mb-6"
+          <h1  
+            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700"
           >
             Web Design
-          </motion.h1>
-          <motion.p 
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto mb-10"
+          </h1>
+          <p 
+            className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl mx-auto mb-10 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 fill-mode-both"
           >
             Websites that clearly explain what you do, build trust, and make it easy to reach you.
-          </motion.p>
-          <motion.div initial="hidden" animate="visible" variants={fadeIn}>
+          </p>
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 fill-mode-both">
             <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white rounded-lg shadow-lg">
               Get a Free Preview
             </Button>
-          </motion.div>
+          </div>
         </div>
       </WaveSection>
 

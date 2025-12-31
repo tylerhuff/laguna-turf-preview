@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from "wouter";
-import { motion } from 'framer-motion';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
@@ -111,10 +110,8 @@ export default function BlogPage() {
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+          <div
+            className="animate-in fade-in slide-in-from-bottom-4 duration-700"
           >
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 leading-tight">
               Latest Insights
@@ -122,7 +119,7 @@ export default function BlogPage() {
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Tips, strategies, and guides to help your service business grow online.
             </p>
-          </motion.div>
+          </div>
         </div>
       </WaveSection>
 
@@ -188,11 +185,10 @@ export default function BlogPage() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((article, index) => (
-                <motion.div
+                <div
                   key={article.id || index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  className="animate-in fade-in duration-500 fill-mode-both"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <Link href={`/resources/${article.slug}`}>
                     <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white overflow-hidden group">
@@ -237,7 +233,7 @@ export default function BlogPage() {
                       </CardFooter>
                     </Card>
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
