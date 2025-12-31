@@ -86,37 +86,70 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
       {/* Main Content */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
-              Web Design and Local SEO Marketing for {industryName}
-            </h2>
-            <div className="text-lg text-gray-600 leading-relaxed space-y-6">
-              <p>
-                As a {industryName.toLowerCase().slice(0, -1)}, your reputation is everything. You need a website that reflects the quality of your work and builds trust instantly. We build custom websites that showcase your projects, highlight your services, and make it incredibly easy for potential clients to contact you.
-              </p>
-              <p>
-                We don't just build pretty sites; we build sites that convert visitors into leads. From clear call-to-actions to mobile-friendly layouts, every element is designed to grow your business.
-              </p>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-16">
             
-            <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm mt-8">
-              <h3 className="text-xl font-bold font-heading text-gray-900 mb-4">Why Choose Us?</h3>
-              <ul className="grid md:grid-cols-2 gap-4">
-                {[
-                  "Mobile-optimized for clients on the go",
-                  "Portfolio galleries to showcase your work",
-                  "Trust signals and testimonial integration",
-                  "Fast loading speeds for better retention",
-                  "Local SEO optimized structure",
-                  "Lead generation focused design"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-700">
-                    <CheckCircle2 className="w-5 h-5 text-[#FD9800] shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Design Section */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold font-heading text-gray-900">
+                Custom Web Design for {industryName}
+              </h2>
+              <div className="text-lg text-gray-600 leading-relaxed space-y-6">
+                <p>
+                  As a {industryName.toLowerCase().slice(0, -1)}, your reputation is everything. You need a website that reflects the quality of your work and builds trust instantly. We build custom websites that showcase your projects, highlight your services, and make it incredibly easy for potential clients to contact you.
+                </p>
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#FD9800]" />
+                    Design Features That Convert
+                  </h4>
+                  <ul className="grid sm:grid-cols-2 gap-3">
+                    {[
+                      "Mobile-optimized for clients on the go",
+                      "Portfolio galleries to showcase work",
+                      "Trust signals & testimonial integration",
+                      "Fast loading speeds for better retention"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FD9800]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
+
+            {/* SEO Section */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold font-heading text-gray-900">
+                Local SEO Marketing for {industryName}
+              </h2>
+              <div className="text-lg text-gray-600 leading-relaxed space-y-6">
+                <p>
+                  Having a website is only half the battle. You need to be found when people in your area search for "{industryName} near me". Our Local SEO services help you climb the Google rankings and get in front of customers exactly when they are looking for your services.
+                </p>
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+                  <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 text-[#FD9800]" />
+                    Dominate Your Local Market
+                  </h4>
+                  <ul className="grid sm:grid-cols-2 gap-3">
+                    {[
+                      "Google Business Profile Optimization",
+                      "Local Citation Building",
+                      "Service Area Targeted Content",
+                      "Review Generation Strategy"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#FD9800]" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
