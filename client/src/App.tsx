@@ -156,27 +156,6 @@ function Router() {
                   description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
                   image: "/assets/images/LuxuryTahoePropertiesMockup.png",
                   link: "https://luxurytahoeproperties.com/"
-                },
-                {
-                  title: "Diamond Construction",
-                  subtitle: "Construction",
-                  description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
-                  image: "/assets/images/DiamondConstructionMockup.png",
-                  link: "https://diamondconstructionandgypsum.com/"
-                },
-                {
-                  title: "Smith & Eastwood Construction",
-                  subtitle: "General Contractors",
-                  description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
-                  image: "/assets/images/SmithandEastWoodConstruction.webp",
-                  link: "https://smitheastwoodbuild.com/"
-                },
-                {
-                  title: "Sierra Precision Electric",
-                  subtitle: "Electrical Contractor",
-                  description: "Trusted Electrical Solutions for Truckee and Lake Tahoe. Specializing in high-end residential installations.",
-                  image: "/assets/images/SierraElectricMockup.png",
-                  link: "https://truckeetahoeelectrical.com/"
                 }
               ]}
             />
