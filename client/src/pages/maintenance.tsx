@@ -2,8 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, BarChart3, Clock, Lock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { ContactForm } from '@/components/ContactForm';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { LeadFormModal } from '@/components/LeadFormModal';
@@ -164,49 +163,9 @@ export default function MaintenancePage() {
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16">
-            <div className="space-y-8">
-              <h2 className="text-4xl font-bold font-heading text-gray-900">Ready to Get Started?</h2>
-              <p className="text-xl text-gray-600">Let us handle your website so you can handle your business.</p>
-              
-              <Card className="border-0 shadow-2xl bg-white overflow-hidden">
-                <CardContent className="p-8">
-                  <form className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="contact-name">Full Name *</Label>
-                        <Input id="contact-name" className="bg-[#fdfaf5] border-gray-200" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="contact-phone">Phone *</Label>
-                        <Input id="contact-phone" className="bg-[#fdfaf5] border-gray-200" required />
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="contact-email">Email *</Label>
-                      <Input id="contact-email" type="email" className="bg-[#fdfaf5] border-gray-200" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="contact-business">Business Name *</Label>
-                      <Input id="contact-business" className="bg-[#fdfaf5] border-gray-200" required />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="contact-desc">What do you need help with? *</Label>
-                      <Input id="contact-desc" className="bg-[#fdfaf5] border-gray-200" required />
-                    </div>
-
-                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-14 text-lg mt-4">
-                      Submit
-                    </Button>
-                    <p className="text-xs text-center text-gray-500">
-                      I agree to privacy policy & terms of service.
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+            <ContactForm 
+              description="Let us handle your website so you can handle your business."
+            />
 
             <div className="space-y-12 lg:pt-20">
               <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
