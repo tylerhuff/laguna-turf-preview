@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+	<Document>
+		<name>Locations for TwentyOne Solutions</name>
+		<atom:author>
+			<atom:name>TwentyOne Solutions</atom:name>
+		</atom:author>
+		<atom:link rel="related" href="https://twentyonesolutions.com" />
+		<Folder>
+			<Placemark>
+				<name><![CDATA[TwentyOne Solutions]]></name>
+				<address><![CDATA[234 Avenida Rosa A, San Clemente, CA, 92672, United States]]></address>
+				<description><![CDATA[San Clemente Web Design & SEO Agency]]></description>
+				<Point>
+					<coordinates>-117.6138,33.4235,0</coordinates>
+				</Point>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

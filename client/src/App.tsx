@@ -33,6 +33,7 @@ const IndustryPage = lazy(() => import("@/pages/industry-template"));
 const SanClementePage = lazy(() => import("@/pages/san-clemente"));
 const PrivacyPolicyPage = lazy(() => import("@/pages/privacy-policy"));
 const TermsOfServicePage = lazy(() => import("@/pages/terms-of-service"));
+const SitemapPage = lazy(() => import("@/pages/sitemap"));
 
 function LoadingFallback() {
   return (
@@ -50,6 +51,7 @@ function Router() {
         <Route path="/san-clemente" component={SanClementePage} />
         <Route path="/privacy-policy" component={PrivacyPolicyPage} />
         <Route path="/terms-of-service" component={TermsOfServicePage} />
+        <Route path="/sitemap" component={SitemapPage} />
         <Route path="/about-us" component={AboutPage} />
         
         {/* Industry Pages */}
