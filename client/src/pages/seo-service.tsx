@@ -246,8 +246,8 @@ export default function SEOPage() {
             <div className="relative">
               <div className="bg-white p-2 rounded-2xl shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img 
-                  src="/assets/images/mockup-mobile-search.jpg" 
-                  alt="Google Search Results Mockup" 
+                  src="/assets/images/google-map-pack-screenshot.avif" 
+                  alt="Google Search Results Map Pack" 
                   className="rounded-xl w-full h-auto object-cover"
                 />
               </div>
@@ -311,12 +311,63 @@ export default function SEOPage() {
                 <div className="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-[#FD9800] mb-6">
                   <Zap className="w-6 h-6" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3">AI Search Ready</h4>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">Site Optimization</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  We structure your data so you show up in Google AI Overviews and ChatGPT results, not just traditional search.
+                  From titles to meta descriptions and speed, we make sure your site is easy for Google to find and rank.
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Search Section */}
+      <section className="py-24 bg-gray-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[128px]"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#FD9800] rounded-full blur-[128px]"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="inline-block px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 font-bold text-sm mb-6">
+                The Future of Search
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
+                Optimized for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#FD9800]">AI Overviews</span> & ChatGPT
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Search is changing. People aren't just clicking links anymore—they're getting answers directly from AI. We structure your data and content so your business is the one the AI recommends.
+              </p>
+              
+              <div className="space-y-6">
+                {[
+                  "Direct Answer Optimization for Google AI Overviews",
+                  "Entity-Based SEO for ChatGPT & Perplexity",
+                  "Schema Markup for Rich Results",
+                  "Voice Search Compatibility"
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-center">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shrink-0">
+                      <Check className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-lg font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-800/50 backdrop-blur-sm">
+                <img 
+                  src="/assets/images/ai-search-features.avif" 
+                  alt="AI Search Optimization Graph" 
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent pointer-events-none"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
