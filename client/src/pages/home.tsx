@@ -452,10 +452,10 @@ export default function HomePage() {
               link="/services/search-engine-optimization"
             />
             <ServiceCard 
-              title="Web Maintenance"
+              title="Website Care"
               description="Web hosting, email, maintenance, backups, unlimited content updates and more."
               items={["Monthly Reporting", "On-demand Backups", "Daily security scans"]}
-              link="/services/managed-wordpress-hosting"
+              link="/services/website-care"
             />
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { Suspense, lazy } from "react";
-import { Switch, Route } from "wouter";
+import { Switch, Route, Redirect } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -122,8 +122,16 @@ function Router() {
         <Route path="/services/search-engine-optimization" component={SEOPage} />
         <Route path="/services/search-engine-optimiziation" component={SEOPage} />
         
-        <Route path="/services/managed-wordpress-hosting" component={MaintenancePage} />
-        <Route path="/services/maintenance" component={MaintenancePage} />
+        {/* New Primary Route */}
+        <Route path="/services/website-care" component={MaintenancePage} />
+        
+        {/* Redirects */}
+        <Route path="/services/managed-wordpress-hosting">
+          <Redirect to="/services/website-care" />
+        </Route>
+        <Route path="/services/maintenance">
+          <Redirect to="/services/website-care" />
+        </Route>
         
         <Route path="/services/google-ads" component={SEOPage} />
         <Route path="/services/online-listings-management" component={SEOPage} />
