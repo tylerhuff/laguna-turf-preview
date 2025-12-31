@@ -381,28 +381,28 @@ export default function HomePage() {
               description="Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes."
               image="/assets/images/Filger-Manufacturing.webp"
               link="#"
-              category="Manufacturing"
+              category="Professional Services"
             />
             <PortfolioItem 
               title="West Coast Washers"
               description="Professional exterior cleaning for homes and businesses in Southern California featuring a modern site."
               image="/assets/images/WCW_mockup_transparent.webp"
               link="#"
-              category="Cleaning Services"
+              category="Professional Services"
             />
             <PortfolioItem 
               title="TSA Group Ltd"
               description="Transmission line siting and right-of-way consulting. Highlights current and past projects."
               image="/assets/images/TSA-Group-Limited.webp"
               link="#"
-              category="Consulting"
+              category="Professional Services"
             />
             <PortfolioItem 
               title="Luxury Tahoe Properties"
               description="High-end properties in the Lake Tahoe area. Integrates MLS listings giving buyers real-time access."
               image="/assets/images/LuxuryTahoeProperties.webp"
               link="#"
-              category="Real Estate"
+              category="Professional Services"
             />
             <PortfolioItem 
               title="Diamond Construction"
@@ -416,7 +416,7 @@ export default function HomePage() {
               description="Thrilling daily fantasy sports experiences for passionate fans with a custom website."
               image="/assets/images/FanFusion.webp"
               link="#"
-              category="Entertainment"
+              category="Professional Services"
             />
           </div>
         </div>
