@@ -98,14 +98,14 @@ export default function First30DaysPage() {
 
         <div className="mt-16 pt-10 border-t border-gray-100">
           <h3 className="text-2xl font-bold font-heading mb-6">Ready to start Day 1?</h3>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact-us">
-              <Button size="lg" className="bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 px-8">
+              <Button size="lg" className="w-full sm:w-auto bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 px-8">
                 Start Your Project
               </Button>
             </Link>
             <Link href="/resources">
-              <Button variant="outline" size="lg" className="border-gray-300 hover:border-[#FD9800] hover:text-[#FD9800] h-12 px-8">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto border-gray-300 hover:border-[#FD9800] hover:text-[#FD9800] h-12 px-8">
                 Read More Guides
               </Button>
             </Link>
