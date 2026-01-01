@@ -41,7 +41,6 @@ export default function AboutPage() {
         schema={aboutSchema}
       />
       <Navigation />
-
       {/* Hero */}
       <WaveSection 
         className="pt-32 md:pt-40 pb-48" 
@@ -64,7 +63,6 @@ export default function AboutPage() {
           </motion.p>
         </div>
       </WaveSection>
-
       {/* Intro */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
@@ -83,13 +81,12 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Why TwentyOne */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Why TwentyOne?</h2>
-            <p className="text-lg text-gray-600">A few reasons clients stick with us.</p>
+            <p className="text-lg text-gray-600 text-left">A few reasons clients stick with us.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -107,7 +104,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Testimonials */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
@@ -179,7 +175,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Some of our Work */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -248,7 +243,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       {/* Form / CTA Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -272,7 +266,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
