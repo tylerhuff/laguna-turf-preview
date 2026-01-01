@@ -132,7 +132,7 @@ export default function SanClementePage() {
 
       {/* Hero */}
       <WaveSection 
-        className="pt-32 md:pt-40 pb-48" 
+        className="pt-20 md:pt-40 pb-24 md:pb-48" 
         disableTopWave
         backgroundImage="/assets/images/san-clemente-hero.webp"
         overlayOpacity={0.7}

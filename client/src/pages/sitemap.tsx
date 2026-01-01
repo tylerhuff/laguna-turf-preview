@@ -72,7 +72,7 @@ export default function SitemapPage() {
       <Navigation />
 
       <WaveSection 
-        className="pt-32 md:pt-40 pb-20" 
+        className="pt-20 md:pt-40 pb-20" 
         disableTopWave
         overlayOpacity={0.75}
         backgroundImage="/assets/images/portfolio-hero.webp"

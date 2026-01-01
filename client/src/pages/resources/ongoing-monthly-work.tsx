@@ -15,7 +15,7 @@ export default function OngoingWorkPage() {
       />
       <Navigation />
 
-      <div className="pt-32 pb-16 bg-[#fdfaf5]">
+      <div className="pt-20 md:pt-32 pb-16 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
            <Link href="/resources">
              <Button variant="ghost" className="mb-8 hover:bg-white/50 text-gray-600 gap-2 pl-0 hover:pl-2 transition-all">

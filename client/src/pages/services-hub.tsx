@@ -13,7 +13,7 @@ export default function ServicesHub() {
         image="/assets/images/bannertwentyone.webp"
       />
       <Navigation />
-      <WaveSection className="pt-32 pb-20" disableTopWave overlayOpacity={0.8}>
+      <WaveSection className="pt-20 md:pt-40 pb-20" disableTopWave overlayOpacity={0.8}>
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6">Our Services</h1>
         </div>

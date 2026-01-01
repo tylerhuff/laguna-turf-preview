@@ -15,7 +15,7 @@ export default function TermsOfServicePage() {
       <Navigation />
       
       <WaveSection 
-        className="pt-32 pb-20" 
+        className="pt-20 md:pt-40 pb-20" 
         disableTopWave 
         overlayOpacity={0.8}
         bottomWaveColor="#fdfaf5"

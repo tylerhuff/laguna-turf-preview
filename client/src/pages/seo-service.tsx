@@ -130,7 +130,7 @@ export default function SEOPage() {
 
       {/* Hero Section */}
       <WaveSection 
-        className="pt-32 md:pt-40 pb-48" 
+        className="pt-20 md:pt-40 pb-24 md:pb-48" 
         disableTopWave
         backgroundImage="/assets/images/seo-hero.webp"
         overlayOpacity={0.75}
