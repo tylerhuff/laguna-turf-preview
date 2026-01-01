@@ -3,6 +3,7 @@ import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { toast } from 'sonner';
 
@@ -221,6 +222,7 @@ export default function PortfolioPage() {
         image="/assets/images/portfolio-hero.webp"
         schema={portfolioSchema}
       />
+      <Navigation />
 
       {/* Hero */}
       <WaveSection 
@@ -308,6 +310,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { motion } from 'framer-motion';
 import { ContactForm } from '@/components/ContactForm';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { Calendar, User, ArrowRight, Loader2, BookOpen, TrendingUp, Clock, Settings } from 'lucide-react';
 import { BlogClient } from 'seobot'; 
@@ -70,6 +71,7 @@ export default function BlogPage() {
         image="/assets/images/portfolio-hero.webp"
         schema={blogSchema}
       />
+      <Navigation />
 
       <WaveSection 
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
@@ -239,6 +241,7 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

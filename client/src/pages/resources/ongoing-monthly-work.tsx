@@ -1,5 +1,6 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
+import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
 import { ArrowLeft, Shield, TrendingUp, CheckCircle2 } from 'lucide-react';
@@ -12,6 +13,7 @@ export default function OngoingWorkPage() {
         description="We don't just build it and leave. Learn how our monthly maintenance and SEO plans keep your business growing."
         canonical="/resources/ongoing-monthly-work"
       />
+      <Navigation />
 
       <div className="pt-20 md:pt-32 pb-16 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -111,6 +113,7 @@ export default function OngoingWorkPage() {
         </div>
       </article>
 
+      <Footer />
     </div>
   );
 }

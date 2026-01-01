@@ -19,6 +19,7 @@ import {
 import { ContactForm } from '@/components/ContactForm';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { LeadFormModal } from '@/components/LeadFormModal';
@@ -125,6 +126,7 @@ export default function SEOPage() {
           "@graph": [serviceSchema, faqSchema]
         }}
       />
+      <Navigation />
 
       {/* Hero Section */}
       <WaveSection 
@@ -460,6 +462,7 @@ export default function SEOPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

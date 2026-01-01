@@ -2,10 +2,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { Navigation, Footer } from '@/components/layout';
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-[#fdfaf5] flex flex-col">
+      <Navigation />
       
       <div className="flex-grow flex items-center justify-center p-6">
         <Card className="w-full max-w-md border-0 shadow-lg bg-white">
@@ -30,6 +32,7 @@ export default function NotFound() {
         </Card>
       </div>
 
+      <Footer />
     </div>
   );
 }

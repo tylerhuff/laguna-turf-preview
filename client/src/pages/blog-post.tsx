@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SEO } from '@/components/seo';
 import { useLocation, Link } from "wouter";
+import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, Share2, Facebook, Twitter, Linkedin, Loader2 } from 'lucide-react';
 import { BlogClient } from 'seobot';
@@ -55,11 +56,11 @@ export default function BlogPost() {
   if (loading) {
     return (
       <div className="min-h-screen bg-white text-gray-800 font-sans">
-
+        <Navigation />
         <div className="flex justify-center py-40">
           <Loader2 className="w-10 h-10 animate-spin text-[#FD9800]" />
         </div>
-
+        <Footer />
       </div>
     );
   }
@@ -67,14 +68,14 @@ export default function BlogPost() {
   if (!article) {
     return (
       <div className="min-h-screen bg-white text-gray-800 font-sans">
-
+        <Navigation />
         <div className="container mx-auto px-6 py-24 text-center">
           <h1 className="text-4xl font-bold mb-4">Article Not Found</h1>
           <Link href="/resources">
             <Button>Back to Resources</Button>
           </Link>
         </div>
-
+        <Footer />
       </div>
     );
   }
@@ -109,6 +110,7 @@ export default function BlogPost() {
         type="article"
         schema={articleSchema}
       />
+      <Navigation />
 
       <div className="pt-24 pb-12 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -196,6 +198,7 @@ export default function BlogPost() {
         </div>
       </article>
 
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { ContactForm } from '@/components/ContactForm';
 
@@ -11,6 +12,7 @@ export default function TermsOfServicePage() {
         <meta name="description" content="Terms of Service for TwentyOne Solutions website design and marketing services." />
       </Helmet>
       
+      <Navigation />
       
       <WaveSection 
         className="pt-20 md:pt-40 pb-20" 
@@ -102,6 +104,7 @@ export default function TermsOfServicePage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

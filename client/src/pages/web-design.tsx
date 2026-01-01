@@ -5,6 +5,7 @@ import { Check, Star, ArrowRight, Zap, MousePointerClick, Search, MapPin } from 
 import { ContactForm } from '@/components/ContactForm';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
+import { Navigation, Footer } from '@/components/layout';
 import {
   Accordion,
   AccordionContent,
@@ -99,6 +100,7 @@ export default function WebDesignPage() {
           "@graph": [serviceSchema, faqSchema]
         }}
       />
+      <Navigation />
 
       {/* Hero */}
       <WaveSection 
@@ -267,6 +269,7 @@ export default function WebDesignPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }

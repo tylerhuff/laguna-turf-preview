@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { ContactForm } from '@/components/ContactForm';
 
@@ -11,6 +12,7 @@ export default function PrivacyPolicyPage() {
         <meta name="description" content="Privacy Policy for TwentyOne Solutions. How we collect, use, and protect your data." />
       </Helmet>
       
+      <Navigation />
       
       <WaveSection 
         className="pt-20 md:pt-40 pb-20" 
@@ -129,6 +131,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
+      <Footer />
     </div>
   );
 }
