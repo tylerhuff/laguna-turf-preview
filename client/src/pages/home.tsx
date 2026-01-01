@@ -312,7 +312,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white transform rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white">
                 <img 
-                  src="/assets/images/local-search-grid-before.png" 
+                  src="/assets/images/local-search-grid-before.webp" 
                   alt="Local Search Grid Report - Before Results" 
                   className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
@@ -327,7 +327,7 @@ export default function HomePage() {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-green-500 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white ring-4 ring-green-500/20">
                 <img 
-                  src="/assets/images/local-search-grid-after.png" 
+                  src="/assets/images/local-search-grid-after.webp" 
                   alt="Local Search Grid Report - After Results" 
                   className="w-full h-auto"
                 />
