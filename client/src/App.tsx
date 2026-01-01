@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
+import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { Loader2 } from "lucide-react";
 import { LazyMotion, domAnimation } from "framer-motion";
 import ReactGA from "react-ga4";
@@ -244,6 +245,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <ScrollToTop />
+          <ScrollToTopButton />
           <Toaster />
           <Router />
         </TooltipProvider>
