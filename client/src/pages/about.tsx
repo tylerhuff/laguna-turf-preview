@@ -1,6 +1,7 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
+import { Link } from "wouter";
 import { Check, Star, ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
