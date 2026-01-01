@@ -154,20 +154,26 @@ export default function WebDesignPage() {
               </div>
             </div>
             
-            <div className="relative space-y-12">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500 relative z-10">
-                <img 
-                  src="/assets/images/WCW_mockup_transparent.webp" 
-                  alt="West Coast Washers Mockup" 
-                  className="w-full h-auto"
-                />
+            <div className="relative space-y-12 flex flex-col items-center">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition-transform duration-500 relative z-10 w-full max-w-md">
+                <picture>
+                  <source media="(max-width: 640px)" srcSet="/assets/images/WCW_mockup_transparent-mobile.webp" />
+                  <img 
+                    src="/assets/images/WCW_mockup_transparent.webp" 
+                    alt="West Coast Washers Mockup" 
+                    className="w-full h-auto"
+                  />
+                </picture>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -rotate-1 hover:rotate-0 transition-transform duration-500 ml-6 relative z-0">
-                <img 
-                  src="/assets/images/SmithandEastWoodConstruction.webp" 
-                  alt="Smith & Eastwood Construction Mockup" 
-                  className="w-full h-auto"
-                />
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform -rotate-1 hover:rotate-0 transition-transform duration-500 relative z-0 w-full max-w-md -mt-8 md:ml-6 md:mt-0">
+                <picture>
+                  <source media="(max-width: 640px)" srcSet="/assets/images/SmithandEastWoodConstruction-mobile.webp" />
+                  <img 
+                    src="/assets/images/SmithandEastWoodConstruction.webp" 
+                    alt="Smith & Eastwood Construction Mockup" 
+                    className="w-full h-auto"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -183,9 +189,9 @@ export default function WebDesignPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { num: "01", title: "Quick launch", desc: "Clear steps, quick turnaround, and you are live without weeks of back and forth." },
-              { num: "02", title: "Proven Results", desc: "Built to get you more calls. Clear message, strong trust, and a simple path to contact you." },
-              { num: "03", title: "Future Proof", desc: "We stay on top of the trends so you never have to worry about falling behind." }
+              { num: "01", title: "Site Preview First", desc: "Get a preview before committing." },
+              { num: "02", title: "Onboarding", desc: "We just need a single onboarding form from you and that’s it." },
+              { num: "03", title: "Launch & Grow", desc: "Once you’re thrilled with the site, we launch it." }
             ].map((item, i) => (
               <div key={i} className="bg-[#fdfaf5] p-8 rounded-xl shadow-lg border-t-4 border-[#FD9800] relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
                 <span className="text-6xl font-bold text-[#FD9800]/20 absolute top-4 right-4">{item.num}</span>
