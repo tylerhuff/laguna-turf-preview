@@ -1,0 +1,13 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&amp;display=swap');
+  </style>
+  <!-- Background: Warm White from site theme -->
+  <rect width="1080" height="1080" fill="#fdfaf5"/>
+  
+  <!-- "TwentyOne" - Orange, Centered -->
+  <text x="50%" y="480" font-family="'Syne', sans-serif" font-weight="700" font-size="180" text-anchor="middle" fill="#FD9800" letter-spacing="-2">TwentyOne</text>
+  
+  <!-- "solutions" - Gray-600, Centered below -->
+  <text x="50%" y="680" font-family="'Syne', sans-serif" font-weight="700" font-size="140" text-anchor="middle" fill="#4b5563" letter-spacing="-1">solutions</text>
+</svg>
