@@ -249,7 +249,7 @@ export default function PortfolioPage() {
 
       {/* Intro */}
       <section className="py-16 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
+        <div className="container mx-auto px-6 text-left md:text-center max-w-3xl">
           <h2 className="text-3xl font-bold font-heading text-gray-900 mb-4">Some of our Work</h2>
           <p className="text-lg text-gray-600">
             Just as we’ve crafted exceptional websites for our clients, we can do the same for you. Our team will understand your unique needs to create stunning websites that resonate with your audience.
