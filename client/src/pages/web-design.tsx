@@ -107,7 +107,7 @@ export default function WebDesignPage() {
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
         disableTopWave
         backgroundImage="/assets/images/web-design-hero.webp"
-        mobileBackgroundImage="/assets/images/web-design-hero-mobile-new.jpg"
+        mobileBackgroundImage="/assets/images/bannertwentyone-mobile.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 flex flex-col justify-center items-center text-center">
