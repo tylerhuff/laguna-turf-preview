@@ -56,7 +56,7 @@ export default function SitemapPage() {
       links: [
         { label: "Privacy Policy", href: "/privacy-policy" },
         { label: "Terms of Service", href: "/terms-of-service" },
-        { label: "XML Sitemap", href: "/page-sitemap.xml", external: true },
+        { label: "XML Sitemap", href: "/sitemap.xml", external: true },
         { label: "KML Locations", href: "/locations.kml", external: true },
       ]
     }
