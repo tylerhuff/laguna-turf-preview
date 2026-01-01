@@ -269,7 +269,7 @@ export default function PortfolioPage() {
             <motion.div 
               initial="hidden" 
               whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-50px" }}
               variants={staggerContainer}
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
