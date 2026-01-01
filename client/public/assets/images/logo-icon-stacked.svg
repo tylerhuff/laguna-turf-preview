@@ -2,12 +2,12 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&amp;family=Open+Sans:wght@600&amp;display=swap');
   </style>
-  <!-- Circular Background -->
-  <circle cx="100" cy="100" r="98" fill="white" stroke="#f3f4f6" stroke-width="2"/>
+  <!-- Rounded Rect Background (like favicon) -->
+  <rect width="200" height="200" rx="40" fill="#FD9800"/>
   
   <!-- "21" Text -->
-  <text x="50%" y="115" font-family="'Syne', sans-serif" font-weight="700" font-size="100" text-anchor="middle" fill="#FD9800" letter-spacing="-2">21</text>
+  <text x="50%" y="115" font-family="'Syne', sans-serif" font-weight="700" font-size="100" text-anchor="middle" fill="white" letter-spacing="-2">21</text>
   
   <!-- "solutions" Text -->
-  <text x="50%" y="155" font-family="'Open Sans', sans-serif" font-weight="600" font-size="24" text-anchor="middle" fill="#4b5563" letter-spacing="0.5">solutions</text>
+  <text x="50%" y="155" font-family="'Open Sans', sans-serif" font-weight="600" font-size="24" text-anchor="middle" fill="white" letter-spacing="0.5" opacity="0.9">solutions</text>
 </svg>
