@@ -5,9 +5,9 @@
   <!-- Background: Warm White from site theme -->
   <rect width="1080" height="1080" fill="#fdfaf5"/>
   
-  <!-- "21" - Orange, Centered, Scaled down to create more background space -->
-  <text x="50%" y="580" font-family="'Syne', sans-serif" font-weight="700" font-size="560" text-anchor="middle" fill="#FD9800" letter-spacing="-24">21</text>
+  <!-- "21" - Orange, Centered, Scaled up massively to match width -->
+  <text x="50%" y="600" font-family="'Syne', sans-serif" font-weight="700" font-size="700" text-anchor="middle" fill="#FD9800" letter-spacing="-30">21</text>
   
   <!-- "solutions" - Gray-600, Centered below -->
-  <text x="50%" y="740" font-family="'Syne', sans-serif" font-weight="700" font-size="124" text-anchor="middle" fill="#4b5563" letter-spacing="-1">solutions</text>
+  <text x="50%" y="800" font-family="'Syne', sans-serif" font-weight="700" font-size="155" text-anchor="middle" fill="#4b5563" letter-spacing="-1">solutions</text>
 </svg>
