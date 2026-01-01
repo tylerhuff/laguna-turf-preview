@@ -185,7 +185,7 @@ export default function AboutPage() {
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Some of our Work</h2>
             <p className="text-lg text-gray-600">
-              We have worked with clients all across California and US. We serve custom home builders, contractors, trades, and business professionals.
+              We have worked with clients all across California and US. We serve <Link href="/industries/home-builders" className="text-[#FD9800] hover:underline">custom home builders</Link>, <Link href="/industries/contractors" className="text-[#FD9800] hover:underline">contractors</Link>, <Link href="/industries/painters" className="text-[#FD9800] hover:underline">trades</Link>, and <Link href="/industries/professional-services" className="text-[#FD9800] hover:underline">business professionals</Link>.
             </p>
           </div>
 
