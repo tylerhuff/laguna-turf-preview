@@ -203,14 +203,8 @@ function Router() {
         {/* Services */}
         <Route path="/services" component={ServicesHub} />
         <Route path="/services/web-design" component={WebDesignPage} />
-        <Route path="/services/web-design/san-juan-capistrano" component={WebDesignPage} />
-        <Route path="/services/web-design/dana-point" component={WebDesignPage} />
-        <Route path="/services/web-design/san-clemente" component={WebDesignPage} />
-        <Route path="/services/web-design/laguna-niguel" component={WebDesignPage} />
         
-        {/* Note: Sitemap has typo 'optimiziation', supporting both */}
         <Route path="/services/search-engine-optimization" component={SEOPage} />
-        <Route path="/services/search-engine-optimiziation" component={SEOPage} />
         
         {/* New Primary Route */}
         <Route path="/services/website-care" component={MaintenancePage} />
@@ -223,13 +217,6 @@ function Router() {
           <Redirect to="/services/website-care" />
         </Route>
         
-        <Route path="/services/google-ads" component={SEOPage} />
-        <Route path="/services/online-listings-management" component={SEOPage} />
-        <Route path="/services/what-is-google-business-profile" component={SEOPage} />
-        <Route path="/services/what-is-listings-management" component={SEOPage} />
-        
-        <Route path="/local-seo-audit" component={SEOPage} />
-
         <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/contact-us" component={ContactPage} />
 
