@@ -1,0 +1,44 @@
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+twentyonesolutions.com 1st party
+112.3 KiB	1,500 ms
+/assets/index-BTHAh41s.css(twentyonesolutions.com)
+112.3 KiB
+1,500 ms
+Document request latency Error!
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.Unscored
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Top function call
+Total reflow time
+/assets/index-NPU7ZZbY.js:19:1353(twentyonesolutions.com)
+40 ms
+Source
+Total reflow time
+/assets/accordion-CjEemNJ6.js:6:3654(twentyonesolutions.com)
+40 ms
+/assets/index-NPU7ZZbY.js:93:62445(twentyonesolutions.com)
+0 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 580 ms
+Initial Navigation
+https://twentyonesolutions.com - 43 ms, 2.35 KiB
+/assets/index-NPU7ZZbY.js(twentyonesolutions.com) - 321 ms, 453.44 KiB
+/assets/home-CS2ojNYx.js(twentyonesolutions.com) - 564 ms, 30.26 KiB
+/assets/seo-A91rEXPt.js(twentyonesolutions.com) - 565 ms, 1.62 KiB
+/assets/Helmet-CIznw4l1.js(twentyonesolutions.com) - 393 ms, 17.37 KiB
+/assets/card-DvHDfCra.js(twentyonesolutions.com) - 563 ms, 1.28 KiB
+/assets/layout-PnTNh7IA.js(twentyonesolutions.com) - 566 ms, 32.03 KiB
+/assets/index-yGZ78WpQ.js(twentyonesolutions.com) - 395 ms, 24.08 KiB
+/assets/textarea-COs2e1Ts.js(twentyonesolutions.com) - 566 ms, 2.05 KiB
+/assets/accordion-CjEemNJ6.js(twentyonesolutions.com) - 580 ms, 9.02 KiB
+/assets/index-C65NBXek.js(twentyonesolutions.com) - 562 ms, 2.89 KiB
+/assets/aspect-ra….js(twentyonesolutions.com) - 567 ms, 1.44 KiB
+/assets/wave-section-DVUaaKkS.js(twentyonesolutions.com) - 564 ms, 1.84 KiB
+/assets/ContactForm-Cj-heosD.js(twentyonesolutions.com) - 564 ms, 4.03 KiB
+/assets/circle-ch….js(twentyonesolutions.com) - 566 ms, 0.66 KiB
+/assets/check-7fWnr5HK.js(twentyonesolutions.com) - 562 ms, 0.61 KiB
+/assets/index-BTHAh41s.css(twentyonesolutions.com) - 119 ms, 112.30 KiB
