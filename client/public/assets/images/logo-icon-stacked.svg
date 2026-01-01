@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&amp;family=Open+Sans:wght@600&amp;display=swap');
+  </style>
+  <!-- Circular Background -->
+  <circle cx="100" cy="100" r="98" fill="white" stroke="#f3f4f6" stroke-width="2"/>
+  
+  <!-- "21" Text -->
+  <text x="50%" y="115" font-family="'Syne', sans-serif" font-weight="700" font-size="100" text-anchor="middle" fill="#FD9800" letter-spacing="-2">21</text>
+  
+  <!-- "solutions" Text -->
+  <text x="50%" y="155" font-family="'Open Sans', sans-serif" font-weight="600" font-size="24" text-anchor="middle" fill="#4b5563" letter-spacing="0.5">solutions</text>
+</svg>
