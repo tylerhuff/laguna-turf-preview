@@ -86,7 +86,7 @@ export default function BlogPage() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6 leading-tight">
-              Latest Insights
+              Resources
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Tips, strategies, and guides to help your service business grow online.
