@@ -244,7 +244,6 @@ export default function HomePage() {
         }}
       />
       <Navigation />
-
       {/* Hero Section */}
       <WaveSection 
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
@@ -293,7 +292,6 @@ export default function HomePage() {
           </div>
         </div>
       </WaveSection>
-
       {/* Why Us Section */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
@@ -372,7 +370,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Real Results Section */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
@@ -426,12 +423,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Portfolio Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center md:text-center text-left max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl font-bold font-heading text-gray-900">Our Work</h2>
+            <h2 className="text-4xl font-bold font-heading text-gray-900 text-center">Our Work</h2>
             <p className="text-lg text-gray-600">
               We serve <Link href="/industries/contractors" className="text-[#FD9800] hover:underline">contractors</Link>, <Link href="/industries/home-builders" className="text-[#FD9800] hover:underline">construction companies</Link>, <Link href="/industries/painters" className="text-[#FD9800] hover:underline">painters</Link>, and more. <Link href="/portfolio" className="text-[#FD9800] hover:underline">See all our work</Link>.
             </p>
@@ -488,7 +484,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Services Breakdown */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
@@ -518,7 +513,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Testimonials */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -614,7 +608,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section className="py-24 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-6xl">
@@ -689,7 +682,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Form / CTA Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
@@ -713,8 +705,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       <Footer />
-      </div>
+    </div>
   );
 }
