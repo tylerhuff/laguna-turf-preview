@@ -339,17 +339,18 @@ export default function HomePage() {
             
             <div className="space-y-10 lg:pl-12">
                {[
-                 { title: "01. Site Preview First", desc: "Get a preview before committing." },
-                 { title: "02. Onboarding", desc: "We just need a single onboarding form from you and that’s it." },
-                 { title: "03. Launch & Grow", desc: "Once you’re thrilled with the site, we launch it." }
+                 { title: "Try Before you Buy", desc: "See a site preview before you commit." },
+                 { title: "Easy Onboarding", desc: "We make the process as easy as possible for you." },
+                 { title: "Marketing Too", desc: "A website turns visitors into customers. Marketing gets visitors to your website." },
+                 { title: "Ongoing Support", desc: "Support to keep your website up to date with content and the trends." }
                ].map((item, i) => (
                  <div key={i} className="flex gap-6">
                    <div className="w-10 h-10 rounded-full bg-[#FD9800] flex items-center justify-center shrink-0 mt-1 shadow-lg shadow-orange-200">
                      <Check className="w-6 h-6 text-white" />
                    </div>
                    <div className="max-w-md">
-                     <h3 className="text-2xl font-bold font-heading text-gray-900 mb-2">{item.title}</h3>
-                     <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
+                     <h3 className="text-xl font-bold font-heading text-gray-900 mb-1">{item.title}</h3>
+                     <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                    </div>
                  </div>
                ))}
