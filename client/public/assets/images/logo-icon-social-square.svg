@@ -1,0 +1,13 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&amp;display=swap');
+  </style>
+  <!-- Full Square Background for Social Media (Instagram crops to circle) -->
+  <rect width="200" height="200" fill="#FD9800"/>
+  
+  <!-- "21" Text - Centered -->
+  <text x="50%" y="115" font-family="'Syne', sans-serif" font-weight="700" font-size="100" text-anchor="middle" fill="white" letter-spacing="-2">21</text>
+  
+  <!-- "solutions" Text -->
+  <text x="50%" y="160" font-family="'Syne', sans-serif" font-weight="700" font-size="28" text-anchor="middle" fill="white" letter-spacing="0.5">solutions</text>
+</svg>
