@@ -71,11 +71,11 @@ const PortfolioItem = ({ title, description, image, mobileImage, link, category 
         <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{title}</h3>
       </div>
       <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
-        <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
+      <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5] mt-auto" asChild>
+        <a href={link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${title} website`}>
           Visit Website <ExternalLink className="w-4 h-4 ml-2" />
-        </Button>
-      </a>
+        </a>
+      </Button>
     </div>
   </m.div>
 );
@@ -100,7 +100,7 @@ const ServiceCard = ({ title, description, link, items }: ServiceCardProps) => (
           </li>
         ))}
       </ul>
-      <Link href={link} className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg">
+      <Link href={link} className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg" aria-label={`Learn more about ${title}`}>
         Learn More
       </Link>
     </CardContent>
@@ -249,6 +249,7 @@ export default function HomePage() {
         }}
       />
       <Navigation />
+      <main id="main-content" role="main">
       {/* Hero Section */}
       <WaveSection 
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
@@ -711,6 +712,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

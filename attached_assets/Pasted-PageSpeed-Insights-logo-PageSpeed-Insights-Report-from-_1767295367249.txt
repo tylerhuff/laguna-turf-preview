@@ -1,0 +1,227 @@
+PageSpeed Insights logo
+PageSpeed Insights
+Report from Jan 1, 2026, 11:21:59 AM
+https://twentyonesolutions.com/
+Enter a valid URL
+
+
+smartphone
+Mobile
+
+computer
+Desktop
+
+Discover what your real users are experiencing
+No Data
+
+Diagnose performance issues
+55
+Performance
+84
+Accessibility
+100
+Best Practices
+92
+SEO
+55
+FCP
++0
+LCP
++0
+TBT
++26
+CLS
++25
+SI
++3
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+7.1 s
+Largest Contentful Paint
+8.8 s
+Total Blocking Time
+220 ms
+Cumulative Layout Shift
+0
+Speed Index
+7.1 s
+Captured at Jan 1, 2026, 11:21 AM PST
+Emulated Moto G Power with Lighthouse 13.0.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 137.0.7151.119 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+Insights
+Render blocking requests Est savings of 460 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+twentyonesolutions.com 1st party
+112.3 KiB	3,030 ms
+/assets/index-BTHAh41s.css(twentyonesolutions.com)
+112.3 KiB
+3,030 ms
+Forced reflow
+A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about forced reflows and possible mitigations.Unscored
+Top function call
+Total reflow time
+/assets/index-D3DPXSPV.js:19:1353(twentyonesolutions.com)
+93 ms
+Source
+Total reflow time
+/assets/accordion-Bn11pzg3.js:6:3654(twentyonesolutions.com)
+93 ms
+/assets/index-D3DPXSPV.js:93:62445(twentyonesolutions.com)
+1 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 551 ms
+Initial Navigation
+https://twentyonesolutions.com - 147 ms, 2.39 KiB
+/assets/index-D3DPXSPV.js(twentyonesolutions.com) - 281 ms, 453.69 KiB
+/assets/home-Cp0dNnZw.js(twentyonesolutions.com) - 543 ms, 30.33 KiB
+/assets/seo-CGhyWSQR.js(twentyonesolutions.com) - 541 ms, 1.67 KiB
+/assets/Helmet-l0oI9U1J.js(twentyonesolutions.com) - 533 ms, 17.41 KiB
+/assets/card-BHz-pj0v.js(twentyonesolutions.com) - 535 ms, 1.33 KiB
+/assets/layout-DV7akhHL.js(twentyonesolutions.com) - 530 ms, 32.14 KiB
+/assets/index-Xrpe5Iws.js(twentyonesolutions.com) - 539 ms, 24.12 KiB
+/assets/textarea-D2Ude3Jb.js(twentyonesolutions.com) - 523 ms, 2.10 KiB
+/assets/accordion-Bn11pzg3.js(twentyonesolutions.com) - 546 ms, 9.07 KiB
+/assets/index-8bHqw6Vz.js(twentyonesolutions.com) - 550 ms, 2.94 KiB
+/assets/aspect-ra….js(twentyonesolutions.com) - 534 ms, 1.49 KiB
+/assets/wave-sect….js(twentyonesolutions.com) - 547 ms, 1.89 KiB
+/assets/ContactForm-JOAtKawQ.js(twentyonesolutions.com) - 551 ms, 4.08 KiB
+/assets/circle-ch….js(twentyonesolutions.com) - 540 ms, 0.71 KiB
+/assets/check-DoT6Tt2R.js(twentyonesolutions.com) - 535 ms, 0.66 KiB
+/assets/index-BTHAh41s.css(twentyonesolutions.com) - 310 ms, 112.34 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Improve image delivery Est savings of 17 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+twentyonesolutions.com 1st party
+91.2 KiB	16.9 KiB
+Background
+<img alt="Background" class="w-full h-full object-cover" fetchpriority="high" loading="eager" src="https://twentyonesolutions.com/assets/images/bannertwentyone-mobile.webp">
+…images/bannertwentyone-mobile.webp(twentyonesolutions.com)
+29.1 KiB
+11.2 KiB
+Increasing the image compression factor could improve this image's download size.
+11.2 KiB
+Local Search Grid Report - After Results
+<img alt="Local Search Grid Report - After Results" class="w-full h-auto" width="600" height="577" src="https://twentyonesolutions.com/assets/images/local-search-grid-after-mobil…">
+…images/local-search-grid-after-mobile.webp(twentyonesolutions.com)
+62.1 KiB
+5.7 KiB
+Increasing the image compression factor could improve this image's download size.
+5.7 KiB
+Optimize DOM size
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 288 KiB
+Avoid long main-thread tasks 4 long tasks found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (18)
+Show
+84
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Names and labels
+Buttons do not have an accessible name
+These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader.
+Best practices
+[user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
+Document does not have a main landmark.
+Identical links have the same purpose.
+These items highlight common accessibility best practices.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+These are opportunities to improve the legibility of your content.
+Navigation
+Heading elements are not in a sequentially-descending order
+These are opportunities to improve keyboard navigation in your application.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (22)
+Show
+Not applicable (32)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Passed audits (13)
+Show
+Not applicable (2)
+Show
+92
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Content Best Practices
+Links do not have descriptive text 3 links found
+Format your HTML in a way that enables crawlers to better understand your app’s content.
+Additional items to manually check (1)
+Show
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (9)
+Show
+More on PageSpeed Insights
+What's new
+Documentation
+Learn about Web Performance
+Ask questions on Stack Overflow
+Mailing list
+Related Content
+Updates
+Web Fundamentals
+Case Studies
+Podcasts
+Connect
+Twitter
+Youtube
+Google Developers Logo
+Chrome
+Firebase
+All products
+Terms and Privacy Policy
+For details, see the Google Developers Site Policies.
