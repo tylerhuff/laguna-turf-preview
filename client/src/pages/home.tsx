@@ -395,10 +395,9 @@ export default function HomePage() {
             
             <div className="space-y-10 lg:pl-12">
                {[
-                 { title: "Try Before you Buy", desc: "See a site preview before you commit." },
-                 { title: "Easy Onboarding", desc: "We make the process as easy as possible for you." },
-                 { title: "Marketing Too", desc: "A website turns visitors into customers. Marketing gets visitors to your website." },
-                 { title: "Ongoing Support", desc: "Support to keep your website up to date with content and the trends." }
+                 { title: "01. Site Preview First", desc: "Get a preview before committing." },
+                 { title: "02. Onboarding", desc: "We just need a single onboarding form from you and that’s it." },
+                 { title: "03. Launch & Grow", desc: "Once you’re thrilled with the site, we launch it." }
                ].map((item, i) => (
                  <div key={i} className="flex gap-6">
                    <div className="w-10 h-10 rounded-full bg-[#FD9800] flex items-center justify-center shrink-0 mt-1 shadow-lg shadow-orange-200">
