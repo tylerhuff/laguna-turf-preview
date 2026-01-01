@@ -20,9 +20,10 @@ interface LeadFormModalProps {
   description: string;
   type: 'preview' | 'strategy';
   formId?: string; // Optional custom form ID, defaults to the main one
+  onSuccess?: () => void;
 }
 
-export function LeadFormModal({ trigger, title, description, type, formId = "mojqordl" }: LeadFormModalProps) {
+export function LeadFormModal({ trigger, title, description, type, formId = "mojqordl", onSuccess }: LeadFormModalProps) {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -54,6 +55,9 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
         });
         setOpen(false);
         form.reset();
+        if (onSuccess) {
+          onSuccess();
+        }
       } else {
         const data = await response.json();
         throw new Error(data.error || "Form submission failed");
