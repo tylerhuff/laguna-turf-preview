@@ -5,13 +5,9 @@
   <!-- Background: Warm White from site theme -->
   <rect width="1080" height="1080" fill="#fdfaf5"/>
   
-  <!-- "21" - Orange, Centered
-       Adjusted size to visually match the width of "solutions" below
-  -->
-  <text x="50%" y="580" font-family="'Syne', sans-serif" font-weight="700" font-size="520" text-anchor="middle" fill="#FD9800" letter-spacing="-25">21</text>
+  <!-- "21" - Orange, Centered, Scaled up massively to match width -->
+  <text x="50%" y="600" font-family="'Syne', sans-serif" font-weight="700" font-size="700" text-anchor="middle" fill="#FD9800" letter-spacing="-30">21</text>
   
-  <!-- "solutions" - Gray-600, Centered below
-       Reset letter-spacing to 0 to match the "closer" spacing of the website title
-  -->
-  <text x="50%" y="760" font-family="'Syne', sans-serif" font-weight="700" font-size="155" text-anchor="middle" fill="#4b5563" letter-spacing="-1">solutions</text>
+  <!-- "solutions" - Gray-600, Centered below -->
+  <text x="50%" y="800" font-family="'Syne', sans-serif" font-weight="700" font-size="155" text-anchor="middle" fill="#4b5563" letter-spacing="-1">solutions</text>
 </svg>
