@@ -95,7 +95,7 @@ export default function ContactPage() {
 
       {/* Hero */}
       <WaveSection 
-        className="pt-20 md:pt-40 pb-24 md:pb-48" 
+        className="pt-20 md:pt-32 pb-12 md:pb-32" 
         disableTopWave
         backgroundImage="/assets/images/whitewater_sanclemente.webp"
         overlayOpacity={0.75}
@@ -104,16 +104,10 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.h1 
             initial="hidden" animate="visible" variants={fadeIn}
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
+            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-0"
           >
             How can we help?
           </motion.h1>
-          <motion.p 
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-xl text-gray-600 font-light"
-          >
-            Just fill out the form below or give us a call.
-          </motion.p>
         </div>
       </WaveSection>
 
