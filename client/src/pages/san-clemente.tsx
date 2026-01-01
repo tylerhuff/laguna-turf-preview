@@ -190,7 +190,7 @@ export default function SanClementePage() {
       {/* Intro / Mission */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-left md:text-center mb-16">
             <h2 className="text-3xl font-bold font-heading text-gray-900 mb-6">TwentyOne Solutions</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               Helps local service businesses build a stronger online presence without making it complicated. The goal is simple. When someone searches for what you do in San Clemente, they find you, trust you, and reach out.
