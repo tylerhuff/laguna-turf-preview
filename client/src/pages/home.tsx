@@ -297,8 +297,8 @@ export default function HomePage() {
       {/* Real Results Section */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-6">Real Results</h2>
+          <div className="max-w-4xl mx-auto text-left md:text-center mb-16">
+            <h2 className="text-4xl font-bold font-heading text-gray-900 mb-6 text-center">Real Results</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               This is the difference effective Local SEO makes. We take businesses from being invisible to dominating their local market.
             </p>
@@ -424,7 +424,7 @@ export default function HomePage() {
           <div className="text-center md:text-center text-left max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl font-bold font-heading text-gray-900">Our Work</h2>
             <p className="text-lg text-gray-600">
-              We serve <Link href="/industries/contractors" className="text-[#FD9800] hover:underline">contractors</Link>, <Link href="/industries/home-builders" className="text-[#FD9800] hover:underline">construction companies</Link>, <Link href="/industries/painters" className="text-[#FD9800] hover:underline">painters</Link>, and more. <Link href="/portfolio" className="text-[#FD9800] hover:underline font-semibold">See all our work</Link>
+              We serve <Link href="/industries/contractors" className="text-[#FD9800] hover:underline">contractors</Link>, <Link href="/industries/home-builders" className="text-[#FD9800] hover:underline">construction companies</Link>, <Link href="/industries/painters" className="text-[#FD9800] hover:underline">painters</Link>, and more. <Link href="/portfolio" className="text-[#FD9800] hover:underline">See all our work</Link>.
             </p>
           </div>
 
