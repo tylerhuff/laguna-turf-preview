@@ -97,8 +97,8 @@ export default function ContactPage() {
       <WaveSection 
         className="pt-20 md:pt-32 pb-24 md:pb-32" 
         disableTopWave
-        backgroundImage="/assets/images/whitewater_sanclemente.webp"
-        overlayOpacity={0.75}
+        backgroundImage="/assets/images/contact-hero-new.jpg"
+        overlayOpacity={0.6}
         priority={true}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
