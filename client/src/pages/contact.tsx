@@ -95,7 +95,7 @@ export default function ContactPage() {
 
       {/* Hero */}
       <WaveSection 
-        className="pt-20 md:pt-32 pb-12 md:pb-32" 
+        className="pt-20 md:pt-32 pb-24 md:pb-32" 
         disableTopWave
         backgroundImage="/assets/images/whitewater_sanclemente.webp"
         overlayOpacity={0.75}
