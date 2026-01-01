@@ -1,0 +1,290 @@
+PageSpeed Insights logo
+PageSpeed Insights
+Report from Dec 31, 2025, 7:27:21 PM
+https://twentyonesolutions.com/
+Enter a valid URL
+
+
+smartphone
+Mobile
+
+computer
+Desktop
+
+Discover what your real users are experiencing
+No Data
+
+Diagnose performance issues
+64
+Performance
+84
+Accessibility
+100
+Best Practices
+92
+SEO
+64
+FCP
++2
+LCP
++0
+TBT
++30
+CLS
++25
+SI
++7
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+4.2 s
+Largest Contentful Paint
+8.6 s
+Total Blocking Time
+90 ms
+Cumulative Layout Shift
+0
+Speed Index
+4.4 s
+Captured at Dec 31, 2025, 7:27 PM PST
+Emulated Moto G Power with Lighthouse 13.0.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 137.0.7151.119 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Use efficient cache lifetimes Est savings of 1,130 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.LCPFCPUnscored
+Request
+Cache TTL
+Transfer Size
+twentyonesolutions.com 1st party
+1,130 KiB
+/assets/index-BhxzK-sL.js(twentyonesolutions.com)
+None
+400 KiB
+…images/local-search-grid-after.webp(twentyonesolutions.com)
+None
+193 KiB
+…images/local-search-grid-before.webp(twentyonesolutions.com)
+None
+156 KiB
+/assets/index-BjVP5LOA.css(twentyonesolutions.com)
+None
+112 KiB
+…images/AscendEquities.webp(twentyonesolutions.com)
+None
+71 KiB
+/assets/layout-CF0hLX3s.js(twentyonesolutions.com)
+None
+42 KiB
+/assets/home-BXpLDTNp.js(twentyonesolutions.com)
+None
+30 KiB
+…images/bannertwentyone-mobile.webp(twentyonesolutions.com)
+None
+29 KiB
+/assets/index-CHM4e81m.js(twentyonesolutions.com)
+None
+27 KiB
+/assets/Helmet-TlT9ux0A.js(twentyonesolutions.com)
+None
+17 KiB
+…images/tylerhuff_founder-mobile.webp(twentyonesolutions.com)
+None
+15 KiB
+…images/Filger-Manufacturing-mobile.webp(twentyonesolutions.com)
+None
+10 KiB
+/assets/accordion-LRkCzbHS.js(twentyonesolutions.com)
+None
+9 KiB
+/assets/ContactForm-BOQTjkhY.js(twentyonesolutions.com)
+None
+4 KiB
+/assets/index-Bx7kEWYr.js(twentyonesolutions.com)
+None
+3 KiB
+/assets/textarea-Ch7SRc_o.js(twentyonesolutions.com)
+None
+2 KiB
+/assets/wave-sect….js(twentyonesolutions.com)
+None
+2 KiB
+/assets/seo-ChOgALHr.js(twentyonesolutions.com)
+None
+2 KiB
+/assets/aspect-ra….js(twentyonesolutions.com)
+None
+1 KiB
+/assets/card-DNdQSZ80.js(twentyonesolutions.com)
+None
+1 KiB
+/assets/circle-check-CgBFZako.js(twentyonesolutions.com)
+None
+1 KiB
+/assets/check-PfG6z_Lq.js(twentyonesolutions.com)
+None
+1 KiB
+Render blocking requests Est savings of 610 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+twentyonesolutions.com 1st party
+112.1 KiB	1,530 ms
+/assets/index-BjVP5LOA.css(twentyonesolutions.com)
+112.1 KiB
+1,530 ms
+Improve image delivery Est savings of 326 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeLCPFCPUnscored
+URL
+Resource Size
+Est Savings
+twentyonesolutions.com 1st party
+448.7 KiB	326.3 KiB
+Local Search Grid Report - After Results
+<img alt="Local Search Grid Report - After Results" class="w-full h-auto" src="/assets/images/local-search-grid-after.webp">
+…images/local-search-grid-after.webp(twentyonesolutions.com)
+192.8 KiB
+140.8 KiB
+This image file is larger than it needs to be (1200x1154) for its displayed dimensions (623x599). Use responsive images to reduce the image download size.
+140.8 KiB
+Local Search Grid Report - Before Results
+<img alt="Local Search Grid Report - Before Results" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300" src="/assets/images/local-search-grid-before.webp">
+…images/local-search-grid-before.webp(twentyonesolutions.com)
+156.2 KiB
+114.1 KiB
+This image file is larger than it needs to be (1200x1103) for its displayed dimensions (623x573). Use responsive images to reduce the image download size.
+114.1 KiB
+Ascend Equities
+<img alt="Ascend Equities" class="object-cover w-full h-full transform transition-transform duration-500 gro…" loading="lazy" src="/assets/images/AscendEquities.webp">
+…images/AscendEquities.webp(twentyonesolutions.com)
+70.6 KiB
+60.1 KiB
+This image file is larger than it needs to be (1730x1081) for its displayed dimensions (704x396). Use responsive images to reduce the image download size.
+60.1 KiB
+Background
+<img alt="Background" class="w-full h-full object-cover" fetchpriority="high" loading="eager" src="https://twentyonesolutions.com/assets/images/bannertwentyone-mobile.webp">
+…images/bannertwentyone-mobile.webp(twentyonesolutions.com)
+29.1 KiB
+11.2 KiB
+Increasing the image compression factor could improve this image's download size.
+11.2 KiB
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 264 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+twentyonesolutions.com 1st party
+426.7 KiB	217.6 KiB
+/assets/index-BhxzK-sL.js(twentyonesolutions.com)
+400.1 KiB
+197.3 KiB
+/assets/index-CHM4e81m.js(twentyonesolutions.com)
+26.6 KiB
+20.3 KiB
+Google Tag Manager tag-manager 
+153.8 KiB	46.8 KiB
+/gtag/js?id=G-1VS2JMB3H6(www.googletagmanager.com)
+153.8 KiB
+46.8 KiB
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits
+Show
+84
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Names and labels
+Buttons do not have an accessible name
+These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader.
+Best practices
+[user-scalable="no"] is used in the <meta name="viewport"> element or the [maximum-scale] attribute is less than 5.
+Document does not have a main landmark.
+Identical links have the same purpose.
+These items highlight common accessibility best practices.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+These are opportunities to improve the legibility of your content.
+Navigation
+Heading elements are not in a sequentially-descending order
+These are opportunities to improve keyboard navigation in your application.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (22)
+Show
+Not applicable (32)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Passed audits (13)
+Show
+Not applicable (2)
+Show
+92
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Content Best Practices
+Links do not have descriptive text 3 links found
+Format your HTML in a way that enables crawlers to better understand your app’s content.
+Additional items to manually check (1)
+Show
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (9)
+Show
+More on PageSpeed Insights
+What's new
+Documentation
+Learn about Web Performance
+Ask questions on Stack Overflow
+Mailing list
+Related Content
+Updates
+Web Fundamentals
+Case Studies
+Podcasts
+Connect
+Twitter
+Youtube
+Google Developers Logo
+Chrome
+Firebase
+All products
+Terms and Privacy Policy
+For details, see the Google Developers Site Policies.

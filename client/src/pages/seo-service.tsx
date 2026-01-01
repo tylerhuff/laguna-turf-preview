@@ -133,6 +133,7 @@ export default function SEOPage() {
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
         disableTopWave
         backgroundImage="/assets/images/seo-hero.webp"
+        mobileBackgroundImage="/assets/images/seo-hero-mobile.webp"
         overlayOpacity={0.75}
         bottomWaveColor="#ffffff"
       >
@@ -217,11 +218,16 @@ export default function SEOPage() {
                 Before
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white transform rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white">
-                <img 
-                  src="/assets/images/local-search-grid-before.png" 
-                  alt="Local Search Grid Report - Before Results" 
-                  className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
-                />
+                <picture>
+                  <source media="(max-width: 640px)" srcSet="/assets/images/local-search-grid-before-mobile.webp" />
+                  <img 
+                    src="/assets/images/local-search-grid-before.webp" 
+                    alt="Local Search Grid Report - Before Results" 
+                    className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    width="600"
+                    height="551"
+                  />
+                </picture>
               </div>
               <p className="text-center mt-6 text-gray-500 font-medium">Limited visibility. <br/>Hard to find.</p>
             </div>
@@ -232,11 +238,16 @@ export default function SEOPage() {
                 After
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-green-500 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white ring-4 ring-green-500/20">
-                <img 
-                  src="/assets/images/local-search-grid-after.png" 
-                  alt="Local Search Grid Report - After Results" 
-                  className="w-full h-auto"
-                />
+                <picture>
+                  <source media="(max-width: 640px)" srcSet="/assets/images/local-search-grid-after-mobile.webp" />
+                  <img 
+                    src="/assets/images/local-search-grid-after.webp" 
+                    alt="Local Search Grid Report - After Results" 
+                    className="w-full h-auto"
+                    width="600"
+                    height="577"
+                  />
+                </picture>
               </div>
                <p className="text-center mt-6 text-gray-900 font-bold">Domination. <br/>Top ranking across the entire city.</p>
             </div>
