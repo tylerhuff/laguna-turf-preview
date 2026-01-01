@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700&amp;display=swap');
+  </style>
+  <rect width="64" height="64" rx="16" fill="#FD9800"/>
+  <text x="50%" y="50%" dy=".35em" font-family="'Syne', sans-serif" font-weight="700" font-size="32" text-anchor="middle" fill="white">21</text>
+</svg>
