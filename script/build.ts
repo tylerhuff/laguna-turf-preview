@@ -1,6 +1,7 @@
 import { build as esbuild } from "esbuild";
 import { build as viteBuild } from "vite";
 import { rm, readFile, copyFile } from "fs/promises";
+import { prerender } from "./prerender";
 
 // server deps to bundle to reduce openat(2) syscalls
 // which helps cold start times
@@ -38,6 +39,9 @@ async function buildAll() {
   console.log("building client...");
   await viteBuild();
   await copyFile("dist/public/index.html", "dist/public/404.html");
+
+  console.log("prerendering static pages...");
+  await prerender();
 
   console.log("building server...");
   const pkg = JSON.parse(await readFile("package.json", "utf-8"));
