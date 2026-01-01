@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold font-heading text-gray-900 mb-4">Why TwentyOne?</h2>
-            <p className="text-lg text-gray-600 text-left">A few reasons clients stick with us.</p>
+            <p className="text-lg text-gray-600 text-center">A few reasons clients stick with us.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
