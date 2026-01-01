@@ -120,7 +120,7 @@ export default function ContactPage() {
       {/* Contact Content */}
       <section className="py-20 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 items-center lg:items-start">
             
             {/* Info Side */}
             <div className="space-y-12">
@@ -141,13 +141,13 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-[#FD9800]">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-[#FD9800] shrink-0">
                       <Mail className="w-6 h-6" />
                     </div>
-                    <div>
+                    <div className="overflow-hidden">
                       <p className="text-sm text-gray-500 font-medium uppercase tracking-wide">Email</p>
-                      <a href="mailto:contact@twentyonesolutions.com" className="font-bold text-gray-900 hover:text-[#FD9800] transition-colors">contact@twentyonesolutions.com</a>
+                      <a href="mailto:contact@twentyonesolutions.com" className="font-bold text-gray-900 hover:text-[#FD9800] transition-colors break-words">contact@twentyonesolutions.com</a>
                     </div>
                   </div>
 
