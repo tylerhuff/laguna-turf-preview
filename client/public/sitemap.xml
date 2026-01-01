@@ -139,33 +139,6 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://twentyonesolutions.com/resources/5-reasons-your-business-needs-a-website</loc>
-        <lastmod>2025-10-12T12:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
-        </image:image>
-    </url>
-    <url>
-        <loc>https://twentyonesolutions.com/resources/seo-basics-for-contractors</loc>
-        <lastmod>2025-10-05T12:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://images.unsplash.com/photo-1557838402-21d133044992?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
-        </image:image>
-    </url>
-    <url>
-        <loc>https://twentyonesolutions.com/resources/maximize-google-business-profile</loc>
-        <lastmod>2025-09-28T12:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <image:image>
-            <image:loc>https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
-        </image:image>
-    </url>
 
     <!-- Legal -->
     <url>

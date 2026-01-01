@@ -10,41 +10,10 @@ import { Calendar, User, ArrowRight, Loader2, BookOpen, TrendingUp, Clock, Setti
 import { BlogClient } from 'seobot'; 
 
 // Mock data for display purposes
-const MOCK_ARTICLES = [
-  {
-    id: '1',
-    slug: '5-reasons-your-business-needs-a-website',
-    title: '5 Reasons Your Service Business Needs a Professional Website in 2025',
-    excerpt: 'In today’s digital age, relying solely on word-of-mouth isn’t enough. Discover why a professional website is crucial for growth.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    date: 'Oct 12, 2025',
-    author: 'Tyler Huff',
-    category: 'Business Growth'
-  },
-  {
-    id: '2',
-    slug: 'seo-basics-for-contractors',
-    title: 'SEO Basics: How to Get Your Construction Business Found on Google',
-    excerpt: 'Stop losing leads to competitors. Learn the fundamental SEO strategies that will put your business on the map.',
-    image: 'https://images.unsplash.com/photo-1557838402-21d133044992?auto=format&fit=crop&q=80&w=800',
-    date: 'Oct 05, 2025',
-    author: 'Tyler Huff',
-    category: 'Marketing'
-  },
-  {
-    id: '3',
-    slug: 'maximize-google-business-profile',
-    title: 'How to Maximize Your Google Business Profile for More Calls',
-    excerpt: 'Your Google Business Profile is often the first thing customers see. Make sure it’s working hard for you.',
-    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800',
-    date: 'Sep 28, 2025',
-    author: 'Tyler Huff',
-    category: 'Local SEO'
-  }
-];
+const MOCK_ARTICLES = [];
 
 export default function BlogPage() {
-  const [articles, setArticles] = useState<any[]>(MOCK_ARTICLES);
+  const [articles, setArticles] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
