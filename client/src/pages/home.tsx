@@ -251,7 +251,7 @@ export default function HomePage() {
         backgroundImage="/assets/images/bannertwentyone.webp"
         overlayOpacity={0.75}
         priority={true}
-        bottomWaveColor="#ffffff"
+        bottomWaveColor="#fdfaf5"
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
