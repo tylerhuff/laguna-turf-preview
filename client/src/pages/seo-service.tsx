@@ -376,7 +376,7 @@ export default function SEOPage() {
             <div className="w-full md:w-7/12 relative">
               <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white bg-white">
                 <img 
-                  src="/assets/images/google-ai-overview-result.png" 
+                  src="/assets/images/google-ai-overview-result.webp" 
                   alt="Google AI Overview Result showing client ranking" 
                   className="w-full h-auto"
                 />

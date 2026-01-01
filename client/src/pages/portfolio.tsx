@@ -99,7 +99,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Case Whittemore, LMFT",
     subtitle: "Healthcare",
     description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges.",
-    image: "/assets/images/CaseWhitteMoreMockUp.png",
+    image: "/assets/images/CaseWhitteMoreMockUp.webp",
     link: "https://caseywhittemorelmft.com/",
     category: "Professional Services"
   },
@@ -107,7 +107,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Fan Fusion Ventures",
     subtitle: "Sports Entertainment",
     description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
-    image: "/assets/images/FanFusionMockup.png",
+    image: "/assets/images/FanFusionMockup.webp",
     link: "https://fanfusionventures.com/",
     category: "Professional Services"
   },
@@ -115,7 +115,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Luxury Tahoe Properties",
     subtitle: "Real Estate",
     description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
-    image: "/assets/images/LuxuryTahoePropertiesMockup.png",
+    image: "/assets/images/LuxuryTahoePropertiesMockup.webp",
     link: "https://luxurytahoeproperties.com/",
     category: "Professional Services"
   },
@@ -125,7 +125,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Diamond Construction",
     subtitle: "Construction",
     description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
-    image: "/assets/images/DiamondConstructionMockup.png",
+    image: "/assets/images/DiamondConstructionMockup.webp",
     link: "https://diamondconstructionandgypsum.com/",
     category: "Construction"
   },
@@ -143,7 +143,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Huff Painting Co",
     subtitle: "Commercial Painting",
     description: "With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting.",
-    image: "/assets/images/HuffPaintingCoMockup.png",
+    image: "/assets/images/HuffPaintingCoMockup.webp",
     link: "https://huffpainting.co/",
     category: "Painters"
   },
@@ -169,7 +169,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Ceiling Pro",
     subtitle: "Ceiling Installation",
     description: "Trusted Ceiling Experts in the Bay Area. Providing exceptional ceiling installations for both commercial and residential spaces with quality you can rely on.",
-    image: "/assets/images/CeilingProMockup.png",
+    image: "/assets/images/CeilingProMockup.webp",
     link: "https://ceilingprosf.com/",
     category: "Trades"
   },
@@ -177,7 +177,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Sierra Precision Electric",
     subtitle: "Electrical Contractor",
     description: "Trusted Electrical Solutions for Truckee and Lake Tahoe. Specializing in high-end residential installations, smart systems, and custom home projects.",
-    image: "/assets/images/SierraElectricMockup.png",
+    image: "/assets/images/SierraElectricMockup.webp",
     link: "https://truckeetahoeelectrical.com/",
     category: "Trades"
   },
@@ -185,7 +185,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Cleaning Solution Building Corp",
     subtitle: "Commercial Cleaning",
     description: "Commercial Cleaning Services in Long Island, Nassau, & Suffolk. Experience top-notch cleaning with our dedicated team committed at a fair price.",
-    image: "/assets/images/CleaningSolutionMockup.png",
+    image: "/assets/images/CleaningSolutionMockup.webp",
     link: "https://cleaningsolutionbuildingcorp.com/",
     category: "Trades"
   }
