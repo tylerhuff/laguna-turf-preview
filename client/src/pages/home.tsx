@@ -355,13 +355,13 @@ export default function HomePage() {
                  </div>
                ))}
                
-               <div className="pt-6">
+               <div className="pt-8 flex justify-center">
                  <LeadFormModal 
                    title="Build My Preview"
                    description="Ready to see your business online? Fill out the form below and we'll get started on your free preview."
                    type="preview"
                    trigger={
-                     <Button size="lg" className="h-14 px-10 text-lg bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
+                     <Button size="lg" className="h-16 px-12 text-xl bg-[#FD9800] hover:bg-[#e08600] text-white font-bold rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                         Build my Preview
                      </Button>
                    }
