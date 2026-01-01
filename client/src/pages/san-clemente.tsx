@@ -2,7 +2,6 @@ import React from 'react';
 import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Check, ArrowRight, ExternalLink } from 'lucide-react';
-import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -127,8 +126,6 @@ export default function SanClementePage() {
           "@graph": [localBusinessSchema, faqSchema]
         }}
       />
-      
-      <Navigation />
 
       {/* Hero */}
       <WaveSection 
@@ -502,7 +499,6 @@ export default function SanClementePage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

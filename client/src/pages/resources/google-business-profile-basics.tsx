@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
 import { ArrowLeft, CheckCircle2, Star } from 'lucide-react';
@@ -13,7 +12,6 @@ export default function GoogleBusinessProfilePage() {
         description="Everything service businesses need to know about their most important digital asset: The Google Business Profile."
         canonical="/resources/google-business-profile-basics"
       />
-      <Navigation />
 
       <div className="pt-20 md:pt-32 pb-16 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -103,7 +101,6 @@ export default function GoogleBusinessProfilePage() {
         </div>
       </article>
 
-      <Footer />
     </div>
   );
 }

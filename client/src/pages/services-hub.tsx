@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
@@ -16,7 +15,6 @@ export default function ServicesHub() {
         canonical="/services"
         image="/assets/images/bannertwentyone.webp"
       />
-      <Navigation />
       
       <WaveSection className="pt-20 md:pt-40 pb-20" disableTopWave overlayOpacity={0.8}>
         <div className="container mx-auto px-6 text-center">
@@ -89,7 +87,6 @@ export default function ServicesHub() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

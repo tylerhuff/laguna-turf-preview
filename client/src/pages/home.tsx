@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/accordion";
 import { toast } from 'sonner';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Navigation, Footer } from '@/components/layout';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -243,7 +242,6 @@ export default function HomePage() {
           "@graph": [faqSchema, businessSchema]
         }}
       />
-      <Navigation />
       {/* Hero Section */}
       <WaveSection 
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
@@ -706,7 +704,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

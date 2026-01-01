@@ -5,7 +5,6 @@ import { Link } from "wouter";
 import { Check, Star, ArrowRight, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { WaveSection } from '@/components/ui/wave-section';
 import { toast } from 'sonner';
@@ -40,7 +39,6 @@ export default function AboutPage() {
         image="/assets/images/whitewater_sanclemente.webp"
         schema={aboutSchema}
       />
-      <Navigation />
       {/* Hero */}
       <WaveSection 
         className="pt-20 md:pt-40 pb-24 md:pb-48" 
@@ -266,7 +264,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { Navigation, Footer } from '@/components/layout';
 import { toast } from 'sonner';
 
 const fadeIn = {
@@ -91,7 +90,6 @@ export default function ContactPage() {
         image="/assets/images/whitewater_sanclemente.webp"
         schema={contactSchema}
       />
-      <Navigation />
 
       {/* Hero */}
       <WaveSection 
@@ -252,7 +250,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

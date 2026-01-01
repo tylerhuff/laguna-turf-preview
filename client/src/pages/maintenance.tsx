@@ -3,7 +3,6 @@ import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { Check, ShieldCheck, Zap, BarChart3, Clock, Lock } from 'lucide-react';
 import { ContactForm } from '@/components/ContactForm';
-import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { LeadFormModal } from '@/components/LeadFormModal';
 import { Label } from '@/components/ui/label';
@@ -36,7 +35,6 @@ export default function MaintenancePage() {
         image="/assets/images/bannertwentyone.webp"
         schema={serviceSchema}
       />
-      <Navigation />
 
       {/* Hero Section */}
       <WaveSection 
@@ -185,7 +183,6 @@ export default function MaintenancePage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

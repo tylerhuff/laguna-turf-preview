@@ -2,7 +2,6 @@ import React from 'react';
 import { SEO } from '@/components/seo';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { ContactForm } from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
@@ -58,7 +57,6 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
         image={heroImage}
         schema={serviceSchema}
       />
-      <Navigation />
 
       {/* Hero */}
       <WaveSection 
@@ -203,7 +201,6 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

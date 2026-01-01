@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { Navigation, Footer } from '@/components/layout';
 import { Link } from "wouter";
 import { WaveSection } from '@/components/ui/wave-section';
 import { Card, CardContent } from '@/components/ui/card';
@@ -69,7 +68,6 @@ export default function SitemapPage() {
         description="Overview of all pages and services on the TwentyOne Solutions website."
         canonical="/sitemap"
       />
-      <Navigation />
 
       <WaveSection 
         className="pt-20 md:pt-40 pb-20" 
@@ -133,7 +131,6 @@ export default function SitemapPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

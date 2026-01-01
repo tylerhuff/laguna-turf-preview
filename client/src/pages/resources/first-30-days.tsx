@@ -1,6 +1,5 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Link } from "wouter";
 import { ArrowLeft, Rocket, Calendar, ClipboardCheck, BarChart3 } from 'lucide-react';
@@ -13,7 +12,6 @@ export default function First30DaysPage() {
         description="A transparent timeline of our onboarding, build, and launch process. From strategy to go-live in 30 days."
         canonical="/resources/first-30-days"
       />
-      <Navigation />
 
       <div className="pt-20 md:pt-32 pb-16 bg-[#fdfaf5]">
         <div className="container mx-auto px-6 max-w-4xl">
@@ -113,7 +111,6 @@ export default function First30DaysPage() {
         </div>
       </article>
 
-      <Footer />
     </div>
   );
 }
