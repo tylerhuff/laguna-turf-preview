@@ -421,10 +421,10 @@ export default function HomePage() {
       {/* Portfolio Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="text-center md:text-center text-left max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl font-bold font-heading text-gray-900">Our Work</h2>
             <p className="text-lg text-gray-600">
-              We serve contractors, construction companies, trades, and more. See all our work.
+              We serve <Link href="/industries/contractors" className="text-[#FD9800] hover:underline">contractors</Link>, <Link href="/industries/home-builders" className="text-[#FD9800] hover:underline">construction companies</Link>, <Link href="/industries/painters" className="text-[#FD9800] hover:underline">painters</Link>, and more. <Link href="/portfolio" className="text-[#FD9800] hover:underline font-semibold">See all our work &rarr;</Link>
             </p>
           </div>
 
