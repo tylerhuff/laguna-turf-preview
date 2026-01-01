@@ -14,7 +14,7 @@ export function SEO({
   title = "TwentyOne Solutions | Web Design & Marketing", 
   description = "Web design and digital marketing agency for service businesses. We help contractors, trades, and professionals get more calls.", 
   canonical, 
-  image = "https://twentyonesolutions.com/wp-content/uploads/2025/06/WCW_mockup_transparent-png.webp",
+  image = "https://twentyonesolutions.com/opengraph.jpg",
   type = "website",
   schema 
 }: Partial<SEOProps>) {
@@ -25,6 +25,8 @@ export function SEO({
 
   // Ensure title has branding if not present
   const fullTitle = title.includes("TwentyOne Solutions") ? title : `${title} | TwentyOne Solutions`;
+
+  const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
   return (
     <Helmet>
@@ -37,7 +39,7 @@ export function SEO({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImage} />
       {fullCanonical && <meta property="og:url" content={fullCanonical} />}
       <meta property="og:site_name" content="TwentyOne Solutions" />
 
@@ -45,7 +47,7 @@ export function SEO({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImage} />
       
       {/* Schema.org JSON-LD */}
       {schema && (
