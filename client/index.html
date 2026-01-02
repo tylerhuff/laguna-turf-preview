@@ -28,6 +28,35 @@
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     </noscript>
+    <style>
+      /* Critical CSS for Mobile LCP Optimization */
+      :root {
+        --background: 40 33% 98%; /* #fdfaf5 */
+        --foreground: 0 0% 20%; /* #333333 */
+        --primary: 36 100% 50%; /* #FD9800 */
+        --primary-foreground: 0 0% 100%;
+        --secondary: 40 20% 97%;
+        --font-sans: 'Open Sans', sans-serif;
+        --font-heading: 'Syne', sans-serif;
+        --radius: 0.6rem;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        background-color: hsl(40, 33%, 98%);
+        color: hsl(0, 0%, 20%);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      /* Pre-render the wave background to avoid pop-in */
+      .bg-wave-header {
+        background-color: #fdfaf5;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L60,197.3C120,203,240,213,360,208C480,203,600,181,720,181.3C840,181,960,203,1080,208C1200,213,1320,203,1380,197.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% 150px;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
