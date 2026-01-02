@@ -1,0 +1,249 @@
+PageSpeed Insights logo
+PageSpeed Insights
+Report from Jan 2, 2026, 12:06:08 PM
+https://twentyonesolutions.com/resources/google-business-profile-basics
+Enter a valid URL
+
+
+smartphone
+Mobile
+
+computer
+Desktop
+
+Discover what your real users are experiencing
+No Data
+
+Diagnose performance issues
+59
+Performance
+94
+Accessibility
+100
+Best Practices
+100
+SEO
+59
+FCP
++0
+LCP
++1
+TBT
++30
+CLS
++25
+SI
++3
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+7.0 s
+Largest Contentful Paint
+8.0 s
+Total Blocking Time
+0 ms
+Cumulative Layout Shift
+0
+Speed Index
+7.0 s
+Captured at Jan 2, 2026, 12:06 PM PST
+Emulated Moto G Power with Lighthouse 13.0.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 137.0.7151.119 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+Insights
+Render blocking requests Est savings of 1,370 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+twentyonesolutions.com 1st party
+112.7 KiB	4,110 ms
+/assets/index-DQBmaVLG.css(twentyonesolutions.com)
+112.7 KiB
+4,110 ms
+Google Fonts cdn 
+3.9 KiB	1,500 ms
+/css2?family=…(fonts.googleapis.com)
+2.7 KiB
+750 ms
+/css2?family=Jost:ital,wght@0,700;1,700&display=swap(fonts.googleapis.com)
+1.2 KiB
+750 ms
+Forced reflow
+Network dependency tree
+Document request latency Est savings of 26 KiB
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.LCPFCPUnscored
+Avoids redirects
+Server responds quickly (observed 2 ms)
+No compression applied
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 515 KiB
+Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. Learn how to reduce unused JavaScript.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+twentyonesolutions.com 1st party
+453.6 KiB	257.8 KiB
+/assets/index-BoCj0bGB.js(twentyonesolutions.com)
+453.6 KiB
+257.8 KiB
+Google Tag Manager tag-manager 
+461.4 KiB	257.6 KiB
+/gtag/js?id=G-1VS2JMB3H6(www.googletagmanager.com)
+153.8 KiB
+105.1 KiB
+/gtag/js?id=G-1VS2JMB3H6(www.googletagmanager.com)
+153.8 KiB
+105.1 KiB
+/gtag/js?id=G-1VS2JMB3H6(www.googletagmanager.com)
+153.8 KiB
+47.3 KiB
+Reduce unused CSS Est savings of 15 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.LCPFCPUnscored
+URL
+Transfer Size
+Est Savings
+[data-sonner-toaster][dir=ltr],html[dir=ltr]{--toast-icon-margin-start:-3px; … } …
+14.5 KiB
+14.5 KiB
+Avoid long main-thread tasks 4 long tasks found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (18)
+Show
+94
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+Low-contrast text is difficult or impossible for many users to read. Learn how to provide sufficient color contrast.
+Failing Elements
+Get a Website Today
+<span class="opacity-90 tracking-wide sm:hidden font-bold">
+Get a Website Today +1 (626) 524-1059
+<div class="bg-[#FD9800] text-white text-xs font-medium py-2.5">
++1 (626) 524-1059
+<a href="tel:+16265241059" class="hover:opacity-80 transition-opacity flex items-center gap-1.5 font-semibold">
+Get a Website Today +1 (626) 524-1059
+<div class="bg-[#FD9800] text-white text-xs font-medium py-2.5">
+TwentyOne
+<span class="text-[#FD9800]">
+TwentyOne solutions
+<header class="sticky top-0 z-50 bg-[#fdfaf5] border-b-0 shadow-sm relative">
+Service Businesses
+<span class="text-[#FD9800]">
+Back to Resources Google Business Profile Basics for Service Businesses Your m…
+<div class="pt-20 md:pt-32 pb-16 bg-[#fdfaf5]">
+DID YOU KNOW?
+<h3 class="text-[#c27602] text-lg font-bold uppercase tracking-wide mb-4 mt-0">
+DID YOU KNOW? Businesses with photos on their profiles receive 42% more reques…
+<div class="my-10 bg-[#fff8ed] border border-[#FD9800]/30 rounded-2xl p-8">
+Get a Free Audit
+<button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm tr…">
+TwentyOne
+<span class="text-[#FD9800]">
+TwentyOne solutions Websites and Marketing for Service Businesses. Based in Sa…
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+San Clemente, CA
+<a href="/san-clemente" class="text-[#FD9800] font-medium hover:text-[#e08600]">
+TwentyOne solutions Websites and Marketing for Service Businesses. Based in Sa…
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+© 2025 Twenty One Solutions. All rights reserved.
+<p>
+TwentyOne solutions Websites and Marketing for Service Businesses. Based in Sa…
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+Privacy Policy
+<a href="/privacy-policy" class="hover:text-[#FD9800]">
+TwentyOne solutions Websites and Marketing for Service Businesses. Based in Sa…
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+Terms of Service
+<a href="/terms-of-service" class="hover:text-[#FD9800]">
+TwentyOne solutions Websites and Marketing for Service Businesses. Based in Sa…
+<footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+These are opportunities to improve the legibility of your content.
+Best practices
+Document does not have a main landmark.
+One main landmark helps screen reader users navigate a web page. Learn more about landmarks.
+Failing Elements
+html
+<html lang="en">
+These items highlight common accessibility best practices.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (22)
+Show
+Not applicable (36)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Passed audits (13)
+Show
+Not applicable (2)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Additional items to manually check (1)
+Hide
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (9)
+Show
+Not applicable (1)
+Show
+More on PageSpeed Insights
+What's new
+Documentation
+Learn about Web Performance
+Ask questions on Stack Overflow
+Mailing list
+Related Content
+Updates
+Web Fundamentals
+Case Studies
+Podcasts
+Connect
+Twitter
+Youtube
+Google Developers Logo
+Chrome
+Firebase
+All products
+Terms and Privacy Policy
+For details, see the Google Developers Site Policies.
