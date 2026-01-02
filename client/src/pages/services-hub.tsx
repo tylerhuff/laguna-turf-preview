@@ -43,7 +43,7 @@ export default function ServicesHub() {
                 </p>
                 <Link href="/services/web-design">
                   <Button variant="outline" className="w-full border-[#FD9800] text-[#FD9800] hover:bg-[#FD9800] hover:text-white font-bold group">
-                    View Service <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Web Design <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </CardContent>
@@ -61,7 +61,7 @@ export default function ServicesHub() {
                 </p>
                 <Link href="/services/search-engine-optimization">
                   <Button variant="outline" className="w-full border-[#FD9800] text-[#FD9800] hover:bg-[#FD9800] hover:text-white font-bold group">
-                    View Service <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    SEO & Marketing <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </CardContent>
@@ -79,7 +79,7 @@ export default function ServicesHub() {
                 </p>
                 <Link href="/services/website-care">
                   <Button variant="outline" className="w-full border-[#FD9800] text-[#FD9800] hover:bg-[#FD9800] hover:text-white font-bold group">
-                    View Service <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    Website Care <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </CardContent>
