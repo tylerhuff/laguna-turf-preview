@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,17 @@ import { m, AnimatePresence } from 'framer-motion';
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const links = [
     { href: "/about-us", label: "About" },
