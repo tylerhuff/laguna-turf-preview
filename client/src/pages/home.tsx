@@ -259,9 +259,8 @@ export default function HomePage() {
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
-            <m.h1 
-              variants={fadeIn} 
-              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
+            <h1 
+              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight animate-fade-in-up"
             >
               Websites and Marketing for <span className="text-[#FD9800] relative inline-block">
                 Service Businesses
@@ -269,16 +268,15 @@ export default function HomePage() {
                   <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                 </svg>
               </span>
-            </m.h1>
+            </h1>
             
-            <m.p 
-              variants={fadeIn} 
-              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed"
+            <p 
+              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed animate-fade-in-up delay-100"
             >
               We help service businesses look professional online and get found when people search.
-            </m.p>
+            </p>
             
-            <m.div variants={fadeIn} className="pt-4 flex flex-col sm:flex-row gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-200">
               <LeadFormModal 
                 title="Get Your Free Site Preview"
                 description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
@@ -292,7 +290,7 @@ export default function HomePage() {
             <Link href="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap h-16 px-10 text-xl border-2 border-gray-200 text-gray-600 hover:border-[#FD9800] hover:text-[#FD9800] rounded-full font-bold bg-transparent hover:bg-white/50 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
               View Our Work
             </Link>
-            </m.div>
+            </div>
           </div>
         </div>
       </WaveSection>
