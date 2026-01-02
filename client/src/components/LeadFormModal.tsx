@@ -15,17 +15,23 @@ import { Loader2 } from 'lucide-react';
 import { toast } from 'sonner';
 
 interface LeadFormModalProps {
-  trigger: React.ReactNode;
+  trigger?: React.ReactNode;
   title: string;
   description: string;
   type: 'preview' | 'strategy';
   formId?: string; // Optional custom form ID, defaults to the main one
   onSuccess?: () => void;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-export function LeadFormModal({ trigger, title, description, type, formId = "mojqordl", onSuccess }: LeadFormModalProps) {
-  const [open, setOpen] = useState(false);
+export function LeadFormModal({ trigger, title, description, type, formId = "mojqordl", onSuccess, open: controlledOpen, onOpenChange: setControlledOpen }: LeadFormModalProps) {
+  const [internalOpen, setInternalOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isControlled = controlledOpen !== undefined;
+  const open = isControlled ? controlledOpen : internalOpen;
+  const setOpen = isControlled ? setControlledOpen : setInternalOpen;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,7 +59,7 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
             : "We'll be in touch to schedule your strategy call.",
           duration: 5000,
         });
-        setOpen(false);
+        if (setOpen) setOpen(false);
         form.reset();
         if (onSuccess) {
           onSuccess();
@@ -74,9 +80,11 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        {trigger}
-      </DialogTrigger>
+      {trigger && (
+        <DialogTrigger asChild>
+          {trigger}
+        </DialogTrigger>
+      )}
       <DialogContent className="sm:max-w-[500px] bg-white text-gray-900" onOpenAutoFocus={(e) => e.preventDefault()}>
         <DialogHeader>
           <DialogTitle className="text-2xl font-heading text-[#FD9800]">{title}</DialogTitle>

@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { LeadFormModal } from '@/components/LeadFormModal';
+// import { LeadFormModal } from '@/components/LeadFormModal'; // Removed eager import
 import { m, AnimatePresence } from 'framer-motion';
+
+// Lazy load the modal to reduce initial bundle size
+const LeadFormModal = lazy(() => import('@/components/LeadFormModal').then(module => ({ default: module.LeadFormModal })));
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [strategyOpen, setStrategyOpen] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -74,16 +79,13 @@ export function Navigation() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <LeadFormModal 
-              title="Schedule a Strategy Call"
-              description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
-              type="strategy"
-              trigger={
-                <Button className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5">
-                  Strategy Call
-                </Button>
-              }
-            />
+            <Button 
+              className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5"
+              onClick={() => setStrategyOpen(true)}
+            >
+              Strategy Call
+            </Button>
+            
             <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"}>
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
@@ -105,28 +107,26 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4">
-                <LeadFormModal 
-                  title="Schedule a Strategy Call"
-                  description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
-                  type="strategy"
-                  onSuccess={() => setIsOpen(false)}
-                  trigger={
-                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
-                      Strategy Call
-                    </Button>
-                  }
-                />
-                <LeadFormModal 
-                  title="Get Your Free Site Preview"
-                  description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
-                  type="preview"
-                  onSuccess={() => setIsOpen(false)}
-                  trigger={
-                    <Button variant="outline" className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]">
-                      Free Site Preview
-                    </Button>
-                  }
-                />
+                <Button 
+                  className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setStrategyOpen(true);
+                  }}
+                >
+                  Strategy Call
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setPreviewOpen(true);
+                  }}
+                >
+                  Free Site Preview
+                </Button>
               </div>
             </nav>
             </m.div>
@@ -145,6 +145,28 @@ export function Navigation() {
           />
         )}
       </AnimatePresence>
+      
+      {/* Lazy Loaded Modals */}
+      <Suspense fallback={null}>
+        {strategyOpen && (
+          <LeadFormModal 
+            open={strategyOpen}
+            onOpenChange={setStrategyOpen}
+            title="Schedule a Strategy Call"
+            description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
+            type="strategy"
+          />
+        )}
+        {previewOpen && (
+          <LeadFormModal 
+            open={previewOpen}
+            onOpenChange={setPreviewOpen}
+            title="Get Your Free Site Preview"
+            description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
+            type="preview"
+          />
+        )}
+      </Suspense>
     </>
   );
 }
