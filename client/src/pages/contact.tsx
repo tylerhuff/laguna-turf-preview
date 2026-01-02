@@ -234,6 +234,24 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="pb-20 bg-[#fdfaf5]">
+        <div className="container mx-auto px-6">
+          <div className="h-[400px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100 transition-all duration-500">
+            <iframe 
+              src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }}
+              allowFullScreen 
+              loading="eager" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="TwentyOne Solutions Location"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

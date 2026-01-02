@@ -129,21 +129,8 @@ export function Navigation() {
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 pt-0 pb-8">
-      <div className="w-full h-[300px] md:h-[400px] w-full grayscale hover:grayscale-0 transition-all duration-500">
-        <iframe 
-          src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=15&ie=UTF8&iwloc=B&output=embed"
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }}
-          allowFullScreen 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          title="TwentyOne Solutions Location"
-        ></iframe>
-      </div>
-      
-      <div className="container mx-auto px-6 pt-16">
+    <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
+      <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1">
             <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-gray-800 mb-4">
