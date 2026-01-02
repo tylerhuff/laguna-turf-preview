@@ -83,11 +83,21 @@ export function Navigation() {
               onClick={() => setIsOpen(false)}
             />
             <m.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6"
+              initial={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="lg:hidden fixed inset-y-0 right-0 w-full bg-white shadow-2xl z-50 p-6 overflow-y-auto"
             >
+            <div className="flex items-center justify-between mb-8">
+              <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800" onClick={() => setIsOpen(false)}>
+                <span className="text-[#FD9800]">TwentyOne</span>
+                <span className="text-gray-600 text-xl">solutions</span>
+              </Link>
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-full hover:bg-gray-100">
+                <X className="w-6 h-6" />
+              </Button>
+            </div>
             <nav className="flex flex-col gap-4">
               {links.map(link => (
                 <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
