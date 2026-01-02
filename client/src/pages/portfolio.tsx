@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { toast } from 'sonner';
+import { LazyImage } from '@/components/ui/lazy-image';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -34,7 +35,7 @@ export const PortfolioCard = ({ title, description, image, link, subtitle }: Por
   <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
     <div className="overflow-hidden">
       <AspectRatio ratio={16/10}>
-        <img 
+        <LazyImage 
           src={image} 
           alt={title} 
           className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"

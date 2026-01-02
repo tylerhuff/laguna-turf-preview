@@ -1,6 +1,6 @@
 import React from 'react';
 import { SEO } from '@/components/seo';
-import { m } from 'framer-motion';
+import { m, Variants } from 'framer-motion';
 import { Link } from "wouter";
 import { 
   Check,
@@ -19,8 +19,9 @@ import {
 import { toast } from 'sonner';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Navigation, Footer } from '@/components/layout';
+import { LazyImage } from '@/components/ui/lazy-image';
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -29,7 +30,7 @@ const fadeIn = {
   }
 };
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -54,15 +55,12 @@ const PortfolioItem = ({ title, description, image, mobileImage, link, category 
   <m.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
     <div className="overflow-hidden">
       <AspectRatio ratio={16/10}>
-        <picture className="w-full h-full">
-          {mobileImage && <source media="(max-width: 640px)" srcSet={mobileImage} />}
-          <img 
-            src={image} 
-            alt={title} 
-            className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-          />
-        </picture>
+        <LazyImage 
+          src={image} 
+          mobileSrc={mobileImage}
+          alt={title} 
+          className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
+        />
       </AspectRatio>
     </div>
     <div className="p-6 flex flex-col flex-grow">
@@ -325,17 +323,14 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative max-w-md mx-auto lg:ml-auto">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                <picture className="w-full h-auto">
-                  <source media="(max-width: 640px)" srcSet="/assets/images/tylerhuff_founder-mobile.webp" />
-                   <img 
-                     src="/assets/images/tylerhuff_founder.webp" 
-                     alt="Tyler Huff" 
-                     className="w-full h-auto object-cover"
-                     loading="lazy"
-                     width="448"
-                     height="560"
-                   />
-                </picture>
+                <LazyImage 
+                   src="/assets/images/tylerhuff_founder.webp" 
+                   mobileSrc="/assets/images/tylerhuff_founder-mobile.webp"
+                   alt="Tyler Huff" 
+                   className="w-full h-auto object-cover"
+                   width={448}
+                   height={560}
+                 />
               </div>
               <div className="absolute -bottom-6 right-4 bg-white p-4 rounded-xl shadow-xl border border-gray-100 max-w-xs block">
                  <h4 className="font-bold text-lg font-heading text-gray-900">Tyler Huff</h4>
@@ -394,16 +389,14 @@ export default function HomePage() {
                 Before
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white transform rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white">
-                <picture>
-                  <source media="(max-width: 640px)" srcSet="/assets/images/local-search-grid-before-mobile.webp" />
-                  <img 
-                    src="/assets/images/local-search-grid-before.webp" 
-                    alt="Local Search Grid Report - Before Results" 
-                    className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
-                    width="600"
-                    height="551"
-                  />
-                </picture>
+                <LazyImage 
+                  src="/assets/images/local-search-grid-before.webp" 
+                  mobileSrc="/assets/images/local-search-grid-before-mobile.webp"
+                  alt="Local Search Grid Report - Before Results" 
+                  className="w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  width={600}
+                  height={551}
+                />
               </div>
               <p className="text-center mt-6 text-gray-500 font-medium">Limited visibility. <br/>Hard to find.</p>
             </div>
@@ -414,16 +407,14 @@ export default function HomePage() {
                 After
               </div>
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-green-500 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500 bg-white ring-4 ring-green-500/20">
-                <picture>
-                  <source media="(max-width: 640px)" srcSet="/assets/images/local-search-grid-after-mobile.webp" />
-                  <img 
-                    src="/assets/images/local-search-grid-after.webp" 
-                    alt="Local Search Grid Report - After Results" 
-                    className="w-full h-auto"
-                    width="600"
-                    height="577"
-                  />
-                </picture>
+                <LazyImage 
+                  src="/assets/images/local-search-grid-after.webp" 
+                  mobileSrc="/assets/images/local-search-grid-after-mobile.webp"
+                  alt="Local Search Grid Report - After Results" 
+                  className="w-full h-auto"
+                  width={600}
+                  height={577}
+                />
               </div>
                <p className="text-center mt-6 text-gray-900 font-bold">Domination. <br/>Top ranking across the entire city.</p>
             </div>
