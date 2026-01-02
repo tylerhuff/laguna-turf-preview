@@ -1,0 +1,191 @@
+PageSpeed Insights logo
+PageSpeed Insights
+Report from Jan 2, 2026, 10:13:42 AM
+https://twentyonesolutions.com/resources/google-business-profile-basics
+Enter a valid URL
+
+
+smartphone
+Mobile
+
+computer
+Desktop
+
+Discover what your real users are experiencing
+No Data
+
+Diagnose performance issues
+66
+Performance
+93
+Accessibility
+96
+Best Practices
+92
+SEO
+66
+FCP
++2
+LCP
++1
+TBT
++30
+CLS
++25
+SI
++8
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+4.1 s
+Largest Contentful Paint
+8.1 s
+Total Blocking Time
+30 ms
+Cumulative Layout Shift
+0.023
+Speed Index
+4.1 s
+Captured at Jan 2, 2026, 10:13 AM PST
+Emulated Moto G Power with Lighthouse 13.0.1
+Single page session
+Initial page load
+Slow 4G throttling
+Using HeadlessChromium 137.0.7151.119 with lr
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Render blocking requests Est savings of 760 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.LCPFCPUnscored
+URL
+Transfer Size
+Duration
+twentyonesolutions.com 1st party
+112.5 KiB	1,520 ms
+/assets/index-C-zmx8gq.css(twentyonesolutions.com)
+112.5 KiB
+1,520 ms
+Document request latency Error!
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.Unscored
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 551 ms
+Initial Navigation
+/resources/google-business-profile-basics(twentyonesolutions.com) - 181 ms, 3.04 KiB
+/assets/index-D4G35Jxp.js(twentyonesolutions.com) - 345 ms, 453.78 KiB
+/assets/google-business-profile-basics-CpodMxgS.js(twentyonesolutions.com) - 551 ms, 6.48 KiB
+/assets/seo-DvRMuU_f.js(twentyonesolutions.com) - 529 ms, 1.67 KiB
+/assets/Helmet-CPkncF5a.js(twentyonesolutions.com) - 518 ms, 17.42 KiB
+/assets/layout-DfYb17CF.js(twentyonesolutions.com) - 529 ms, 32.86 KiB
+/assets/index-Dnrzak2h.js(twentyonesolutions.com) - 531 ms, 24.12 KiB
+/assets/textarea-D_yEQAB-.js(twentyonesolutions.com) - 528 ms, 2.10 KiB
+/assets/arrow-lef….js(twentyonesolutions.com) - 518 ms, 0.70 KiB
+/assets/circle-ch….js(twentyonesolutions.com) - 528 ms, 0.71 KiB
+/assets/index-C-zmx8gq.css(twentyonesolutions.com) - 307 ms, 112.50 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Layout shift culprits
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused JavaScript Est savings of 301 KiB
+Avoid long main-thread tasks 2 long tasks found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (19)
+Show
+93
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+These are opportunities to improve the legibility of your content.
+Navigation
+Heading elements are not in a sequentially-descending order
+These are opportunities to improve keyboard navigation in your application.
+Best practices
+Document does not have a main landmark.
+These items highlight common accessibility best practices.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (21)
+Show
+Not applicable (36)
+Show
+96
+Best Practices
+General
+Browser errors were logged to the console
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Passed audits (12)
+Show
+Not applicable (2)
+Show
+92
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Crawling and Indexing
+Page has unsuccessful HTTP status code 404
+To appear in search results, crawlers need access to your app.
+Additional items to manually check (1)
+Show
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (8)
+Show
+Not applicable (1)
+Show
+More on PageSpeed Insights
+What's new
+Documentation
+Learn about Web Performance
+Ask questions on Stack Overflow
+Mailing list
+Related Content
+Updates
+Web Fundamentals
+Case Studies
+Podcasts
+Connect
+Twitter
+Youtube
+Google Developers Logo
+Chrome
+Firebase
+All products
+Terms and Privacy Policy
+For details, see the Google Developers Site Policies.
