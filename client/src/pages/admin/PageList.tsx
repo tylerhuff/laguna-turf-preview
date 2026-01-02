@@ -14,14 +14,29 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export default function AdminPages() {
-  const pages = [
+  const [pages, setPages] = React.useState([
     { id: 1, title: 'Home', slug: '/', status: 'Published', lastModified: '2 mins ago', author: 'Tyler Huff' },
     { id: 2, title: 'About Us', slug: '/about', status: 'Published', lastModified: '2 days ago', author: 'Tyler Huff' },
     { id: 3, title: 'Services', slug: '/services', status: 'Published', lastModified: '1 week ago', author: 'System' },
     { id: 4, title: 'Portfolio', slug: '/portfolio', status: 'Published', lastModified: '3 weeks ago', author: 'Tyler Huff' },
     { id: 5, title: 'Contact', slug: '/contact', status: 'Published', lastModified: '1 month ago', author: 'System' },
     { id: 6, title: 'Privacy Policy', slug: '/privacy', status: 'Draft', lastModified: 'Yesterday', author: 'Legal' },
-  ];
+  ]);
+
+  const toggleStatus = (id: number) => {
+    setPages(prev => prev.map(p => {
+      if (p.id === id) {
+        return { ...p, status: p.status === 'Published' ? 'Draft' : 'Published' };
+      }
+      return p;
+    }));
+  };
+
+  const deletePage = (id: number) => {
+    if (window.confirm('Are you sure you want to delete this page?')) {
+      setPages(prev => prev.filter(p => p.id !== id));
+    }
+  };
 
   return (
     <AdminLayout>
@@ -64,9 +79,12 @@ export default function AdminPages() {
                          </div>
                        </td>
                        <td className="p-6">
-                         <Badge variant="secondary" className={
+                         <Badge 
+                           onClick={() => toggleStatus(page.id)}
+                           variant="secondary" 
+                           className={`cursor-pointer hover:opacity-80 transition-opacity ${
                            page.status === 'Published' ? "bg-green-100 text-green-700 hover:bg-green-200" : "bg-gray-100 text-gray-700"
-                         }>
+                         }`}>
                            {page.status}
                          </Badge>
                        </td>
@@ -97,7 +115,12 @@ export default function AdminPages() {
                               <DropdownMenuContent align="end">
                                 <DropdownMenuItem>Page Settings</DropdownMenuItem>
                                 <DropdownMenuItem>Duplicate</DropdownMenuItem>
-                                <DropdownMenuItem className="text-red-600">Delete</DropdownMenuItem>
+                                <DropdownMenuItem 
+                                  className="text-red-600"
+                                  onClick={() => deletePage(page.id)}
+                                >
+                                  Delete
+                                </DropdownMenuItem>
                               </DropdownMenuContent>
                             </DropdownMenu>
                          </div>

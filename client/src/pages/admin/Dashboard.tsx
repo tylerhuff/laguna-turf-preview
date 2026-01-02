@@ -5,12 +5,45 @@ import { Users, Eye, MousePointer2, TrendingUp, Calendar, ArrowUpRight } from 'l
 import { Button } from '@/components/ui/button';
 
 export default function AdminDashboard() {
-  const stats = [
+  const [leads, setLeads] = React.useState([
+    { id: 1, name: 'Sarah Connor', email: 'sarah@skynet.com', date: '2 hours ago', status: 'New' },
+    { id: 2, name: 'John Wick', email: 'john@continental.com', date: '5 hours ago', status: 'Contacted' },
+    { id: 3, name: 'Bruce Wayne', email: 'bruce@wayne.corp', date: '1 day ago', status: 'Pending' },
+    { id: 4, name: 'Tony Stark', email: 'tony@stark.ind', date: '2 days ago', status: 'Closed' },
+  ]);
+
+  const [stats, setStats] = React.useState([
     { title: 'Total Visitors', value: '12,345', change: '+12%', icon: Users },
     { title: 'Page Views', value: '45,678', change: '+8%', icon: Eye },
     { title: 'Conversion Rate', value: '3.2%', change: '+0.4%', icon: MousePointer2 },
     { title: 'New Leads', value: '145', change: '+24%', icon: TrendingUp },
-  ];
+  ]);
+
+  // Update stats when leads change (mock logic)
+  React.useEffect(() => {
+    setStats(prev => prev.map(stat => {
+      if (stat.title === 'New Leads') {
+        return { ...stat, value: leads.length.toString() };
+      }
+      return stat;
+    }));
+  }, [leads]);
+
+  const deleteLead = (id: number) => {
+    setLeads(prev => prev.filter(l => l.id !== id));
+  };
+
+  const toggleStatus = (id: number) => {
+    setLeads(prev => prev.map(l => {
+      if (l.id === id) {
+        const statuses = ['New', 'Contacted', 'Pending', 'Closed'];
+        const currentIndex = statuses.indexOf(l.status);
+        const nextStatus = statuses[(currentIndex + 1) % statuses.length];
+        return { ...l, status: nextStatus };
+      }
+      return l;
+    }));
+  };
 
   return (
     <AdminLayout>
@@ -53,13 +86,8 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent className="p-0">
               <div className="divide-y divide-gray-100">
-                {[
-                  { name: 'Sarah Connor', email: 'sarah@skynet.com', date: '2 hours ago', status: 'New' },
-                  { name: 'John Wick', email: 'john@continental.com', date: '5 hours ago', status: 'Contacted' },
-                  { name: 'Bruce Wayne', email: 'bruce@wayne.corp', date: '1 day ago', status: 'Pending' },
-                  { name: 'Tony Stark', email: 'tony@stark.ind', date: '2 days ago', status: 'Closed' },
-                ].map((lead, i) => (
-                  <div key={i} className="flex items-center justify-between p-6 hover:bg-gray-50 transition-colors">
+                {leads.map((lead) => (
+                  <div key={lead.id} className="flex items-center justify-between p-6 hover:bg-gray-50 transition-colors group">
                     <div className="flex items-center gap-4">
                       <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-600">
                         {lead.name.charAt(0)}
@@ -71,17 +99,32 @@ export default function AdminDashboard() {
                     </div>
                     <div className="flex items-center gap-4">
                        <span className="text-sm text-gray-400 hidden sm:block">{lead.date}</span>
-                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                       <button 
+                         onClick={() => toggleStatus(lead.id)}
+                         className={`px-3 py-1 rounded-full text-xs font-bold cursor-pointer hover:opacity-80 transition-opacity ${
                          lead.status === 'New' ? 'bg-blue-100 text-blue-700' :
                          lead.status === 'Contacted' ? 'bg-yellow-100 text-yellow-700' :
                          lead.status === 'Closed' ? 'bg-green-100 text-green-700' :
                          'bg-gray-100 text-gray-700'
                        }`}>
                          {lead.status}
-                       </span>
+                       </button>
+                       <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        className="text-red-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                        onClick={() => deleteLead(lead.id)}
+                       >
+                         Delete
+                       </Button>
                     </div>
                   </div>
                 ))}
+                {leads.length === 0 && (
+                  <div className="p-8 text-center text-gray-500">
+                    No recent leads found.
+                  </div>
+                )}
               </div>
             </CardContent>
           </Card>
