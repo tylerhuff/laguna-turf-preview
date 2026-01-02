@@ -120,6 +120,7 @@ export function Navigation() {
               </div>
             </nav>
           </m.div>
+          </>
         )}
       </AnimatePresence>
     </>
