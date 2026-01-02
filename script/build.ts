@@ -37,6 +37,12 @@ async function buildAll() {
 
   console.log("building client...");
   await viteBuild();
+  
+  // Run prerender script to generate static HTML for all routes
+  console.log("prerendering pages...");
+  const { execSync } = await import('child_process');
+  execSync('npx tsx script/prerender.ts', { stdio: 'inherit' });
+
   await copyFile("dist/public/index.html", "dist/public/404.html");
 
   console.log("building server...");
