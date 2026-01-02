@@ -148,6 +148,16 @@ export default function AdminDashboard() {
                  <ArrowUpRight className="w-4 h-4 text-gray-400" />
                </Button>
                
+               <Button 
+                onClick={() => {
+                  alert("Backup Download Started\n\nThis will download a .zip file containing:\n- Source Code\n- Media Assets\n- Content Database");
+                }}
+                className="w-full justify-between bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 h-12"
+               >
+                 Download Full Backup
+                 <ArrowUpRight className="w-4 h-4 text-gray-400" />
+               </Button>
+               
                <div className="pt-4 mt-4 border-t border-gray-100">
                   <h4 className="font-bold text-gray-900 mb-2">System Status</h4>
                   <div className="space-y-2">
