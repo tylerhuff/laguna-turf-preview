@@ -74,12 +74,20 @@ export function Navigation() {
 
       <AnimatePresence>
         {isOpen && (
-          <m.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6"
-          >
+          <>
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 bg-black/50 z-30"
+              onClick={() => setIsOpen(false)}
+            />
+            <m.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6"
+            >
             <nav className="flex flex-col gap-4">
               {links.map(link => (
                 <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>

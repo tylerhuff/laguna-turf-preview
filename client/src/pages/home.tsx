@@ -703,7 +703,7 @@ export default function HomePage() {
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
-                  loading="lazy" 
+                  loading="eager" 
                   referrerPolicy="no-referrer-when-downgrade"
                   title="TwentyOne Solutions Location"
                 ></iframe>
