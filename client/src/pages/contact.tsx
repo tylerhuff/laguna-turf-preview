@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Navigation, Footer } from '@/components/layout';
 import { toast } from 'sonner';
+import { LazyImage } from '@/components/ui/lazy-image';
+import MapPlaceholder from '@assets/generated_images/static_map_placeholder_for_contact_page.png';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -237,16 +239,30 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="pb-20 bg-[#fdfaf5]">
         <div className="container mx-auto px-6">
-          <div className="h-[400px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100 transition-all duration-500">
+          <div className="h-[400px] w-full overflow-hidden rounded-2xl shadow-lg border border-gray-100 transition-all duration-500 relative group">
+             {/* Static Map Image Placeholder */}
+            <LazyImage 
+              src={MapPlaceholder}
+              alt="Map Location" 
+              className="absolute inset-0 w-full h-full object-cover z-10 pointer-events-none group-hover:pointer-events-auto group-hover:opacity-0 transition-opacity duration-500 delay-200"
+            />
+             {/* Hint to interact */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-300 bg-black/5">
+                <span className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-700 shadow-sm border border-gray-200">
+                    Click to interact with map
+                </span>
+            </div>
+
             <iframe 
               src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=15&ie=UTF8&iwloc=B&output=embed"
               width="100%" 
               height="100%" 
               style={{ border: 0 }}
               allowFullScreen 
-              loading="eager" 
+              loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="TwentyOne Solutions Location"
+              className="relative z-0"
             ></iframe>
           </div>
         </div>
