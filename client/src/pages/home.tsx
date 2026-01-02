@@ -260,7 +260,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center text-center max-w-5xl mx-auto space-y-8">
             <h1 
-              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight"
+              className="text-5xl md:text-7xl font-bold font-heading text-gray-900 leading-[1.1] tracking-tight md:animate-fade-in-up"
             >
               Websites and Marketing for <span className="text-[#FD9800] relative inline-block">
                 Service Businesses
@@ -271,12 +271,12 @@ export default function HomePage() {
             </h1>
             
             <p 
-              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed mt-8"
+              className="text-xl md:text-2xl text-gray-600 font-light max-w-3xl leading-relaxed mt-8 md:animate-fade-in-up md:delay-100"
             >
               We help service businesses look professional online and get found when people search.
             </p>
             
-            <div className="pt-4 flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="pt-4 flex flex-col sm:flex-row gap-4 mt-8 md:animate-fade-in-up md:delay-200">
               <LeadFormModal 
                 title="Get Your Free Site Preview"
                 description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
