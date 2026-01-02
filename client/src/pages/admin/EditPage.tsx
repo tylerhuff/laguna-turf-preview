@@ -11,6 +11,43 @@ import { Save, ArrowLeft, Image as ImageIcon, Layout, Type } from 'lucide-react'
 import { Link } from "wouter";
 
 export default function AdminEditPage() {
+  const [loading, setLoading] = React.useState(false);
+  const [heroImage, setHeroImage] = React.useState("/assets/images/tylerhuff_founder.webp");
+  const [formData, setFormData] = React.useState({
+    headline: "Websites and Marketing for Service Businesses",
+    subheadline: "We help service businesses look professional online and get found when people search.",
+    features: [
+      { title: "Try Before you Buy", desc: "See your site before paying." },
+      { title: "Easy Onboarding", desc: "We handle the tech stuff." },
+      { title: "Marketing Too", desc: "SEO and Ads included." },
+      { title: "Ongoing Support", desc: "We update it for you." }
+    ]
+  });
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      const file = e.target.files[0];
+      const imageUrl = URL.createObjectURL(file);
+      setHeroImage(imageUrl);
+    }
+  };
+
+  const handleSave = () => {
+    setLoading(true);
+    // Simulate API call
+    setTimeout(() => {
+      setLoading(false);
+      // In a real app, this would show a toast notification
+      alert("Changes saved successfully!");
+    }, 1000);
+  };
+
+  const updateFeature = (index: number, field: 'title' | 'desc', value: string) => {
+    const newFeatures = [...formData.features];
+    newFeatures[index] = { ...newFeatures[index], [field]: value };
+    setFormData({ ...formData, features: newFeatures });
+  };
+
   return (
     <AdminLayout>
       <div className="space-y-6 max-w-5xl mx-auto">
@@ -30,9 +67,13 @@ export default function AdminEditPage() {
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline">Preview</Button>
-            <Button className="bg-[#FD9800] hover:bg-[#e08600] text-white gap-2">
+            <Button 
+              className="bg-[#FD9800] hover:bg-[#e08600] text-white gap-2"
+              onClick={handleSave}
+              disabled={loading}
+            >
               <Save className="w-4 h-4" />
-              Save Changes
+              {loading ? "Saving..." : "Save Changes"}
             </Button>
           </div>
         </div>
@@ -56,23 +97,43 @@ export default function AdminEditPage() {
                   <div className="grid gap-6">
                     <div className="space-y-2">
                        <Label>Hero Headline</Label>
-                       <Input defaultValue="Websites and Marketing for Service Businesses" className="font-bold text-lg" />
+                       <Input 
+                         value={formData.headline} 
+                         onChange={(e) => setFormData({...formData, headline: e.target.value})}
+                         className="font-bold text-lg" 
+                       />
                     </div>
                     <div className="space-y-2">
                        <Label>Hero Subheadline</Label>
-                       <Textarea defaultValue="We help service businesses look professional online and get found when people search." rows={3} />
+                       <Textarea 
+                         value={formData.subheadline}
+                         onChange={(e) => setFormData({...formData, subheadline: e.target.value})}
+                         rows={3} 
+                       />
                     </div>
                     <div className="space-y-2">
                        <Label>Hero Image</Label>
-                       <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer group">
-                          <div className="w-full h-48 bg-gray-100 rounded overflow-hidden relative">
-                             <img src="/assets/images/tylerhuff_founder.webp" className="w-full h-full object-cover opacity-50 group-hover:opacity-75 transition-opacity" alt="Preview" />
-                             <div className="absolute inset-0 flex items-center justify-center">
-                                <Button variant="secondary" size="sm" className="gap-2">
-                                  <ImageIcon className="w-4 h-4" /> Change Image
-                                </Button>
-                             </div>
-                          </div>
+                       <div className="relative group cursor-pointer">
+                         <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center gap-4 hover:bg-gray-50 transition-colors h-64 relative overflow-hidden">
+                            {heroImage ? (
+                              <img src={heroImage} className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity" alt="Preview" />
+                            ) : null}
+                            
+                            <div className="relative z-10 flex flex-col items-center gap-2">
+                               <Button variant="secondary" size="sm" className="gap-2 pointer-events-none">
+                                 <ImageIcon className="w-4 h-4" /> 
+                                 {heroImage ? "Change Image" : "Upload Image"}
+                               </Button>
+                               <span className="text-xs text-gray-500">JPG, PNG, WebP up to 5MB</span>
+                            </div>
+                            
+                            <input 
+                              type="file" 
+                              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                              accept="image/*"
+                              onChange={handleImageUpload}
+                            />
+                         </div>
                        </div>
                     </div>
                   </div>
@@ -87,14 +148,23 @@ export default function AdminEditPage() {
                </div>
                <CardContent className="p-6 space-y-6">
                   <div className="space-y-4">
-                     {["Try Before you Buy", "Easy Onboarding", "Marketing Too", "Ongoing Support"].map((item, i) => (
+                     {formData.features.map((item, i) => (
                        <div key={i} className="flex gap-4 items-start p-4 bg-gray-50 rounded-lg border border-gray-100">
                           <div className="w-8 h-8 bg-white rounded flex items-center justify-center border border-gray-200 shrink-0 font-bold text-gray-400">
                              {i + 1}
                           </div>
                           <div className="flex-1 space-y-3">
-                             <Input defaultValue={item} className="font-semibold" />
-                             <Textarea placeholder="Description text..." rows={2} />
+                             <Input 
+                               value={item.title} 
+                               onChange={(e) => updateFeature(i, 'title', e.target.value)}
+                               className="font-semibold" 
+                             />
+                             <Textarea 
+                               value={item.desc}
+                               onChange={(e) => updateFeature(i, 'desc', e.target.value)}
+                               placeholder="Description text..." 
+                               rows={2} 
+                             />
                           </div>
                        </div>
                      ))}
