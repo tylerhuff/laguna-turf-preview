@@ -89,7 +89,7 @@ export function Navigation() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/50 -z-10 lg:hidden"
+                className="absolute top-full left-0 right-0 h-screen bg-black/50 -z-10 lg:hidden"
                 onClick={() => setIsOpen(false)}
               />
               <m.div 
