@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,17 +17,6 @@ export function Navigation() {
     { href: "/resources", label: "Resources" },
     { href: "/contact-us", label: "Contact" },
   ];
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
 
   return (
     <>
@@ -50,7 +39,7 @@ export function Navigation() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#fdfaf5] border-b-0 shadow-sm relative">
+      <header className="sticky top-0 z-50 bg-[#fdfaf5] border-b-0 shadow-sm">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">
             <span className="text-[#FD9800]">TwentyOne</span>
@@ -81,59 +70,59 @@ export function Navigation() {
             </Button>
           </div>
         </div>
-
-        <AnimatePresence>
-          {isOpen && (
-            <>
-              <m.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute top-full left-0 right-0 h-screen bg-black/50 -z-10 lg:hidden"
-                onClick={() => setIsOpen(false)}
-              />
-              <m.div 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-40 p-6"
-              >
-              <nav className="flex flex-col gap-4">
-                {links.map(link => (
-                  <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
-                    {link.label}
-                  </Link>
-                ))}
-                <div className="flex flex-col gap-3 mt-4">
-                  <LeadFormModal 
-                    title="Schedule a Strategy Call"
-                    description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
-                    type="strategy"
-                    onSuccess={() => setIsOpen(false)}
-                    trigger={
-                      <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
-                        Strategy Call
-                      </Button>
-                    }
-                  />
-                  <LeadFormModal 
-                    title="Get Your Free Site Preview"
-                    description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
-                    type="preview"
-                    onSuccess={() => setIsOpen(false)}
-                    trigger={
-                      <Button variant="outline" className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]">
-                        Free Site Preview
-                      </Button>
-                    }
-                  />
-                </div>
-              </nav>
-            </m.div>
-            </>
-          )}
-        </AnimatePresence>
       </header>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-0 bg-black/50 z-30"
+              onClick={() => setIsOpen(false)}
+            />
+            <m.div 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6"
+            >
+            <nav className="flex flex-col gap-4">
+              {links.map(link => (
+                <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
+              <div className="flex flex-col gap-3 mt-4">
+                <LeadFormModal 
+                  title="Schedule a Strategy Call"
+                  description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
+                  type="strategy"
+                  onSuccess={() => setIsOpen(false)}
+                  trigger={
+                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
+                      Strategy Call
+                    </Button>
+                  }
+                />
+                <LeadFormModal 
+                  title="Get Your Free Site Preview"
+                  description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
+                  type="preview"
+                  onSuccess={() => setIsOpen(false)}
+                  trigger={
+                    <Button variant="outline" className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]">
+                      Free Site Preview
+                    </Button>
+                  }
+                />
+              </div>
+            </nav>
+          </m.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
