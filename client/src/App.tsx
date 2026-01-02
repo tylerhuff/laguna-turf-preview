@@ -14,8 +14,6 @@ import ReactGA from "react-ga4";
 // Users should replace this with their actual Measurement ID
 const GA_MEASUREMENT_ID = "G-1VS2JMB3H6"; 
 
-ReactGA.initialize(GA_MEASUREMENT_ID);
-
 // Lazy load pages
 const NotFound = lazy(() => import("@/pages/not-found"));
 const HomePage = lazy(() => import("@/pages/home"));
@@ -51,12 +49,26 @@ function LoadingFallback() {
   );
 }
 
+declare global {
+  interface Window {
+    gaInitialized?: boolean;
+  }
+}
+
 function Router() {
   const [location] = useLocation();
 
   useEffect(() => {
-    // Send pageview to Google Analytics on route change
-    ReactGA.send({ hitType: "pageview", page: location });
+    // Delay GA initialization until after initial paint
+    const timer = setTimeout(() => {
+        if (!window.gaInitialized) {
+            ReactGA.initialize(GA_MEASUREMENT_ID);
+            window.gaInitialized = true;
+        }
+        ReactGA.send({ hitType: "pageview", page: location });
+    }, 4000); // 4 second delay to ensure LCP is done
+
+    return () => clearTimeout(timer);
   }, [location]);
 
   return (
