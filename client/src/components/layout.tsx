@@ -133,53 +133,13 @@ export function Navigation() {
 
       <AnimatePresence>
         {isOpen && (
-          <>
-            <m.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="lg:hidden fixed inset-0 bg-black/50 z-30"
-              onClick={() => setIsOpen(false)}
-            />
-            <m.div 
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="lg:hidden fixed inset-x-0 top-[116px] bg-white border-b border-gray-100 shadow-lg z-40 p-6"
-            >
-            <nav className="flex flex-col gap-4">
-              {links.map(link => (
-                <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
-                  {link.label}
-                </Link>
-              ))}
-              <div className="flex flex-col gap-3 mt-4">
-                <LeadFormModal 
-                  title="Schedule a Strategy Call"
-                  description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
-                  type="strategy"
-                  onSuccess={() => setIsOpen(false)}
-                  trigger={
-                    <Button className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12">
-                      Strategy Call
-                    </Button>
-                  }
-                />
-                <LeadFormModal 
-                  title="Get Your Free Site Preview"
-                  description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
-                  type="preview"
-                  onSuccess={() => setIsOpen(false)}
-                  trigger={
-                    <Button variant="outline" className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]">
-                      Free Site Preview
-                    </Button>
-                  }
-                />
-              </div>
-            </nav>
-          </m.div>
-          </>
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+            onClick={() => setIsOpen(false)}
+          />
         )}
       </AnimatePresence>
     </>
