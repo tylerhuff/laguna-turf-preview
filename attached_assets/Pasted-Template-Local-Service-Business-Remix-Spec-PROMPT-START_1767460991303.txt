@@ -1,0 +1,361 @@
+Template Local Service Business Remix Spec
+
+PROMPT START
+
+Role
+You are working inside an existing React, Vite, TypeScript, Tailwind app that is a reusable template for local service businesses. Your job is to remix the current codebase into a polished, generic contractor style website that can be rebranded per client. Do not start from scratch. Refactor and extend what is already there.
+
+Primary goal
+Build a fast, conversion focused local service business website that is fully indexable, has strong schema, automated blog content, a working Google Map embed, and a consistent conversion layer on every page.
+
+Inputs you may receive
+
+1. A business details block with some or all fields filled in
+2. A link to the existing business website
+
+Critical requirement
+If business information is not specified but an existing website link is provided, extract as much as possible from that website and use it to populate the site. Prefer facts over guesses. Do not invent phone numbers, addresses, license numbers, service areas, or review stats.
+
+Extraction rules
+
+1. Prefer facts from the provided website over guesses
+2. If a value is not found, leave it blank or use a safe placeholder and keep the UI graceful
+3. Create a small local Node script that fetches and parses key pages from the provided website link to extract business data
+4. Use a lightweight HTML parser such as cheerio
+5. Do not scrape Google
+
+Suggested extraction targets
+Home page
+Contact page
+About page
+Services pages
+Header and footer content
+Any existing schema tags
+
+Section 1
+Single source of truth for business data
+
+Create a config module at client src config business.ts that exports businessConfig plus sensible defaults for a generic contractor template.
+
+Default template business identity
+Business name: Coastal Contractor Services
+Tagline: Reliable local service, done right
+Phone: (555) 555 5555
+Email: [hello@example.com](mailto:hello@example.com)
+Website: [https://example.com](https://example.com)
+Price range: $$
+Insured and bonded: true
+
+businessConfig must include at minimum
+
+Business identity
+businessName
+legalBusinessName optional
+tagline
+primaryPhone
+phoneDisplay
+primaryEmail
+websiteUrl
+priceRange
+licenseNumber optional
+insuredBonded boolean
+foundedYear optional
+
+Address and geo
+streetAddress
+city
+state
+postalCode
+country
+geoLat optional
+geoLng optional
+
+Hours
+openingHours array with day, open, close
+availabilityNote optional
+
+Service areas
+areasServedCities array
+areasServedNeighborhoods optional array
+areasServedZips optional array
+
+Services
+services array of objects with
+name
+slug
+shortDescription
+longDescription
+serviceBenefits array
+processSteps array
+pricingTiers array with name, priceRange, includes
+faqs array with question and answer
+primaryKeywords array
+
+Reviews
+aggregateRatingValue optional
+aggregateRatingCount optional
+reviewCards array with name, rating, text, city
+
+Maps
+mapsShareUrl optional
+mapsQueryOverride optional
+
+Branding
+primaryAccentColor optional
+secondaryAccentColor optional
+logoPath optional
+heroImagePath optional
+fontHeading optional
+fontBody optional
+
+Integrations
+ga4MeasurementId optional
+formspreeEndpoint string
+seobotApiKey optional
+
+Section 2
+Global layout and conversion system
+
+Implement a consistent sitewide layout that wraps every route.
+
+Must appear on every page
+
+1. Sticky header
+2. Primary navigation: Services, Service Areas, About, Contact
+3. Primary CTA buttons: Call Now, Get a Quote, Get Estimate
+4. Mobile fixed bottom bar with two buttons: Call Now and Get a Quote
+5. A persistent CTA footer block above the real footer on every page
+
+CTA behavior
+Call Now is a tel link using primaryPhone
+Get a Quote opens the quote modal
+Get Estimate opens the same modal but uses estimate language in the heading and submit copy
+
+Persistent CTA footer block requirements
+Headline and short supporting copy
+Primary button Get a Quote
+Secondary button Call Now
+Compact service area summary or a mini map preview
+This block must render on every route, above the real footer
+
+Real footer requirements
+Links to Privacy Policy, Terms of Service, Accessibility Statement
+Contact info
+Service area summary
+
+Section 3
+Google Maps integration
+
+Create a reusable BusinessMap component used across the site.
+
+Requirements
+
+1. It must render a working embed with real map output, no placeholders
+2. It must be data driven from businessConfig
+3. It must not require scraping Google
+
+Priority for map source
+
+1. If mapsShareUrl is provided, use it to produce an embed
+2. Else build an embed query using businessName, streetAddress, city, state
+3. If a field is missing, fall back to businessName plus city plus state
+
+Use BusinessMap in
+Contact page
+All location pages
+Persistent CTA footer block as a mini map preview or a map toggle
+Optional on Home page in the service area section
+
+Section 4
+Pages and routing
+
+Use wouter routing.
+
+Required routes
+Home
+Services index
+Service detail pages from businessConfig services by slug
+Service Areas page listing cities and neighborhoods
+Location pages with dynamic routing
+locations city
+locations city service
+About
+Contact
+Resources index
+Resources detail at resources slug
+Thank You page after form submit
+Privacy Policy
+Terms of Service
+Accessibility Statement
+Not Found page
+
+All pages must use the shared layout so the persistent CTA footer block and mobile bar appear everywhere.
+
+Section 5
+Forms and lead capture
+
+Create a QuoteRequestModal triggered by every Get a Quote and Get Estimate CTA.
+
+Fields
+Name
+Phone
+Service needed dropdown from businessConfig services
+Scheduling preference: Today, This week, Flexible
+Issue description
+Optional photo upload if feasible
+
+Hidden fields
+Lead source such as Header CTA, Footer CTA, Mobile Bar, Service Page CTA
+Current page path
+Selected service slug
+
+Submission
+Submit to Formspree using businessConfig formspreeEndpoint.
+
+Contact page
+Create a contact form that uses the same submission logic.
+
+Thank You flow
+After submit, route to Thank You page. Thank You page repeats the phone number and includes a clear Call Now button.
+
+Section 6
+SEO and schema
+
+Create a robust SEO component using a Helmet style head manager.
+
+Every page must set
+Title
+Description
+Canonical
+Open Graph tags
+Twitter card tags
+Robots directives when needed
+
+Implement JSON LD schema generators.
+
+Must support
+LocalBusiness schema globally using businessConfig
+Service schema on each service page
+FAQPage schema on Home and service pages when FAQs exist
+BreadcrumbList schema on all non Home pages
+AggregateRating schema when aggregate data exists
+
+Meta title patterns
+Service page title uses Service Name in City, Business Name when a city context exists
+Non city pages use Business Name plus primary service category
+
+Section 7
+llms.txt, robots.txt, sitemap.xml
+
+Create public llms.txt generated from businessConfig.
+
+llms.txt must include
+Business name
+Primary phone
+Address
+Hours
+Full service list
+Full service area list
+Website URL
+
+robots.txt must point to sitemap.xml.
+
+Generate sitemap.xml automatically.
+
+Sitemap must include
+All static routes
+All service routes
+All location routes generated from config
+All resources routes from the blog system
+
+Section 8
+Automated blog with SeoBot
+
+Integrate SeoBot.
+
+Pages
+Resources index page
+Resources detail page
+
+Routing
+Posts must render at resources slug.
+
+Build time support
+Create a small script that fetches or reads a list of available blog slugs and writes a local JSON file into public so sitemap generation and pre render can include blog routes.
+
+Fallback behavior
+If seobotApiKey is not provided, fall back to a small set of local sample posts so routes still work.
+
+Section 9
+Static pre render for maximum indexability
+
+Implement or confirm a Puppeteer pre render script at scripts prerender.ts.
+
+It must
+Build or use the dist output
+Start a local preview server
+Visit every route in the same route registry used by sitemap generation
+Write static HTML files for each route into dist so each route has an HTML entry point
+
+Routes included in pre render must include
+Home
+All services
+All locations
+All resources slugs
+Legal pages
+Thank You
+Not Found
+
+Wire this into the build command so a production build always produces the pre rendered HTML.
+
+Section 10
+Performance requirements
+
+1. Lazy load heavy components such as maps and modals, and routes where appropriate, using Suspense
+2. Use WebP images and lazy loading with meaningful alt text that includes service and city where appropriate
+3. Avoid huge bundles on first paint
+
+Section 11
+Design and branding behavior
+
+If branding fields exist in businessConfig, use them to theme the site.
+
+If branding is missing, default to a generic contractor design that looks good
+Clean light background
+Dark readable text
+Strong accent color for CTAs
+Professional headings
+Simple trust badges
+Strong spacing and typography
+
+Do not hardcode TwentyOne Solutions branding. Everything must flow from businessConfig.
+
+Section 12
+Remix checklist output
+
+Create a short markdown file at the repo root named REMIX_CHECKLIST.md that tells a user exactly what to change for a new client. It must list
+Business config values to update
+websiteUrl
+formspreeEndpoint
+mapsShareUrl or address
+Services list
+Service areas list
+License and insurance fields
+seobotApiKey if used
+
+Section 13
+Final verification
+
+After implementing, ensure
+All routes work in dev
+A production build completes
+sitemap.xml exists and includes dynamic routes
+robots.txt exists
+llms.txt exists
+Pre rendered HTML files exist in dist for key routes
+Forms submit correctly to the Formspree endpoint
+Map embed renders a real map without placeholders
+Legal pages are accessible from the footer
+Persistent CTA footer block appears on every page above the real footer
+
+PROMPT END
