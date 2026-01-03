@@ -45,7 +45,7 @@ export function ScrollToTopButton() {
             size="icon"
             className={cn(
               "h-12 w-12 rounded-full shadow-xl",
-              "bg-[#FD9800] hover:bg-[#e08600] text-white",
+              "bg-primary hover:bg-primary/90 text-primary-foreground",
               "border-2 border-white",
               "transition-transform hover:-translate-y-1"
             )}

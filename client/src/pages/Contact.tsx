@@ -81,11 +81,6 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-
-            {/* Map */}
-            <div className="bg-white p-2 rounded-xl shadow-sm border border-gray-100 h-[300px]">
-               <BusinessMap className="w-full h-full rounded-lg" />
-            </div>
           </div>
 
           {/* Contact Form */}
