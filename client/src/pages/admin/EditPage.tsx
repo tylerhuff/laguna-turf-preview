@@ -12,7 +12,7 @@ import { Link } from "wouter";
 
 export default function AdminEditPage() {
   const [loading, setLoading] = React.useState(false);
-  const [heroImage, setHeroImage] = React.useState("/assets/images/tylerhuff_founder.webp");
+  const [heroImage, setHeroImage] = React.useState("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80");
   const [formData, setFormData] = React.useState({
     headline: "Websites and Marketing for Service Businesses",
     subheadline: "We help service businesses look professional online and get found when people search.",

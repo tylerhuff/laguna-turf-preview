@@ -94,15 +94,17 @@ export default function BlogPost() {
     "image": article.image,
     "author": {
       "@type": "Person",
-      "name": article.author || "TwentyOne Solutions"
+      "name": article.author || businessConfig.businessName
     },
     "publisher": {
       "@type": "Organization",
-      "name": "TwentyOne Solutions",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "/assets/images/logo.png"
-      }
+      "name": businessConfig.businessName,
+      ...(businessConfig.logoPath && {
+        "logo": {
+          "@type": "ImageObject",
+          "url": businessConfig.logoPath
+        }
+      })
     },
     "datePublished": article.date,
     "description": article.description || article.excerpt
@@ -110,9 +112,9 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-white text-gray-800 font-sans">
-      <SEO 
+      <SEO
         title={`${article.title}`}
-        description={article.description || article.excerpt || "Article by TwentyOne Solutions"}
+        description={article.description || article.excerpt || `Article by ${businessConfig.businessName}`}
         image={article.image}
         type="article"
         schema={articleSchema}
@@ -133,7 +135,7 @@ export default function BlogPost() {
                    <span className="bg-[#FD9800]/10 text-[#FD9800] px-3 py-1 rounded-full font-bold">{article.category}</span>
                  )}
                  <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {new Date(article.date).toLocaleDateString()}</span>
-                 <span className="flex items-center gap-1"><User className="w-4 h-4" /> {article.author || 'TwentyOne Solutions'}</span>
+                 <span className="flex items-center gap-1"><User className="w-4 h-4" /> {article.author || businessConfig.businessName}</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold font-heading text-gray-900 leading-tight">

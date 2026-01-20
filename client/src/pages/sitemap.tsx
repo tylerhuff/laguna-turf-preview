@@ -71,11 +71,10 @@ export default function SitemapPage() {
       />
       <Navigation />
 
-      <WaveSection 
-        className="pt-20 md:pt-40 pb-20" 
+      <WaveSection
+        className="pt-20 md:pt-40 pb-20"
         disableTopWave
         overlayOpacity={0.75}
-        backgroundImage="/assets/images/portfolio-hero.webp"
       >
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6">

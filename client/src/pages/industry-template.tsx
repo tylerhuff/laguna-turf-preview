@@ -7,6 +7,7 @@ import { WaveSection } from '@/components/ui/wave-section';
 import { ContactForm } from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
 import { PortfolioCard } from '@/pages/portfolio';
+import { businessConfig } from '@/config/business';
 
 interface PortfolioItem {
   title: string;
@@ -186,18 +187,20 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
             <ContactForm />
 
             <div className="space-y-12 lg:pt-20">
-              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
-                <iframe 
-                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="TwentyOne Solutions Location"
-                ></iframe>
-              </div>
+              {businessConfig.mapsShareUrl && (
+                <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                  <iframe
+                    src={businessConfig.mapsShareUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${businessConfig.businessName} Location`}
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -39,6 +39,26 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // Performance optimizations
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-ui': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs'
+          ],
+          'vendor-framer': ['framer-motion'],
+        }
+      }
+    },
+    minify: 'esbuild', // Fast minification
+    cssCodeSplit: true, // Split CSS into separate files
+    sourcemap: false, // Disable sourcemaps in production for smaller files
+    chunkSizeWarningLimit: 1000, // Increase limit to 1000kb
   },
   server: {
     host: "0.0.0.0",
