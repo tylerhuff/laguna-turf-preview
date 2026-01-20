@@ -59,7 +59,7 @@ export default function AdminDashboard() {
             <Card key={i} className="border-0 shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-[#FD9800]/10 flex items-center justify-center text-[#FD9800]">
+                  <div className="w-12 h-12 rounded-lg bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)]">
                     <stat.icon className="w-6 h-6" />
                   </div>
                   <span className="text-sm font-medium text-green-600 bg-green-50 px-2.5 py-0.5 rounded-full">

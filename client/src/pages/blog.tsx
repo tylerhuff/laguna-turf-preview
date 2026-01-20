@@ -38,7 +38,7 @@ export default function BlogPage() {
             excerpt: a.metaDescription,
             image: a.image,
             date: a.createdAt,
-            author: 'TwentyOne Solutions', // API doesn't provide author
+            author: 'John Smith', // API doesn't provide author
             category: a.category ? a.category.title : 'General'
           }));
           setArticles(mappedArticles);
@@ -105,13 +105,13 @@ export default function BlogPage() {
       <section className="py-12 pb-24">
         <div className="container mx-auto px-6">
 
-          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[#FD9800] pl-4">
+          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[var(--accent-color)] pl-4">
              Latest Articles
           </h2>
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <Loader2 className="w-10 h-10 animate-spin text-[#FD9800]" />
+              <Loader2 className="w-10 h-10 animate-spin text-[var(--accent-color)]" />
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -126,7 +126,7 @@ export default function BlogPage() {
                     <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white overflow-hidden group">
                       <div className="h-48 overflow-hidden relative">
                          {article.category && (
-                           <div className="absolute top-4 left-4 bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+                           <div className="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
                               {article.category}
                            </div>
                          )}
@@ -146,10 +146,10 @@ export default function BlogPage() {
                           )}
                           <div className="flex items-center gap-1">
                             <User className="w-3 h-3" />
-                            {article.author || 'TwentyOne Solutions'}
+                            {article.author || 'John Smith'}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold font-heading text-gray-900 leading-tight group-hover:text-[#FD9800] transition-colors">
+                        <h3 className="text-xl font-bold font-heading text-gray-900 leading-tight group-hover:text-[var(--accent-color)] transition-colors">
                           {article.title}
                         </h3>
                       </CardHeader>
@@ -159,7 +159,7 @@ export default function BlogPage() {
                         </p>
                       </CardContent>
                       <CardFooter className="pt-0">
-                        <span className="text-[#FD9800] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span className="text-[var(--accent-color)] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                           Read Article <ArrowRight className="w-4 h-4" />
                         </span>
                       </CardFooter>

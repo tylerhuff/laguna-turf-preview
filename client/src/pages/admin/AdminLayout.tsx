@@ -28,7 +28,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
     <div className="flex flex-col h-full bg-slate-900 text-white">
       <div className="p-6">
         <h1 className="text-xl font-bold font-heading flex items-center gap-2">
-          <span className="text-[#FD9800]">21</span> Admin
+          <span className="text-[var(--accent-color)]">21</span> Admin
         </h1>
       </div>
       
@@ -39,7 +39,7 @@ export function AdminLayout({ children }: { children: React.ReactNode }) {
             <Link key={item.name} href={item.href}>
               <div className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-colors ${
                 isActive 
-                  ? 'bg-[#FD9800] text-white font-medium' 
+                  ? 'bg-[var(--accent-color)] text-white font-medium' 
                   : 'text-slate-400 hover:text-white hover:bg-slate-800'
               }`}>
                 <item.icon className="w-5 h-5" />

@@ -45,12 +45,12 @@ export const PortfolioCard = ({ title, description, image, link, subtitle }: Por
     </div>
     <div className="p-6 flex flex-col flex-grow">
       <div className="mb-2">
-        {subtitle && <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{subtitle}</span>}
-        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{title}</h3>
+        {subtitle && <span className="text-xs font-bold text-[var(--accent-color)] uppercase tracking-wide">{subtitle}</span>}
+        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[var(--accent-color)] transition-colors">{title}</h3>
       </div>
       <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
-        <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
+        <Button variant="outline" className="w-full border-gray-200 hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] group-hover:bg-[#fdfaf5]">
           Visit Website <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
       </a>

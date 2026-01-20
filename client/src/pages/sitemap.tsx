@@ -93,7 +93,7 @@ export default function SitemapPage() {
               <Card key={idx} className="border border-gray-100 shadow-md hover:shadow-lg transition-all">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-full bg-[#FD9800]/10 flex items-center justify-center text-[#FD9800]">
+                    <div className="w-10 h-10 rounded-full bg-[var(--accent-color)]/10 flex items-center justify-center text-[var(--accent-color)]">
                       <section.icon className="w-5 h-5" />
                     </div>
                     <h2 className="text-xl font-bold font-heading text-gray-900">
@@ -109,15 +109,15 @@ export default function SitemapPage() {
                             href={link.href} 
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center text-gray-600 hover:text-[#FD9800] transition-colors group"
+                            className="flex items-center text-gray-600 hover:text-[var(--accent-color)] transition-colors group"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mr-3 group-hover:bg-[#FD9800] transition-colors"></span>
+                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mr-3 group-hover:bg-[var(--accent-color)] transition-colors"></span>
                             {link.label}
                           </a>
                         ) : (
                           <Link href={link.href}>
-                            <a className="flex items-center text-gray-600 hover:text-[#FD9800] transition-colors group">
-                              <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mr-3 group-hover:bg-[#FD9800] transition-colors"></span>
+                            <a className="flex items-center text-gray-600 hover:text-[var(--accent-color)] transition-colors group">
+                              <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mr-3 group-hover:bg-[var(--accent-color)] transition-colors"></span>
                               {link.label}
                             </a>
                           </Link>

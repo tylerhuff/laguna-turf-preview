@@ -65,7 +65,7 @@ export default function BlogPost() {
       <div className="min-h-screen bg-white text-gray-800 font-sans">
         <Navigation />
         <div className="flex justify-center py-40">
-          <Loader2 className="w-10 h-10 animate-spin text-[#FD9800]" />
+          <Loader2 className="w-10 h-10 animate-spin text-[var(--accent-color)]" />
         </div>
         <Footer />
       </div>
@@ -94,7 +94,7 @@ export default function BlogPost() {
     "image": article.image,
     "author": {
       "@type": "Person",
-      "name": article.author || businessConfig.businessName
+      "name": article.author || "John Smith"
     },
     "publisher": {
       "@type": "Organization",
@@ -114,7 +114,7 @@ export default function BlogPost() {
     <div className="min-h-screen bg-white text-gray-800 font-sans">
       <SEO
         title={`${article.title}`}
-        description={article.description || article.excerpt || `Article by ${businessConfig.businessName}`}
+        description={article.description || article.excerpt || "Article by John Smith"}
         image={article.image}
         type="article"
         schema={articleSchema}
@@ -132,10 +132,10 @@ export default function BlogPost() {
            <div className="space-y-6">
               <div className="flex items-center gap-4 text-sm text-gray-500">
                  {article.category && (
-                   <span className="bg-[#FD9800]/10 text-[#FD9800] px-3 py-1 rounded-full font-bold">{article.category}</span>
+                   <span className="bg-[var(--accent-color)]/10 text-[var(--accent-color)] px-3 py-1 rounded-full font-bold">{article.category}</span>
                  )}
                  <span className="flex items-center gap-1"><Calendar className="w-4 h-4" /> {new Date(article.date).toLocaleDateString()}</span>
-                 <span className="flex items-center gap-1"><User className="w-4 h-4" /> {article.author || businessConfig.businessName}</span>
+                 <span className="flex items-center gap-1"><User className="w-4 h-4" /> {article.author || "John Smith"}</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold font-heading text-gray-900 leading-tight">
@@ -143,7 +143,7 @@ export default function BlogPost() {
               </h1>
               
               {article.excerpt && (
-                <p className="text-xl text-gray-600 leading-relaxed border-l-4 border-[#FD9800] pl-6 italic">
+                <p className="text-xl text-gray-600 leading-relaxed border-l-4 border-[var(--accent-color)] pl-6 italic">
                   {article.excerpt}
                 </p>
               )}
@@ -152,7 +152,7 @@ export default function BlogPost() {
       </div>
 
       <article className="container mx-auto px-6 max-w-4xl py-12">
-        <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-[#FD9800] prose-img:rounded-xl">
+        <div className="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-[var(--accent-color)] prose-img:rounded-xl">
            <img 
              src={article.image || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"} 
              alt={article.title} 
@@ -167,8 +167,8 @@ export default function BlogPost() {
                prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-ul:text-gray-600 prose-li:mb-2
                prose-ol:list-decimal prose-ol:pl-6 prose-ol:mb-6 prose-ol:text-gray-600
                prose-strong:text-gray-900 prose-strong:font-bold
-               prose-a:text-[#FD9800] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-               prose-blockquote:border-l-4 prose-blockquote:border-[#FD9800] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg prose-blockquote:my-8
+               prose-a:text-[var(--accent-color)] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+               prose-blockquote:border-l-4 prose-blockquote:border-[var(--accent-color)] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg prose-blockquote:my-8
                prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8 prose-img:w-full
                [&>*:first-child]:mt-0
              "
@@ -182,7 +182,7 @@ export default function BlogPost() {
               <p className="mb-6 text-gray-600">
                 We can build you a stunning, high-performance website just like this one in as little as 24 hours.
               </p>
-              <Button className="bg-[#FD9800] hover:bg-[#e08600] text-white font-bold">
+              <Button className="bg-[var(--accent-color)] hover:bg-[#e08600] text-white font-bold">
                 Get Your Free Preview
               </Button>
            </div>

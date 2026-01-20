@@ -68,7 +68,7 @@ export default function AdminEditPage() {
           <div className="flex items-center gap-3">
             <Button variant="outline">Preview</Button>
             <Button 
-              className="bg-[#FD9800] hover:bg-[#e08600] text-white gap-2"
+              className="bg-[var(--accent-color)] hover:bg-[#e08600] text-white gap-2"
               onClick={handleSave}
               disabled={loading}
             >

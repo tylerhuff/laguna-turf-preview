@@ -113,7 +113,10 @@
   /* Fonts - Generic System Fonts */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  
+
+  /* Brand Accent Color - Set dynamically from config in main.tsx */
+  --accent-color: #FD9800; /* Default orange, overridden by businessConfig.primaryAccentColor */
+
   --card-border: 214.3 31.8% 91.4%;
   --popover-border: 214.3 31.8% 91.4%;
   --primary-border: 221.2 83.2% 53.3%;

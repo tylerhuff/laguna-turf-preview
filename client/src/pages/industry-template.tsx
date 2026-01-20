@@ -73,7 +73,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
             initial="hidden" animate="visible" variants={fadeIn}
             className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >
-            Web Design & Local SEO Marketing for <span className="text-[#FD9800]">{industryName}</span>
+            Web Design & Local SEO Marketing for <span className="text-[var(--accent-color)]">{industryName}</span>
           </motion.h1>
           <motion.p 
             initial="hidden" animate="visible" variants={fadeIn}
@@ -100,7 +100,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                 </p>
                 <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                   <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#FD9800]" />
+                    <CheckCircle2 className="w-5 h-5 text-[var(--accent-color)]" />
                     Design Features That Convert
                   </h4>
                   <ul className="grid sm:grid-cols-2 gap-3">
@@ -111,7 +111,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                       "Fast loading speeds for better retention"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FD9800]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent-color)]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -131,7 +131,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                 </p>
                 <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                   <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#FD9800]" />
+                    <CheckCircle2 className="w-5 h-5 text-[var(--accent-color)]" />
                     Dominate Your Local Market
                   </h4>
                   <ul className="grid sm:grid-cols-2 gap-3">
@@ -142,7 +142,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                       "Review Generation Strategy"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FD9800]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent-color)]" />
                         <span>{item}</span>
                       </li>
                     ))}
