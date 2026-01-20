@@ -4,6 +4,7 @@ import { CheckCircle2, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { QuoteRequestModal } from "@/components/QuoteRequestModal";
+import { SimpleHeroForm } from "@/components/SimpleHeroForm";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -17,46 +18,55 @@ export default function Home() {
              <img src={businessConfig.heroImagePath} alt="Hero" className="w-full h-full object-cover opacity-40" />
           </div>
         )}
-        <div className="container mx-auto px-4 relative z-10 text-center md:text-left">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {businessConfig.tagline}
-            </h1>
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              Professional, reliable, and experienced. We provide top-quality services for residential and commercial clients in {businessConfig.city} and surrounding areas.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-14 px-8"
-                onClick={() => setModalOpen(true)}
-              >
-                Get a Free Quote
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg h-14 px-8"
-                asChild
-              >
-                <Link href="/services">View Our Services</Link>
-              </Button>
-            </div>
-            
-            <div className="mt-12 flex flex-wrap gap-6 justify-center md:justify-start text-sm font-medium">
-              {businessConfig.insuredBonded && (
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                {businessConfig.tagline}
+              </h1>
+              <p className="text-xl text-gray-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Professional, reliable, and experienced. We provide top-quality services for residential and commercial clients in {businessConfig.city} and surrounding areas.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 lg:mb-0">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-14 px-8 lg:hidden"
+                  onClick={() => setModalOpen(true)}
+                >
+                  Get a Free Quote
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg h-14 px-8 hidden lg:inline-flex"
+                  asChild
+                >
+                  <Link href="/services">View Our Services</Link>
+                </Button>
+              </div>
+              
+              <div className="mt-12 flex flex-wrap gap-6 justify-center lg:justify-start text-sm font-medium">
+                {businessConfig.insuredBonded && (
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="text-primary w-5 h-5" />
+                    <span>Licensed, Insured & Bonded</span>
+                  </div>
+                )}
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="text-primary w-5 h-5" />
-                  <span>Licensed, Insured & Bonded</span>
+                  <span>Satisfaction Guaranteed</span>
                 </div>
-              )}
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-primary w-5 h-5" />
-                <span>Satisfaction Guaranteed</span>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="text-primary w-5 h-5" />
+                  <span>Free Estimates</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="text-primary w-5 h-5" />
-                <span>Free Estimates</span>
+            </div>
+            
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+              <div className="w-full max-w-md">
+                <SimpleHeroForm />
               </div>
             </div>
           </div>
