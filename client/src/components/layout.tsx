@@ -2,8 +2,8 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-// import { LeadFormModal } from '@/components/LeadFormModal'; // Removed eager import
 import { m, AnimatePresence } from 'framer-motion';
+import { businessConfig } from '@/config/business';
 
 // Lazy load the modal to reduce initial bundle size
 const LeadFormModal = lazy(() => import('@/components/LeadFormModal').then(module => ({ default: module.LeadFormModal })));
@@ -16,7 +16,6 @@ export function Navigation() {
 
   useEffect(() => {
     if (isOpen) {
-      // Get the current scrollbar width
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.paddingRight = `${scrollbarWidth}px`;
       document.body.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
@@ -34,45 +33,47 @@ export function Navigation() {
   }, [isOpen]);
 
   const links = [
-    { href: "/about-us", label: "About" },
-    { href: "/services/web-design", label: "Web Design" },
-    { href: "/services/search-engine-optimization", label: "Marketing" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/resources", label: "Resources" },
-    { href: "/contact-us", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
     <>
-      <div className="bg-[#FD9800] text-white text-xs font-medium py-2.5">
+      <div className="bg-primary text-primary-foreground text-xs font-medium py-2.5">
         <div className="container mx-auto px-6 flex flex-row justify-between items-center">
-          <span className="opacity-90 tracking-wide sm:hidden font-bold">Get a Website Today</span>
-          <span className="opacity-90 tracking-wide hidden sm:inline">Get a Professional Website in 24 Hours</span>
+          <span className="opacity-90 tracking-wide sm:hidden font-bold">{businessConfig.tagline}</span>
+          <span className="opacity-90 tracking-wide hidden sm:inline">{businessConfig.tagline}</span>
           
           <div className="flex items-center gap-6">
-             <a href="mailto:contact@twentyonesolutions.com" className="hover:opacity-80 transition-opacity hidden sm:flex items-center gap-1.5">
+             <a href={`mailto:${businessConfig.primaryEmail}`} className="hover:opacity-80 transition-opacity hidden sm:flex items-center gap-1.5">
                <Mail className="w-3.5 h-3.5" />
-               <span>contact@twentyonesolutions.com</span>
+               <span>{businessConfig.primaryEmail}</span>
              </a>
-             <div className="w-px h-3 bg-white/20 hidden sm:block"></div>
-             <a href="tel:+16265241059" className="hover:opacity-80 transition-opacity flex items-center gap-1.5 font-semibold">
+             <div className="w-px h-3 bg-primary-foreground/20 hidden sm:block"></div>
+             <a href={`tel:${businessConfig.primaryPhone}`} className="hover:opacity-80 transition-opacity flex items-center gap-1.5 font-semibold">
                <Phone className="w-3.5 h-3.5" />
-               +1 (626) 524-1059
+               {businessConfig.phoneDisplay}
              </a>
           </div>
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-[#fdfaf5] border-b-0 shadow-sm relative">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm relative">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-heading font-bold text-2xl tracking-tight text-gray-800">
-            <span className="text-[#FD9800]">TwentyOne</span>
-            <span className="text-gray-600 text-xl">solutions</span>
+          <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight text-gray-800">
+            {businessConfig.logoPath ? (
+              <img src={businessConfig.logoPath} alt={businessConfig.businessName} className="h-8 md:h-10 w-auto" />
+            ) : (
+              <span>{businessConfig.businessName}</span>
+            )}
           </Link>
           
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-600">
             {links.map(link => (
-              <Link key={link.href} href={link.href} className={`transition-colors ${location === link.href ? 'text-[#FD9800]' : 'hover:text-[#FD9800]'}`}>
+              <Link key={link.href} href={link.href} className={`transition-colors ${location === link.href ? 'text-primary' : 'hover:text-primary'}`}>
                 {link.label}
               </Link>
             ))}
@@ -80,10 +81,10 @@ export function Navigation() {
 
           <div className="flex items-center gap-4">
             <Button 
-              className="hidden md:flex bg-[#FD9800] hover:bg-[#e08600] text-white font-semibold px-6 rounded-lg shadow-md transition-all hover:-translate-y-0.5"
+              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-lg shadow-sm transition-all hover:-translate-y-0.5"
               onClick={() => setStrategyOpen(true)}
             >
-              Strategy Call
+              Get a Quote
             </Button>
             
             <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"}>
@@ -102,30 +103,29 @@ export function Navigation() {
             >
             <nav className="flex flex-col gap-4">
               {links.map(link => (
-                <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-[#FD9800]' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
+                <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-primary' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
                   {link.label}
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4">
                 <Button 
-                  className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12"
                   onClick={() => {
                     setIsOpen(false);
                     setStrategyOpen(true);
                   }}
                 >
-                  Strategy Call
+                  Get a Quote
                 </Button>
                 
                 <Button 
                   variant="outline" 
-                  className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-[#FD9800] hover:text-[#FD9800]"
-                  onClick={() => {
-                    setIsOpen(false);
-                    setPreviewOpen(true);
-                  }}
+                  className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-primary hover:text-primary"
+                  asChild
                 >
-                  Free Site Preview
+                  <a href={`tel:${businessConfig.primaryPhone}`}>
+                    Call {businessConfig.phoneDisplay}
+                  </a>
                 </Button>
               </div>
             </nav>
@@ -152,18 +152,9 @@ export function Navigation() {
           <LeadFormModal 
             open={strategyOpen}
             onOpenChange={setStrategyOpen}
-            title="Schedule a Strategy Call"
-            description="Let's discuss your business goals and how we can help you achieve them. Fill out the form below and we'll reach out to schedule a time."
+            title="Get a Free Quote"
+            description="Let's discuss your project goals. Fill out the form below and we'll reach out to provide an estimate."
             type="strategy"
-          />
-        )}
-        {previewOpen && (
-          <LeadFormModal 
-            open={previewOpen}
-            onOpenChange={setPreviewOpen}
-            title="Get Your Free Site Preview"
-            description="Enter your details and we'll create a custom preview of what your new website could look like. No commitment required."
-            type="preview"
           />
         )}
       </Suspense>
@@ -177,33 +168,38 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1">
-            <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight text-gray-800 mb-4">
-              <span className="text-[#FD9800]">TwentyOne</span>
-              <span className="text-gray-600 text-lg">solutions</span>
+            <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-gray-800 mb-4">
+              {businessConfig.logoPath ? (
+                <img src={businessConfig.logoPath} alt={businessConfig.businessName} className="h-8 w-auto" />
+              ) : (
+                <span>{businessConfig.businessName}</span>
+              )}
             </Link>
             <p className="text-gray-500 text-sm">
-              Websites and Marketing for Service Businesses. Based in <Link href="/san-clemente" className="text-[#FD9800] font-medium hover:text-[#e08600]">San Clemente, CA</Link>.
+              {businessConfig.tagline}. Based in <Link href={`/locations/${businessConfig.city.toLowerCase().replace(/\s+/g, '-')}`} className="text-primary font-medium hover:underline">{businessConfig.city}, {businessConfig.state}</Link>.
             </p>
           </div>
           
           <div>
             <h4 className="font-bold text-gray-900 mb-4">Company</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/about-us" className="hover:text-[#FD9800]">About Us</Link></li>
-              <li><Link href="/portfolio" className="hover:text-[#FD9800]">Our Portfolio</Link></li>
-              <li><Link href="/services/web-design" className="hover:text-[#FD9800]">Web Design</Link></li>
-              <li><Link href="/services/search-engine-optimization" className="hover:text-[#FD9800]">Marketing</Link></li>
-              <li><Link href="/resources" className="hover:text-[#FD9800]">Resources</Link></li>
+              <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
+              <li><Link href="/portfolio" className="hover:text-primary">Our Work</Link></li>
+              <li><Link href="/services" className="hover:text-primary">Services</Link></li>
+              <li><Link href="/resources" className="hover:text-primary">Resources</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 mb-4">Industries</h4>
+            <h4 className="font-bold text-gray-900 mb-4">Services</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="/industries/contractors" className="hover:text-[#FD9800]">Contractors</Link></li>
-              <li><Link href="/industries/home-builders" className="hover:text-[#FD9800]">Home Builders</Link></li>
-              <li><Link href="/industries/professional-services" className="hover:text-[#FD9800]">Professional Services</Link></li>
-              <li><Link href="/industries/painters" className="hover:text-[#FD9800]">Painters</Link></li>
+              {businessConfig.services.slice(0, 4).map(service => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="hover:text-primary">
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -211,30 +207,30 @@ export function Footer() {
             <h4 className="font-bold text-gray-900 mb-4">Contact</h4>
             <ul className="space-y-3 text-sm text-gray-600">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#FD9800] shrink-0 mt-0.5" /> 
-                <a href="https://share.google/GwCCMnYsmulVGlOPB" target="_blank" rel="noopener noreferrer" className="hover:text-[#FD9800]">
-                  TwentyOne Solutions<br/>
-                  234 Avenida Rosa A<br/>
-                  San Clemente, CA 92672
-                </a>
+                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" /> 
+                <span>
+                  {businessConfig.businessName}<br/>
+                  {businessConfig.streetAddress}<br/>
+                  {businessConfig.city}, {businessConfig.state} {businessConfig.postalCode}
+                </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#FD9800] shrink-0" /> 
-                <a href="tel:+16265241059">+1 (626) 524-1059</a>
+                <Phone className="w-4 h-4 text-primary shrink-0" /> 
+                <a href={`tel:${businessConfig.primaryPhone}`}>{businessConfig.phoneDisplay}</a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#FD9800] shrink-0" /> 
-                <a href="mailto:contact@twentyonesolutions.com">contact@twentyonesolutions.com</a>
+                <Mail className="w-4 h-4 text-primary shrink-0" /> 
+                <a href={`mailto:${businessConfig.primaryEmail}`}>{businessConfig.primaryEmail}</a>
               </li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>&copy; 2025 Twenty One Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {businessConfig.businessName}. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="hover:text-[#FD9800]">Privacy Policy</Link>
-            <Link href="/terms-of-service" className="hover:text-[#FD9800]">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-primary">Terms of Service</Link>
           </div>
         </div>
       </div>

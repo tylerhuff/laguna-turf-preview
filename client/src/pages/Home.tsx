@@ -1,9 +1,9 @@
 import { businessConfig } from "@/config/business";
-import { Button } from "@/components/ui/button";
-import { QuoteRequestModal } from "@/components/QuoteRequestModal";
-import { useState } from "react";
 import { Link } from "wouter";
 import { CheckCircle2, Star, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { QuoteRequestModal } from "@/components/QuoteRequestModal";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -131,11 +131,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center text-gray-400">
-                  {/* Placeholder if no image, or the actual image */}
-                  <span className="sr-only">About Us Image</span>
-               </div>
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gray-200 flex items-center justify-center">
+               {/* Placeholder if no image, or the actual image */}
+               <span className="sr-only">About Us Image</span>
             </div>
           </div>
         </div>
