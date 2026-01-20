@@ -210,6 +210,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Service Areas Preview */}
+      <section className="py-20 bg-gray-900 text-white overflow-hidden relative">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row gap-12 items-center justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Areas We Serve</h2>
+              <p className="text-gray-400 text-lg max-w-xl">
+                We are proud to serve homeowners and businesses throughout {businessConfig.city} and the surrounding region.
+              </p>
+            </div>
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 h-12 px-8" asChild>
+              <Link href="/service-areas">View All Locations</Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {Array.from(new Set(businessConfig.areasServedCities)).slice(0, 5).map((city) => (
+              <Link key={city} href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`}>
+                <div className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 p-6 rounded-xl transition-all duration-300 cursor-pointer text-center group h-full flex flex-col items-center justify-center">
+                   <MapPin className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+                   <h3 className="font-bold text-lg">{city}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About / Values Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">

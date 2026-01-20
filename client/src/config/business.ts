@@ -123,7 +123,12 @@ export const businessConfig: BusinessConfig = {
     "Dana Point",
     "San Juan Capistrano",
     "Laguna Niguel",
-    "Mission Viejo"
+    "Mission Viejo",
+    "Aliso Viejo",
+    "Laguna Beach",
+    "San Clemente",
+    "Dana Point",
+    "San Juan Capistrano"
   ],
 
   services: [
@@ -180,6 +185,110 @@ export const businessConfig: BusinessConfig = {
         { question: "Can I stay in my home during the remodel?", answer: "Yes, though the kitchen will be unusable for a period." }
       ],
       primaryKeywords: ["kitchen remodel", "custom cabinets", "kitchen design"]
+    },
+    {
+      name: "Bathroom Remodeling",
+      slug: "bathroom-remodeling",
+      shortDescription: "Luxurious bathroom makeovers and upgrades.",
+      longDescription: "Turn your bathroom into a spa-like retreat. We handle everything from tile work and plumbing to vanity installation and lighting, creating a space that is both functional and beautiful.",
+      serviceBenefits: [
+        "Spa-like atmosphere",
+        "Improved water efficiency",
+        "Modern fixtures",
+        "Increased home value"
+      ],
+      processSteps: [
+        { name: "Concept", description: "Discussing style, fixtures, and layout." },
+        { name: "Demo", description: "Removing old tub, shower, and vanity." },
+        { name: "Plumbing & Electrical", description: "Updating systems to code." },
+        { name: "Finishing", description: "Tiling, painting, and fixture installation." }
+      ],
+      pricingTiers: [
+        { name: "Update", priceRange: "$5k - $10k", includes: ["New vanity", "Toilet", "Paint"] },
+        { name: "Full Remodel", priceRange: "$15k - $30k", includes: ["Tile shower", "New tub", "Flooring"] }
+      ],
+      faqs: [
+        { question: "How long is the bathroom out of commission?", answer: "Typically 2-3 weeks for a full remodel." }
+      ],
+      primaryKeywords: ["bathroom remodel", "shower installation", "vanity upgrade"]
+    },
+    {
+      name: "Outdoor Living & Decks",
+      slug: "outdoor-living",
+      shortDescription: "Custom decks, patios, and outdoor spaces.",
+      longDescription: "Expand your living space outdoors with our custom deck and patio services. Whether you want a simple wood deck or a full outdoor kitchen, we build durable and stylish structures.",
+      serviceBenefits: [
+        "Expanded entertainment space",
+        "Durable materials",
+        "Custom design",
+        "Increases property appeal"
+      ],
+      processSteps: [
+        { name: "Site Analysis", description: "Measuring the space and checking soil/grading." },
+        { name: "Design", description: "Creating a layout that fits your yard and lifestyle." },
+        { name: "Build", description: "Constructing the frame and decking." },
+        { name: "Finish", description: "Staining, sealing, and adding railings." }
+      ],
+      pricingTiers: [
+        { name: "Deck", priceRange: "$10k - $25k", includes: ["Composite or wood decking", "Railings"] },
+        { name: "Patio Cover", priceRange: "$5k - $15k", includes: ["Attached or freestanding structure"] }
+      ],
+      faqs: [
+        { question: "Do I need a permit for a deck?", answer: "Most decks require a permit, which we handle." }
+      ],
+      primaryKeywords: ["deck builder", "patio cover", "outdoor kitchen"]
+    },
+    {
+      name: "Flooring Installation",
+      slug: "flooring-installation",
+      shortDescription: "Hardwood, tile, laminate, and vinyl flooring.",
+      longDescription: "Upgrade your home with beautiful new flooring. We install all types of flooring including hardwood, luxury vinyl plank, tile, and laminate, ensuring a perfect finish every time.",
+      serviceBenefits: [
+        "Durability",
+        "Wide variety of styles",
+        "Easy maintenance",
+        "Professional installation"
+      ],
+      processSteps: [
+        { name: "Selection", description: "Choosing the right material for your needs." },
+        { name: "Prep", description: "Removing old flooring and leveling the subfloor." },
+        { name: "Install", description: "Precision laying of the new floor." },
+        { name: "Trim", description: "Installing baseboards and transitions." }
+      ],
+      pricingTiers: [
+        { name: "Laminate/Vinyl", priceRange: "$5 - $10 /sqft", includes: ["Material and labor"] },
+        { name: "Hardwood/Tile", priceRange: "$10 - $20 /sqft", includes: ["Material and labor"] }
+      ],
+      faqs: [
+        { question: "How long does installation take?", answer: "Usually 1-3 days depending on the area size." }
+      ],
+      primaryKeywords: ["flooring installer", "hardwood floors", "tile installation"]
+    },
+    {
+      name: "Painting Services",
+      slug: "painting-services",
+      shortDescription: "Interior and exterior residential painting.",
+      longDescription: "Refresh your home with a fresh coat of paint. Our professional painters provide meticulous interior and exterior painting services, using high-quality paints for long-lasting results.",
+      serviceBenefits: [
+        "Clean and precise lines",
+        "Surface preparation",
+        "High-quality paints",
+        "Protects your home"
+      ],
+      processSteps: [
+        { name: "Prep", description: "Masking, sanding, and priming surfaces." },
+        { name: "Paint", description: "Applying multiple coats for even coverage." },
+        { name: "Inspect", description: "Checking for imperfections." },
+        { name: "Cleanup", description: "Leaving your home spotless." }
+      ],
+      pricingTiers: [
+        { name: "Room", priceRange: "$300 - $800", includes: ["Walls", "Trim"] },
+        { name: "Exterior", priceRange: "$3k - $8k", includes: ["Full exterior prep and paint"] }
+      ],
+      faqs: [
+        { question: "Do you use eco-friendly paint?", answer: "Yes, we offer low-VOC options upon request." }
+      ],
+      primaryKeywords: ["house painter", "interior painting", "exterior painting"]
     }
   ],
 
