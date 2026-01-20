@@ -7,7 +7,8 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
 import { Calendar, User, ArrowRight, Loader2, BookOpen, TrendingUp, Clock, Settings } from 'lucide-react';
-import { BlogClient } from 'seobot'; 
+import { BlogClient } from 'seobot';
+import { businessConfig } from '@/config/business'; 
 
 // Mock data for display purposes
 const MOCK_ARTICLES = [];
@@ -18,9 +19,15 @@ export default function BlogPage() {
 
   useEffect(() => {
     async function fetchArticles() {
+      // Only fetch if API key is configured
+      if (!businessConfig.seobotApiKey) {
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
-        const client = new BlogClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
+        const client = new BlogClient(businessConfig.seobotApiKey);
         // Seobot client uses 0-based indexing for pages and positional arguments
         const data = await client.getArticles(0, 10);
         if (data && data.articles && data.articles.length > 0) {

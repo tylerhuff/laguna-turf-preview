@@ -5,6 +5,7 @@ import { Navigation, Footer } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, Share2, Facebook, Twitter, Linkedin, Loader2 } from 'lucide-react';
 import { BlogClient } from 'seobot';
+import { businessConfig } from '@/config/business';
 
 export default function BlogPost() {
   const [location] = useLocation();
@@ -15,16 +16,22 @@ export default function BlogPost() {
   useEffect(() => {
     async function fetchArticle() {
       if (!slug) return;
-      
+
+      // Only fetch if API key is configured
+      if (!businessConfig.seobotApiKey) {
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
 
-        const client = new BlogClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
-        
+        const client = new BlogClient(businessConfig.seobotApiKey);
+
         // Fetch list to get metadata (image, description) which might be missing in single article response
-        const listData = await client.getArticles(0, 100); 
+        const listData = await client.getArticles(0, 100);
         const metadata = listData.articles.find(a => a.slug === slug);
-        
+
         const fetchedArticle = await client.getArticle(slug);
         
         if (fetchedArticle) {

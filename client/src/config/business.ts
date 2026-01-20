@@ -314,5 +314,6 @@ export const businessConfig: BusinessConfig = {
   ],
 
   formspreeEndpoint: "https://formspree.io/f/example",
+  seobotApiKey: "", // Add your SeoBot API key from https://seobotai.com/
   mapsShareUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53308.26188373308!2d-117.65365569502967!3d33.43387819000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce5ce56784d59%3A0x6d64921605333799!2sSan%20Clemente%2C%20CA!5e0!3m2!1sen!2sus!4v1709848245789!5m2!1sen!2sus"
 };

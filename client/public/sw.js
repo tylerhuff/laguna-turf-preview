@@ -1,5 +1,5 @@
-const CACHE_NAME = 'twentyone-solutions-v1';
-const ASSET_CACHE_NAME = 'twentyone-assets-v1';
+const CACHE_NAME = 'local-business-v1';
+const ASSET_CACHE_NAME = 'local-business-assets-v1';
 
 // Assets to cache immediately (core shell)
 const PRECACHE_URLS = [

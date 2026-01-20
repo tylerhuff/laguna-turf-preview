@@ -53,7 +53,7 @@
   --color-destructive-border: var(--destructive-border);
 }
 
-/* LIGHT MODE - TwentyOne Solutions Brand */
+/* LIGHT MODE - Generic Business Template */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
