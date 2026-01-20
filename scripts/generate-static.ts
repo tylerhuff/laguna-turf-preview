@@ -89,6 +89,34 @@ ${pages.map(page => `  <url>
   console.log("Generated sitemap.xml");
 }
 
+function generateLocationsKml() {
+  const content = `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+        <Document>
+                <name>Locations for ${businessConfig.businessName}</name>
+                <atom:author>
+                        <atom:name>${businessConfig.businessName}</atom:name>
+                </atom:author>
+                <atom:link rel="related" href="${businessConfig.websiteUrl}" />
+                <Folder>
+                        <Placemark>
+                                <name><![CDATA[${businessConfig.businessName}]]></name>
+                                <address><![CDATA[${businessConfig.streetAddress}, ${businessConfig.city}, ${businessConfig.state}, ${businessConfig.postalCode}, ${businessConfig.country}]]></address>
+                                <description><![CDATA[${businessConfig.tagline}]]></description>
+                                ${businessConfig.geoLat && businessConfig.geoLng ? `
+                                <Point>
+                                        <coordinates>${businessConfig.geoLng},${businessConfig.geoLat},0</coordinates>
+                                </Point>
+                                ` : ''}
+                        </Placemark>
+                </Folder>
+        </Document>
+</kml>`;
+
+  fs.writeFileSync(path.join(publicDir, "locations.kml"), content);
+  console.log("Generated locations.kml");
+}
+
 function main() {
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
@@ -97,6 +125,7 @@ function main() {
   generateRobotsTxt();
   generateLlmsTxt();
   generateSitemapXml();
+  generateLocationsKml();
 }
 
 main();
