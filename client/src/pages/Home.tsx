@@ -64,7 +64,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
               <div className="w-full max-w-md">
                 <SimpleHeroForm />
               </div>
