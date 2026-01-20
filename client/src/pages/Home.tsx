@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { QuoteRequestModal } from "@/components/QuoteRequestModal";
 import { SimpleHeroForm } from "@/components/SimpleHeroForm";
+import { GoogleReviews } from "@/components/GoogleReviews";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -99,7 +100,11 @@ export default function Home() {
              <p className="text-xl text-gray-600">Don't just take our word for it. See what our neighbors in {businessConfig.city} are saying.</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="mb-12">
+            <GoogleReviews />
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 hidden">
             {businessConfig.reviewCards.map((review, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
                 <div className="flex gap-1 mb-6">
@@ -127,7 +132,7 @@ export default function Home() {
             ))}
           </div>
           
-          <div className="mt-16 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm text-center">
+          <div className="mt-8 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm text-center">
              <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="bg-blue-600 rounded-full p-2">
                   <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
