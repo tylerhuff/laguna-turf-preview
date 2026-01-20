@@ -4,57 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="B_QBGnpclQ7SiPy9go6x1UiVzOKA1t_3PYlxA3YkZj4" />
-    
     <!-- Primary Meta Tags (Fallbacks for non-JS bots) -->
-    <title>TwentyOne Solutions | Web Design & Marketing</title>
-    <meta name="title" content="TwentyOne Solutions | Web Design & Marketing">
-    <meta name="description" content="Web design and digital marketing agency for service businesses. We help contractors, trades, and professionals get more calls in San Clemente and Orange County.">
+    <title>Professional Contractor Services</title>
+    <meta name="title" content="Professional Contractor Services">
+    <meta name="description" content="Quality service you can trust. Contact us today for a free estimate.">
 
     <link rel="manifest" href="/manifest.json" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
-    
-    <!-- Critical Assets Preload -->
-    <link rel="preload" as="image" href="/assets/images/bannertwentyone-mobile.webp" fetchpriority="high" media="(max-width: 768px)">
-    <link rel="preload" as="image" href="/assets/images/bannertwentyone.webp" fetchpriority="high" media="(min-width: 769px)">
     
     <!-- Optimize Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Only load the weights we actually use: Syne (700, 800) for headings, Open Sans (400, 600) for body -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Syne:wght@700;800&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    </noscript>
     <style>
-      /* Critical CSS for Mobile LCP Optimization */
       :root {
-        --background: 40 33% 98%; /* #fdfaf5 */
-        --foreground: 0 0% 20%; /* #333333 */
-        --primary: 36 100% 50%; /* #FD9800 */
-        --primary-foreground: 0 0% 100%;
-        --secondary: 40 20% 97%;
-        --font-sans: 'Open Sans', sans-serif;
-        --font-heading: 'Syne', sans-serif;
-        --radius: 0.6rem;
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+        --primary: 221.2 83.2% 53.3%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 210 40% 96.1%;
+        --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       }
       body {
         margin: 0;
         font-family: var(--font-sans);
-        background-color: hsl(40, 33%, 98%);
-        color: hsl(0, 0%, 20%);
+        background-color: #ffffff;
+        color: hsl(222.2, 84%, 4.9%);
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
-      }
-      /* Pre-render the wave background to avoid pop-in */
-      .bg-wave-header {
-        background-color: #fdfaf5;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L60,197.3C120,203,240,213,360,208C480,203,600,181,720,181.3C840,181,960,203,1080,208C1200,213,1320,203,1380,197.3L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: 100% 150px;
       }
       
       /* Static Hero Styles for immediate paint */
@@ -68,7 +45,6 @@
         text-align: center;
       }
       .static-h1 {
-        font-family: var(--font-heading);
         font-weight: 700;
         color: #111;
         font-size: 3rem;
@@ -78,27 +54,12 @@
         max-width: 900px;
       }
       .static-p {
-        font-family: var(--font-sans);
         font-size: 1.25rem;
         color: #4b5563;
         font-weight: 300;
         max-width: 48rem;
         line-height: 1.625;
         margin-bottom: 2rem;
-      }
-      .static-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 4rem;
-        padding: 0 2.5rem;
-        font-size: 1.25rem;
-        font-weight: 700;
-        border-radius: 9999px;
-        background-color: hsl(36, 100%, 50%);
-        color: white;
-        text-decoration: none;
-        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
       }
       @media (min-width: 768px) {
         .static-h1 { font-size: 4.5rem; }
@@ -109,27 +70,22 @@
   <body>
     <div id="root">
       <!-- Static App Shell / First Paint Content -->
-      <div class="min-h-screen bg-[#fdfaf5] font-sans">
-        <div class="bg-wave-header" style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: 0;"></div>
+      <div style="min-height: 100vh; background-color: white;">
         <div style="position: relative; z-index: 1;">
-          <header style="height: 5rem; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-             <div style="font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem;">
-               <span style="color: hsl(36, 100%, 50%)">TwentyOne</span>
-               <span style="color: #4b5563; font-size: 1.25rem;">solutions</span>
+          <header style="height: 5rem; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f3f4f6;">
+             <div style="font-weight: 700; font-size: 1.5rem; color: #111;">
+               Loading...
              </div>
           </header>
           
           <main class="static-hero">
             <div style="padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center;">
               <h1 class="static-h1">
-                Websites and Marketing for <span style="color: hsl(36, 100%, 50%)">Service Businesses</span>
+                Professional Services
               </h1>
               <p class="static-p">
-                We help service businesses look professional online and get found when people search.
+                Loading application...
               </p>
-              <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                <a href="#" class="static-btn">Free Site Preview</a>
-              </div>
             </div>
           </main>
         </div>
