@@ -117,6 +117,28 @@ function generateLocationsKml() {
   console.log("Generated locations.kml");
 }
 
+function generateManifestJson() {
+  const content = {
+    name: businessConfig.businessName,
+    short_name: businessConfig.businessName.split(' ')[0] || "Business",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#2563EB", // Primary Blue from generic theme
+    description: businessConfig.tagline,
+    icons: [
+      {
+        src: "/favicon.svg",
+        sizes: "any",
+        type: "image/svg+xml"
+      }
+    ]
+  };
+
+  fs.writeFileSync(path.join(publicDir, "manifest.json"), JSON.stringify(content, null, 2));
+  console.log("Generated manifest.json");
+}
+
 function main() {
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
@@ -126,6 +148,7 @@ function main() {
   generateLlmsTxt();
   generateSitemapXml();
   generateLocationsKml();
+  generateManifestJson();
 }
 
 main();

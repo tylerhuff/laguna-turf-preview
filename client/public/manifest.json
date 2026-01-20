@@ -1,21 +1,16 @@
 {
-  "name": "TwentyOne Solutions",
-  "short_name": "TwentyOne",
+  "name": "Coastal Contractor Services",
+  "short_name": "Coastal",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fdfaf5",
-  "theme_color": "#FD9800",
-  "description": "Web design and digital marketing agency for service businesses.",
+  "background_color": "#ffffff",
+  "theme_color": "#2563EB",
+  "description": "Reliable local service, done right",
   "icons": [
     {
-      "src": "/favicon.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
