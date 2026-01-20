@@ -51,7 +51,7 @@ export function GoogleReviews({ placeId, apiKey }: GoogleReviewsProps) {
       libraries: ["places"]
     });
 
-    loader.load().then(() => {
+    loader.importLibrary("places").then(() => {
       if (!mapDivRef.current) return;
 
       const service = new google.maps.places.PlacesService(mapDivRef.current);
@@ -73,8 +73,23 @@ export function GoogleReviews({ placeId, apiKey }: GoogleReviewsProps) {
       );
     }).catch(err => {
       console.error("Failed to load Google Maps API", err);
-      setError("Failed to load Google Maps API");
-      setLoading(false);
+      // Fallback to load() if importLibrary fails (older versions)
+      loader.load().then(() => {
+        if (!mapDivRef.current) return;
+        const service = new google.maps.places.PlacesService(mapDivRef.current);
+         service.getDetails(
+          { placeId: PLACE_ID, fields: ['reviews'] },
+          (place, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK && place?.reviews) {
+              setReviews(place.reviews as GoogleReview[]);
+            }
+             setLoading(false);
+          }
+        );
+      }).catch(e => {
+         setError("Failed to load Google Maps API");
+         setLoading(false);
+      });
     });
   }, [GOOGLE_API_KEY, PLACE_ID]);
 
