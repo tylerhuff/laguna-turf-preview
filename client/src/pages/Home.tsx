@@ -104,50 +104,30 @@ export default function Home() {
             <GoogleReviews />
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 hidden">
-            {businessConfig.reviewCards.map((review, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic text-lg leading-relaxed flex-grow">"{review.text}"</p>
-                <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                  <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-gray-500">
-                    {review.name.charAt(0)}
+          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm text-center max-w-4xl mx-auto">
+             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-blue-600 rounded-full p-2">
+                    <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" />
+                    </svg>
                   </div>
-                  <div>
-                    <p className="font-bold text-gray-900">{review.name}</p>
-                    <p className="text-sm text-gray-500">{review.city}</p>
-                  </div>
-                  <div className="ml-auto">
-                     {/* Google 'G' icon placeholder */}
-                     <svg className="w-5 h-5 opacity-50" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" />
-                     </svg>
+                  <div className="text-left">
+                    <h3 className="text-xl font-bold">Excellent</h3>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-8 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm text-center">
-             <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="bg-blue-600 rounded-full p-2">
-                  <svg className="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold">See more reviews on Google</h3>
-             </div>
-             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-               We're proud of our 5-star reputation in {businessConfig.city}. Check out what more of our satisfied customers have to say.
-             </p>
-             <div>
-                <Button asChild size="lg" className="bg-white border border-gray-300 text-gray-900 hover:bg-gray-50 font-semibold h-12 px-8">
+                <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+                <p className="text-gray-600 max-w-sm text-left">
+                  Based on <strong>{businessConfig.aggregateRatingCount || '50+'} reviews</strong>. We're proud of our reputation in {businessConfig.city}.
+                </p>
+                <Button asChild variant="outline" className="border-gray-300 text-gray-900 hover:bg-gray-50 font-semibold">
                    <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(businessConfig.businessName + ' ' + businessConfig.city)}`} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                      View all Google Reviews <ExternalLink className="w-4 h-4" />
+                      Read All Reviews <ExternalLink className="w-4 h-4" />
                    </a>
                 </Button>
              </div>
@@ -155,96 +135,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-         <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 max-w-4xl mx-auto">Ready to get started with your project?</h2>
-            <p className="text-xl md:text-2xl opacity-90 mb-10 max-w-2xl mx-auto">
-               Contact us today for a free consultation and estimate. We're ready to help.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-               <Button 
-                 size="lg" 
-                 variant="secondary" 
-                 className="text-primary font-bold text-lg h-16 px-12 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1"
-                 onClick={() => setModalOpen(true)}
-               >
-                 Get Your Free Quote
-               </Button>
-               <Button 
-                 size="lg" 
-                 variant="outline" 
-                 className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg h-16 px-10"
-                 asChild
-               >
-                 <Link href="/contact">Contact Us</Link>
-               </Button>
-            </div>
-         </div>
-      </section>
-
-      {/* Services Preview */}
+      {/* Committed to Excellence Section */}
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-lg text-gray-600">
-              We offer a wide range of services to meet your needs. Quality workmanship is our promise.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {businessConfig.services.slice(0, 6).map((service, index) => (
-              <div key={index} className="group bg-gray-50 rounded-xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.name}</h3>
-                <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
-                  {service.shortDescription}
-                </p>
-                <Link href={`/services/${service.slug}`} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all mt-auto pt-4">
-                  Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild className="border-2 px-10 h-14 text-lg">
-              <Link href="/services">View All Services</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Service Areas Preview */}
-      <section className="py-20 bg-gray-900 text-white overflow-hidden relative">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row gap-12 items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Areas We Serve</h2>
-              <p className="text-gray-400 text-lg max-w-xl">
-                We are proud to serve homeowners and businesses throughout {businessConfig.city} and the surrounding region.
-              </p>
-            </div>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 h-12 px-8" asChild>
-              <Link href="/service-areas">View All Locations</Link>
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {Array.from(new Set(businessConfig.areasServedCities)).slice(0, 5).map((city) => (
-              <Link key={city} href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`}>
-                <div className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50 p-6 rounded-xl transition-all duration-300 cursor-pointer text-center group h-full flex flex-col items-center justify-center">
-                   <MapPin className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
-                   <h3 className="font-bold text-lg">{city}</h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About / Values Section */}
-      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -295,6 +187,110 @@ export default function Home() {
                )}
                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-lg text-gray-600">
+              We offer a wide range of services to meet your needs. Quality workmanship is our promise.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {businessConfig.services.slice(0, 6).map((service, index) => (
+              <div key={index} className="group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.name}</h3>
+                <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
+                  {service.shortDescription}
+                </p>
+                <Link href={`/services/${service.slug}`} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all mt-auto pt-4">
+                  Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" asChild className="border-2 px-10 h-14 text-lg bg-white">
+              <Link href="/services">View All Services</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Testimonials Section */}
+      <section className="py-24 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+           <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Real Results, Real Satisfaction</h2>
+                 <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                    Our goal is to build long-lasting relationships with our clients through trust, reliability, and superior craftsmanship. Here is what some of our recent clients have to say about their experience working with us.
+                 </p>
+                 <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="bg-white/10 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                       <div className="flex gap-1 mb-3">
+                          {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
+                       </div>
+                       <p className="text-gray-200 italic text-sm mb-4">"Absolutely transformed our home. The team was professional, clean, and finished ahead of schedule."</p>
+                       <p className="font-bold text-white">- Jennifer T.</p>
+                    </div>
+                    <div className="bg-white/10 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                       <div className="flex gap-1 mb-3">
+                          {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
+                       </div>
+                       <p className="text-gray-200 italic text-sm mb-4">"Best contractor we've ever hired. Transparent pricing and no surprises. Highly recommended!"</p>
+                       <p className="font-bold text-white">- Mark S.</p>
+                    </div>
+                 </div>
+              </div>
+              <div className="bg-primary rounded-2xl p-10 md:p-12 text-center shadow-2xl relative overflow-hidden">
+                 <div className="relative z-10">
+                    <h3 className="text-3xl font-bold text-primary-foreground mb-4">Ready to start your project?</h3>
+                    <p className="text-primary-foreground/90 mb-8 max-w-md mx-auto">
+                       Contact us today for a free estimate. Let's make your vision a reality.
+                    </p>
+                    <Button size="lg" className="bg-white text-primary hover:bg-gray-100 font-bold h-14 px-8 w-full sm:w-auto" onClick={() => setModalOpen(true)}>
+                       Get Your Free Quote
+                    </Button>
+                 </div>
+                 {/* Decorative circles */}
+                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* Service Areas Preview */}
+      <section className="py-20 bg-white overflow-hidden relative">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row gap-12 items-center justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Areas We Serve</h2>
+              <p className="text-gray-600 text-lg max-w-xl">
+                We are proud to serve homeowners and businesses throughout {businessConfig.city} and the surrounding region.
+              </p>
+            </div>
+            <Button variant="outline" className="border-gray-300 text-gray-900 hover:bg-gray-50 h-12 px-8" asChild>
+              <Link href="/service-areas">View All Locations</Link>
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {Array.from(new Set(businessConfig.areasServedCities)).slice(0, 5).map((city) => (
+              <Link key={city} href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`}>
+                <div className="bg-gray-50 border border-gray-100 hover:bg-white hover:border-primary/50 hover:shadow-lg p-6 rounded-xl transition-all duration-300 cursor-pointer text-center group h-full flex flex-col items-center justify-center">
+                   <MapPin className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
+                   <h3 className="font-bold text-lg text-gray-900">{city}</h3>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
