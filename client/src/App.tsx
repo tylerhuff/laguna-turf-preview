@@ -12,6 +12,7 @@ import { Layout } from "@/components/Layout";
 import { businessConfig } from "@/config/business";
 import ReactGA from "react-ga4";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useAIReferralTracking } from "@/hooks/useAIReferralTracking";
 
 /**
  * Lazy load pages for better performance
@@ -58,6 +59,9 @@ function Router() {
        ReactGA.initialize(businessConfig.ga4MeasurementId);
     }
   }, []);
+
+  // Track AI referrals from ChatGPT, Claude, Perplexity, etc.
+  useAIReferralTracking();
 
   return (
     <Layout>
