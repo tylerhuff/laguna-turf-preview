@@ -41,7 +41,7 @@ export function SEO({
     ? (image.startsWith('http') ? image : `${siteUrl}${image}`)
     : defaultImage;
 
-  // Base Schema for LocalBusiness
+  // Base Schema for LocalBusiness with enhanced SEO data
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -69,6 +69,41 @@ export function SEO({
       "dayOfWeek": h.day,
       "opens": h.open,
       "closes": h.close
+    })),
+    // Add aggregate rating if reviews exist
+    ...(businessConfig.reviewCards && businessConfig.reviewCards.length > 0 && {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": (businessConfig.reviewCards.reduce((acc, r) => acc + r.rating, 0) / businessConfig.reviewCards.length).toFixed(1),
+        "reviewCount": businessConfig.reviewCards.length,
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }),
+    // Add reviews
+    ...(businessConfig.reviewCards && businessConfig.reviewCards.length > 0 && {
+      "review": businessConfig.reviewCards.map(review => ({
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": review.name
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": review.rating,
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "reviewBody": review.text,
+        "datePublished": review.date || new Date().toISOString()
+      }))
+    }),
+    // Add service areas
+    "areaServed": businessConfig.areasServedCities.map(city => ({
+      "@type": "City",
+      "name": city,
+      "addressRegion": businessConfig.state,
+      "addressCountry": businessConfig.country
     }))
   };
 
