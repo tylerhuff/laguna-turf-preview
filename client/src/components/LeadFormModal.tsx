@@ -133,9 +133,9 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
           </div>
 
           <Button 
-            type="submit" 
-            disabled={isSubmitting} 
-            className="w-full bg-[var(--accent-color)] hover:bg-[#e08600] text-white font-bold h-12 text-lg"
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-[var(--accent-color)] hover:brightness-90 text-white font-bold h-12 text-lg transition-all"
           >
             {isSubmitting ? (
               <>
