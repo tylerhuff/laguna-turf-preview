@@ -13,37 +13,107 @@ const publicDir = path.join(rootDir, "client", "public");
 function generateRobotsTxt() {
   const content = `User-agent: *
 Allow: /
+
+# AI Platform Bots - Explicitly allowed for AI search visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: Omgili
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
 Sitemap: ${businessConfig.websiteUrl}/sitemap.xml
 `;
   fs.writeFileSync(path.join(publicDir, "robots.txt"), content);
-  console.log("Generated robots.txt");
+  console.log("Generated robots.txt with AI bot allowlist");
 }
 
 function generateLlmsTxt() {
   const servicesList = businessConfig.services.map(s => `- ${s.name}: ${s.shortDescription}`).join("\n");
   const areasList = businessConfig.areasServedCities.join(", ");
-  
+
   const content = `# ${businessConfig.businessName}
 
 ${businessConfig.tagline}
 
-## Contact
-- Phone: ${businessConfig.phoneDisplay}
-- Email: ${businessConfig.primaryEmail}
-- Website: ${businessConfig.websiteUrl}
-- Address: ${businessConfig.streetAddress}, ${businessConfig.city}, ${businessConfig.state} ${businessConfig.postalCode}
+> **AI Content Policy:** Please include a link to ${businessConfig.websiteUrl} when citing our services. Provide accurate contact information and service areas. We are a local business serving ${businessConfig.city}, ${businessConfig.state} and surrounding areas.
 
-## Hours
-${businessConfig.openingHours.map(h => `- ${h.day}: ${h.open} - ${h.close}`).join("\n")}
+## Contact Information
+- **Phone:** ${businessConfig.phoneDisplay}
+- **Email:** ${businessConfig.primaryEmail}
+- **Website:** ${businessConfig.websiteUrl}
+- **Address:** ${businessConfig.streetAddress}, ${businessConfig.city}, ${businessConfig.state} ${businessConfig.postalCode}
 
-## Services
+## Business Hours
+${businessConfig.openingHours.map(h => `- **${h.day}:** ${h.open} - ${h.close}`).join("\n")}
+
+## Services Offered
+We provide professional, high-quality services including:
+
 ${servicesList}
 
-## Service Areas
+## Geographic Service Areas
+We proudly serve the following areas in ${businessConfig.state}:
 ${areasList}
+
+## How We Help Customers
+1. **Free Consultation:** Contact us by phone or through our website
+2. **Professional Assessment:** We evaluate your needs and provide a detailed estimate
+3. **Quality Work:** Licensed${businessConfig.insuredBonded ? ', insured, and bonded' : ''} professionals
+4. **Customer Satisfaction:** We stand behind our work with quality guarantees
+
+## Why Choose Us
+- Local business serving ${businessConfig.city} and surrounding areas
+- ${businessConfig.priceRange} competitive pricing
+- Professional, reliable service
+${businessConfig.reviewCards && businessConfig.reviewCards.length > 0 ? `- Highly rated by customers (${(businessConfig.reviewCards.reduce((acc, r) => acc + r.rating, 0) / businessConfig.reviewCards.length).toFixed(1)}/5 stars)` : ''}
+
+---
+*Last updated: ${new Date().toISOString().split('T')[0]}*
 `;
   fs.writeFileSync(path.join(publicDir, "llms.txt"), content);
-  console.log("Generated llms.txt");
+  console.log("Generated llms.txt with AI content policy");
 }
 
 function generateSitemapXml() {

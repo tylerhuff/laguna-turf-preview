@@ -3,29 +3,32 @@ import { preview } from 'vite';
 import { mkdir, writeFile } from 'fs/promises';
 import { join, dirname } from 'path';
 import { execSync } from 'child_process';
+import { businessConfig } from '../client/src/config/business.js';
 
+// Generate routes dynamically from businessConfig
 const routes = [
   '/',
-  '/san-clemente',
+  '/about',
+  '/contact',
+  '/services',
+  '/service-areas',
+  '/resources',
   '/privacy-policy',
   '/terms-of-service',
-  '/about-us',
-  '/industries/contractors',
-  '/industries/home-builders',
-  '/industries/professional-services',
-  '/industries/painters',
-  '/services',
-  '/services/web-design',
-  '/services/search-engine-optimization',
-  '/services/website-care',
-  '/portfolio',
-  '/contact-us',
-  '/resources',
-  '/resources/how-online-marketing-works',
-  '/resources/google-business-profile-basics',
-  '/resources/first-30-days',
-  '/resources/ongoing-monthly-work'
+  '/accessibility',
+  '/thank-you'
 ];
+
+// Add all service pages
+businessConfig.services.forEach(service => {
+  routes.push(`/services/${service.slug}`);
+});
+
+// Add all location pages (just a few samples to avoid too many)
+businessConfig.areasServedCities.slice(0, 3).forEach(city => {
+  const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+  routes.push(`/locations/${citySlug}`);
+});
 
 async function prerender() {
   console.log('Starting preview server...');

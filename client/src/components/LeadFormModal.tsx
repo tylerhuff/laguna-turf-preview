@@ -87,7 +87,7 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
       )}
       <DialogContent className="sm:max-w-[500px] bg-white text-gray-900" onOpenAutoFocus={(e) => e.preventDefault()}>
         <DialogHeader>
-          <DialogTitle className="text-2xl font-heading text-[#FD9800]">{title}</DialogTitle>
+          <DialogTitle className="text-2xl font-heading text-[var(--accent-color)]">{title}</DialogTitle>
           <DialogDescription className="text-gray-600">
             {description}
           </DialogDescription>
@@ -135,7 +135,7 @@ export function LeadFormModal({ trigger, title, description, type, formId = "moj
           <Button 
             type="submit" 
             disabled={isSubmitting} 
-            className="w-full bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 text-lg"
+            className="w-full bg-[var(--accent-color)] hover:bg-[#e08600] text-white font-bold h-12 text-lg"
           >
             {isSubmitting ? (
               <>

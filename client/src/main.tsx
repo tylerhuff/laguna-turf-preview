@@ -1,6 +1,12 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import { businessConfig } from "./config/business";
+
+// Inject brand colors as CSS variables
+if (businessConfig.primaryAccentColor) {
+  document.documentElement.style.setProperty('--accent-color', businessConfig.primaryAccentColor);
+}
 
 // Register Service Worker for caching
 if ('serviceWorker' in navigator && import.meta.env.PROD) {

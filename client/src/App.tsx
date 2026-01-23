@@ -11,8 +11,15 @@ import { LazyMotion, domAnimation } from "framer-motion";
 import { Layout } from "@/components/Layout";
 import { businessConfig } from "@/config/business";
 import ReactGA from "react-ga4";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useAIReferralTracking } from "@/hooks/useAIReferralTracking";
 
-// Lazy load pages
+/**
+ * Lazy load pages for better performance
+ * All pages use React.lazy() to split code and reduce initial bundle size
+ * On mobile, this is especially important for performance
+ * The LazyMotion wrapper below also helps by only loading animation features when needed
+ */
 const Home = lazy(() => import("@/pages/Home"));
 const Services = lazy(() => import("@/pages/Services"));
 const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
@@ -29,9 +36,19 @@ const AccessibilityStatement = lazy(() => import("@/pages/AccessibilityStatement
 const NotFound = lazy(() => import("@/pages/not-found"));
 
 function LoadingFallback() {
+  const isMobile = useIsMobile();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <Loader2 className="w-10 h-10 animate-spin text-primary" />
+      {isMobile ? (
+        // Simpler loading indicator for mobile
+        <div className="flex flex-col items-center gap-3">
+          <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          <p className="text-sm text-gray-500">Loading...</p>
+        </div>
+      ) : (
+        <Loader2 className="w-10 h-10 animate-spin text-primary" />
+      )}
     </div>
   );
 }
@@ -42,6 +59,9 @@ function Router() {
        ReactGA.initialize(businessConfig.ga4MeasurementId);
     }
   }, []);
+
+  // Track AI referrals from ChatGPT, Claude, Perplexity, etc.
+  useAIReferralTracking();
 
   return (
     <Layout>

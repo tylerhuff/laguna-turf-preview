@@ -7,6 +7,7 @@ import { Navigation, Footer } from '@/components/layout';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { toast } from 'sonner';
 import { LazyImage } from '@/components/ui/lazy-image';
+import { businessConfig } from '@/config/business';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -44,12 +45,12 @@ export const PortfolioCard = ({ title, description, image, link, subtitle }: Por
     </div>
     <div className="p-6 flex flex-col flex-grow">
       <div className="mb-2">
-        {subtitle && <span className="text-xs font-bold text-[#FD9800] uppercase tracking-wide">{subtitle}</span>}
-        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[#FD9800] transition-colors">{title}</h3>
+        {subtitle && <span className="text-xs font-bold text-[var(--accent-color)] uppercase tracking-wide">{subtitle}</span>}
+        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[var(--accent-color)] transition-colors">{title}</h3>
       </div>
       <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
-        <Button variant="outline" className="w-full border-gray-200 hover:border-[#FD9800] hover:text-[#FD9800] group-hover:bg-[#fdfaf5]">
+        <Button variant="outline" className="w-full border-gray-200 hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] group-hover:bg-[#fdfaf5]">
           Visit Website <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
       </a>
@@ -76,7 +77,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Filger Manufacturing",
     subtitle: "Aerospace",
     description: "Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes.",
-    image: "/assets/images/Filger-Manufacturing.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=Filger-Manufacturing.webp",
     link: "https://filger.com/",
     category: "Professional Services"
   },
@@ -84,7 +85,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Ascend Equities",
     subtitle: "Real Estate Investment",
     description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California.",
-    image: "/assets/images/AscendEquities.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=AscendEquities.webp",
     link: "https://ascendequities.com/",
     category: "Professional Services"
   },
@@ -92,7 +93,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "TSA Group Ltd",
     subtitle: "Consulting",
     description: "Transmission line siting and right-of-way consulting. Highlights current and past projects.",
-    image: "/assets/images/TSA-Group-Limited.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=TSA-Group-Limited.webp",
     link: "https://tsagroupconsulting.com/",
     category: "Professional Services"
   },
@@ -100,7 +101,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Case Whittemore, LMFT",
     subtitle: "Healthcare",
     description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges.",
-    image: "/assets/images/CaseWhitteMoreMockUp.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=CaseWhitteMoreMockUp.webp",
     link: "https://caseywhittemorelmft.com/",
     category: "Professional Services"
   },
@@ -108,7 +109,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Fan Fusion Ventures",
     subtitle: "Sports Entertainment",
     description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
-    image: "/assets/images/FanFusionMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=FanFusionMockup.webp",
     link: "https://fanfusionventures.com/",
     category: "Professional Services"
   },
@@ -116,7 +117,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Luxury Tahoe Properties",
     subtitle: "Real Estate",
     description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
-    image: "/assets/images/LuxuryTahoePropertiesMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=LuxuryTahoePropertiesMockup.webp",
     link: "https://luxurytahoeproperties.com/",
     category: "Professional Services"
   },
@@ -126,7 +127,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Diamond Construction",
     subtitle: "Construction",
     description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
-    image: "/assets/images/DiamondConstructionMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=DiamondConstructionMockup.webp",
     link: "https://diamondconstructionandgypsum.com/",
     category: "Construction"
   },
@@ -134,7 +135,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Smith & Eastwood Construction",
     subtitle: "General Contractors",
     description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
-    image: "/assets/images/SmithandEastWoodConstruction.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=SmithandEastWoodConstruction.webp",
     link: "https://smitheastwoodbuild.com/",
     category: "Construction"
   },
@@ -144,7 +145,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Huff Painting Co",
     subtitle: "Commercial Painting",
     description: "With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting.",
-    image: "/assets/images/HuffPaintingCoMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=HuffPaintingCoMockup.webp",
     link: "https://huffpainting.co/",
     category: "Painters"
   },
@@ -152,7 +153,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Wrangler Painting",
     subtitle: "Residential Painting",
     description: "Located in Los Angeles, California, this company focuses on residential painting and power washing services.",
-    image: "/assets/images/WranglerPaintingMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=WranglerPaintingMockup.webp",
     link: "https://wranglerpainting.com/",
     category: "Painters"
   },
@@ -162,7 +163,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "West Coast Washers",
     subtitle: "Exterior Cleaning",
     description: "Specializes in commercial building exterior cleaning and pressure washing services across Southern California.",
-    image: "/assets/images/WCW_mockup_transparent.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=WCW_mockup_transparent.webp",
     link: "https://westcoastwashersllc.com/",
     category: "Trades"
   },
@@ -170,7 +171,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Ceiling Pro",
     subtitle: "Ceiling Installation",
     description: "Trusted Ceiling Experts in the Bay Area. Providing exceptional ceiling installations for both commercial and residential spaces with quality you can rely on.",
-    image: "/assets/images/CeilingProMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=CeilingProMockup.webp",
     link: "https://ceilingprosf.com/",
     category: "Trades"
   },
@@ -178,7 +179,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Sierra Precision Electric",
     subtitle: "Electrical Contractor",
     description: "Trusted Electrical Solutions for Truckee and Lake Tahoe. Specializing in high-end residential installations, smart systems, and custom home projects.",
-    image: "/assets/images/SierraElectricMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=SierraElectricMockup.webp",
     link: "https://truckeetahoeelectrical.com/",
     category: "Trades"
   },
@@ -186,7 +187,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "Cleaning Solution Building Corp",
     subtitle: "Commercial Cleaning",
     description: "Commercial Cleaning Services in Long Island, Nassau, & Suffolk. Experience top-notch cleaning with our dedicated team committed at a fair price.",
-    image: "/assets/images/CleaningSolutionMockup.webp",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=CleaningSolutionMockup.webp",
     link: "https://cleaningsolutionbuildingcorp.com/",
     category: "Trades"
   }
@@ -216,20 +217,18 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <SEO 
+      <SEO
         title="Web Design Portfolio | Contractor & Service Business Websites"
-        description="View our recent web design work for contractors, trades, home builders, and professional service businesses in San Clemente and beyond."
+        description="View our recent web design work for contractors, trades, home builders, and professional service businesses."
         canonical="/portfolio"
-        image="/assets/images/portfolio-hero.webp"
         schema={portfolioSchema}
       />
       <Navigation />
 
       {/* Hero */}
-      <WaveSection 
-        className="pt-20 md:pt-40 pb-24 md:pb-48" 
+      <WaveSection
+        className="pt-20 md:pt-40 pb-24 md:pb-48"
         disableTopWave
-        backgroundImage="/assets/images/portfolio-hero.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center max-w-4xl">
@@ -294,18 +293,20 @@ export default function PortfolioPage() {
             <ContactForm />
 
             <div className="space-y-12 lg:pt-20">
-              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
-                <iframe 
-                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="TwentyOne Solutions Location"
-                ></iframe>
-              </div>
+              {businessConfig.mapsShareUrl && (
+                <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                  <iframe
+                    src={businessConfig.mapsShareUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${businessConfig.businessName} Location`}
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>

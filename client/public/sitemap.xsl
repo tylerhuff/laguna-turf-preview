@@ -42,7 +42,7 @@
             border-bottom: 1px solid #eee;
           }
           a {
-            color: #FD9800;
+            color: var(--accent-color);
             text-decoration: none;
           }
           a:hover {

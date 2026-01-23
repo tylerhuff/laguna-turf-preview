@@ -24,7 +24,7 @@ export default function NotFound() {
             </p>
             
             <Link href="/">
-              <Button className="bg-[#FD9800] hover:bg-[#e08600] text-white font-bold h-12 px-8">
+              <Button className="bg-[var(--accent-color)] hover:bg-[#e08600] text-white font-bold h-12 px-8">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Return Home
               </Button>
             </Link>

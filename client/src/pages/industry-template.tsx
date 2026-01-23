@@ -7,6 +7,7 @@ import { WaveSection } from '@/components/ui/wave-section';
 import { ContactForm } from '@/components/ContactForm';
 import { Button } from '@/components/ui/button';
 import { PortfolioCard } from '@/pages/portfolio';
+import { businessConfig } from '@/config/business';
 
 interface PortfolioItem {
   title: string;
@@ -72,7 +73,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
             initial="hidden" animate="visible" variants={fadeIn}
             className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
           >
-            Web Design & Local SEO Marketing for <span className="text-[#FD9800]">{industryName}</span>
+            Web Design & Local SEO Marketing for <span className="text-[var(--accent-color)]">{industryName}</span>
           </motion.h1>
           <motion.p 
             initial="hidden" animate="visible" variants={fadeIn}
@@ -99,7 +100,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                 </p>
                 <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                   <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#FD9800]" />
+                    <CheckCircle2 className="w-5 h-5 text-[var(--accent-color)]" />
                     Design Features That Convert
                   </h4>
                   <ul className="grid sm:grid-cols-2 gap-3">
@@ -110,7 +111,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                       "Fast loading speeds for better retention"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FD9800]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent-color)]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -130,7 +131,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                 </p>
                 <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
                   <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#FD9800]" />
+                    <CheckCircle2 className="w-5 h-5 text-[var(--accent-color)]" />
                     Dominate Your Local Market
                   </h4>
                   <ul className="grid sm:grid-cols-2 gap-3">
@@ -141,7 +142,7 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
                       "Review Generation Strategy"
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-gray-700 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#FD9800]" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent-color)]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -186,18 +187,20 @@ export default function IndustryPage({ industryName, heroImage, portfolioItems }
             <ContactForm />
 
             <div className="space-y-12 lg:pt-20">
-              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
-                <iframe 
-                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="TwentyOne Solutions Location"
-                ></iframe>
-              </div>
+              {businessConfig.mapsShareUrl && (
+                <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                  <iframe
+                    src={businessConfig.mapsShareUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${businessConfig.businessName} Location`}
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>

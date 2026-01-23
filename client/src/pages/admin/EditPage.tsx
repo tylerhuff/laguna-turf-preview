@@ -12,7 +12,7 @@ import { Link } from "wouter";
 
 export default function AdminEditPage() {
   const [loading, setLoading] = React.useState(false);
-  const [heroImage, setHeroImage] = React.useState("/assets/images/tylerhuff_founder.webp");
+  const [heroImage, setHeroImage] = React.useState("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80");
   const [formData, setFormData] = React.useState({
     headline: "Websites and Marketing for Service Businesses",
     subheadline: "We help service businesses look professional online and get found when people search.",
@@ -68,7 +68,7 @@ export default function AdminEditPage() {
           <div className="flex items-center gap-3">
             <Button variant="outline">Preview</Button>
             <Button 
-              className="bg-[#FD9800] hover:bg-[#e08600] text-white gap-2"
+              className="bg-[var(--accent-color)] hover:bg-[#e08600] text-white gap-2"
               onClick={handleSave}
               disabled={loading}
             >

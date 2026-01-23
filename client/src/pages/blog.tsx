@@ -6,8 +6,9 @@ import { ContactForm } from '@/components/ContactForm';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Navigation, Footer } from '@/components/layout';
 import { WaveSection } from '@/components/ui/wave-section';
-import { Calendar, User, ArrowRight, Loader2, BookOpen, TrendingUp, Clock, Settings } from 'lucide-react';
-import { BlogClient } from 'seobot'; 
+import { Calendar, User, ArrowRight, Loader2 } from 'lucide-react';
+import { BlogClient } from 'seobot';
+import { businessConfig } from '@/config/business'; 
 
 // Mock data for display purposes
 const MOCK_ARTICLES = [];
@@ -18,9 +19,15 @@ export default function BlogPage() {
 
   useEffect(() => {
     async function fetchArticles() {
+      // Only fetch if API key is configured
+      if (!businessConfig.seobotApiKey) {
+        setLoading(false);
+        return;
+      }
+
       try {
         setLoading(true);
-        const client = new BlogClient("80accd1a-599c-4d93-8e68-1c6745ef48db");
+        const client = new BlogClient(businessConfig.seobotApiKey);
         // Seobot client uses 0-based indexing for pages and positional arguments
         const data = await client.getArticles(0, 10);
         if (data && data.articles && data.articles.length > 0) {
@@ -31,7 +38,7 @@ export default function BlogPage() {
             excerpt: a.metaDescription,
             image: a.image,
             date: a.createdAt,
-            author: 'TwentyOne Solutions', // API doesn't provide author
+            author: 'John Smith', // API doesn't provide author
             category: a.category ? a.category.title : 'General'
           }));
           setArticles(mappedArticles);
@@ -49,34 +56,34 @@ export default function BlogPage() {
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "TwentyOne Solutions Resources",
+    "name": `${businessConfig.businessName} Resources`,
     "description": "Tips, strategies, and guides to help your service business grow online.",
-    "url": "https://twentyonesolutions.com/resources",
+    "url": `${businessConfig.websiteUrl}/resources`,
     "publisher": {
       "@type": "Organization",
-      "name": "TwentyOne Solutions",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "/assets/images/logo.png"
-      }
+      "name": businessConfig.businessName,
+      ...(businessConfig.logoPath && {
+        "logo": {
+          "@type": "ImageObject",
+          "url": businessConfig.logoPath
+        }
+      })
     }
   };
 
   return (
     <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <SEO 
-        title="Digital Marketing Resources & Guides | TwentyOne Solutions"
-        description="Actionable tips, strategies, and guides to help your service business grow online. Learn about SEO, web design, and Google Business Profile."
+      <SEO
+        title={`Resources & Guides | ${businessConfig.businessName}`}
+        description="Actionable tips, strategies, and guides to help your service business grow online."
         canonical="/resources"
-        image="/assets/images/portfolio-hero.webp"
         schema={blogSchema}
       />
       <Navigation />
 
-      <WaveSection 
-        className="pt-20 md:pt-40 pb-24 md:pb-48" 
+      <WaveSection
+        className="pt-20 md:pt-40 pb-24 md:pb-48"
         disableTopWave
-        backgroundImage="/assets/images/portfolio-hero.webp"
         overlayOpacity={0.75}
       >
         <div className="container mx-auto px-6 text-center">
@@ -97,62 +104,14 @@ export default function BlogPage() {
 
       <section className="py-12 pb-24">
         <div className="container mx-auto px-6">
-          
-          {/* Featured Guides Grid */}
-          <div className="mb-20">
-            <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[#FD9800] pl-4">
-              Core Guides for Business Owners
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { 
-                  title: "How Marketing Works", 
-                  desc: "The simple system tailored for service businesses.", 
-                  icon: TrendingUp,
-                  link: "/resources/how-online-marketing-works"
-                },
-                { 
-                  title: "Google Business Profile", 
-                  desc: "Master the basics of your most important asset.", 
-                  icon: BookOpen,
-                  link: "/resources/google-business-profile-basics"
-                },
-                { 
-                  title: "First 30 Days", 
-                  desc: "Exactly what happens after you sign up with us.", 
-                  icon: Clock,
-                  link: "/resources/first-30-days"
-                },
-                { 
-                  title: "Ongoing Monthly Work", 
-                  desc: "How we protect and grow your digital presence.", 
-                  icon: Settings,
-                  link: "/resources/ongoing-monthly-work"
-                },
-              ].map((guide, i) => (
-                <Link key={i} href={guide.link}>
-                  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all cursor-pointer h-full flex flex-col group">
-                    <div className="w-12 h-12 rounded-full bg-[#fdfaf5] flex items-center justify-center text-[#FD9800] mb-4 group-hover:bg-[#FD9800] group-hover:text-white transition-colors">
-                      <guide.icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#FD9800] transition-colors">{guide.title}</h3>
-                    <p className="text-sm text-gray-600 mb-4 flex-grow">{guide.desc}</p>
-                    <div className="text-xs font-bold uppercase tracking-wide text-[#FD9800] flex items-center gap-1">
-                      Read Guide <ArrowRight className="w-3 h-3" />
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
 
-          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[#FD9800] pl-4">
+          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8 border-l-4 border-[var(--accent-color)] pl-4">
              Latest Articles
           </h2>
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <Loader2 className="w-10 h-10 animate-spin text-[#FD9800]" />
+              <Loader2 className="w-10 h-10 animate-spin text-[var(--accent-color)]" />
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -167,7 +126,7 @@ export default function BlogPage() {
                     <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer bg-white overflow-hidden group">
                       <div className="h-48 overflow-hidden relative">
                          {article.category && (
-                           <div className="absolute top-4 left-4 bg-[#FD9800] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
+                           <div className="absolute top-4 left-4 bg-[var(--accent-color)] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
                               {article.category}
                            </div>
                          )}
@@ -187,10 +146,10 @@ export default function BlogPage() {
                           )}
                           <div className="flex items-center gap-1">
                             <User className="w-3 h-3" />
-                            {article.author || 'TwentyOne Solutions'}
+                            {article.author || 'John Smith'}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold font-heading text-gray-900 leading-tight group-hover:text-[#FD9800] transition-colors">
+                        <h3 className="text-xl font-bold font-heading text-gray-900 leading-tight group-hover:text-[var(--accent-color)] transition-colors">
                           {article.title}
                         </h3>
                       </CardHeader>
@@ -200,7 +159,7 @@ export default function BlogPage() {
                         </p>
                       </CardContent>
                       <CardFooter className="pt-0">
-                        <span className="text-[#FD9800] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span className="text-[var(--accent-color)] font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
                           Read Article <ArrowRight className="w-4 h-4" />
                         </span>
                       </CardFooter>
@@ -224,18 +183,20 @@ export default function BlogPage() {
             <ContactForm />
 
             <div className="space-y-12 lg:pt-20">
-              <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
-                <iframe 
-                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=TwentyOne%20Solutions%20234%20Avenida%20Rosa%20San%20Clemente%20CA&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="eager" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="TwentyOne Solutions Location"
-                ></iframe>
-              </div>
+              {businessConfig.mapsShareUrl && (
+                <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
+                  <iframe
+                    src={businessConfig.mapsShareUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="eager"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${businessConfig.businessName} Location`}
+                  ></iframe>
+                </div>
+              )}
             </div>
           </div>
         </div>
