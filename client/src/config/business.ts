@@ -100,8 +100,9 @@ export const businessConfig: BusinessConfig = {
   primaryEmail: "hello@example.com",
   websiteUrl: "https://example.com",
   priceRange: "$$",
+  licenseNumber: "CA-123456",
   insuredBonded: true,
-  
+
   streetAddress: "123 Main St",
   city: "San Clemente",
   state: "CA",

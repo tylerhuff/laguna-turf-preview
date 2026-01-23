@@ -182,7 +182,7 @@ export default function BlogPost() {
               <p className="mb-6 text-gray-600">
                 We can build you a stunning, high-performance website just like this one in as little as 24 hours.
               </p>
-              <Button className="bg-[var(--accent-color)] hover:bg-[#e08600] text-white font-bold">
+              <Button className="bg-[var(--accent-color)] hover:brightness-90 text-white font-bold transition-all">
                 Get Your Free Preview
               </Button>
            </div>

@@ -46,7 +46,7 @@ export default function AdminPages() {
             <h1 className="text-3xl font-bold font-heading text-gray-900">Pages</h1>
             <p className="text-gray-500">Manage your website content and page structure.</p>
           </div>
-          <Button className="bg-[var(--accent-color)] hover:bg-[#e08600] text-white">
+          <Button className="bg-[var(--accent-color)] hover:brightness-90 text-white transition-all">
             + Create New Page
           </Button>
         </div>
