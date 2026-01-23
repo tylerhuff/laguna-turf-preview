@@ -47,6 +47,10 @@ if (!businessConfig.streetAddress || businessConfig.streetAddress.includes("Defa
   warnings.push("streetAddress appears to be example data");
 }
 
+if (!businessConfig.licenseNumber || businessConfig.licenseNumber === "CA-123456") {
+  warnings.push("licenseNumber not set or still has example value");
+}
+
 if (!businessConfig.ga4MeasurementId) {
   warnings.push("ga4MeasurementId not set - Google Analytics won't work");
 }
@@ -132,6 +136,7 @@ const checklist = [
     items: [
       "Business name, tagline, and description",
       "Contact info (phone, email, address)",
+      "License number (if applicable for your industry)",
       "Geographic coordinates (geoLat, geoLng)",
       "Services and pricing",
       "Service areas (cities)",
