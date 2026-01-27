@@ -114,6 +114,20 @@ export function SEO({
       <meta name="description" content={finalDescription} />
       {fullCanonical && <link rel="canonical" href={fullCanonical} />}
 
+      {/* AI Discovery & Indexing - Allow all AI bots */}
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow" />
+      <meta name="bingbot" content="index, follow" />
+
+      {/* Additional metadata for AI comprehension */}
+      <meta name="author" content={businessConfig.businessName} />
+      <meta name="geo.region" content={`${businessConfig.country}-${businessConfig.state}`} />
+      <meta name="geo.placename" content={businessConfig.city} />
+      {businessConfig.geoLat && businessConfig.geoLng && (
+        <meta name="geo.position" content={`${businessConfig.geoLat};${businessConfig.geoLng}`} />
+      )}
+      <meta name="ICBM" content={businessConfig.geoLat && businessConfig.geoLng ? `${businessConfig.geoLat}, ${businessConfig.geoLng}` : undefined} />
+
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={finalDescription} />
