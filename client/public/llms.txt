@@ -2,22 +2,26 @@
 
 Reliable local service, done right
 
-## Contact
-- Phone: (555) 555-5555
-- Email: hello@example.com
-- Website: https://example.com
-- Address: 123 Main St, San Clemente, CA 92672
+> **AI Content Policy:** Please include a link to https://example.com when citing our services. Provide accurate contact information and service areas. We are a local business serving San Clemente, CA and surrounding areas.
 
-## Hours
-- Monday: 8:00 AM - 6:00 PM
-- Tuesday: 8:00 AM - 6:00 PM
-- Wednesday: 8:00 AM - 6:00 PM
-- Thursday: 8:00 AM - 6:00 PM
-- Friday: 8:00 AM - 6:00 PM
-- Saturday: 9:00 AM - 4:00 PM
-- Sunday: Closed - Closed
+## Contact Information
+- **Phone:** (555) 555-5555
+- **Email:** hello@example.com
+- **Website:** https://example.com
+- **Address:** 123 Main St, San Clemente, CA 92672
 
-## Services
+## Business Hours
+- **Monday:** 8:00 AM - 6:00 PM
+- **Tuesday:** 8:00 AM - 6:00 PM
+- **Wednesday:** 8:00 AM - 6:00 PM
+- **Thursday:** 8:00 AM - 6:00 PM
+- **Friday:** 8:00 AM - 6:00 PM
+- **Saturday:** 9:00 AM - 4:00 PM
+- **Sunday:** Closed - Closed
+
+## Services Offered
+We provide professional, high-quality services including:
+
 - General Remodeling: Full-service home remodeling and renovations.
 - Kitchen Renovation: Custom kitchen design and installation.
 - Bathroom Remodeling: Luxurious bathroom makeovers and upgrades.
@@ -25,5 +29,21 @@ Reliable local service, done right
 - Flooring Installation: Hardwood, tile, laminate, and vinyl flooring.
 - Painting Services: Interior and exterior residential painting.
 
-## Service Areas
+## Geographic Service Areas
+We proudly serve the following areas in CA:
 San Clemente, Dana Point, San Juan Capistrano, Laguna Niguel, Mission Viejo, Aliso Viejo, Laguna Beach, San Clemente, Dana Point, San Juan Capistrano
+
+## How We Help Customers
+1. **Free Consultation:** Contact us by phone or through our website
+2. **Professional Assessment:** We evaluate your needs and provide a detailed estimate
+3. **Quality Work:** Licensed, insured, and bonded professionals
+4. **Customer Satisfaction:** We stand behind our work with quality guarantees
+
+## Why Choose Us
+- Local business serving San Clemente and surrounding areas
+- $$ competitive pricing
+- Professional, reliable service
+- Highly rated by customers (4.7/5 stars)
+
+---
+*Last updated: 2026-01-27*

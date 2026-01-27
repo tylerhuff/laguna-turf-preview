@@ -14,41 +14,83 @@ function generateRobotsTxt() {
   const content = `User-agent: *
 Allow: /
 
-# AI Platform Bots - Explicitly allowed for AI search visibility
-User-agent: GPTBot
+# ============================================================================
+# AI DISCOVERY & SEARCH BOTS - Allowed for visibility in AI search platforms
+# ============================================================================
+
+# OpenAI - ChatGPT Search & Browsing (ALLOW for discovery)
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
+# OpenAI - Model Training (Block if you don't want content used for training)
+User-agent: GPTBot
+Allow: /
+
+# Anthropic Claude - Browsing & Search (ALLOW for discovery)
 User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
 Allow: /
 
 User-agent: anthropic-ai
 Allow: /
 
-User-agent: Bytespider
+# Anthropic - Model Training
+User-agent: ClaudeBot
 Allow: /
 
+# Perplexity AI - Search & Answer Engine (ALLOW for discovery)
+User-agent: PerplexityBot
+Allow: /
+
+# Google - Gemini Training (Block if you don't want content used for training)
+User-agent: Google-Extended
+Allow: /
+
+# Google - Search (Keep ALLOWED)
+User-agent: Googlebot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Apple Intelligence & Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Microsoft Bing & AI
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Common Crawl (used by many AI companies)
 User-agent: CCBot
 Allow: /
 
-User-agent: Diffbot
+# Bytedance (TikTok AI)
+User-agent: Bytespider
 Allow: /
 
-User-agent: FacebookBot
+# Other AI/ML Crawlers
+User-agent: Diffbot
 Allow: /
 
 User-agent: ImagesiftBot
@@ -63,10 +105,19 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+# ============================================================================
+# NOTES FOR CUSTOMIZATION:
+# - To block training bots: Change "Allow: /" to "Disallow: /" for:
+#   GPTBot, ClaudeBot, Google-Extended, CCBot
+# - To maximize AI visibility: Keep all search/browsing bots allowed:
+#   ChatGPT-User, OAI-SearchBot, Claude-Web, PerplexityBot
+# - For local businesses: Recommend ALLOWING all bots for maximum discovery
+# ============================================================================
+
 Sitemap: ${businessConfig.websiteUrl}/sitemap.xml
 `;
   fs.writeFileSync(path.join(publicDir, "robots.txt"), content);
-  console.log("Generated robots.txt with AI bot allowlist");
+  console.log("Generated robots.txt with hyper-segmented AI bot rules");
 }
 
 function generateLlmsTxt() {
