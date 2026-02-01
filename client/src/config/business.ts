@@ -93,231 +93,264 @@ export interface BusinessConfig {
 }
 
 export const businessConfig: BusinessConfig = {
-  businessName: "Coastal Contractor Services",
-  tagline: "Reliable local service, done right",
-  primaryPhone: "+15555555555",
-  phoneDisplay: "(555) 555-5555",
-  primaryEmail: "hello@example.com",
-  websiteUrl: "https://example.com",
+  businessName: "Standard Plumbing OC",
+  tagline: "Leak Detection & Repair Specialists",
+  primaryPhone: "+1XXXXXXXXXX", // Need actual phone
+  phoneDisplay: "(XXX) XXX-XXXX", // Need actual phone
+  primaryEmail: "info@standardplumbingoc.com",
+  websiteUrl: "https://standardplumbingoc.com",
   priceRange: "$$",
-  licenseNumber: "CA-123456",
   insuredBonded: true,
 
-  streetAddress: "123 Main St",
-  city: "San Clemente",
+  streetAddress: "", // Dana Point area
+  city: "Dana Point",
   state: "CA",
-  postalCode: "92672",
+  postalCode: "92629",
   country: "US",
 
   openingHours: [
-    { day: "Monday", open: "8:00 AM", close: "6:00 PM" },
-    { day: "Tuesday", open: "8:00 AM", close: "6:00 PM" },
-    { day: "Wednesday", open: "8:00 AM", close: "6:00 PM" },
-    { day: "Thursday", open: "8:00 AM", close: "6:00 PM" },
-    { day: "Friday", open: "8:00 AM", close: "6:00 PM" },
-    { day: "Saturday", open: "9:00 AM", close: "4:00 PM" },
+    { day: "Monday", open: "7:00 AM", close: "8:00 PM" },
+    { day: "Tuesday", open: "7:00 AM", close: "8:00 PM" },
+    { day: "Wednesday", open: "7:00 AM", close: "8:00 PM" },
+    { day: "Thursday", open: "7:00 AM", close: "8:00 PM" },
+    { day: "Friday", open: "7:00 AM", close: "8:00 PM" },
+    { day: "Saturday", open: "9:00 AM", close: "2:00 PM" },
     { day: "Sunday", open: "Closed", close: "Closed" }
   ],
+  availabilityNote: "Emergency services available",
 
   areasServedCities: [
-    "San Clemente",
     "Dana Point",
-    "San Juan Capistrano",
     "Laguna Niguel",
-    "Mission Viejo",
-    "Aliso Viejo",
+    "Laguna Hills",
     "Laguna Beach",
+    "San Juan Capistrano",
+    "Mission Viejo",
+    "Rancho Santa Margarita",
+    "Aliso Viejo",
     "San Clemente",
-    "Dana Point",
-    "San Juan Capistrano"
+    "Irvine"
   ],
 
   services: [
     {
-      name: "General Remodeling",
-      slug: "general-remodeling",
-      shortDescription: "Full-service home remodeling and renovations.",
-      longDescription: "Transform your home with our expert remodeling services. From concept to completion, we handle every aspect of your renovation project with precision and care.",
+      name: "Water Leak Detection & Repair",
+      slug: "water-leak-detection",
+      shortDescription: "State-of-the-art leak detection using modern electronic equipment.",
+      longDescription: "Water leaks are serious situations that require immediate inspection and professional repair to prevent more serious damage to your home or business. We offer state of the art leak detection using the most modern electronic listening devices, thermal imaging, and electronic line tracing equipment that accurately determines the source of your leak and offers the best and most noninvasive route for repair.",
       serviceBenefits: [
-        "Increases home value",
-        "Modernizes your living space",
-        "Improves energy efficiency",
-        "Customized to your needs"
+        "Modern electronic listening devices",
+        "Thermal imaging detection",
+        "Electronic line tracing equipment",
+        "Non-invasive repair solutions",
+        "Same-day emergency service"
       ],
       processSteps: [
-        { name: "Consultation", description: "We meet to discuss your vision and needs." },
-        { name: "Design", description: "Our team creates a detailed plan and 3D rendering." },
-        { name: "Construction", description: "Our skilled craftsmen bring the design to life." },
-        { name: "Walkthrough", description: "Final inspection to ensure your complete satisfaction." }
+        { name: "Inspection", description: "Thorough assessment using advanced detection equipment" },
+        { name: "Diagnosis", description: "Accurately determine the source and cause of the leak" },
+        { name: "Repair Plan", description: "Provide options for the best and most cost-effective repair" },
+        { name: "Repair", description: "Professional repair with minimal disruption to your home" }
       ],
       pricingTiers: [
-        { name: "Basic", priceRange: "$5k - $15k", includes: ["Minor updates", "Paint", "Flooring"] },
-        { name: "Standard", priceRange: "$15k - $50k", includes: ["Kitchen/Bath remodel", "New fixtures", "Lighting"] },
-        { name: "Premium", priceRange: "$50k+", includes: ["Full home renovation", "Structural changes", "High-end finishes"] }
+        { name: "Detection Only", priceRange: "Call for quote", includes: ["Full leak detection service", "Detailed report"] },
+        { name: "Detection + Repair", priceRange: "Call for quote", includes: ["Detection", "Repair", "Warranty"] }
       ],
       faqs: [
-        { question: "How long does a typical remodel take?", answer: "Timeline varies by project size, but typically 4-8 weeks." },
-        { question: "Do you handle permits?", answer: "Yes, we manage all necessary permits and inspections." }
+        { question: "What are signs of a potential leak?", answer: "Watch for wet spots around exterior, wall discoloration, bubbling paint, warm spots in floor, musty smell, sudden increase in water bill, or dripping sounds in walls while no water is being used." },
+        { question: "Do you offer emergency leak repair?", answer: "Yes! We respond to emergency plumbing situations and can often arrive the same day." }
       ],
-      primaryKeywords: ["remodeling", "renovation", "contractor", "home improvement"]
+      primaryKeywords: ["leak detection", "water leak repair", "slab leak", "pipe leak", "plumber Orange County"]
     },
     {
-      name: "Kitchen Renovation",
-      slug: "kitchen-renovation",
-      shortDescription: "Custom kitchen design and installation.",
-      longDescription: "Create the kitchen of your dreams with our comprehensive renovation services. We specialize in custom cabinetry, countertops, and modern layouts.",
+      name: "Pex Repipes",
+      slug: "pex-repipes",
+      shortDescription: "Complete home repiping with durable Pex piping systems.",
+      longDescription: "If your old copper system is getting to the point where leaks are a common occurrence then it's recommended to consider repiping the entire system. Pex piping is not only more affordable but much more durable than copper piping. The pex material isn't susceptible to Southern California's water treatments that destroy copper systems, with chloramine being the number one offender!",
       serviceBenefits: [
-        "Custom cabinetry",
-        "High-end appliances",
-        "Optimized layout",
-        "Increased storage"
-      ],
-      processSteps: [
-        { name: "Initial Meeting", description: "We assess your current kitchen and discuss goals." },
-        { name: "Design Phase", description: "Selecting materials, layout, and finishes." },
-        { name: "Demolition", description: "Removing old fixtures and preparing the space." },
-        { name: "Installation", description: "Installing new cabinets, counters, and appliances." }
-      ],
-      pricingTiers: [
-        { name: "Cosmetic", priceRange: "$10k - $20k", includes: ["Refacing", "New counters", "Backsplash"] },
-        { name: "Full Remodel", priceRange: "$25k - $60k", includes: ["New layout", "Custom cabinets", "New flooring"] }
-      ],
-      faqs: [
-        { question: "Can I stay in my home during the remodel?", answer: "Yes, though the kitchen will be unusable for a period." }
-      ],
-      primaryKeywords: ["kitchen remodel", "custom cabinets", "kitchen design"]
-    },
-    {
-      name: "Bathroom Remodeling",
-      slug: "bathroom-remodeling",
-      shortDescription: "Luxurious bathroom makeovers and upgrades.",
-      longDescription: "Turn your bathroom into a spa-like retreat. We handle everything from tile work and plumbing to vanity installation and lighting, creating a space that is both functional and beautiful.",
-      serviceBenefits: [
-        "Spa-like atmosphere",
-        "Improved water efficiency",
-        "Modern fixtures",
-        "Increased home value"
-      ],
-      processSteps: [
-        { name: "Concept", description: "Discussing style, fixtures, and layout." },
-        { name: "Demo", description: "Removing old tub, shower, and vanity." },
-        { name: "Plumbing & Electrical", description: "Updating systems to code." },
-        { name: "Finishing", description: "Tiling, painting, and fixture installation." }
-      ],
-      pricingTiers: [
-        { name: "Update", priceRange: "$5k - $10k", includes: ["New vanity", "Toilet", "Paint"] },
-        { name: "Full Remodel", priceRange: "$15k - $30k", includes: ["Tile shower", "New tub", "Flooring"] }
-      ],
-      faqs: [
-        { question: "How long is the bathroom out of commission?", answer: "Typically 2-3 weeks for a full remodel." }
-      ],
-      primaryKeywords: ["bathroom remodel", "shower installation", "vanity upgrade"]
-    },
-    {
-      name: "Outdoor Living & Decks",
-      slug: "outdoor-living",
-      shortDescription: "Custom decks, patios, and outdoor spaces.",
-      longDescription: "Expand your living space outdoors with our custom deck and patio services. Whether you want a simple wood deck or a full outdoor kitchen, we build durable and stylish structures.",
-      serviceBenefits: [
-        "Expanded entertainment space",
-        "Durable materials",
-        "Custom design",
-        "Increases property appeal"
-      ],
-      processSteps: [
-        { name: "Site Analysis", description: "Measuring the space and checking soil/grading." },
-        { name: "Design", description: "Creating a layout that fits your yard and lifestyle." },
-        { name: "Build", description: "Constructing the frame and decking." },
-        { name: "Finish", description: "Staining, sealing, and adding railings." }
-      ],
-      pricingTiers: [
-        { name: "Deck", priceRange: "$10k - $25k", includes: ["Composite or wood decking", "Railings"] },
-        { name: "Patio Cover", priceRange: "$5k - $15k", includes: ["Attached or freestanding structure"] }
-      ],
-      faqs: [
-        { question: "Do I need a permit for a deck?", answer: "Most decks require a permit, which we handle." }
-      ],
-      primaryKeywords: ["deck builder", "patio cover", "outdoor kitchen"]
-    },
-    {
-      name: "Flooring Installation",
-      slug: "flooring-installation",
-      shortDescription: "Hardwood, tile, laminate, and vinyl flooring.",
-      longDescription: "Upgrade your home with beautiful new flooring. We install all types of flooring including hardwood, luxury vinyl plank, tile, and laminate, ensuring a perfect finish every time.",
-      serviceBenefits: [
-        "Durability",
-        "Wide variety of styles",
-        "Easy maintenance",
+        "More affordable than copper",
+        "More durable than copper piping",
+        "Resistant to chloramine damage",
+        "Long-lasting leak-free solution",
         "Professional installation"
       ],
       processSteps: [
-        { name: "Selection", description: "Choosing the right material for your needs." },
-        { name: "Prep", description: "Removing old flooring and leveling the subfloor." },
-        { name: "Install", description: "Precision laying of the new floor." },
-        { name: "Trim", description: "Installing baseboards and transitions." }
+        { name: "Assessment", description: "Evaluate your current plumbing system" },
+        { name: "Planning", description: "Design the optimal piping layout" },
+        { name: "Installation", description: "Replace old pipes with new Pex system" },
+        { name: "Testing", description: "Pressure test and verify all connections" }
       ],
       pricingTiers: [
-        { name: "Laminate/Vinyl", priceRange: "$5 - $10 /sqft", includes: ["Material and labor"] },
-        { name: "Hardwood/Tile", priceRange: "$10 - $20 /sqft", includes: ["Material and labor"] }
+        { name: "Whole House Repipe", priceRange: "Call for quote", includes: ["Complete system replacement", "All fixtures connected", "Permits and inspections"] }
       ],
       faqs: [
-        { question: "How long does installation take?", answer: "Usually 1-3 days depending on the area size." }
+        { question: "Why is Pex better than copper?", answer: "Pex is more resistant to the chloramine in Southern California water that corrodes copper pipes over time, making it a longer-lasting solution." },
+        { question: "How long does a repipe take?", answer: "Most whole-house repipes can be completed in 1-2 days." }
       ],
-      primaryKeywords: ["flooring installer", "hardwood floors", "tile installation"]
+      primaryKeywords: ["pex repipe", "whole house repipe", "copper pipe replacement", "repiping service"]
     },
     {
-      name: "Painting Services",
-      slug: "painting-services",
-      shortDescription: "Interior and exterior residential painting.",
-      longDescription: "Refresh your home with a fresh coat of paint. Our professional painters provide meticulous interior and exterior painting services, using high-quality paints for long-lasting results.",
+      name: "Water Heater Services",
+      slug: "water-heaters",
+      shortDescription: "Water heater installation, repair, and replacement.",
+      longDescription: "A water heater is an essential part of your home's plumbing system. Over time water heater tanks deteriorate from the inside, which can lead to discolored water coming from sinks or showers. Eventually this deterioration will lead to a leak from your water heater tank.",
       serviceBenefits: [
-        "Clean and precise lines",
-        "Surface preparation",
-        "High-quality paints",
-        "Protects your home"
+        "Expert installation",
+        "All major brands",
+        "Tank and tankless options",
+        "Energy-efficient upgrades",
+        "Same-day service available"
       ],
       processSteps: [
-        { name: "Prep", description: "Masking, sanding, and priming surfaces." },
-        { name: "Paint", description: "Applying multiple coats for even coverage." },
-        { name: "Inspect", description: "Checking for imperfections." },
-        { name: "Cleanup", description: "Leaving your home spotless." }
+        { name: "Diagnosis", description: "Assess your current water heater condition" },
+        { name: "Recommendation", description: "Provide repair or replacement options" },
+        { name: "Installation", description: "Professional installation with proper permits" },
+        { name: "Testing", description: "Verify proper operation and temperature" }
       ],
       pricingTiers: [
-        { name: "Room", priceRange: "$300 - $800", includes: ["Walls", "Trim"] },
-        { name: "Exterior", priceRange: "$3k - $8k", includes: ["Full exterior prep and paint"] }
+        { name: "Repair", priceRange: "Call for quote", includes: ["Diagnosis", "Parts", "Labor"] },
+        { name: "Replacement", priceRange: "Call for quote", includes: ["New water heater", "Installation", "Old unit disposal"] }
       ],
       faqs: [
-        { question: "Do you use eco-friendly paint?", answer: "Yes, we offer low-VOC options upon request." }
+        { question: "What are signs my water heater needs replacing?", answer: "Discolored or gritty water, hot water runs out quickly, doesn't get hot enough, moisture around tank, rotten egg smell, or popping/crackling sounds." },
+        { question: "How long do water heaters last?", answer: "Tank water heaters typically last 8-12 years with proper maintenance." }
       ],
-      primaryKeywords: ["house painter", "interior painting", "exterior painting"]
+      primaryKeywords: ["water heater installation", "water heater repair", "tankless water heater", "hot water heater"]
+    },
+    {
+      name: "Seismic Gas Valves",
+      slug: "seismic-gas-valves",
+      shortDescription: "Automatic gas shutoff valves for earthquake protection.",
+      longDescription: "Automatic gas shutoff valves activate and shut off your home or business's natural gas supply in the event of a 5.4 or greater earthquake. One out of every four fires in California after an earthquake is related to a natural gas leak. Make sure your home or business is protected. In compliance with Section 19202 of the State of California.",
+      serviceBenefits: [
+        "Automatic earthquake shutoff",
+        "Fire prevention",
+        "California code compliant",
+        "Peace of mind protection",
+        "Professional installation"
+      ],
+      processSteps: [
+        { name: "Assessment", description: "Evaluate your gas line setup" },
+        { name: "Installation", description: "Install the seismic valve at the meter" },
+        { name: "Testing", description: "Verify proper operation" },
+        { name: "Documentation", description: "Provide compliance documentation" }
+      ],
+      pricingTiers: [
+        { name: "Installation", priceRange: "Free quote", includes: ["Seismic valve", "Professional installation", "Compliance certificate"] }
+      ],
+      faqs: [
+        { question: "Is a seismic gas valve required in California?", answer: "While not required for existing homes, it's highly recommended and required for new construction under Section 19202 of the State of California." },
+        { question: "Will it shut off for small earthquakes?", answer: "The valve activates at 5.4 magnitude or greater to avoid unnecessary shutoffs." }
+      ],
+      primaryKeywords: ["seismic gas valve", "earthquake gas shutoff", "gas safety valve", "California gas code"]
+    },
+    {
+      name: "Preventative Maintenance",
+      slug: "preventative-maintenance",
+      shortDescription: "Regular plumbing inspections to prevent costly repairs.",
+      longDescription: "The plumbing in your home is a complicated network of connected pipes, valves, drains and fixtures that keep your home or business operating. In order to make sure your plumbing system operates effectively, regular system inspections are recommended. Little problems that are inexpensive to fix can lead to big problems and costly repairs if not addressed early.",
+      serviceBenefits: [
+        "Prevent costly emergency repairs",
+        "Extend system lifespan",
+        "Identify potential problems early",
+        "Professional system inspection",
+        "Peace of mind"
+      ],
+      processSteps: [
+        { name: "Inspection", description: "Thorough examination of all plumbing components" },
+        { name: "Testing", description: "Pressure tests and flow verification" },
+        { name: "Report", description: "Detailed findings and recommendations" },
+        { name: "Maintenance", description: "Address any minor issues found" }
+      ],
+      pricingTiers: [
+        { name: "Inspection", priceRange: "Call for quote", includes: ["Full system inspection", "Detailed report", "Recommendations"] }
+      ],
+      faqs: [
+        { question: "What do you inspect during maintenance?", answer: "We check angle stop valves, water pressure, visible pipes, water heater, fixtures, and look for signs of leaks or corrosion." },
+        { question: "How often should I have my plumbing inspected?", answer: "We recommend annual inspections to catch small problems before they become expensive emergencies." }
+      ],
+      primaryKeywords: ["plumbing maintenance", "plumbing inspection", "preventative plumbing", "plumbing checkup"]
+    },
+    {
+      name: "Gas Line Services",
+      slug: "gas-lines",
+      shortDescription: "Gas line repair, installation, and repipes.",
+      longDescription: "Professional gas line services including repairs, new installations, and complete gas repipes. Safety is our top priority when working with gas lines.",
+      serviceBenefits: [
+        "Licensed gas line work",
+        "Safety-focused approach",
+        "Leak detection and repair",
+        "New appliance hookups",
+        "Code compliant installations"
+      ],
+      processSteps: [
+        { name: "Safety Check", description: "Verify safe working conditions" },
+        { name: "Assessment", description: "Evaluate the gas line issue or installation needs" },
+        { name: "Work", description: "Perform repairs or installation" },
+        { name: "Testing", description: "Pressure test and leak check all work" }
+      ],
+      pricingTiers: [
+        { name: "Repair/Installation", priceRange: "Call for quote", includes: ["Assessment", "Materials", "Labor", "Testing"] }
+      ],
+      faqs: [
+        { question: "Do you install gas lines for new appliances?", answer: "Yes, we can run new gas lines for ranges, dryers, outdoor grills, and other gas appliances." }
+      ],
+      primaryKeywords: ["gas line repair", "gas line installation", "gas repipe", "gas leak repair"]
     }
   ],
 
+  aggregateRatingValue: 5.0,
+  aggregateRatingCount: 50,
+  
   reviewCards: [
     {
-      name: "John D.",
+      name: "William S.",
       rating: 5,
-      text: "Excellent work and very professional. Finished on time and on budget.",
-      city: "San Clemente"
+      text: "Tony & Taylor performed awesome service fixing my slab leak. They were very prompt, clean and explained everything in great detail. The fee was very reasonable. For free, they fixed one of my valves that had a slow leak and performed a pressure test on my main line. I highly recommend this company.",
+      city: "Laguna Hills",
+      date: "5/25/2024"
     },
     {
-      name: "Sarah M.",
+      name: "Sydney R.",
       rating: 5,
-      text: "Transformed our outdated kitchen into a modern masterpiece. Highly recommend!",
-      city: "Dana Point"
+      text: "Tony was a LIFE SAVER. We had an emergency plumbing issue and he got out of bed in the middle of the night to help us. He was at our place within 20 mins and fixed the issue quickly. He was so professional, calm, kind. For any and all plumbing issues we will be calling Tony!",
+      city: "Dana Point",
+      date: "8/26/2023"
     },
     {
-      name: "Mike R.",
-      rating: 4,
-      text: "Great communication throughout the project. Very happy with the results.",
-      city: "Mission Viejo"
+      name: "Imad D.",
+      rating: 5,
+      text: "Tony is responsive, prompt, friendly, respectful, and honest. We had a slab leak, which he came out to fix the same day. He's going to be our go to plumber from now on. We highly recommend Standard Plumbing!",
+      city: "Dana Point",
+      date: "5/18/2023"
+    },
+    {
+      name: "Don R.",
+      rating: 5,
+      text: "Tony Vinciguerra has serviced three of our families households. He has been superior in his workmanship, reliability and promptness. We have been impressed with his fair pricing. This company is one to experience for your needs.",
+      city: "Laguna Niguel",
+      date: "1/10/2023"
+    },
+    {
+      name: "Brian R.",
+      rating: 5,
+      text: "Tony's responsiveness for a water slab leak was incredible. We had shut off the main valve due to the leak. He took our call in the evening and said he would see us in the morning. He arrived at our home in Laguna Niguel at the time committed. Within 30 minutes he had completed his testing and identified what needed to be done.",
+      city: "Laguna Niguel",
+      date: "12/27/2022"
+    },
+    {
+      name: "Peyman L.",
+      rating: 5,
+      text: "Tony is a really nice guy and cares to do a great job. If you are looking for someone professional who knows what he is doing, call Tony!",
+      city: "Orange County",
+      date: "12/1/2025"
     }
   ],
 
-  formspreeEndpoint: "https://formspree.io/f/example",
-  seobotApiKey: "", // Add your SeoBot API key from https://seobotai.com/
-  mapsShareUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53308.26188373308!2d-117.65365569502967!3d33.43387819000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce5ce56784d59%3A0x6d64921605333799!2sSan%20Clemente%2C%20CA!5e0!3m2!1sen!2sus!4v1709848245789!5m2!1sen!2sus",
+  formspreeEndpoint: "https://formspree.io/f/example", // Update with actual endpoint
+  seobotApiKey: "",
+  mapsShareUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106456.35318955467!2d-117.75661897382814!3d33.48091989999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce8a2e2c82d1d%3A0x5b4e5f18b5d1d6e9!2sDana%20Point%2C%20CA!5e0!3m2!1sen!2sus",
+  mapsQueryOverride: "Standard Plumbing OC Dana Point",
 
-  // Brand colors - customize these to match your business
-  primaryAccentColor: "#FD9800", // Orange accent color used throughout the site
+  // Brand colors - blue theme for plumbing
+  primaryAccentColor: "#1e40af", // Professional blue
 };

@@ -1,94 +1,69 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, MapPin, Mail, ChevronRight } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { QuoteRequestModal } from '@/components/QuoteRequestModal';
-import { BusinessMap } from '@/components/BusinessMap';
 import { m, AnimatePresence } from 'framer-motion';
 import { businessConfig } from '@/config/business';
 
-export function Layout({ children }: { children: React.ReactNode }) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState("Get a Quote");
+// Lazy load the modal to reduce initial bundle size
+const LeadFormModal = lazy(() => import('@/components/LeadFormModal').then(module => ({ default: module.LeadFormModal })));
+
+export function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const [strategyOpen, setStrategyOpen] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
 
-  // Close mobile menu on route change
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      // Save current scroll position and lock body
+    if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      document.body.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.style.width = '100%';
     } else {
-      // Restore scroll position
-      const scrollY = document.body.style.top;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      }
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+      document.body.style.removeProperty('--scrollbar-width');
     }
-
-    // Cleanup on unmount
     return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
+      document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
+      document.body.style.removeProperty('--scrollbar-width');
     };
-  }, [isMobileMenuOpen]);
+  }, [isOpen]);
 
-  // Handle CTA clicks
-  const handleQuoteClick = () => {
-    setModalTitle("Get a Quote");
-    setQuoteModalOpen(true);
-  };
-
-  const handleEstimateClick = () => {
-    setModalTitle("Get a Free Estimate");
-    setQuoteModalOpen(true);
-  };
-
-  const navLinks = [
-    { href: "/services", label: "Services" },
-    { href: "/service-areas", label: "Service Areas" },
+  const links = [
     { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/portfolio", label: "Portfolio" },
+    { href: "/resources", label: "Resources" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white font-sans text-gray-900">
-      {/* Top Bar (Desktop) */}
-      <div className="bg-primary text-primary-foreground text-xs md:text-sm font-medium py-2 hidden md:block">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <span className="opacity-90">{businessConfig.tagline}</span>
+    <>
+      <div className="bg-primary text-primary-foreground text-xs font-medium py-2.5">
+        <div className="container mx-auto px-6 flex flex-row justify-between items-center">
+          <span className="opacity-90 tracking-wide sm:hidden font-bold">{businessConfig.tagline}</span>
+          <span className="opacity-90 tracking-wide hidden sm:inline">{businessConfig.tagline}</span>
+          
           <div className="flex items-center gap-6">
-            <a href={`mailto:${businessConfig.primaryEmail}`} className="hover:opacity-80 flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5" />
-              {businessConfig.primaryEmail}
-            </a>
-            <div className="w-px h-3 bg-primary-foreground/20"></div>
-            <a href={`tel:${businessConfig.primaryPhone}`} className="hover:opacity-80 flex items-center gap-1.5 font-bold">
-              <Phone className="w-3.5 h-3.5" />
-              {businessConfig.phoneDisplay}
-            </a>
+             <a href={`mailto:${businessConfig.primaryEmail}`} className="hover:opacity-80 transition-opacity hidden sm:flex items-center gap-1.5">
+               <Mail className="w-3.5 h-3.5" />
+               <span>{businessConfig.primaryEmail}</span>
+             </a>
+             <div className="w-px h-3 bg-primary-foreground/20 hidden sm:block"></div>
+             <a href={`tel:${businessConfig.primaryPhone}`} className="hover:opacity-80 transition-opacity flex items-center gap-1.5 font-semibold">
+               <Phone className="w-3.5 h-3.5" />
+               {businessConfig.phoneDisplay}
+             </a>
           </div>
         </div>
       </div>
 
-      {/* Sticky Header */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-gray-100 shadow-sm">
-        <div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl md:text-2xl tracking-tight text-gray-900">
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm relative">
+        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight text-gray-800">
             {businessConfig.logoPath ? (
               <img src={businessConfig.logoPath} alt={businessConfig.businessName} className="h-8 md:h-10 w-auto" />
             ) : (
@@ -97,224 +72,168 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </Link>
           
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-600">
-            {navLinks.map(link => (
-              <Link key={link.href} href={link.href} className={`transition-colors hover:text-primary ${location === link.href ? 'text-primary font-semibold' : ''}`}>
+            {links.map(link => (
+              <Link key={link.href} href={link.href} className={`transition-colors ${location === link.href ? 'text-primary' : 'hover:text-primary'}`}>
                 {link.label}
               </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href={`tel:${businessConfig.primaryPhone}`} className="hidden md:flex items-center gap-2 text-gray-600 hover:text-primary font-bold mr-2">
-              <Phone className="w-5 h-5" />
-              {businessConfig.phoneDisplay}
-            </a>
             <Button 
-              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6"
-              onClick={handleQuoteClick}
+              className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 rounded-lg shadow-sm transition-all hover:-translate-y-0.5"
+              onClick={() => setStrategyOpen(true)}
             >
               Get a Quote
             </Button>
             
-            <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close menu" : "Open menu"}>
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
-          {isMobileMenuOpen && (
+          {isOpen && (
             <m.div 
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-b border-gray-100 shadow-lg overflow-hidden"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="lg:hidden absolute top-full inset-x-0 bg-white border-b border-gray-100 shadow-lg z-50 p-6"
             >
-              <nav className="flex flex-col p-4 gap-4">
-                {navLinks.map(link => (
-                  <Link key={link.href} href={link.href} className={`text-lg font-medium py-2 border-b border-gray-50 ${location === link.href ? 'text-primary' : 'text-gray-600'}`}>
-                    {link.label}
-                  </Link>
-                ))}
-                <div className="flex flex-col gap-3 mt-2">
-                  <Button 
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12"
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      handleQuoteClick();
-                    }}
-                  >
-                    Get a Quote
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="w-full h-12 border-2"
-                    asChild
-                  >
-                    <a href={`tel:${businessConfig.primaryPhone}`}>
-                      Call Now: {businessConfig.phoneDisplay}
-                    </a>
-                  </Button>
-                </div>
-              </nav>
+            <nav className="flex flex-col gap-4">
+              {links.map(link => (
+                <Link key={link.href} href={link.href} className={`text-lg font-medium ${location === link.href ? 'text-primary' : 'text-gray-600'}`} onClick={() => setIsOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
+              <div className="flex flex-col gap-3 mt-4">
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-12"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setStrategyOpen(true);
+                  }}
+                >
+                  Get a Quote
+                </Button>
+                
+                <Button 
+                  variant="outline" 
+                  className="w-full border-2 border-gray-200 text-gray-700 font-bold h-12 hover:border-primary hover:text-primary"
+                  asChild
+                >
+                  <a href={`tel:${businessConfig.primaryPhone}`}>
+                    Call {businessConfig.phoneDisplay}
+                  </a>
+                </Button>
+              </div>
+            </nav>
             </m.div>
           )}
         </AnimatePresence>
       </header>
 
-      {/* Main Content */}
-      <main className="flex-1">
-        {children}
-      </main>
+      <AnimatePresence>
+        {isOpen && (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+        )}
+      </AnimatePresence>
+      
+      {/* Lazy Loaded Modals */}
+      <Suspense fallback={null}>
+        {strategyOpen && (
+          <LeadFormModal 
+            open={strategyOpen}
+            onOpenChange={setStrategyOpen}
+            title="Get a Free Quote"
+            description="Let's discuss your project goals. Fill out the form below and we'll reach out to provide an estimate."
+            type="strategy"
+          />
+        )}
+      </Suspense>
+    </>
+  );
+}
 
-      {/* Persistent CTA Footer Block */}
-      <div className="bg-gray-50 border-t border-gray-100 py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Ready to start your project?</h2>
-              <p className="text-lg text-gray-600 mb-8 max-w-lg">
-                Contact {businessConfig.businessName} today for a free estimate. We are ready to help with your next project.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg h-14 px-8"
-                  onClick={handleEstimateClick}
-                >
-                  Get Estimate
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="bg-white border-2 hover:bg-gray-50 text-lg h-14 px-8"
-                  asChild
-                >
-                  <a href={`tel:${businessConfig.primaryPhone}`}>
-                    <Phone className="w-5 h-5 mr-2" />
-                    Call {businessConfig.phoneDisplay}
-                  </a>
-                </Button>
-              </div>
-            </div>
-            
-            <div className="hidden lg:block h-64 rounded-xl overflow-hidden shadow-lg ring-1 ring-gray-200">
-               {/* Mini Map Preview */}
-               <BusinessMap className="w-full h-full" />
-            </div>
+export function Footer() {
+  return (
+    <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
+          <div className="col-span-1">
+            <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight text-gray-800 mb-4">
+              {businessConfig.logoPath ? (
+                <img src={businessConfig.logoPath} alt={businessConfig.businessName} className="h-8 w-auto" />
+              ) : (
+                <span>{businessConfig.businessName}</span>
+              )}
+            </Link>
+            <p className="text-gray-500 text-sm">
+              {businessConfig.tagline}. Based in <Link href={`/locations/${businessConfig.city.toLowerCase().replace(/\s+/g, '-')}`} className="text-primary font-medium hover:underline">{businessConfig.city}, {businessConfig.state}</Link>.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="font-bold text-gray-900 mb-4">Company</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              <li><Link href="/about" className="hover:text-primary">About Us</Link></li>
+              <li><Link href="/portfolio" className="hover:text-primary">Our Work</Link></li>
+              <li><Link href="/services" className="hover:text-primary">Services</Link></li>
+              <li><Link href="/resources" className="hover:text-primary">Resources</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-gray-900 mb-4">Services</h4>
+            <ul className="space-y-2 text-sm text-gray-600">
+              {businessConfig.services.slice(0, 4).map(service => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="hover:text-primary">
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-gray-900 mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" /> 
+                <span>
+                  {businessConfig.businessName}<br/>
+                  {businessConfig.streetAddress}<br/>
+                  {businessConfig.city}, {businessConfig.state} {businessConfig.postalCode}
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-primary shrink-0" /> 
+                <a href={`tel:${businessConfig.primaryPhone}`}>{businessConfig.phoneDisplay}</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-primary shrink-0" /> 
+                <a href={`mailto:${businessConfig.primaryEmail}`}>{businessConfig.primaryEmail}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+          <p>&copy; {new Date().getFullYear()} {businessConfig.businessName}. All rights reserved.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <Link href="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-primary">Terms of Service</Link>
           </div>
         </div>
       </div>
-
-      {/* Real Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h3 className="text-white text-xl font-bold mb-4">{businessConfig.businessName}</h3>
-              <p className="text-sm leading-relaxed mb-6 opacity-80">
-                {businessConfig.tagline}
-              </p>
-              <div className="flex flex-col gap-2 text-sm">
-                 {businessConfig.licenseNumber && (
-                   <p>License: {businessConfig.licenseNumber}</p>
-                 )}
-                 {businessConfig.insuredBonded && (
-                   <p>Fully Insured & Bonded</p>
-                 )}
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm">
-                {businessConfig.services.slice(0, 5).map(service => (
-                  <li key={service.slug}>
-                    <Link href={`/services/${service.slug}`} className="hover:text-primary transition-colors">
-                      {service.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold mb-4">Service Area</h4>
-              <ul className="space-y-2 text-sm">
-                {businessConfig.areasServedCities.slice(0, 5).map(city => (
-                   <li key={city}>
-                     <Link href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-primary transition-colors">
-                       {city}
-                     </Link>
-                   </li>
-                ))}
-                <li>
-                  <Link href="/service-areas" className="text-primary hover:underline">View All Areas</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-bold mb-4">Contact Info</h4>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary shrink-0" />
-                  <span>
-                    {businessConfig.streetAddress}<br/>
-                    {businessConfig.city}, {businessConfig.state} {businessConfig.postalCode}
-                  </span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-primary shrink-0" />
-                  <a href={`tel:${businessConfig.primaryPhone}`} className="hover:text-white transition-colors">
-                    {businessConfig.phoneDisplay}
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-primary shrink-0" />
-                  <a href={`mailto:${businessConfig.primaryEmail}`} className="hover:text-white transition-colors">
-                    {businessConfig.primaryEmail}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm opacity-60">
-            <p>&copy; {new Date().getFullYear()} {businessConfig.businessName}. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
-              <Link href="/accessibility" className="hover:text-white transition-colors">Accessibility</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Mobile Fixed Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 p-3 shadow-negative flex gap-3 pb-safe">
-        <Button 
-          variant="outline" 
-          className="flex-1 h-11 border-primary text-primary font-bold hover:bg-primary/5"
-          asChild
-        >
-          <a href={`tel:${businessConfig.primaryPhone}`}>Call Now</a>
-        </Button>
-        <Button 
-          className="flex-1 h-11 bg-primary text-primary-foreground font-bold hover:bg-primary/90"
-          onClick={handleQuoteClick}
-        >
-          Get a Quote
-        </Button>
-      </div>
-
-      {/* Modals */}
-      <QuoteRequestModal 
-        isOpen={quoteModalOpen} 
-        onOpenChange={setQuoteModalOpen}
-        title={modalTitle}
-      />
-    </div>
+    </footer>
   );
 }
