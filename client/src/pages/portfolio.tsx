@@ -1,318 +1,73 @@
-import React from 'react';
-import { SEO } from '@/components/seo';
-import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Navigation, Footer } from '@/components/layout';
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { toast } from 'sonner';
-import { LazyImage } from '@/components/ui/lazy-image';
-import { businessConfig } from '@/config/business';
+import { businessConfig } from "@/config/business";
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
+export default function Portfolio() {
+  // Placeholder portfolio data - in production this would likely be in business config
+  const portfolioItems = [
+    {
+      title: "Modern Kitchen Remodel",
+      category: "Renovation",
+      description: "Complete overhaul of a 1980s kitchen into a modern chef's paradise.",
+      image: null // Placeholder
+    },
+    {
+      title: "Bathroom Renovation",
+      category: "Bath",
+      description: "Spa-like master bathroom transformation with custom tiling.",
+      image: null
+    },
+    {
+      title: "Outdoor Living Space",
+      category: "Exterior",
+      description: "Custom deck and patio design for year-round entertainment.",
+      image: null
     }
-  }
-};
-
-interface PortfolioCardProps {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-  subtitle?: string;
-}
-
-export const PortfolioCard = ({ title, description, image, link, subtitle }: PortfolioCardProps) => (
-  <motion.div variants={fadeIn} className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-xl transition-all h-full flex flex-col">
-    <div className="overflow-hidden">
-      <AspectRatio ratio={16/10}>
-        <LazyImage 
-          src={image} 
-          alt={title} 
-          className="object-cover w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-        />
-      </AspectRatio>
-    </div>
-    <div className="p-6 flex flex-col flex-grow">
-      <div className="mb-2">
-        {subtitle && <span className="text-xs font-bold text-[var(--accent-color)] uppercase tracking-wide">{subtitle}</span>}
-        <h3 className="text-2xl font-bold font-heading text-gray-900 mt-1 group-hover:text-[var(--accent-color)] transition-colors">{title}</h3>
-      </div>
-      <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto">
-        <Button variant="outline" className="w-full border-gray-200 hover:border-[var(--accent-color)] hover:text-[var(--accent-color)] group-hover:bg-[#fdfaf5]">
-          Visit Website <ExternalLink className="w-4 h-4 ml-2" />
-        </Button>
-      </a>
-    </div>
-  </motion.div>
-);
-
-import { WaveSection } from '@/components/ui/wave-section';
-
-type Category = 'Professional Services' | 'Construction' | 'Painters' | 'Trades';
-
-interface PortfolioItem {
-  title: string;
-  subtitle: string;
-  description: string;
-  image: string;
-  link: string;
-  category: Category;
-}
-
-const portfolioItems: PortfolioItem[] = [
-  // Professional Services
-  {
-    title: "Filger Manufacturing",
-    subtitle: "Aerospace",
-    description: "Specializes in high-precision machining for aerospace and defense. Site highlights equipment and quality processes.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=Filger-Manufacturing.webp",
-    link: "https://filger.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "Ascend Equities",
-    subtitle: "Real Estate Investment",
-    description: "Real estate investment firm specializing in developing and operating premier RV parks and commercial real estate across Texas, Utah, and California.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=AscendEquities.webp",
-    link: "https://ascendequities.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "TSA Group Ltd",
-    subtitle: "Consulting",
-    description: "Transmission line siting and right-of-way consulting. Highlights current and past projects.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=TSA-Group-Limited.webp",
-    link: "https://tsagroupconsulting.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "Case Whittemore, LMFT",
-    subtitle: "Healthcare",
-    description: "A licensed Marriage and Family Therapist with a certification in perinatal mental health, she helps women navigate various challenges.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=CaseWhitteMoreMockUp.webp",
-    link: "https://caseywhittemorelmft.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "Fan Fusion Ventures",
-    subtitle: "Sports Entertainment",
-    description: "Fan Fusion provides exciting daily fantasy sports experiences tailored for passionate sports fans.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=FanFusionMockup.webp",
-    link: "https://fanfusionventures.com/",
-    category: "Professional Services"
-  },
-  {
-    title: "Luxury Tahoe Properties",
-    subtitle: "Real Estate",
-    description: "Led by real estate professional Samantha Bass, focuses on high-end properties in the Lake Tahoe area.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=LuxuryTahoePropertiesMockup.webp",
-    link: "https://luxurytahoeproperties.com/",
-    category: "Professional Services"
-  },
-
-  // Construction
-  {
-    title: "Diamond Construction",
-    subtitle: "Construction",
-    description: "Established in 2013, specializes in waterproofing solutions and gypsum concrete services.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=DiamondConstructionMockup.webp",
-    link: "https://diamondconstructionandgypsum.com/",
-    category: "Construction"
-  },
-  {
-    title: "Smith & Eastwood Construction",
-    subtitle: "General Contractors",
-    description: "Premier construction services delivering quality craftsmanship for residential and commercial projects.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=SmithandEastWoodConstruction.webp",
-    link: "https://smitheastwoodbuild.com/",
-    category: "Construction"
-  },
-
-  // Painters
-  {
-    title: "Huff Painting Co",
-    subtitle: "Commercial Painting",
-    description: "With over 40 years of experience, this family-owned business serves the San Gabriel Valley with residential and commercial painting.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=HuffPaintingCoMockup.webp",
-    link: "https://huffpainting.co/",
-    category: "Painters"
-  },
-  {
-    title: "Wrangler Painting",
-    subtitle: "Residential Painting",
-    description: "Located in Los Angeles, California, this company focuses on residential painting and power washing services.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=WranglerPaintingMockup.webp",
-    link: "https://wranglerpainting.com/",
-    category: "Painters"
-  },
-
-  // Trades
-  {
-    title: "West Coast Washers",
-    subtitle: "Exterior Cleaning",
-    description: "Specializes in commercial building exterior cleaning and pressure washing services across Southern California.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=WCW_mockup_transparent.webp",
-    link: "https://westcoastwashersllc.com/",
-    category: "Trades"
-  },
-  {
-    title: "Ceiling Pro",
-    subtitle: "Ceiling Installation",
-    description: "Trusted Ceiling Experts in the Bay Area. Providing exceptional ceiling installations for both commercial and residential spaces with quality you can rely on.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=CeilingProMockup.webp",
-    link: "https://ceilingprosf.com/",
-    category: "Trades"
-  },
-  {
-    title: "Sierra Precision Electric",
-    subtitle: "Electrical Contractor",
-    description: "Trusted Electrical Solutions for Truckee and Lake Tahoe. Specializing in high-end residential installations, smart systems, and custom home projects.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=SierraElectricMockup.webp",
-    link: "https://truckeetahoeelectrical.com/",
-    category: "Trades"
-  },
-  {
-    title: "Cleaning Solution Building Corp",
-    subtitle: "Commercial Cleaning",
-    description: "Commercial Cleaning Services in Long Island, Nassau, & Suffolk. Experience top-notch cleaning with our dedicated team committed at a fair price.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80&sig=CleaningSolutionMockup.webp",
-    link: "https://cleaningsolutionbuildingcorp.com/",
-    category: "Trades"
-  }
-];
-
-import { ContactForm } from '@/components/ContactForm';
-
-export default function PortfolioPage() {
-  const portfolioSchema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "TwentyOne Solutions Portfolio",
-    "description": "Our work with home builders, contractors, trades, and professional services businesses.",
-    "url": "https://twentyonesolutions.com/portfolio",
-    "mainEntity": {
-      "@type": "ItemList",
-      "itemListElement": portfolioItems.map(item => ({
-        "@type": "CreativeWork",
-        "name": item.title,
-        "description": item.description
-      }))
-    }
-  };
-
-  const categories: Category[] = ['Professional Services', 'Construction', 'Painters', 'Trades'];
-
+  ];
 
   return (
-    <div className="min-h-screen bg-[#fdfaf5] text-gray-800 font-sans">
-      <SEO
-        title="Web Design Portfolio | Contractor & Service Business Websites"
-        description="View our recent web design work for contractors, trades, home builders, and professional service businesses."
-        canonical="/portfolio"
-        schema={portfolioSchema}
-      />
-      <Navigation />
-
-      {/* Hero */}
-      <WaveSection
-        className="pt-20 md:pt-40 pb-24 md:pb-48"
-        disableTopWave
-        overlayOpacity={0.75}
-      >
-        <div className="container mx-auto px-6 text-center max-w-4xl">
-          <motion.h1  
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-4xl md:text-6xl font-bold font-heading text-gray-900 mb-6"
-          >
-            Our Portfolio
-          </motion.h1>
-          <motion.p 
-            initial="hidden" animate="visible" variants={fadeIn}
-            className="text-xl text-gray-600 font-light max-w-2xl mx-auto"
-          >
-            We work with home builders, contractors, trades, and professional services businesses.
-          </motion.p>
-        </div>
-      </WaveSection>
-
-      {/* Intro */}
-      <section className="py-16 bg-[#fdfaf5]">
-        <div className="container mx-auto px-6 text-left md:text-center max-w-3xl">
-          <h2 className="text-3xl font-bold font-heading text-gray-900 mb-4">Some of our Work</h2>
-          <p className="text-lg text-gray-600">
-            Just as we’ve crafted exceptional websites for our clients, we can do the same for you. Our team will understand your unique needs to create stunning websites that resonate with your audience.
+    <div className="py-12 md:py-20 bg-gray-50 min-h-screen">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Work</h1>
+          <p className="text-xl text-gray-600">
+            A showcase of our recent projects and transformations.
           </p>
         </div>
-      </section>
 
-      {/* Portfolio Sections */}
-      <div className="space-y-20 pb-24 bg-[#fdfaf5]">
-        {categories.map((category) => (
-          <section key={category} className="container mx-auto px-6">
-            <div className="flex items-center gap-4 mb-8">
-              <h3 className="text-3xl font-bold font-heading text-gray-900">{category}</h3>
-              <div className="h-px bg-gray-200 flex-grow"></div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {portfolioItems.map((item, idx) => (
+            <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div className="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+                {/* Image Placeholder */}
+                <span>Project Image</span>
+              </div>
+              <div className="p-6">
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">{item.category}</span>
+                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">{item.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {item.description}
+                </p>
+              </div>
             </div>
-            
-            <motion.div 
-              initial="hidden" 
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {portfolioItems
-                .filter(item => item.category === category)
-                .map((item, index) => (
-                  <PortfolioCard 
-                    key={index}
-                    {...item}
-                  />
-                ))}
-            </motion.div>
-          </section>
-        ))}
-      </div>
-
-      {/* Form / CTA Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
-            <ContactForm />
-
-            <div className="space-y-12 lg:pt-20">
-              {businessConfig.mapsShareUrl && (
-                <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-500">
-                  <iframe
-                    src={businessConfig.mapsShareUrl}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`${businessConfig.businessName} Location`}
-                  ></iframe>
-                </div>
-              )}
-            </div>
+          ))}
+        </div>
+        
+        <div className="mt-16 text-center bg-white p-8 rounded-xl shadow-sm border border-gray-100 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to start your own project?</h2>
+          <p className="text-gray-600 mb-6">
+            Contact us today to discuss how we can bring your vision to life.
+          </p>
+          <div className="flex justify-center gap-4">
+             <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90">
+               Get a Quote
+             </Link>
+             <Link href="/services" className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+               View Services
+             </Link>
           </div>
         </div>
-      </section>
-
-      <Footer />
+      </div>
     </div>
   );
 }
