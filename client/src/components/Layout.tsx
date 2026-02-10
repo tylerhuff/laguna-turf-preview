@@ -42,6 +42,9 @@ export function Navigation() {
 
   return (
     <>
+      {/* Grass texture strip at top */}
+      <div className="h-4" style={{ backgroundImage: 'url(/grass-texture.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      
       <div className="text-white text-xs font-medium py-2.5" style={{ backgroundColor: 'var(--brand-top-bar, #5D4037)' }}>
         <div className="container mx-auto px-6 flex flex-row justify-between items-center">
           <span className="opacity-90 tracking-wide sm:hidden font-bold">{businessConfig.tagline}</span>
@@ -61,7 +64,7 @@ export function Navigation() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm relative">
+      <header className="sticky top-0 z-50 border-b border-gray-100 shadow-sm relative" style={{ backgroundImage: 'url(/wood-fence.jpg)', backgroundSize: 'cover' }}>
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight text-gray-800">
             {businessConfig.logoPath ? (
