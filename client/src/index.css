@@ -111,8 +111,8 @@
   --sidebar-ring: 217.2 91.2% 59.8%;
 
   /* Fonts - Generic System Fonts */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-heading: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
 
   /* Brand Accent Color - Set dynamically from config in main.tsx */
   --accent-color: #FD9800; /* Default orange, overridden by businessConfig.primaryAccentColor */

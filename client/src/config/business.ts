@@ -344,4 +344,7 @@ export const businessConfig: BusinessConfig = {
   // Brand colors - matching lagunaturf.com (green grass + orange accents)
   primaryAccentColor: "#166534", // Forest green (primary brand)
   secondaryAccentColor: "#ea580c", // Orange (CTA/accent - matches their site)
+  
+  // Logo
+  logoPath: "/logo.png",
 };
