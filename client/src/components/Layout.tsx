@@ -42,7 +42,7 @@ export function Navigation() {
 
   return (
     <>
-      <div className="bg-amber-900 text-white text-xs font-medium py-2.5">
+      <div className="text-white text-xs font-medium py-2.5" style={{ backgroundColor: 'var(--brand-top-bar, #5D4037)' }}>
         <div className="container mx-auto px-6 flex flex-row justify-between items-center">
           <span className="opacity-90 tracking-wide sm:hidden font-bold">{businessConfig.tagline}</span>
           <span className="opacity-90 tracking-wide hidden sm:inline">{businessConfig.tagline}</span>

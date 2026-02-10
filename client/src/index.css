@@ -72,14 +72,16 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222.2 84% 4.9%;
 
-  /* Forest Green: matches Laguna Turf branding */
+  /* Brand colors - injected from config via main.tsx */
+  --brand-primary: #166534;
+  --brand-cta: #ea580c;
+  --brand-accent: #8B4513;
+  --brand-nav-bg: #166534;
+  --brand-top-bar: #5D4037;
+  
+  /* Primary uses brand color */
   --primary: 142 68% 24%;
   --primary-foreground: 0 0% 100%;
-  
-  /* Brown (wood/fence): #6D4C41 */
-  --wood-brown: 15 25% 34%;
-  /* Orange accent: #ea580c */
-  --cta-orange: 21 90% 48%;
 
   /* Slate gray for secondary */
   --secondary: 210 40% 96.1%;

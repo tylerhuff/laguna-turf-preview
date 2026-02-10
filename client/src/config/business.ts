@@ -86,6 +86,13 @@ export interface BusinessConfig {
   heroImagePath?: string;
   fontHeading?: string;
   fontBody?: string;
+  brandColors?: {
+    primary?: string;      // Main brand color (green for landscaping)
+    cta?: string;          // Call-to-action buttons (orange)
+    accent?: string;       // Secondary accent (brown/wood)
+    navBg?: string;        // Navigation background
+    topBar?: string;       // Top bar background
+  };
 
   // Integrations
   ga4MeasurementId?: string;
@@ -349,6 +356,15 @@ export const businessConfig: BusinessConfig = {
   // Brand colors - matching lagunaturf.com (green grass + orange accents)
   primaryAccentColor: "#166534", // Forest green (primary brand)
   secondaryAccentColor: "#ea580c", // Orange (CTA/accent - matches their site)
+  
+  // Full brand color scheme
+  brandColors: {
+    primary: "#166534",    // Forest green (grass)
+    cta: "#ea580c",        // Orange (buttons, links)
+    accent: "#8B4513",     // Saddle brown (wood/fence)
+    navBg: "#166534",      // Green nav bar
+    topBar: "#5D4037",     // Dark brown top bar
+  },
   
   // Logo & Images
   logoPath: "/logo.png",

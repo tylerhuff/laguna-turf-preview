@@ -43,7 +43,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                 <Button 
                   size="lg" 
-                  className="bg-orange-600 hover:bg-orange-700 text-white font-bold text-lg h-16 px-10 shadow-lg shadow-orange-600/20 lg:hidden"
+                  style={{ backgroundColor: 'var(--brand-cta)', boxShadow: '0 10px 15px -3px var(--brand-cta)' }} className="hover:opacity-90 text-white font-bold text-lg h-16 px-10 lg:hidden"
                   onClick={() => setModalOpen(true)}
                 >
                   Get a Free Quote
@@ -69,7 +69,7 @@ export default function Home() {
               <div className="pt-8 flex flex-wrap gap-x-8 gap-y-4 justify-center lg:justify-start text-base font-medium text-gray-300">
                 {businessConfig.insuredBonded && (
                   <div className="flex items-center gap-3">
-                    <ShieldCheck className="text-orange-500 w-6 h-6" />
+                    <ShieldCheck style={{ color: 'var(--brand-cta)' }} className="w-6 h-6" />
                     <span>Licensed, Insured & Bonded</span>
                   </div>
                 )}
@@ -192,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 relative" style={{ backgroundColor: '#166534' }}>
+      <section className="py-24 relative" style={{ backgroundColor: 'var(--brand-primary, #166534)' }}>
         {/* Grass texture overlay */}
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
         <div className="container mx-auto px-4 relative z-10">
@@ -216,7 +216,7 @@ export default function Home() {
                   <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
                     {service.shortDescription}
                   </p>
-                  <Link href={`/services/${service.slug}`} className="inline-flex items-center text-orange-600 font-bold hover:gap-2 transition-all mt-auto pt-4">
+                  <Link href={`/services/${service.slug}`} style={{ color: 'var(--brand-cta)' }} className="inline-flex items-center font-bold hover:gap-2 transition-all mt-auto pt-4">
                     Learn More <ArrowRight className="w-4 h-4 ml-1" />
                   </Link>
                 </div>
@@ -225,7 +225,7 @@ export default function Home() {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" asChild className="bg-orange-600 hover:bg-orange-700 text-white border-0 px-10 h-14 text-lg font-bold">
+            <Button size="lg" asChild style={{ backgroundColor: 'var(--brand-cta)' }} className="hover:opacity-90 text-white border-0 px-10 h-14 text-lg font-bold">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>
