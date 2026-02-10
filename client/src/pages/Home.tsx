@@ -192,13 +192,11 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-24 relative" style={{ backgroundColor: 'var(--brand-primary, #166534)' }}>
-        {/* Grass texture overlay */}
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'url(/hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-24" style={{ backgroundColor: '#D7CCC8' }}>
+        <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
-            <p className="text-lg text-white/80">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-lg text-gray-600">
               Premium artificial grass solutions for residential and commercial properties. Quality installation is our promise.
             </p>
           </div>
@@ -233,28 +231,28 @@ export default function Home() {
       </section>
 
       {/* Additional Testimonials Section */}
-      <section className="py-24 bg-gray-900 text-white">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
            <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Real Results, Real Satisfaction</h2>
-                 <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                 <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Real Results, Real Satisfaction</h2>
+                 <p className="text-gray-600 text-lg mb-8 leading-relaxed">
                     Our goal is to build long-lasting relationships with our clients through trust, reliability, and superior craftsmanship. Here is what some of our recent clients have to say about their experience working with us.
                  </p>
                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="bg-white/10 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                        <div className="flex gap-1 mb-3">
                           {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
                        </div>
-                       <p className="text-gray-200 italic text-sm mb-4">"Absolutely transformed our home. The team was professional, clean, and finished ahead of schedule."</p>
-                       <p className="font-bold text-white">- Jennifer T.</p>
+                       <p className="text-gray-600 italic text-sm mb-4">"Absolutely transformed our home. The team was professional, clean, and finished ahead of schedule."</p>
+                       <p className="font-bold text-gray-900">- Jennifer T.</p>
                     </div>
-                    <div className="bg-white/10 p-6 rounded-xl border border-white/10 backdrop-blur-sm">
+                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
                        <div className="flex gap-1 mb-3">
                           {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />)}
                        </div>
-                       <p className="text-gray-200 italic text-sm mb-4">"Best contractor we've ever hired. Transparent pricing and no surprises. Highly recommended!"</p>
-                       <p className="font-bold text-white">- Mark S.</p>
+                       <p className="text-gray-600 italic text-sm mb-4">"Best contractor we've ever hired. Transparent pricing and no surprises. Highly recommended!"</p>
+                       <p className="font-bold text-gray-900">- Mark S.</p>
                     </div>
                  </div>
               </div>
