@@ -203,14 +203,21 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {businessConfig.services.slice(0, 6).map((service, index) => (
-              <div key={index} className="group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.name}</h3>
-                <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
-                  {service.shortDescription}
-                </p>
-                <Link href={`/services/${service.slug}`} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all mt-auto pt-4">
-                  Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                </Link>
+              <div key={index} className="group bg-white rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col">
+                {service.imagePath && (
+                  <div className="h-48 overflow-hidden">
+                    <img src={service.imagePath} alt={service.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                )}
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.name}</h3>
+                  <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
+                    {service.shortDescription}
+                  </p>
+                  <Link href={`/services/${service.slug}`} className="inline-flex items-center text-primary font-bold hover:gap-2 transition-all mt-auto pt-4">
+                    Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
