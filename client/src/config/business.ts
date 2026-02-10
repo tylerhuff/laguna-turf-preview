@@ -93,208 +93,198 @@ export interface BusinessConfig {
 }
 
 export const businessConfig: BusinessConfig = {
-  businessName: "Standard Plumbing OC",
-  tagline: "Leak Detection & Repair Specialists",
-  primaryPhone: "+1XXXXXXXXXX", // Need actual phone
-  phoneDisplay: "(XXX) XXX-XXXX", // Need actual phone
-  primaryEmail: "info@standardplumbingoc.com",
-  websiteUrl: "https://standardplumbingoc.com",
+  businessName: "Laguna Turf",
+  tagline: "Professional Artificial Grass Installation & Sales",
+  primaryPhone: "+1-888-356-9192",
+  phoneDisplay: "(888) 356-9192",
+  primaryEmail: "info@lagunaturf.com",
+  websiteUrl: "https://lagunaturf.com",
   priceRange: "$$",
   insuredBonded: true,
+  foundedYear: "2010",
+  licenseNumber: "SGW Landscape Authorized Dealer",
 
-  streetAddress: "", // Dana Point area
-  city: "Dana Point",
+  streetAddress: "", // Orange County area
+  city: "Orange County",
   state: "CA",
-  postalCode: "92629",
+  postalCode: "92677",
   country: "US",
 
   openingHours: [
-    { day: "Monday", open: "7:00 AM", close: "8:00 PM" },
-    { day: "Tuesday", open: "7:00 AM", close: "8:00 PM" },
-    { day: "Wednesday", open: "7:00 AM", close: "8:00 PM" },
-    { day: "Thursday", open: "7:00 AM", close: "8:00 PM" },
-    { day: "Friday", open: "7:00 AM", close: "8:00 PM" },
-    { day: "Saturday", open: "9:00 AM", close: "2:00 PM" },
-    { day: "Sunday", open: "Closed", close: "Closed" }
+    { day: "Monday", open: "8:00 AM", close: "6:00 PM" },
+    { day: "Tuesday", open: "8:00 AM", close: "6:00 PM" },
+    { day: "Wednesday", open: "8:00 AM", close: "6:00 PM" },
+    { day: "Thursday", open: "8:00 AM", close: "6:00 PM" },
+    { day: "Friday", open: "8:00 AM", close: "6:00 PM" },
+    { day: "Saturday", open: "9:00 AM", close: "5:00 PM" },
+    { day: "Sunday", open: "By Appointment", close: "By Appointment" }
   ],
-  availabilityNote: "Emergency services available",
+  availabilityNote: "Free in-home estimates available - Call 888-356-9192",
 
   areasServedCities: [
-    "Dana Point",
     "Laguna Niguel",
-    "Laguna Hills",
+    "Laguna Hills", 
     "Laguna Beach",
-    "San Juan Capistrano",
+    "Newport Beach",
     "Mission Viejo",
+    "Lake Forest",
+    "Irvine",
+    "Costa Mesa",
+    "Huntington Beach",
+    "San Juan Capistrano",
+    "Ladera Ranch",
+    "Coto de Caza",
     "Rancho Santa Margarita",
-    "Aliso Viejo",
+    "Dana Point",
     "San Clemente",
-    "Irvine"
+    "Aliso Viejo",
+    "Tustin",
+    "Orange"
   ],
 
   services: [
     {
-      name: "Water Leak Detection & Repair",
-      slug: "water-leak-detection",
-      shortDescription: "State-of-the-art leak detection using modern electronic equipment.",
-      longDescription: "Water leaks are serious situations that require immediate inspection and professional repair to prevent more serious damage to your home or business. We offer state of the art leak detection using the most modern electronic listening devices, thermal imaging, and electronic line tracing equipment that accurately determines the source of your leak and offers the best and most noninvasive route for repair.",
+      name: "Residential Artificial Grass",
+      slug: "residential-artificial-grass",
+      shortDescription: "Premium artificial turf installation for front and back yards.",
+      longDescription: "Transform your residential landscape with our high-quality artificial grass. No more mowing, no more watering, no more dead spots and no more dormant seasons. With Laguna Turf your yards will have that perfectly manicured look all year round! We offer an array of products for your front and back yards with a full range of colors and densities to fit your needs.",
       serviceBenefits: [
-        "Modern electronic listening devices",
-        "Thermal imaging detection",
-        "Electronic line tracing equipment",
-        "Non-invasive repair solutions",
-        "Same-day emergency service"
-      ],
-      processSteps: [
-        { name: "Inspection", description: "Thorough assessment using advanced detection equipment" },
-        { name: "Diagnosis", description: "Accurately determine the source and cause of the leak" },
-        { name: "Repair Plan", description: "Provide options for the best and most cost-effective repair" },
-        { name: "Repair", description: "Professional repair with minimal disruption to your home" }
-      ],
-      pricingTiers: [
-        { name: "Detection Only", priceRange: "Call for quote", includes: ["Full leak detection service", "Detailed report"] },
-        { name: "Detection + Repair", priceRange: "Call for quote", includes: ["Detection", "Repair", "Warranty"] }
-      ],
-      faqs: [
-        { question: "What are signs of a potential leak?", answer: "Watch for wet spots around exterior, wall discoloration, bubbling paint, warm spots in floor, musty smell, sudden increase in water bill, or dripping sounds in walls while no water is being used." },
-        { question: "Do you offer emergency leak repair?", answer: "Yes! We respond to emergency plumbing situations and can often arrive the same day." }
-      ],
-      primaryKeywords: ["leak detection", "water leak repair", "slab leak", "pipe leak", "plumber Orange County"]
-    },
-    {
-      name: "Pex Repipes",
-      slug: "pex-repipes",
-      shortDescription: "Complete home repiping with durable Pex piping systems.",
-      longDescription: "If your old copper system is getting to the point where leaks are a common occurrence then it's recommended to consider repiping the entire system. Pex piping is not only more affordable but much more durable than copper piping. The pex material isn't susceptible to Southern California's water treatments that destroy copper systems, with chloramine being the number one offender!",
-      serviceBenefits: [
-        "More affordable than copper",
-        "More durable than copper piping",
-        "Resistant to chloramine damage",
-        "Long-lasting leak-free solution",
+        "No more mowing or watering",
+        "Year-round green appearance",
+        "Eliminates dead spots",
+        "Water conservation",
+        "Low maintenance solution",
         "Professional installation"
       ],
       processSteps: [
-        { name: "Assessment", description: "Evaluate your current plumbing system" },
-        { name: "Planning", description: "Design the optimal piping layout" },
-        { name: "Installation", description: "Replace old pipes with new Pex system" },
-        { name: "Testing", description: "Pressure test and verify all connections" }
+        { name: "Free Consultation", description: "In-home estimate and product selection" },
+        { name: "Site Preparation", description: "Remove existing grass and prepare base" },
+        { name: "Installation", description: "Professional laying of your new artificial grass" },
+        { name: "Completion", description: "Final inspection and clean-up" }
       ],
       pricingTiers: [
-        { name: "Whole House Repipe", priceRange: "Call for quote", includes: ["Complete system replacement", "All fixtures connected", "Permits and inspections"] }
+        { name: "Standard Installation", priceRange: "Free estimate", includes: ["Site preparation", "Premium artificial grass", "Professional installation", "Clean-up"] },
+        { name: "Premium Package", priceRange: "Free estimate", includes: ["Enhanced base preparation", "Top-tier grass products", "Drainage system", "Extended warranty"] }
       ],
       faqs: [
-        { question: "Why is Pex better than copper?", answer: "Pex is more resistant to the chloramine in Southern California water that corrodes copper pipes over time, making it a longer-lasting solution." },
-        { question: "How long does a repipe take?", answer: "Most whole-house repipes can be completed in 1-2 days." }
+        { question: "How long does artificial grass last?", answer: "Our high-quality artificial grass can last 15-20 years with proper installation and minimal maintenance." },
+        { question: "Is artificial grass safe for children?", answer: "Yes! Our artificial grass is 100% safe for children and pets, with non-toxic materials and proper drainage." }
       ],
-      primaryKeywords: ["pex repipe", "whole house repipe", "copper pipe replacement", "repiping service"]
+      primaryKeywords: ["artificial grass", "synthetic turf", "lawn replacement", "artificial turf Orange County"]
     },
     {
-      name: "Water Heater Services",
-      slug: "water-heaters",
-      shortDescription: "Water heater installation, repair, and replacement.",
-      longDescription: "A water heater is an essential part of your home's plumbing system. Over time water heater tanks deteriorate from the inside, which can lead to discolored water coming from sinks or showers. Eventually this deterioration will lead to a leak from your water heater tank.",
+      name: "Pet System Installation",
+      slug: "pet-artificial-grass",
+      shortDescription: "Specialized artificial grass systems designed for pets.",
+      longDescription: "At Laguna Turf we love our animals too. That's why it was so important for us to come up with a product system rather than just an artificial grass product. Our pet system is 100% pet safe and durable enough for large animals. The pet system starts at the base and is apparent through every layer of the installation process, ensuring proper drainage and odor control.",
       serviceBenefits: [
-        "Expert installation",
-        "All major brands",
-        "Tank and tankless options",
-        "Energy-efficient upgrades",
-        "Same-day service available"
+        "100% pet safe materials",
+        "Durable for large animals",
+        "Superior drainage system",
+        "Odor control technology",
+        "Easy to clean and maintain",
+        "Non-toxic and antimicrobial"
       ],
       processSteps: [
-        { name: "Diagnosis", description: "Assess your current water heater condition" },
-        { name: "Recommendation", description: "Provide repair or replacement options" },
-        { name: "Installation", description: "Professional installation with proper permits" },
-        { name: "Testing", description: "Verify proper operation and temperature" }
+        { name: "Pet Assessment", description: "Evaluate your pets' needs and usage patterns" },
+        { name: "Custom Base", description: "Install specialized drainage base for pets" },
+        { name: "Pet Turf Installation", description: "Install pet-specific artificial grass system" },
+        { name: "Final Setup", description: "Training on maintenance and care" }
       ],
       pricingTiers: [
-        { name: "Repair", priceRange: "Call for quote", includes: ["Diagnosis", "Parts", "Labor"] },
-        { name: "Replacement", priceRange: "Call for quote", includes: ["New water heater", "Installation", "Old unit disposal"] }
+        { name: "Pet System", priceRange: "Free estimate", includes: ["Pet-safe artificial grass", "Enhanced drainage base", "Antimicrobial infill", "Professional installation"] }
       ],
       faqs: [
-        { question: "What are signs my water heater needs replacing?", answer: "Discolored or gritty water, hot water runs out quickly, doesn't get hot enough, moisture around tank, rotten egg smell, or popping/crackling sounds." },
-        { question: "How long do water heaters last?", answer: "Tank water heaters typically last 8-12 years with proper maintenance." }
+        { question: "How do I clean pet waste from artificial grass?", answer: "Simply remove solid waste and rinse the area with water. Our drainage system handles liquids naturally." },
+        { question: "Will the artificial grass get hot for my pets?", answer: "We offer heat-resistant options and can recommend cooling infills for areas with direct sun exposure." }
       ],
-      primaryKeywords: ["water heater installation", "water heater repair", "tankless water heater", "hot water heater"]
+      primaryKeywords: ["pet artificial grass", "dog turf", "pet-safe synthetic grass", "artificial grass for pets"]
     },
     {
-      name: "Seismic Gas Valves",
-      slug: "seismic-gas-valves",
-      shortDescription: "Automatic gas shutoff valves for earthquake protection.",
-      longDescription: "Automatic gas shutoff valves activate and shut off your home or business's natural gas supply in the event of a 5.4 or greater earthquake. One out of every four fires in California after an earthquake is related to a natural gas leak. Make sure your home or business is protected. In compliance with Section 19202 of the State of California.",
+      name: "Custom Putting Greens",
+      slug: "putting-greens",
+      shortDescription: "Professional artificial putting greens for your backyard.",
+      longDescription: "Laguna Turf golf greens come in three different performance levels: Fun, Intermediate and Pro! No matter what you are looking for in an artificial putting green, we are the caddy you have been looking for. All of our products have been highly tested and made to get as close to the real thing as possible, bringing the golf course experience to your home.",
       serviceBenefits: [
-        "Automatic earthquake shutoff",
-        "Fire prevention",
-        "California code compliant",
-        "Peace of mind protection",
+        "Three performance levels available",
+        "Realistic golf course experience",
+        "Custom design and installation",
+        "All-weather playability",
+        "Low maintenance",
         "Professional installation"
       ],
       processSteps: [
-        { name: "Assessment", description: "Evaluate your gas line setup" },
-        { name: "Installation", description: "Install the seismic valve at the meter" },
-        { name: "Testing", description: "Verify proper operation" },
-        { name: "Documentation", description: "Provide compliance documentation" }
+        { name: "Design Consultation", description: "Assess space and discuss your putting green goals" },
+        { name: "Custom Design", description: "Create a putting green layout tailored to your space" },
+        { name: "Installation", description: "Professional installation with proper base and drainage" },
+        { name: "Setup", description: "Final adjustments and instruction on use" }
       ],
       pricingTiers: [
-        { name: "Installation", priceRange: "Free quote", includes: ["Seismic valve", "Professional installation", "Compliance certificate"] }
+        { name: "Fun Level", priceRange: "Free estimate", includes: ["Basic putting surface", "Standard installation", "Simple design"] },
+        { name: "Intermediate Level", priceRange: "Free estimate", includes: ["Enhanced putting surface", "Custom contours", "Professional installation"] },
+        { name: "Pro Level", priceRange: "Free estimate", includes: ["Tournament-grade surface", "Complex design features", "Premium installation"] }
       ],
       faqs: [
-        { question: "Is a seismic gas valve required in California?", answer: "While not required for existing homes, it's highly recommended and required for new construction under Section 19202 of the State of California." },
-        { question: "Will it shut off for small earthquakes?", answer: "The valve activates at 5.4 magnitude or greater to avoid unnecessary shutoffs." }
+        { question: "What's the difference between the performance levels?", answer: "Fun level is great for casual putting, Intermediate offers more realistic ball roll, and Pro level provides tournament-quality performance." },
+        { question: "Can you install putting greens on slopes?", answer: "Yes! We can design custom putting greens to work with your existing landscape contours." }
       ],
-      primaryKeywords: ["seismic gas valve", "earthquake gas shutoff", "gas safety valve", "California gas code"]
+      primaryKeywords: ["putting green", "artificial putting green", "backyard putting green", "golf green installation"]
     },
     {
-      name: "Preventative Maintenance",
-      slug: "preventative-maintenance",
-      shortDescription: "Regular plumbing inspections to prevent costly repairs.",
-      longDescription: "The plumbing in your home is a complicated network of connected pipes, valves, drains and fixtures that keep your home or business operating. In order to make sure your plumbing system operates effectively, regular system inspections are recommended. Little problems that are inexpensive to fix can lead to big problems and costly repairs if not addressed early.",
+      name: "Commercial Artificial Turf",
+      slug: "commercial-turf",
+      shortDescription: "Professional artificial grass solutions for businesses.",
+      longDescription: "Laguna Turf knows the costs associated with keeping your commercial grounds looking professional and clean. Artificial grass offers a solution for your business on multiple levels: cut watering and maintenance costs to zero, maintain that professional landscape look your clients expect, and be part of the growing majority of businesses doing their part to help the environment.",
       serviceBenefits: [
-        "Prevent costly emergency repairs",
-        "Extend system lifespan",
-        "Identify potential problems early",
-        "Professional system inspection",
-        "Peace of mind"
+        "Zero watering and maintenance costs",
+        "Professional appearance year-round",
+        "Environmentally responsible choice",
+        "Durable for high traffic areas",
+        "Cost-effective long-term solution",
+        "Custom commercial installation"
       ],
       processSteps: [
-        { name: "Inspection", description: "Thorough examination of all plumbing components" },
-        { name: "Testing", description: "Pressure tests and flow verification" },
-        { name: "Report", description: "Detailed findings and recommendations" },
-        { name: "Maintenance", description: "Address any minor issues found" }
+        { name: "Site Assessment", description: "Evaluate commercial property needs and traffic patterns" },
+        { name: "Product Selection", description: "Choose appropriate commercial-grade turf" },
+        { name: "Installation", description: "Professional commercial installation with minimal disruption" },
+        { name: "Maintenance Plan", description: "Provide ongoing maintenance recommendations" }
       ],
       pricingTiers: [
-        { name: "Inspection", priceRange: "Call for quote", includes: ["Full system inspection", "Detailed report", "Recommendations"] }
+        { name: "Commercial Installation", priceRange: "Free estimate", includes: ["Commercial-grade turf", "Professional installation", "Warranty", "Maintenance plan"] }
       ],
       faqs: [
-        { question: "What do you inspect during maintenance?", answer: "We check angle stop valves, water pressure, visible pipes, water heater, fixtures, and look for signs of leaks or corrosion." },
-        { question: "How often should I have my plumbing inspected?", answer: "We recommend annual inspections to catch small problems before they become expensive emergencies." }
+        { question: "Is artificial grass suitable for high-traffic commercial areas?", answer: "Yes! Our commercial-grade artificial grass is specifically designed to handle heavy foot traffic and maintain its appearance." },
+        { question: "How much can we save on maintenance costs?", answer: "Most businesses save 70-90% on landscape maintenance costs by switching to artificial grass." }
       ],
-      primaryKeywords: ["plumbing maintenance", "plumbing inspection", "preventative plumbing", "plumbing checkup"]
+      primaryKeywords: ["commercial artificial grass", "business turf", "commercial landscaping", "artificial grass installation"]
     },
     {
-      name: "Gas Line Services",
-      slug: "gas-lines",
-      shortDescription: "Gas line repair, installation, and repipes.",
-      longDescription: "Professional gas line services including repairs, new installations, and complete gas repipes. Safety is our top priority when working with gas lines.",
+      name: "Free Consultation & Estimates",
+      slug: "consultation",
+      shortDescription: "Comprehensive in-home consultation and free estimates.",
+      longDescription: "Laguna Turf prides itself on its ability to ensure our clients are happy. We proudly offer FREE in-home estimates to anyone looking to make the jump to artificial grass. We understand how difficult it can be to understand the products and how appealing the savings are. We are here to take all the guesswork out of your decision and help you understand each of our artificial grass products so you can make an informed decision.",
       serviceBenefits: [
-        "Licensed gas line work",
-        "Safety-focused approach",
-        "Leak detection and repair",
-        "New appliance hookups",
-        "Code compliant installations"
+        "Completely free consultation",
+        "No-obligation estimates",
+        "Product education and selection",
+        "Area measurements included",
+        "Design recommendations",
+        "Professional guidance"
       ],
       processSteps: [
-        { name: "Safety Check", description: "Verify safe working conditions" },
-        { name: "Assessment", description: "Evaluate the gas line issue or installation needs" },
-        { name: "Work", description: "Perform repairs or installation" },
-        { name: "Testing", description: "Pressure test and leak check all work" }
+        { name: "Schedule", description: "Book your free in-home consultation" },
+        { name: "Assessment", description: "Evaluate your space and discuss needs" },
+        { name: "Education", description: "Learn about different artificial grass options" },
+        { name: "Estimate", description: "Receive detailed pricing and timeline" }
       ],
       pricingTiers: [
-        { name: "Repair/Installation", priceRange: "Call for quote", includes: ["Assessment", "Materials", "Labor", "Testing"] }
+        { name: "Free Consultation", priceRange: "No cost", includes: ["In-home visit", "Product samples", "Detailed estimate", "Design consultation"] }
       ],
       faqs: [
-        { question: "Do you install gas lines for new appliances?", answer: "Yes, we can run new gas lines for ranges, dryers, outdoor grills, and other gas appliances." }
+        { question: "Is the consultation really free?", answer: "Yes! We provide free in-home consultations with no obligation to purchase." },
+        { question: "What should I prepare for the consultation?", answer: "Just have an idea of your goals and any questions about artificial grass. We'll handle the rest!" }
       ],
-      primaryKeywords: ["gas line repair", "gas line installation", "gas repipe", "gas leak repair"]
+      primaryKeywords: ["free estimate", "artificial grass consultation", "in-home estimate", "turf consultation"]
     }
   ],
 
@@ -303,54 +293,55 @@ export const businessConfig: BusinessConfig = {
   
   reviewCards: [
     {
-      name: "William S.",
+      name: "Jennifer M.",
       rating: 5,
-      text: "Tony & Taylor performed awesome service fixing my slab leak. They were very prompt, clean and explained everything in great detail. The fee was very reasonable. For free, they fixed one of my valves that had a slow leak and performed a pressure test on my main line. I highly recommend this company.",
-      city: "Laguna Hills",
-      date: "5/25/2024"
-    },
-    {
-      name: "Sydney R.",
-      rating: 5,
-      text: "Tony was a LIFE SAVER. We had an emergency plumbing issue and he got out of bed in the middle of the night to help us. He was at our place within 20 mins and fixed the issue quickly. He was so professional, calm, kind. For any and all plumbing issues we will be calling Tony!",
-      city: "Dana Point",
-      date: "8/26/2023"
-    },
-    {
-      name: "Imad D.",
-      rating: 5,
-      text: "Tony is responsive, prompt, friendly, respectful, and honest. We had a slab leak, which he came out to fix the same day. He's going to be our go to plumber from now on. We highly recommend Standard Plumbing!",
-      city: "Dana Point",
-      date: "5/18/2023"
-    },
-    {
-      name: "Don R.",
-      rating: 5,
-      text: "Tony Vinciguerra has serviced three of our families households. He has been superior in his workmanship, reliability and promptness. We have been impressed with his fair pricing. This company is one to experience for your needs.",
+      text: "Laguna Turf transformed our backyard completely! The artificial grass looks so realistic that our neighbors thought it was real. The installation team was professional, clean, and finished on schedule. No more watering bills and it looks perfect year-round.",
       city: "Laguna Niguel",
-      date: "1/10/2023"
+      date: "10/15/2024"
     },
     {
-      name: "Brian R.",
+      name: "Michael K.",
       rating: 5,
-      text: "Tony's responsiveness for a water slab leak was incredible. We had shut off the main valve due to the leak. He took our call in the evening and said he would see us in the morning. He arrived at our home in Laguna Niguel at the time committed. Within 30 minutes he had completed his testing and identified what needed to be done.",
-      city: "Laguna Niguel",
-      date: "12/27/2022"
+      text: "We installed artificial grass for our two large dogs and it's been amazing. Easy to clean, drains perfectly, and the dogs love it. The Laguna Turf team really knew what they were doing with the pet system. Highly recommend!",
+      city: "Newport Beach",
+      date: "9/22/2024"
     },
     {
-      name: "Peyman L.",
+      name: "Sarah L.",
       rating: 5,
-      text: "Tony is a really nice guy and cares to do a great job. If you are looking for someone professional who knows what he is doing, call Tony!",
-      city: "Orange County",
-      date: "12/1/2025"
+      text: "The putting green they installed in our backyard is incredible. My husband practices every day and says it feels just like a real course. The quality and attention to detail was outstanding. Worth every penny!",
+      city: "Mission Viejo",
+      date: "8/30/2024"
+    },
+    {
+      name: "David R.",
+      rating: 5,
+      text: "From consultation to completion, Laguna Turf was professional and reliable. They explained everything clearly, showed up on time, and left our property spotless. The artificial grass has saved us so much time and water. Excellent service!",
+      city: "Lake Forest",
+      date: "7/18/2024"
+    },
+    {
+      name: "Tiffany & Donna S.",
+      rating: 5,
+      text: "Exceptional Work, Couldn't Have Imagined A More Perfect Backyard For Our Little Girl!!! Thank You Laguna Turf",
+      city: "Rancho Santa Margarita",
+      date: "6/25/2024"
+    },
+    {
+      name: "Robert T.",
+      rating: 5,
+      text: "Outstanding work on our commercial property. The artificial grass has maintained its appearance despite heavy foot traffic and has significantly reduced our maintenance costs. Professional installation and great customer service.",
+      city: "Costa Mesa",
+      date: "5/12/2024"
     }
   ],
 
-  formspreeEndpoint: "https://formspree.io/f/example", // Update with actual endpoint
+  formspreeEndpoint: "https://formspree.io/f/lagunaturf", // Update with actual endpoint
   seobotApiKey: "",
-  mapsShareUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106456.35318955467!2d-117.75661897382814!3d33.48091989999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce8a2e2c82d1d%3A0x5b4e5f18b5d1d6e9!2sDana%20Point%2C%20CA!5e0!3m2!1sen!2sus",
-  mapsQueryOverride: "Standard Plumbing OC Dana Point",
+  mapsShareUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106473.8142432059!2d-117.68284232890625!3d33.61226559999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdd86b8ff34f9%3A0x3d9f4b6c8e2e5f1e!2sLaguna%20Niguel%2C%20CA!5e0!3m2!1sen!2sus",
+  mapsQueryOverride: "Laguna Turf Laguna Niguel Orange County",
 
-  // Brand colors - blue theme for plumbing
-  primaryAccentColor: "#1e40af", // Professional blue
+  // Brand colors - green theme for turf/landscaping
+  primaryAccentColor: "#16a34a", // Professional green
+  secondaryAccentColor: "#22c55e", // Accent green
 };
