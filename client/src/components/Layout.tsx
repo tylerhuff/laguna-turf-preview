@@ -42,7 +42,7 @@ export function Navigation() {
 
   return (
     <>
-      <div className="bg-primary text-primary-foreground text-xs font-medium py-2.5">
+      <div className="bg-amber-900 text-white text-xs font-medium py-2.5">
         <div className="container mx-auto px-6 flex flex-row justify-between items-center">
           <span className="opacity-90 tracking-wide sm:hidden font-bold">{businessConfig.tagline}</span>
           <span className="opacity-90 tracking-wide hidden sm:inline">{businessConfig.tagline}</span>
@@ -52,7 +52,7 @@ export function Navigation() {
                <Mail className="w-3.5 h-3.5" />
                <span>{businessConfig.primaryEmail}</span>
              </a>
-             <div className="w-px h-3 bg-primary-foreground/20 hidden sm:block"></div>
+             <div className="w-px h-3 bg-white/20 hidden sm:block"></div>
              <a href={`tel:${businessConfig.primaryPhone}`} className="hover:opacity-80 transition-opacity flex items-center gap-1.5 font-semibold">
                <Phone className="w-3.5 h-3.5" />
                {businessConfig.phoneDisplay}
