@@ -345,6 +345,7 @@ export const businessConfig: BusinessConfig = {
   primaryAccentColor: "#166534", // Forest green (primary brand)
   secondaryAccentColor: "#ea580c", // Orange (CTA/accent - matches their site)
   
-  // Logo
+  // Logo & Images
   logoPath: "/logo.png",
+  heroImagePath: "/hero.jpg",
 };

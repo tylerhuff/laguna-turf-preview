@@ -75,6 +75,11 @@
   /* Forest Green: matches Laguna Turf branding */
   --primary: 142 68% 24%;
   --primary-foreground: 0 0% 100%;
+  
+  /* Brown (wood/fence): #6D4C41 */
+  --wood-brown: 15 25% 34%;
+  /* Orange accent: #ea580c */
+  --cta-orange: 21 90% 48%;
 
   /* Slate gray for secondary */
   --secondary: 210 40% 96.1%;
@@ -113,6 +118,7 @@
   /* Fonts - Generic System Fonts */
   --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-weight-heading: 700;
 
   /* Brand Accent Color - Set dynamically from config in main.tsx */
   --accent-color: #FD9800; /* Default orange, overridden by businessConfig.primaryAccentColor */

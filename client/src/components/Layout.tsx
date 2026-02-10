@@ -65,7 +65,7 @@ export function Navigation() {
         <div className="container mx-auto px-6 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tight text-gray-800">
             {businessConfig.logoPath ? (
-              <img src={businessConfig.logoPath} alt={businessConfig.businessName} className="h-8 md:h-10 w-auto" />
+              <img src={businessConfig.logoPath} alt={businessConfig.businessName} className="h-16 md:h-20 w-auto" />
             ) : (
               <span>{businessConfig.businessName}</span>
             )}
