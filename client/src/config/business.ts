@@ -154,7 +154,7 @@ export const businessConfig: BusinessConfig = {
     {
       name: "Residential Artificial Grass",
       slug: "residential-artificial-grass",
-      imagePath: "/turf-lawn.jpg",
+      imagePath: "/ig-turf-2.jpg",
       shortDescription: "Premium artificial turf installation for front and back yards.",
       longDescription: "Transform your residential landscape with our high-quality artificial grass. No more mowing, no more watering, no more dead spots and no more dormant seasons. With Laguna Turf your yards will have that perfectly manicured look all year round! We offer an array of products for your front and back yards with a full range of colors and densities to fit your needs.",
       serviceBenefits: [
@@ -184,7 +184,7 @@ export const businessConfig: BusinessConfig = {
     {
       name: "Pet System Installation",
       slug: "pet-artificial-grass",
-      imagePath: "/pet-turf.jpg",
+      imagePath: "/ig-turf-3.jpg",
       shortDescription: "Specialized artificial grass systems designed for pets.",
       longDescription: "At Laguna Turf we love our animals too. That's why it was so important for us to come up with a product system rather than just an artificial grass product. Our pet system is 100% pet safe and durable enough for large animals. The pet system starts at the base and is apparent through every layer of the installation process, ensuring proper drainage and odor control.",
       serviceBenefits: [
@@ -213,7 +213,7 @@ export const businessConfig: BusinessConfig = {
     {
       name: "Custom Putting Greens",
       slug: "putting-greens",
-      imagePath: "/putting-green-stock.jpg",
+      imagePath: "/ig-turf-4.jpg",
       shortDescription: "Professional artificial putting greens for your backyard.",
       longDescription: "Laguna Turf golf greens come in three different performance levels: Fun, Intermediate and Pro! No matter what you are looking for in an artificial putting green, we are the caddy you have been looking for. All of our products have been highly tested and made to get as close to the real thing as possible, bringing the golf course experience to your home.",
       serviceBenefits: [
@@ -368,5 +368,5 @@ export const businessConfig: BusinessConfig = {
   
   // Logo & Images
   logoPath: "/logo.png",
-  heroImagePath: "/hero-stock.jpg",
+  heroImagePath: "/ig-turf-1.jpg",
 };
