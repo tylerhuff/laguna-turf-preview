@@ -341,7 +341,7 @@ export const businessConfig: BusinessConfig = {
   mapsShareUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106473.8142432059!2d-117.68284232890625!3d33.61226559999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdd86b8ff34f9%3A0x3d9f4b6c8e2e5f1e!2sLaguna%20Niguel%2C%20CA!5e0!3m2!1sen!2sus",
   mapsQueryOverride: "Laguna Turf Laguna Niguel Orange County",
 
-  // Brand colors - green theme for turf/landscaping
-  primaryAccentColor: "#16a34a", // Professional green
-  secondaryAccentColor: "#22c55e", // Accent green
+  // Brand colors - matching lagunaturf.com (green grass + orange accents)
+  primaryAccentColor: "#166534", // Forest green (primary brand)
+  secondaryAccentColor: "#ea580c", // Orange (CTA/accent - matches their site)
 };
